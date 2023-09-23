@@ -4,13 +4,19 @@ using System.Collections.Generic;
 
 public class CardData : ScriptableObject
 {	
-	public List<Param> param = new List<Param> ();
+	public List<Sheet> sheets = new List<Sheet> ();
+
+	[System.SerializableAttribute]
+	public class Sheet
+	{
+		public string name = string.Empty;
+		public List<Param> list = new List<Param>();
+	}
 
 	[System.SerializableAttribute]
 	public class Param
 	{
 		
-		public double index;
 		public string id;
 		public string name;
 		public string method;
@@ -30,3 +36,4 @@ public class CardData : ScriptableObject
 		public string image;
 	}
 }
+

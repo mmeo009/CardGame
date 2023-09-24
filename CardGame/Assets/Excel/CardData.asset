@@ -9,7 +9,128 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e4fc73d55b5ed4b947dc07c3daa655, type: 3}
+  m_Script: {fileID: 11500000, guid: f4b26d504986dc44091bdacc9c89afae, type: 3}
   m_Name: CardData
   m_EditorClassIdentifier: 
-  sheets: []
+  param:
+  - id: 101001A
+    itemCode: Wood_001
+    cardName: "\uB098\uBB34 \uB9C9\uB300\uAE30"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 0
+    element: GRESS
+    rarity: 1
+    text: text
+    comment: "\uBC29\uAE08 \uC8FC\uC6CC\uC628 \uC2E0\uC120\uD55C \uB098\uBB34\uC785\uB2C8\uB2E4."
+    adPower: 1
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101001B
+    itemCode: Wood_002
+    cardName: "\uBFB0\uC871\uD55C \uB098\uBB34 \uB9C9\uB300\uAE30"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 1
+    element: GRESS
+    rarity: 1
+    text: text
+    comment: "\uB098\uBB34\uB97C \uBE44\uBCD0\uB354\uB2C8 \uBFB0\uC871\uD574 \uC84C\uC2B5\uB2C8\uB2E4."
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101001C
+    itemCode: Wood_003
+    cardName: "\uBFB0\uC871\uD55C \uB098\uBB34 \uCC3D"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 2
+    element: GRESS
+    rarity: 1
+    text: text
+    comment: "\uBFB0\uC871\uD55C \uB098\uBB34\uB97C \uBB49\uCCD0\uC11C \uCC3D\uC744
+      \uB9CC\uB4E4\uC5C8\uC2B5\uB2C8\uB2E4."
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101002A
+    itemCode: Dagger_001
+    cardName: "\uB2E8\uAC80"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 1
+    element: NONE
+    rarity: 1
+    text: text
+    comment: "\uC0AC\uACFC\uB97C \uC798 \uAE4E\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4.  "
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101002B
+    itemCode: Dagger_002
+    cardName: "\uC591\uB0A0 \uB2E8\uAC80"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 2
+    element: NONE
+    rarity: 1
+    text: text
+    comment: "\uBCA0\uC774\uBA74 \uC544\uD50C\uAC83 \uAC19\uC2B5\uB2C8\uB2E4. (\uB530\uB054!)"
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101002C
+    itemCode: Dagger_003
+    cardName: "\uB3C5\uAE30\uB97C \uD488\uC740 \uAC80"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 4
+    element: GRESS
+    rarity: 1
+    text: text
+    comment: "\uB3C5\uC740 \uC5B4\uB514\uC11C \uB0AC\uB294\uC9C0 \uBAA8\uB985\uB2C8\uB2E4."
+    adPower: 1
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: POISON
+    stat_01: 0
+    stat_02: 0
+    stat_03: 2
+    stat_04: 4
+    stat_05: 0

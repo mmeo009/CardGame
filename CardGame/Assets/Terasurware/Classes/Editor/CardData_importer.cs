@@ -30,13 +30,13 @@ public class CardData_importer : AssetPostprocessor
 
                 foreach (string sheetName in sheetNames)
                 {
-                    var exportPath = "Assets/Excel/" + sheetName + ".asset";
+                    var exportPath = "Assets/Resources/" + sheetName + ".asset";
                     
                     // check scriptable object
-                    var data = (Card)AssetDatabase.LoadAssetAtPath(exportPath, typeof(Card));
+                    var data = (Entity_CardData)AssetDatabase.LoadAssetAtPath(exportPath, typeof(Entity_CardData));
                     if (data == null)
                     {
-                        data = ScriptableObject.CreateInstance<Card>();
+                        data = ScriptableObject.CreateInstance<Entity_CardData>();
                         AssetDatabase.CreateAsset((ScriptableObject)data, exportPath);
                         data.hideFlags = HideFlags.NotEditable;
                     }
@@ -56,7 +56,7 @@ public class CardData_importer : AssetPostprocessor
                         IRow row = sheet.GetRow(i);
                         ICell cell = null;
                         
-                        var p = new Card.Param();
+                        var p = new Entity_CardData.Param();
 			
 					cell = row.GetCell(0); p.id = (cell == null ? "" : cell.StringCellValue);
 					cell = row.GetCell(1); p.itemCode = (cell == null ? "" : cell.StringCellValue);

@@ -2,47 +2,20 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class DeckData : MonoBehaviour
+public class DeckManager: MonoBehaviour
 {
-    public Card cardDatabase;
-
-    [System.Serializable]
-    public class CardDataEntry
-    {
-        public string id;
-        public int count; // 카드 개수
-    }
-
-    // 싱글톤 인스턴스
-    public static DeckData Instance { get; private set; }
-
-    // 덱 리스트
-    public List<CardDataEntry> deck = new List<CardDataEntry>();
-
-    private void Awake()
-    {
-        // 싱글톤 인스턴스를 설정
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            // 이미 다른 인스턴스가 존재하면 이 인스턴스를 파괴
-            Destroy(gameObject);
-        }
-    }
+    
 
     // 카드를 덱에 추가하는 함수
     public void AddCardToDeckById(string cardId, int cardCount = 1)
     {
         // 스크립터블 오브젝트에서 해당 id를 가진 카드를 찾음
-        Card.Param foundCard = cardDatabase.param.Find(card => card.id == cardId);
+        Entity_CardData.Param foundCard = GameData.CardD.cardDatabase.param.Find(card => card.id == cardId);
 
         if (foundCard != null)
         {
             // 덱에 이미 같은 카드가 있는지 확인
-            CardDataEntry existingEntry = deck.Find(entry => entry.id == cardId);
+            CardData.CardDataEntry existingEntry = GameData.CardD.deck.Find(entry => entry.id == cardId);
 
             if (existingEntry != null)
             {
@@ -52,12 +25,12 @@ public class DeckData : MonoBehaviour
             else
             {
                 // 새로운 카드라면 덱에 추가
-                CardDataEntry newEntry = new CardDataEntry
+                CardData.CardDataEntry newEntry = new CardData.CardDataEntry
                 {
                     id = cardId,
                     count = cardCount
                 };
-                deck.Add(newEntry);
+                GameData.CardD.deck.Add(newEntry);
             }
 
             // 추가된 카드 정보를 출력
@@ -73,12 +46,12 @@ public class DeckData : MonoBehaviour
     public void RemoveCardToDeckById(string cardId, int cardAmount = 1)
     {
         // 스크립터블 오브젝트에서 해당 id를 가진 카드를 찾음
-        Card.Param foundCard = cardDatabase.param.Find(card => card.id == cardId);
+        Entity_CardData.Param foundCard = GameData.CardD.cardDatabase.param.Find(card => card.id == cardId);
 
         if (foundCard != null)
         {
             // 덱에 이미 같은 카드가 있는지 확인
-            CardDataEntry existingEntry = deck.Find(entry => entry.id == cardId);
+            CardData.CardDataEntry existingEntry = GameData.CardD.deck.Find(entry => entry.id == cardId);
 
             if (existingEntry != null)
             {
@@ -92,7 +65,7 @@ public class DeckData : MonoBehaviour
                 else if(existingEntry.count == cardAmount)
                 {
                     // 제거량이 덱에 있는 카드와 같을경우 덱에 있는 카드를 제거
-                    deck.Remove(existingEntry);
+                    GameData.CardD.deck.Remove(existingEntry);
                     // 제거된 카드 정보를 출력
                     Debug.Log($"제거된 카드 : (카드 이름: {foundCard.cardName}, 제거 량: {cardAmount})");
                 }
@@ -119,9 +92,9 @@ public class DeckData : MonoBehaviour
     // 덱에 있는 카드 정보 출력 함수
     public void PrintDeck()
     {
-        foreach (var entry in deck)
+        foreach (var entry in GameData.CardD.deck)
         {
-            Card.Param foundCard = cardDatabase.param.Find(card => card.id == entry.id);
+            Entity_CardData.Param foundCard = GameData.CardD.cardDatabase.param.Find(card => card.id == entry.id);
             if (foundCard != null)
             {
                 Debug.Log($"카드 이름: {foundCard.cardName}, 개수: {entry.count}");

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Util;
 
-public class Turn : MonoBehaviour
+public class TurnManager : MonoBehaviour
 {
     public enum TurnState
     {

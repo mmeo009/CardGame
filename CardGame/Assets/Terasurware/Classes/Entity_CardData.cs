@@ -2,8 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Card : ScriptableObject
-{	
+public class Entity_CardData : ScriptableObject
+{
+
 	public List<Param> param = new List<Param> ();
 
 	[System.SerializableAttribute]

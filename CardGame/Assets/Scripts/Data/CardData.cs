@@ -8,7 +8,6 @@ public class CardData : GenericSingleton<CardData>
     public int amountOfCardsInDeck;     //덱에 들어있는 카드의 양
     // 덱 리스트
     public List<CardDataEntry> deck = new List<CardDataEntry>();
-
     private void Awake()
     {
         // Resources 폴더에서 스크립터블 오브젝트 불러오기

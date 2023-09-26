@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class DeckManager: MonoBehaviour
+public class DeckManager
 {
     
 
@@ -10,12 +10,12 @@ public class DeckManager: MonoBehaviour
     public void AddCardToDeckById(string cardId, int cardCount = 1)
     {
         // 스크립터블 오브젝트에서 해당 id를 가진 카드를 찾음
-        Entity_CardData.Param foundCard = GameData.CardD.cardDatabase.param.Find(card => card.id == cardId);
+        Entity_CardData.Param foundCard = CardData.Instance.cardDatabase.param.Find(card => card.id == cardId);
 
         if (foundCard != null)
         {
             // 덱에 이미 같은 카드가 있는지 확인
-            CardData.CardDataEntry existingEntry = GameData.CardD.deck.Find(entry => entry.id == cardId);
+            CardDataEntry existingEntry = CardData.Instance.deck.Find(entry => entry.id == cardId);
 
             if (existingEntry != null)
             {
@@ -25,12 +25,12 @@ public class DeckManager: MonoBehaviour
             else
             {
                 // 새로운 카드라면 덱에 추가
-                CardData.CardDataEntry newEntry = new CardData.CardDataEntry
+                CardDataEntry newEntry = new CardDataEntry
                 {
                     id = cardId,
                     count = cardCount
                 };
-                GameData.CardD.deck.Add(newEntry);
+                CardData.Instance.deck.Add(newEntry);
             }
 
             // 추가된 카드 정보를 출력
@@ -41,17 +41,19 @@ public class DeckManager: MonoBehaviour
             // 추가할 카드가 스크립쳐블 오브젝트에 없다면 없다면 오류 메세지 출력
             Debug.Log($"ID {cardId}를 가진 카드를 찾을 수 없습니다.");
         }
+        // 덱에 남은 카드 수 체크
+        CountCardsInDeck();
     }
 
     public void RemoveCardToDeckById(string cardId, int cardAmount = 1)
     {
         // 스크립터블 오브젝트에서 해당 id를 가진 카드를 찾음
-        Entity_CardData.Param foundCard = GameData.CardD.cardDatabase.param.Find(card => card.id == cardId);
+        Entity_CardData.Param foundCard = CardData.Instance.cardDatabase.param.Find(card => card.id == cardId);
 
         if (foundCard != null)
         {
             // 덱에 이미 같은 카드가 있는지 확인
-            CardData.CardDataEntry existingEntry = GameData.CardD.deck.Find(entry => entry.id == cardId);
+            CardDataEntry existingEntry = CardData.Instance.deck.Find(entry => entry.id == cardId);
 
             if (existingEntry != null)
             {
@@ -65,7 +67,7 @@ public class DeckManager: MonoBehaviour
                 else if(existingEntry.count == cardAmount)
                 {
                     // 제거량이 덱에 있는 카드와 같을경우 덱에 있는 카드를 제거
-                    GameData.CardD.deck.Remove(existingEntry);
+                    CardData.Instance.deck.Remove(existingEntry);
                     // 제거된 카드 정보를 출력
                     Debug.Log($"제거된 카드 : (카드 이름: {foundCard.cardName}, 제거 량: {cardAmount})");
                 }
@@ -87,18 +89,35 @@ public class DeckManager: MonoBehaviour
             // 제거할 카드가 스크립쳐블 오브젝트에 없다면 없다면 오류 메세지 출력
             Debug.Log($"ID {cardId}를 가진 카드를 찾을 수 없습니다.");
         }
+        // 덱에 남은 카드 수 체크
+        CountCardsInDeck();
     }
 
     // 덱에 있는 카드 정보 출력 함수
     public void PrintDeck()
     {
-        foreach (var entry in GameData.CardD.deck)
+        foreach (var entry in CardData.Instance.deck)
         {
-            Entity_CardData.Param foundCard = GameData.CardD.cardDatabase.param.Find(card => card.id == entry.id);
+            Entity_CardData.Param foundCard = CardData.Instance.cardDatabase.param.Find(card => card.id == entry.id);
             if (foundCard != null)
             {
                 Debug.Log($"카드 이름: {foundCard.cardName}, 개수: {entry.count}");
             }
+        }
+    }
+
+    // 덱에 있는 카드의 수량 체크 함수
+    public void CountCardsInDeck()
+    {
+        int count = 0;
+        foreach (var entry in CardData.Instance.deck)
+        {
+            Entity_CardData.Param foundCard = CardData.Instance.cardDatabase.param.Find(card => card.id == entry.id);
+            if (foundCard != null)
+            {
+                count += entry.count;
+            }
+            CardData.Instance.amountOfCardsInDeck = count;
         }
     }
 }

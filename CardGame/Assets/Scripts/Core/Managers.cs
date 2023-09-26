@@ -5,6 +5,7 @@ using UnityEngine;
 public class Managers : MonoBehaviour
 {
     static Managers s_instance;
+
     static Managers Instance { get { Init(); return s_instance; } }
     public static void Init()
     {
@@ -21,13 +22,10 @@ public class Managers : MonoBehaviour
             s_instance = go.GetComponent<Managers>();
         }
     }
-
     DeckManager _deck = new DeckManager();
-    TurnManager _turn = new TurnManager();
     PoolManager _pool = new PoolManager();
     ResourceManager _resource = new ResourceManager();
     public static DeckManager Deck { get { return Instance?._deck; } }
-    public static TurnManager Turn { get { return Instance?._turn; } }
     public static PoolManager Pool { get { return Instance?._pool; } }
     public static ResourceManager Resource { get { return Instance?._resource; } }
 }

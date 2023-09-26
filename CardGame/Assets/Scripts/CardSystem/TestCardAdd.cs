@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestCardAdd : MonoBehaviour
 {
 
-    private void Update()
+   private void Update()
     {
         if(Input.GetKeyDown(KeyCode.O))
         {

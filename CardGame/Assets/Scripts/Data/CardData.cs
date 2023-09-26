@@ -2,16 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardData : MonoBehaviour
+public class CardData : GenericSingleton<CardData>
 {
     public Entity_CardData cardDatabase; // 아래 Awake 메서드에서 할당할 것입니다
-
-    [System.Serializable]
-    public class CardDataEntry
-    {
-        public string id;
-        public int count; // 카드 개수
-    }
+    public int amountOfCardsInDeck;     //덱에 들어있는 카드의 양
     // 덱 리스트
     public List<CardDataEntry> deck = new List<CardDataEntry>();
 
@@ -28,4 +22,10 @@ public class CardData : MonoBehaviour
             Debug.Log("찾았다룡.");
         }
     }
+}
+[System.Serializable]
+public class CardDataEntry
+{
+    public string id;
+    public int count; // 카드 개수
 }

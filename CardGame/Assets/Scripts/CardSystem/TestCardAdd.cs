@@ -34,7 +34,11 @@ public class TestCardAdd : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            this.gameObject.GetComponent<DrawCard>().CreateCard();
+            this.gameObject.GetComponent<DrawCard>().CreateCardAllAtOnce();
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            this.gameObject.GetComponent<DrawCard>().CreateCardOneAtTheTime();
         }
     }
 }

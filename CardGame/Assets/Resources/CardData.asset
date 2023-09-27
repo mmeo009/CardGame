@@ -134,3 +134,187 @@ MonoBehaviour:
     stat_03: 2
     stat_04: 4
     stat_05: 0
+  - id: 101003A
+    itemCode: Stone_001
+    cardName: "\uC791\uC740 \uC870\uC57D\uB3CC"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 0
+    element: NONE
+    rarity: 1
+    text: text
+    comment: "\uC5B4\uB290 \uB9C8\uC744\uC5D0 \uC0AC\uB294 5\uC0B4 \uAF2C\uB9C8\uB294
+      \uC608\uC05C \uB3CC\uC744 \uBAA8\uC73C\uB294\uAC8C \uCDE8\uBBF8\uB77C\uACE0
+      \uD569\uB2C8\uB2E4."
+    adPower: 1
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101003B
+    itemCode: Stone_002
+    cardName: "\uB530\uB73B\uD55C \uC870\uC57D\uB3CC"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 0
+    element: FIRE
+    rarity: 1
+    text: text
+    comment: "\uD56B\uD329\uBCF4\uB2E4 \uC88B\uC2B5\uB2C8\uB2E4."
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 50
+  - id: 101003C
+    itemCode: Stone_003
+    cardName: "\uB728\uAC70\uC6B4 \uC870\uC57D\uB3CC"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 0
+    element: FIRE
+    rarity: 1
+    text: text
+    comment: "\uC190\uC774 \uB370\uC774\uC9C0 \uC54A\uAC8C \uC870\uC2EC\uD558\uC138\uC694"
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: POISON
+    stat_01: 0
+    stat_02: 0
+    stat_03: 1
+    stat_04: 1
+    stat_05: 50
+  - id: 101004A
+    itemCode: BounceBall_001
+    cardName: "\uD0F1\uD0F1\uBCFC \uD55C\uAC1C"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 1
+    element: NONE
+    rarity: 1
+    text: text
+    comment: "\uC544\uC774\uCF54 \uBF08 \uB9DE\uC558\uB124"
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101004B
+    itemCode: BounceBall_002
+    cardName: "\uD0F1\uD0F1\uBCFC \uB450\uAC1C"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: text
+    comment: "\uC544\uC774\uCF54 \uBF08 \uB450\uBC88 \uB9DE\uC558\uB124"
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 100
+  - id: 101004C
+    itemCode: BounceBall_003
+    cardName: "\uD0F1\uD0F1\uBCFC \uC5EC\uB7EC \uAC1C"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 3
+    element: NONE
+    rarity: 2
+    text: text
+    comment: "\uD55C\uBC88\uC5D0 4\uAC1C\uB97C \uB358\uC9C0\uB2C8 \uD558\uB098\uC529
+      \uBE57\uB098\uAC00\uC9C0"
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 101
+  - id: 101005A
+    itemCode: Boomerang_001
+    cardName: "\uBD80\uBA54\uB791"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 2
+    element: GRESS
+    rarity: 2
+    text: text
+    comment: "\uCD08\uC2B9\uB2EC \uCC98\uB7FC \uC0DD\uACBC\uC2B5\uB2C8\uB2E4. (\uBC18\uC9DD!)"
+    adPower: 4
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101005B
+    itemCode: Boomerang_002
+    cardName: "\uD2BC\uD2BC\uD55C \uBD80\uBA54\uB791"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 2
+    element: GRESS
+    rarity: 2
+    text: text
+    comment: "\uC544\uD504\uC9C0 \uC54A\uAC8C \uB450\uAEBC\uC6B4 \uC7A5\uAC11\uC744
+      \uAF2D \uCC29\uC6A9\uD558\uC138\uC694."
+    adPower: 5
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101005C
+    itemCode: Boomerang_003
+    cardName: "\uAC15\uD654\uB41C \uBD80\uBA54\uB791"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 3
+    element: GRESS
+    rarity: 2
+    text: text
+    comment: "\uBB35\uC9C1\uD55C \uD55C\uBC29 (\uB098\uB3C4 \uD55C\uBC29)"
+    adPower: 6
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0

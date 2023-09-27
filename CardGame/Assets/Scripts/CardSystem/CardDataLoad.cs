@@ -1,0 +1,128 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class CardDataLoad : MonoBehaviour
+{
+    [SerializeField]
+    private List<ObjectNameAndParent> thisCardinfo = new List<ObjectNameAndParent>();
+    [SerializeField]
+    private string thisCardId;
+    public void FindChilds(GameObject target)
+    {
+        for (int i = 0; i < target.gameObject.transform.childCount; i++)
+        {
+            Transform childTransform = target.gameObject.transform.GetChild(i);
+            GameObject childObject = childTransform.gameObject;
+            string childName = childObject.name;
+            ObjectNameAndParent info = new ObjectNameAndParent
+            {
+                name = childName,
+                thisObject = childObject,
+                parantName = target.name,
+                parantObject = target.gameObject
+            };
+            thisCardinfo.Add(info);
+            Debug.Log(target.name);
+            if(childObject.gameObject.transform.childCount > 0)
+            {
+                FindChilds(childObject);
+            }
+        }
+    }
+
+    public void PickCardAndIdFromDeck()
+    {
+        if(CardData.Instance != null)
+        {
+            if(CardData.Instance.deck.Count != 0)
+            {
+                int card = Random.Range(0, CardData.Instance.deck.Count);
+                CardDataEntry oneCard = CardData.Instance.deck[card];
+                thisCardId = oneCard.id;
+                Managers.Deck.RemoveCardToDeckById(thisCardId, 1);
+                LoadCardData(thisCardId);
+            }
+        }
+    }
+
+    private void LoadCardData(string id)
+    {
+        Entity_CardData.Param cardData = CardData.Instance.cardDatabase.param.Find(card => card.id == id);
+        if(cardData != null)
+        {
+            // 희귀도 불러오기
+            switch (cardData.rarity)
+            {
+                // normal 티어
+                case 1:
+                    ObjectNameAndParent normal = thisCardinfo.Find(name => name.name == "Normal");
+                    if (normal != null)
+                    {
+                        normal.thisObject.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("티어 이미지를 찾을 수 없습니다.");
+                    }
+                    break;
+                    // rare 티어
+                case 2:
+                    ObjectNameAndParent rare = thisCardinfo.Find(name => name.name == "Rare");
+                    if (rare != null)
+                    {
+                        rare.thisObject.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("티어 이미지를 찾을 수 없습니다.");
+                    }
+                    break;
+                    // epic 티어
+                case 3:
+                    ObjectNameAndParent epic = thisCardinfo.Find(name => name.name == "Epic");
+                    if (epic != null)
+                    {
+                        epic.thisObject.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("티어 이미지를 찾을 수 없습니다.");
+                    }
+                    break;
+                    // legendary 티어
+                case 4:
+                    ObjectNameAndParent legendary = thisCardinfo.Find(name => name.name == "Legendary");
+                    if (legendary != null)
+                    {
+                        legendary.thisObject.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("티어 이미지를 찾을 수 없습니다.");
+                    }
+                    break;
+            }
+            //카드 이미지 불러오기
+            ObjectNameAndParent cardImage = thisCardinfo.Find(name => name.name == "CardImage");
+            if (cardImage != null)
+            {
+                cardImage.thisObject.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Illustration/{id}");
+            }
+        }
+        else
+        {
+            Debug.Log($"ID {cardData}를 가진 카드를 찾을 수 없습니다.");
+        }
+
+    }
+}
+[System.Serializable]
+public class ObjectNameAndParent
+{
+    public string name;
+    public GameObject thisObject;
+    public string parantName;
+    public GameObject parantObject;
+}

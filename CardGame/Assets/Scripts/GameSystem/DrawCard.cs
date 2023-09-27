@@ -62,6 +62,10 @@ public class DrawCard : MonoBehaviour
                 {
                     // 카드 프리팹 생성
                     GameObject newCard = Instantiate(cardPrefab, deckUi.position, Quaternion.identity);
+                    // 카드의 정보를 불러오기 위해 카드에 값을 입력 
+                    newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
+                    // 덱에 들어있는 카드중 한가지를 선택하여 카드의 아이디를 불러와 프리팹에 넣어줌
+                    newCard.GetComponent<CardDataLoad>().PickCardAndIdFromDeck();
                     // 생성된 카드를 캔버스에 넣음
                     newCard.transform.SetParent(GameObject.Find("Canvas").transform);
                     // cardGrid로 이동
@@ -96,6 +100,10 @@ public class DrawCard : MonoBehaviour
                 {
                     // 카드 프리팹 생성
                     GameObject newCard = Instantiate(cardPrefab, deckUi.position, Quaternion.identity);
+                    // 카드의 정보를 불러오기 위해 카드에 값을 입력 
+                    newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
+                    // 덱에 들어있는 카드중 한가지를 선택하여 카드의 아이디를 불러와 프리팹에 넣어줌
+                    newCard.GetComponent<CardDataLoad>().PickCardAndIdFromDeck();
                     // 생성된 카드를 캔버스에 넣음
                     newCard.transform.SetParent(GameObject.Find("Canvas").transform);
                     // cardGrid로 이동

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CardDataLoad : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CardDataLoad : MonoBehaviour
     private List<ObjectNameAndParent> thisCardinfo = new List<ObjectNameAndParent>();
     [SerializeField]
     private string thisCardId;
+
     public void FindChilds(GameObject target)
     {
         for (int i = 0; i < target.gameObject.transform.childCount; i++)
@@ -104,11 +106,24 @@ public class CardDataLoad : MonoBehaviour
                     }
                     break;
             }
-            //카드 이미지 불러오기
+
+            // 카드 이미지 불러오기
             ObjectNameAndParent cardImage = thisCardinfo.Find(name => name.name == "CardImage");
             if (cardImage != null)
             {
                 cardImage.thisObject.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Illustration/{id}");
+            }
+
+            // 카드 이름 및 텍스트 불러오기
+            ObjectNameAndParent cardName = thisCardinfo.Find(name => name.name == "CardName");
+            ObjectNameAndParent cardText = thisCardinfo.Find(name => name.name == "CardText");
+            if(cardName != null)
+            {
+                cardName.thisObject.GetComponent<TMP_Text>().text = cardData.cardName;
+            }
+            if(cardText != null)
+            {
+                cardText.thisObject.GetComponent<TMP_Text>().text = cardData.text;
             }
         }
         else

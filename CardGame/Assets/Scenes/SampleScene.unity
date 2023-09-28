@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 1068644429}
   - component: {fileID: 1068644428}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PlayerHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1129,6 +1129,7 @@ GameObject:
   - component: {fileID: 1642555951}
   - component: {fileID: 1642555950}
   - component: {fileID: 1642555952}
+  - component: {fileID: 1642555953}
   m_Layer: 0
   m_Name: TestObject
   m_TagString: Untagged
@@ -1179,6 +1180,19 @@ MonoBehaviour:
   cardGrids: []
   deckUi: {fileID: 0}
   gridNum: 0
+--- !u!114 &1642555953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642555949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451811a75d136fe4e865c4f3806fc36f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayerTurnEnd: 0
 --- !u!1 &1687005467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834652964}
   - component: {fileID: 1834652965}
+  - component: {fileID: 1834652966}
   m_Layer: 0
   m_Name: GameData
   m_TagString: Untagged
@@ -1653,6 +1668,27 @@ MonoBehaviour:
   cardDatabase: {fileID: 0}
   amountOfCardsInDeck: 0
   deck: []
+--- !u!114 &1834652966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834652962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7947d234ac20b647803929701c48994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player:
+    adPower: 1
+    apPower: 1
+    baPower: 1
+    plusPower: 0
+    maxHealth: 30
+    currentHealth: 0
+    maxMana: 3
+    currentMana: 0
 --- !u!1001 &1879701000
 PrefabInstance:
   m_ObjectHideFlags: 0

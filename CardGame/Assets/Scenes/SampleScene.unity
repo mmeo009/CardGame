@@ -1683,12 +1683,17 @@ MonoBehaviour:
   player:
     adPower: 1
     apPower: 1
+    fixedPower: 1
     baPower: 1
     plusPower: 0
     maxHealth: 30
     currentHealth: 0
     maxMana: 3
     currentMana: 0
+    adDamage: 0
+    apDamage: 0
+    fixedDamage: 0
+  cards: []
 --- !u!1001 &1879701000
 PrefabInstance:
   m_ObjectHideFlags: 0

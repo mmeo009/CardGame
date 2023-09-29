@@ -8,8 +8,7 @@ public class CardDataLoad : MonoBehaviour
 {
     [SerializeField]
     private List<ObjectNameAndParent> thisCardinfo = new List<ObjectNameAndParent>();
-    [SerializeField]
-    private string thisCardId;
+    public string thisCardId;
 
     public void FindChilds(GameObject target)
     {
@@ -49,7 +48,7 @@ public class CardDataLoad : MonoBehaviour
         }
     }
 
-    private void LoadCardData(string id)
+    public void LoadCardData(string id)
     {
         Entity_CardData.Param cardData = CardData.Instance.cardDatabase.param.Find(card => card.id == id);
         if(cardData != null)
@@ -123,7 +122,14 @@ public class CardDataLoad : MonoBehaviour
             }
             if(cardText != null)
             {
-                cardText.thisObject.GetComponent<TMP_Text>().text = cardData.text;
+                string _text = cardData.text.Replace("[ad]", $"{PlayerData.Instance.player.adDamage + cardData.adPower}")
+                    .Replace("[ap]", $"{PlayerData.Instance.player.apDamage + cardData.apPower}")
+                    .Replace("[fd]", $"{PlayerData.Instance.player.fixedDamage + cardData.fixedPower}")
+                    .Replace("[had]", $"{(PlayerData.Instance.player.adDamage + cardData.adPower) / 2}")
+                    .Replace("[hap]", $"{(PlayerData.Instance.player.apDamage + cardData.adPower) / 2}")
+                    .Replace("[hfd]", $"{(PlayerData.Instance.player.fixedDamage + cardData.adPower) / 2}");
+
+                cardText.thisObject.GetComponent<TMP_Text>().text = _text;
             }
         }
         else

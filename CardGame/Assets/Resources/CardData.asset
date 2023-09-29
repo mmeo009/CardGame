@@ -21,7 +21,7 @@ MonoBehaviour:
     cardCost: 0
     element: GRESS
     rarity: 1
-    text: text
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uBC29\uAE08 \uC8FC\uC6CC\uC628 \uC2E0\uC120\uD55C \uB098\uBB34\uC785\uB2C8\uB2E4."
     adPower: 1
     apPower: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
     cardCost: 1
     element: GRESS
     rarity: 1
-    text: text
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uB098\uBB34\uB97C \uBE44\uBCD0\uB354\uB2C8 \uBFB0\uC871\uD574 \uC84C\uC2B5\uB2C8\uB2E4."
     adPower: 2
     apPower: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
     cardCost: 2
     element: GRESS
     rarity: 1
-    text: text
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uBFB0\uC871\uD55C \uB098\uBB34\uB97C \uBB49\uCCD0\uC11C \uCC3D\uC744
       \uB9CC\uB4E4\uC5C8\uC2B5\uB2C8\uB2E4."
     adPower: 3
@@ -82,7 +82,7 @@ MonoBehaviour:
     cardCost: 1
     element: NONE
     rarity: 1
-    text: text
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uC0AC\uACFC\uB97C \uC798 \uAE4E\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4.  "
     adPower: 2
     apPower: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
     cardCost: 2
     element: NONE
     rarity: 1
-    text: text
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uBCA0\uC774\uBA74 \uC544\uD50C\uAC83 \uAC19\uC2B5\uB2C8\uB2E4. (\uB530\uB054!)"
     adPower: 3
     apPower: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
     cardCost: 4
     element: GRESS
     rarity: 1
-    text: text
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uB3C5\uC740 \uC5B4\uB514\uC11C \uB0AC\uB294\uC9C0 \uBAA8\uB985\uB2C8\uB2E4."
     adPower: 1
     apPower: 0
@@ -142,7 +142,8 @@ MonoBehaviour:
     cardCost: 0
     element: NONE
     rarity: 1
-    text: text
+    text: "\uB3CC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
     comment: "\uC5B4\uB290 \uB9C8\uC744\uC5D0 \uC0AC\uB294 5\uC0B4 \uAF2C\uB9C8\uB294
       \uC608\uC05C \uB3CC\uC744 \uBAA8\uC73C\uB294\uAC8C \uCDE8\uBBF8\uB77C\uACE0
       \uD569\uB2C8\uB2E4."
@@ -164,7 +165,8 @@ MonoBehaviour:
     cardCost: 0
     element: FIRE
     rarity: 1
-    text: text
+    text: "\uB3CC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
     comment: "\uD56B\uD329\uBCF4\uB2E4 \uC88B\uC2B5\uB2C8\uB2E4."
     adPower: 3
     apPower: 0
@@ -184,7 +186,8 @@ MonoBehaviour:
     cardCost: 0
     element: FIRE
     rarity: 1
-    text: text
+    text: "\uB3CC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
     comment: "\uC190\uC774 \uB370\uC774\uC9C0 \uC54A\uAC8C \uC870\uC2EC\uD558\uC138\uC694"
     adPower: 3
     apPower: 0
@@ -204,7 +207,10 @@ MonoBehaviour:
     cardCost: 1
     element: NONE
     rarity: 1
-    text: text
+    text: "\uD0F1\uD0F1\uBCFC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uD0F1\uD0F1\uBCFC\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uC544\uC774\uCF54 \uBF08 \uB9DE\uC558\uB124"
     adPower: 2
     apPower: 0
@@ -224,7 +230,10 @@ MonoBehaviour:
     cardCost: 2
     element: NONE
     rarity: 2
-    text: text
+    text: "\uD0F1\uD0F1\uBCFC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uD0F1\uD0F1\uBCFC\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uC544\uC774\uCF54 \uBF08 \uB450\uBC88 \uB9DE\uC558\uB124"
     adPower: 2
     apPower: 0
@@ -244,7 +253,10 @@ MonoBehaviour:
     cardCost: 3
     element: NONE
     rarity: 2
-    text: text
+    text: "\uD0F1\uD0F1\uBCFC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uD0F1\uD0F1\uBCFC\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uD55C\uBC88\uC5D0 4\uAC1C\uB97C \uB358\uC9C0\uB2C8 \uD558\uB098\uC529
       \uBE57\uB098\uAC00\uC9C0"
     adPower: 2
@@ -265,7 +277,10 @@ MonoBehaviour:
     cardCost: 2
     element: GRESS
     rarity: 2
-    text: text
+    text: "\uBD80\uBA54\uB791\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uBD80\uBA54\uB791\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uCD08\uC2B9\uB2EC \uCC98\uB7FC \uC0DD\uACBC\uC2B5\uB2C8\uB2E4. (\uBC18\uC9DD!)"
     adPower: 4
     apPower: 0
@@ -285,7 +300,10 @@ MonoBehaviour:
     cardCost: 2
     element: GRESS
     rarity: 2
-    text: text
+    text: "\uBD80\uBA54\uB791\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uBD80\uBA54\uB791\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uC544\uD504\uC9C0 \uC54A\uAC8C \uB450\uAEBC\uC6B4 \uC7A5\uAC11\uC744
       \uAF2D \uCC29\uC6A9\uD558\uC138\uC694."
     adPower: 5
@@ -306,7 +324,10 @@ MonoBehaviour:
     cardCost: 3
     element: GRESS
     rarity: 2
-    text: text
+    text: "\uBD80\uBA54\uB791\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uBD80\uBA54\uB791\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
     comment: "\uBB35\uC9C1\uD55C \uD55C\uBC29 (\uB098\uB3C4 \uD55C\uBC29)"
     adPower: 6
     apPower: 0

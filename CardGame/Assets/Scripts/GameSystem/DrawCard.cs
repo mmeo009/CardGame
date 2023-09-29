@@ -42,6 +42,11 @@ public class DrawCard : MonoBehaviour
             
         }
 
+        if(cardPrefab == null)
+        {
+            cardPrefab = Resources.Load<GameObject>("Prefabs/Card");
+        }
+
     }
 
     public void CreateCardAllAtOnce()

@@ -32,6 +32,18 @@ public class CardDataLoad : MonoBehaviour
             }
         }
     }
+    public void IsHolding(bool hold)
+    {
+        ObjectNameAndParent front = thisCardinfo.Find(name => name.name == "Front");
+        if (hold == true)
+        {
+            front.thisObject.GetComponent<Image>().color = Color.cyan;
+        }
+        else
+        {
+            front.thisObject.GetComponent<Image>().color = Color.white;
+        }
+    }
 
     public void PickCardAndIdFromDeck()
     {

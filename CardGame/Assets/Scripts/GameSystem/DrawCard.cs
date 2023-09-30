@@ -116,9 +116,11 @@ public class DrawCard : MonoBehaviour
                     {
                         // cardGrid의 자식으로 설정
                         newCard.transform.SetParent(targetGrid);
+                        // 카드 그리드를 찾아 카드에 넣음
+                        newCard.GetComponent<CardController>().ChackMyGrid();
                         if (targetGrid.GetComponent<GridIndex>() != null)
                         {
-                            targetGrid.GetComponent<GridIndex>().isEmpty = false;
+                            targetGrid.GetComponent<GridIndex>().ISEmpty();
                         }
                     });
                     CardMoveToGrid(newCard, time, targetGrid, 1);
@@ -148,9 +150,11 @@ public class DrawCard : MonoBehaviour
             {
                 // cardGrid의 자식으로 설정
                 newCard.transform.SetParent(targetGrid);
+                // 카드 그리드를 찾아 카드에 넣음
+                newCard.GetComponent<CardController>().ChackMyGrid();
                 if (targetGrid.GetComponent<GridIndex>() != null)
                 {
-                    targetGrid.GetComponent<GridIndex>().isEmpty = false;
+                    targetGrid.GetComponent<GridIndex>().ISEmpty();
                 }
             });
             if (type == 1)
@@ -168,5 +172,37 @@ public class DrawCard : MonoBehaviour
 
     public void CardInToDeck()
     {
+        GameObject[] cards;
+        cards = new GameObject[cardGrids.Length];
+        for (int i = 0; i < cardGrids.Length; i++)
+        {
+            if(cardGrids[i].GetComponent<GridIndex>().myCard != null)
+            {
+                cards[i] = cardGrids[i].GetComponent<GridIndex>().myCard;
+                Debug.Log(cards[i].GetComponent<CardDataLoad>().thisCardId);
+            }
+            else
+            {
+                cards[i] = null;
+            }
+        }
+        for (int j = 0; j < cards.Length; j++)
+        {
+            if(cards[j] != null)
+            {
+                if (cards[j].GetComponent<CardController>().isHolding == false)
+                {
+                    int gridNum = j;
+                    GameObject cardToGoHome = cards[j]; // 카드를 클로저에서 사용하기 위해 변수에 할당
+                    cardToGoHome.transform.SetParent(GameObject.Find("Canvas").transform);
+                    cardToGoHome.transform.DOMove(deckUi.position, 0.5f).SetEase(Ease.Linear).OnComplete(() =>
+                    {
+                        cardGrids[gridNum].GetComponent<GridIndex>().ISEmpty();
+                        Managers.Deck.AddCardToDeckById(cardToGoHome.GetComponent<CardDataLoad>().thisCardId, 1);
+                        Destroy(cardToGoHome); // 변수를 사용하여 카드 삭제
+                    });
+                }
+            }
+        }
     }
 }

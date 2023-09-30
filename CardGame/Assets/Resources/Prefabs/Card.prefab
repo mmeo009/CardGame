@@ -577,10 +577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2007d082b598cde45af5d1fe32f78792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moreInfoTime: 3
+  isDragging: 0
+  moreInfoTime: 0.8
   smoothingDuration: 0.2
   onMouse: 0
   isEnlargedCardCreated: 0
+  isHolding: 0
+  myGrid: {fileID: 0}
   enlargedCardPrefab: {fileID: 0}
   id: 
 --- !u!1 &6489616553083105034
@@ -635,7 +638,7 @@ GameObject:
   - component: {fileID: 125923081049124572}
   - component: {fileID: 3088681758003982113}
   m_Layer: 5
-  m_Name: FRONT
+  m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

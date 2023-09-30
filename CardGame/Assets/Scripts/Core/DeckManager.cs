@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class DeckManager
 {
-    
+    public int maxHold = 2;
+    public int nowHold = 0;
 
     // 카드를 덱에 추가하는 함수
     public void AddCardToDeckById(string cardId, int cardCount = 1)

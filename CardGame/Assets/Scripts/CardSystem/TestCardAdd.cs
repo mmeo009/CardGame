@@ -43,5 +43,9 @@ public class TestCardAdd : MonoBehaviour
         {
             this.gameObject.GetComponent<DrawCard>().CreateCardOneAtTheTime();
         }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            this.gameObject.GetComponent<DrawCard>().CardInToDeck();
+        }
     }
 }

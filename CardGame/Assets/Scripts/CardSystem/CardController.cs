@@ -4,15 +4,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class CardController : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
+public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private RectTransform rectTransform;
     private Vector2 offset;
-    private bool isDragging = false;
-    public float moreInfoTime = 1.5f;
+    public bool isDragging = false;
+    public float moreInfoTime = 0.8f;
     public float smoothingDuration = 0.2f;
     public bool onMouse = false;
     public bool isEnlargedCardCreated = false;
+    public bool isHolding = false;
+    public GameObject myGrid;
     public GameObject enlargedCardPrefab;
     public string id;
 
@@ -20,26 +22,57 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     {
         rectTransform = GetComponent<RectTransform>();
     }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            if (isHolding == false)
+            {
+                if (Managers.Deck.nowHold < Managers.Deck.maxHold)
+                {
+                    Managers.Deck.nowHold++;
+                    isHolding = true;
+                }
+                else
+                {
+                    Debug.Log($"홀드는 {Managers.Deck.maxHold}개 까지 가능해");
+                }
+            }
+            else
+            {
+                Managers.Deck.nowHold--;
+                isHolding = false;
+            }
+            this.gameObject.GetComponent<CardDataLoad>().IsHolding(isHolding);
+        }
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(isDragging == false)
         {
             onMouse = true;
         }
+        if(isDragging == true)
+        {
+            onMouse = false;
+            moreInfoTime = 0.8f;
+            DestroyEnlargedCard();
+        }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         onMouse = false;
-        moreInfoTime = 1.5f;
+        moreInfoTime = 0.8f;
         DestroyEnlargedCard();
     }
-
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
     {
+        if(Input.GetMouseButton(0))
+        {
+            isDragging = true;
+        }
         offset = rectTransform.anchoredPosition - eventData.position;
-        isDragging = true;
     }
-
     public void OnDrag(PointerEventData eventData)
     {
         if (isDragging)
@@ -47,8 +80,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             rectTransform.anchoredPosition = eventData.position + offset;
         }
     }
-
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
     {
         if (isDragging)
         {
@@ -59,7 +91,6 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             rectTransform.DOAnchorPos(targetPosition, smoothingDuration);
         }
     }
-
     private Vector2 ClampToCanvas(Vector2 position)
     {
         // 캔버스 영역 내에서 움직이도록 제한
@@ -113,6 +144,10 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             }
         }
     }
+    public void ChackMyGrid()
+    {
+        myGrid = this.gameObject.transform.parent.gameObject;
+    }
 
     private void Update()
     {
@@ -128,6 +163,5 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             }
         }
     }
-
 
 }

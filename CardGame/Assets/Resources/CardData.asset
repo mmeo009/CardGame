@@ -244,7 +244,7 @@ MonoBehaviour:
     stat_02: 0
     stat_03: 0
     stat_04: 0
-    stat_05: 100
+    stat_05: 0
   - id: 101004C
     itemCode: BounceBall_003
     cardName: "\uD0F1\uD0F1\uBCFC \uC5EC\uB7EC \uAC1C"
@@ -268,7 +268,7 @@ MonoBehaviour:
     stat_02: 0
     stat_03: 0
     stat_04: 0
-    stat_05: 101
+    stat_05: 0
   - id: 101005A
     itemCode: Boomerang_001
     cardName: "\uBD80\uBA54\uB791"

@@ -1,12 +1,28 @@
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 
 public class DeckManager
 {
     public int maxHold = 2;
     public int nowHold = 0;
+    public GameObject deckInfo;
 
+    public void ShowRemainingCards()
+    {
+        GameObject _deckInfo = GameObject.Find("RemainingCards");
+        if(_deckInfo != null)
+        {
+            deckInfo = _deckInfo;
+            deckInfo.GetComponent<TMP_Text>().text = CardData.Instance.amountOfCardsInDeck.ToString();
+        }
+        else
+        {
+            Debug.Log("숫자를 표시할 수 없어");
+        }
+    }
     // 카드를 덱에 추가하는 함수
     public void AddCardToDeckById(string cardId, int cardCount = 1)
     {
@@ -44,6 +60,7 @@ public class DeckManager
         }
         // 덱에 남은 카드 수 체크
         CountCardsInDeck();
+        ShowRemainingCards();
     }
 
     public void RemoveCardToDeckById(string cardId, int cardAmount = 1)
@@ -92,6 +109,7 @@ public class DeckManager
         }
         // 덱에 남은 카드 수 체크
         CountCardsInDeck();
+        ShowRemainingCards();
     }
 
     // 덱에 있는 카드 정보 출력 함수
@@ -105,6 +123,7 @@ public class DeckManager
                 Debug.Log($"카드 이름: {foundCard.cardName}, 개수: {entry.count}");
             }
         }
+        ShowRemainingCards();
     }
 
     // 덱에 있는 카드의 수량 체크 함수

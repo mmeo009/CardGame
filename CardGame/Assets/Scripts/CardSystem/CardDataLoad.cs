@@ -25,7 +25,7 @@ public class CardDataLoad : MonoBehaviour
                 parantObject = target.gameObject
             };
             thisCardinfo.Add(info);
-            Debug.Log(target.name);
+            //Debug.Log(target.name);
             if(childObject.gameObject.transform.childCount > 0)
             {
                 FindChilds(childObject);
@@ -57,6 +57,20 @@ public class CardDataLoad : MonoBehaviour
                 Managers.Deck.RemoveCardToDeckById(thisCardId, 1);
                 LoadCardData(thisCardId);
             }
+        }
+    }
+
+    public void PickCardIdFromDataBase(string cardId)
+    {
+        Entity_CardData.Param foundCard = CardData.Instance.cardDatabase.param.Find(card => card.id == cardId);
+        if (foundCard != null)
+        {
+            thisCardId = cardId;
+            LoadCardData(thisCardId);
+        }
+        else
+        {
+            Debug.Log($"ID {cardId}를 가진 카드를 찾을 수 없습니다.");
         }
     }
 
@@ -143,12 +157,13 @@ public class CardDataLoad : MonoBehaviour
 
                 cardText.thisObject.GetComponent<TMP_Text>().text = _text;
             }
+            if(this.gameObject.GetComponent<CardController>() != null)
+            this.gameObject.GetComponent<CardController>().id = id;
         }
         else
         {
             Debug.Log($"ID {cardData}를 가진 카드를 찾을 수 없습니다.");
         }
-
     }
 }
 [System.Serializable]

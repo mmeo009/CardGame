@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
@@ -70,42 +71,42 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if(Input.GetMouseButton(0))
         {
             isDragging = true;
+            this.transform.SetParent(transform.root);
+            this.transform.SetAsLastSibling();
+            if (myGrid.GetComponent<GridIndex>() != null)
+            {
+                myGrid.GetComponent<GridIndex>().ISEmpty();
+            }
+            else
+            {
+                myGrid.GetComponent<MergeGrid>().ISEmpty();
+            }
+            this.GetComponent<Image>().raycastTarget = false;
         }
-        offset = rectTransform.anchoredPosition - eventData.position;
     }
     public void OnDrag(PointerEventData eventData)
     {
-        if (isDragging)
+        if (isDragging == true)
         {
-            rectTransform.anchoredPosition = eventData.position + offset;
+            transform.position = Input.mousePosition;
         }
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (isDragging)
+        if (isDragging == true)
         {
             isDragging = false;
-
-            // 드래그가 끝났을 때 부드럽게 위치 조정
-            Vector2 targetPosition = ClampToCanvas(rectTransform.anchoredPosition);
-            rectTransform.DOAnchorPos(targetPosition, smoothingDuration);
+            this.transform.SetParent(myGrid.transform);
+            if (myGrid.GetComponent<GridIndex>() != null)
+            {
+                myGrid.GetComponent<GridIndex>().ISEmpty();
+            }
+            else
+            {
+                myGrid.GetComponent<MergeGrid>().ISEmpty();
+            }
+            this.GetComponent<Image>().raycastTarget = true;
         }
-    }
-    private Vector2 ClampToCanvas(Vector2 position)
-    {
-        // 캔버스 영역 내에서 움직이도록 제한
-        Canvas canvas = GetComponentInParent<Canvas>();
-        if (canvas != null)
-        {
-            RectTransform canvasRect = canvas.GetComponent<RectTransform>();
-            Vector2 minPosition = canvasRect.rect.min - rectTransform.rect.min;
-            Vector2 maxPosition = canvasRect.rect.max - rectTransform.rect.max;
-
-            position.x = Mathf.Clamp(position.x, minPosition.x, maxPosition.x);
-            position.y = Mathf.Clamp(position.y, minPosition.y, maxPosition.y);
-        }
-
-        return position;
     }
     private void CreateEnlargedCard()
     {
@@ -147,6 +148,14 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void ChackMyGrid()
     {
         myGrid = this.gameObject.transform.parent.gameObject;
+        if (myGrid.GetComponent<GridIndex>() != null)
+        {
+            myGrid.GetComponent<GridIndex>().ISEmpty();
+        }
+        else
+        {
+            myGrid.GetComponent<MergeGrid>().ISEmpty();
+        }
     }
 
     private void Update()

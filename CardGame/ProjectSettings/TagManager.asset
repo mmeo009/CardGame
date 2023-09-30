@@ -7,6 +7,9 @@ TagManager:
   - Grid
   - EnlargedCard
   - Card
+  - Merge
+  - Manager
+  - MergeButton
   layers:
   - Default
   - TransparentFX

@@ -7,17 +7,17 @@ public class TestCardAdd : MonoBehaviour
 
     private void Start()
     {
-        this.gameObject.GetComponent<DrawCard>().TransformChack();
+        DrawCard.Instance.GetComponent<DrawCard>().TransformChack();
     }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.O))
         {
             // 카드를 덱에 추가
-            Managers.Deck.AddCardToDeckById("101001C", 2);
-            Managers.Deck.AddCardToDeckById("101002C", 3);
-            Managers.Deck.AddCardToDeckById("101003C", 5);
-            Managers.Deck.AddCardToDeckById("101004C", 6);
+            Managers.Deck.AddCardToDeckById("101001B", 2);
+            Managers.Deck.AddCardToDeckById("101002B", 3);
+            Managers.Deck.AddCardToDeckById("101003B", 5);
+            Managers.Deck.AddCardToDeckById("101004B", 6);
         }
         if(Input.GetKeyDown(KeyCode.K))
         {
@@ -37,15 +37,15 @@ public class TestCardAdd : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            this.gameObject.GetComponent<DrawCard>().CreateCardAllAtOnce();
+            DrawCard.Instance.CreateCardAllAtOnce();
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            this.gameObject.GetComponent<DrawCard>().CreateCardOneAtTheTime();
+            DrawCard.Instance.CreateCardOneAtTheTime();
         }
         if(Input.GetKeyDown(KeyCode.E))
         {
-            this.gameObject.GetComponent<DrawCard>().CardInToDeck();
+            DrawCard.Instance.MergeGridToCardGrid();
         }
     }
 }

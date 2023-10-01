@@ -46,6 +46,7 @@ public class TestCardAdd : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             DrawCard.Instance.MergeGridToCardGrid();
+            DrawCard.Instance.Invoke("CardInToDeck", 0.5f);
         }
     }
 }

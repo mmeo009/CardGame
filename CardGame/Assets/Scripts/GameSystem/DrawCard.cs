@@ -219,10 +219,6 @@ public class DrawCard : GenericSingleton<DrawCard>
             {
                 targetGrid.GetComponent<MergeGrid>().ISEmpty();
             }
-            if(type == 3)
-            {
-                CardInToDeck();
-            }
         });
         if (type == 1)
         {
@@ -240,63 +236,33 @@ public class DrawCard : GenericSingleton<DrawCard>
         GameObject cardA = mergeGrids[0].GetComponent<MergeGrid>().myCard;
         GameObject cardB = mergeGrids[1].GetComponent<MergeGrid>().myCard;
 
-        if (cardA != null && cardB != null)
+        if(cardA != null)
         {
-            for (int i = 0; i < cardGrids.Length; i++)
+            for(int i = 0; i < cardGrids.Length; i++)
             {
-                // 현재 반복중인 인덱스를 저장
-                Transform targetGridA = cardGrids[i];
-                // 카드 그리드가 찼는지 체크
+                Transform grid = cardGrids[i];
                 if (cardGrids[i].GetComponent<GridIndex>().isEmpty == true)
                 {
                     cardA.transform.SetParent(GameObject.Find("Canvas").transform);
                     mergeGrids[0].GetComponent<MergeGrid>().ISEmpty();
-                    CardMoveToGrid(cardA, 0.5f, targetGridA, 2);
-                    for (int j = i; j < cardGrids.Length; j++)
-                    {
-                        Transform targetGridB = cardGrids[j];
-                        if (cardGrids[j].GetComponent<GridIndex>().isEmpty == true)
-                        {
-                            cardB.transform.SetParent(GameObject.Find("Canvas").transform);
-                            mergeGrids[1].GetComponent<MergeGrid>().ISEmpty();
-                            CardMoveToGrid(cardB, 0.5f, targetGridB, 3);
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-        else if (cardA != null || cardB != null)
-        {
-            GameObject card;
-            int num;
-            if (cardA == null)
-            {
-                card = cardB;
-                num = 1;
-            }
-            else
-            {
-                card = cardA;
-                num = 0;
-            }
-            for (int i = 0; i < cardGrids.Length; i++)
-            {
-                // 현재 반복중인 인덱스를 저장
-                Transform targetGrid = cardGrids[i];
-                // 카드 그리드가 찼는지 체크
-                if (cardGrids[i].GetComponent<GridIndex>().isEmpty == true)
-                {
-                    card.transform.SetParent(GameObject.Find("Canvas").transform);
-                    mergeGrids[num].GetComponent<MergeGrid>().ISEmpty();
-                    CardMoveToGrid(card, 0.5f, targetGrid, 3);
+                    CardMoveToGrid(cardA, 0.3f, grid);
                     break;
                 }
             }
         }
-        else if(cardA == null && cardB == null)
+        if(cardB != null)
         {
-            CardInToDeck();
+            for (int i = cardGrids.Length-1; i >= 0 ; i--)
+            {
+                Transform grid = cardGrids[i];
+                if (cardGrids[i].GetComponent<GridIndex>().isEmpty == true)
+                {
+                    cardB.transform.SetParent(GameObject.Find("Canvas").transform);
+                    mergeGrids[1].GetComponent<MergeGrid>().ISEmpty();
+                    CardMoveToGrid(cardB, 0.3f, grid);
+                    break;
+                }
+            }
         }
     }
     public void CardInToDeck()

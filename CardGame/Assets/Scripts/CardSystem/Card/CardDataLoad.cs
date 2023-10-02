@@ -157,8 +157,97 @@ public class CardDataLoad : MonoBehaviour
 
                 cardText.thisObject.GetComponent<TMP_Text>().text = _text;
             }
-            if(this.gameObject.GetComponent<CardController>() != null)
-            this.gameObject.GetComponent<CardController>().id = id;
+
+            // 카드 강화 단계 불러오기
+            ObjectNameAndParent levelText = thisCardinfo.Find(name => name.name == "LevelText");
+            if(levelText != null)
+            {
+                int levelNum = 0;
+                char level = cardData.id[cardData.id.Length - 1];
+                if (level == 'A' || level == 'J')
+                {
+                    levelNum = 1;
+                }
+                else if(level == 'B' || level == 'T')
+                {
+                    levelNum = 2;
+                }
+                else if(level == 'C' || level == 'H')
+                {
+                    levelNum = 3;
+                }
+                else if(level == 'I' || level == 'N')
+                {
+                    //levelNum = 100;
+                }
+                    levelText.thisObject.GetComponent<TMP_Text>().text = levelNum.ToString();
+            }
+
+            // 카드 코스트 불러오기
+            ObjectNameAndParent manaText = thisCardinfo.Find(name => name.name == "ManaText");
+            if(manaText != null)
+            {
+                manaText.thisObject.GetComponent<TMP_Text>().text = cardData.cardCost.ToString();
+            }
+
+            // 카드 스텟 불러오기
+            ObjectNameAndParent typeText = thisCardinfo.Find(name => name.name == "TypeText");
+            switch (cardData.cardType)
+            {
+                case 0:
+                    ObjectNameAndParent SPI = thisCardinfo.Find(name => name.name == "SP");
+
+                    if (SPI != null && typeText != null)
+                    {
+                        SPI.thisObject.SetActive(true);
+                        typeText.thisObject.GetComponent<TMP_Text>().text = "∞";
+                    }
+                    else
+                    {
+                        Debug.Log("해당 이미지를 찾을 수 없습니다.");
+                    }
+                    break;
+                case 1:
+                    ObjectNameAndParent AD = thisCardinfo.Find(name => name.name == "AD");
+                    ObjectNameAndParent AP = thisCardinfo.Find(name => name.name == "AP");
+                    ObjectNameAndParent FP = thisCardinfo.Find(name => name.name == "FP");
+                    if (AD != null && AP != null && FP != null)
+                    {
+                        if(cardData.adPower != 0)
+                        {
+                            AD.thisObject.SetActive(true);
+                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.adPower.ToString();
+                        }
+                        else if(cardData.apPower != 0)
+                        {
+                            AP.thisObject.SetActive(true);
+                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.apPower.ToString();
+                        }
+                        else if(cardData.fixedPower != 0)
+                        {
+                            FP.thisObject.SetActive(true);
+                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.fixedPower.ToString();
+                        }
+                        else
+                        {
+                            AD.thisObject.SetActive(true);
+                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.adPower.ToString();
+                        }
+                    }
+                    break;
+                case 2:
+                    ObjectNameAndParent DF = thisCardinfo.Find(name => name.name == "DF");
+                    break;
+                case 3:
+                    ObjectNameAndParent SP = thisCardinfo.Find(name => name.name == "SP");
+                    break;
+            }
+
+            if (this.gameObject.GetComponent<CardController>() != null)
+            {
+                this.gameObject.GetComponent<CardController>().id = id;
+            }
+
         }
         else
         {

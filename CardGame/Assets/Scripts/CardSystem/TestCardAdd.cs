@@ -14,16 +14,21 @@ public class TestCardAdd : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.O))
         {
             // 카드를 덱에 추가
-            Managers.Deck.AddCardToDeckById("101001B", 2);
-            Managers.Deck.AddCardToDeckById("101002B", 3);
-            Managers.Deck.AddCardToDeckById("101003B", 5);
-            Managers.Deck.AddCardToDeckById("101004B", 6);
+            Managers.Deck.AddCardToDeckById("101001A", 4);
+            Managers.Deck.AddCardToDeckById("101002A", 4);
+            Managers.Deck.AddCardToDeckById("101003A", 4);
+            Managers.Deck.AddCardToDeckById("101004A", 4);
+            Managers.Deck.AddCardToDeckById("101005A", 4);
+            Managers.Deck.AddCardToDeckById("101006A", 4);
+            Managers.Deck.AddCardToDeckById("101008A", 4);
+            Managers.Deck.AddCardToDeckById("101009A", 4);
+            Managers.Deck.AddCardToDeckById("101011J", 4);
         }
         if(Input.GetKeyDown(KeyCode.K))
         {
             int num = Random.Range(1, 5);
             // 덱에서 카드를 제거
-            Managers.Deck.RemoveCardToDeckById($"10100{num}C", 1);
+            Managers.Deck.RemoveCardToDeckById($"10100{num}A", 1);
         }
         if(Input.GetKeyDown(KeyCode.L))
         {

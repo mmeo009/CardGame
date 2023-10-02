@@ -63,6 +63,7 @@ public class TurnManager : MonoBehaviour
                 case TurnState.Enemy:
                     yield return StartCoroutine(EnemyTurn());
                     currentTurn = TurnState.SubsequentEffect;
+                    // 몬스터 반복 생성
                     Debug.Log(currentTurn);
                     break;
 

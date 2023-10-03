@@ -18,7 +18,7 @@ public class PlayerData : GenericSingleton<PlayerData>
         }
     }
 
-    public void calculatingDamage()
+    public void CalculatingDamage()
     {
         player.adDamage = player.adPower * player.baPower;
         player.apDamage = player.apPower * player.baPower;
@@ -93,7 +93,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                     break;
             }
         }
-        calculatingDamage();
+        CalculatingDamage();
         ValuesAreChanged();
     }
     public void ValuesAreChanged()

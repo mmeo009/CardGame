@@ -237,6 +237,7 @@ public class CardDataLoad : MonoBehaviour
                     break;
                 case 2:
                     ObjectNameAndParent DF = thisCardinfo.Find(name => name.name == "DF");
+                    ObjectNameAndParent HP = thisCardinfo.Find(name => name.name == "HP");
                     break;
                 case 3:
                     ObjectNameAndParent SP = thisCardinfo.Find(name => name.name == "SP");

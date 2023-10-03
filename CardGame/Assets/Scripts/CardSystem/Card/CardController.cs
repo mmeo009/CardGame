@@ -8,7 +8,7 @@ using DG.Tweening;
 public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private RectTransform rectTransform;
-    private Vector2 offset;
+
     public bool isDragging = false;
     public float moreInfoTime = 0.8f;
     public float smoothingDuration = 0.2f;

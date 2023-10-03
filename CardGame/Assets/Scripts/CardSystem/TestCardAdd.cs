@@ -22,6 +22,7 @@ public class TestCardAdd : MonoBehaviour
             Managers.Deck.AddCardToDeckById("101006A", 4);
             Managers.Deck.AddCardToDeckById("101008A", 4);
             Managers.Deck.AddCardToDeckById("101009A", 4);
+            Managers.Deck.AddCardToDeckById("101010A", 4);
             Managers.Deck.AddCardToDeckById("101011J", 4);
         }
         if(Input.GetKeyDown(KeyCode.K))

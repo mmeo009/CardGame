@@ -10,6 +10,7 @@ public class MergeController : GenericSingleton<MergeController>
     public int gridALevel;
     public int gridBLevel;
     public int level;
+    string baseCardId = null;
     public void MergeCards()
     {
         if (gridACardId != null && gridBCardId != null)
@@ -41,6 +42,7 @@ public class MergeController : GenericSingleton<MergeController>
                     {
                         _id = gridACardId.Replace("N", "I");
                         level = 1;
+                        baseCardId = gridACardId.Replace("N", "A");
                     }
                     else if (lastId == 'J')
                     {
@@ -73,6 +75,11 @@ public class MergeController : GenericSingleton<MergeController>
                     gridACardId = null;
                     gridBCardId = null;
                     DrawCard.Instance.CreateCardFromNothing(_id, level);
+                    if(baseCardId != null)
+                    {
+                        Managers.Deck.AddCardToDeckById(baseCardId, 4);
+                        baseCardId = null;
+                    }
                     _id = null;
                     level = 0;
                 }

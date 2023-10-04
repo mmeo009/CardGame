@@ -219,7 +219,7 @@ public class CardDataLoad : MonoBehaviour
                 }
                 else if(level == 'I' || level == 'N')
                 {
-                    //levelNum = 100;
+                    levelNum = thisCardLevel;
                 }
                     levelText.thisObject.GetComponent<TMP_Text>().text = levelNum.ToString();
             }
@@ -236,11 +236,11 @@ public class CardDataLoad : MonoBehaviour
             switch (cardData.cardType)
             {
                 case 0:
-                    ObjectNameAndParent SPI = thisCardinfo.Find(name => name.name == "SP");
+                    ObjectNameAndParent SPN = thisCardinfo.Find(name => name.name == "SP");
 
-                    if (SPI != null && typeText != null)
+                    if (SPN != null && typeText != null)
                     {
-                        SPI.thisObject.SetActive(true);
+                        SPN.thisObject.SetActive(true);
                         typeText.thisObject.GetComponent<TMP_Text>().text = "¡Ä";
                     }
                     else
@@ -283,6 +283,14 @@ public class CardDataLoad : MonoBehaviour
                 case 3:
                     ObjectNameAndParent SP = thisCardinfo.Find(name => name.name == "SP");
                     break;
+                case 4:
+                    ObjectNameAndParent SPI = thisCardinfo.Find(name => name.name == "SP");
+                    if (SPI != null && typeText != null)
+                    {
+                        SPI.thisObject.SetActive(true);
+                        typeText.thisObject.GetComponent<TMP_Text>().text = $"{cardData.adPower}x{thisCardLevel}";
+                    }
+                        break;
             }
 
             if (this.gameObject.GetComponent<CardController>() != null)

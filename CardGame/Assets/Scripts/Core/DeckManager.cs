@@ -108,13 +108,6 @@ public class DeckManager
             // 추가할 카드가 스크립쳐블 오브젝트에 없다면 없다면 오류 메세지 출력
             Debug.Log($"ID {cardId}를 가진 카드를 찾을 수 없습니다.");
         }
-
-        // 무한대로 추가하는 카드일 경우
-        if (lastId == 'N')
-        {
-            string infCard = foundCard.id.Replace("N", "A");
-            AddCardToDeckById(infCard, 2);
-        }
         // 덱에 남은 카드 수 체크
         CountCardsInDeck();
         ShowRemainingCards();

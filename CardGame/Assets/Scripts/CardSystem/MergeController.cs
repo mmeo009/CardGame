@@ -7,6 +7,9 @@ public class MergeController : GenericSingleton<MergeController>
     public string gridACardId = null;
     public string gridBCardId = null;
     public string _id = null;
+    public int gridALevel;
+    public int gridBLevel;
+    public int level;
     public void MergeCards()
     {
         if (gridACardId != null && gridBCardId != null)
@@ -19,11 +22,25 @@ public class MergeController : GenericSingleton<MergeController>
                     char lastId = gridACardId[idLength - 1];
                     if (lastId == 'A')
                     {
-                        _id = gridACardId.Replace("A", "B");
+                        string __id = gridACardId.Replace("A", "B");
+                        CardDataEntry existingEntry = CardData.Instance.deck.Find(entry => entry.id == __id);
+                        if (existingEntry == null)
+                        {
+                            _id = __id.Replace("B","N");
+                        }
+                        else
+                        {
+                            _id = __id;
+                        }
                     }
                     else if (lastId == 'B')
                     {
                         _id = gridACardId.Replace("B", "C");
+                    }
+                    else if(lastId == 'N')
+                    {
+                        _id = gridACardId.Replace("N", "I");
+                        level = 1;
                     }
                     else if (lastId == 'J')
                     {
@@ -33,17 +50,31 @@ public class MergeController : GenericSingleton<MergeController>
                     {
                         _id = gridACardId.Replace("T", "H");
                     }
+                    else if (lastId == 'I')
+                    {
+                        if (gridALevel == gridBLevel)
+                        {
+                            _id = gridACardId;
+                            level = gridALevel + 1;
+                        }
+                        else
+                        {
+                            Debug.Log("두 카드의 강화단계가 달라!");
+                            _id = null;
+                        }
+                    }
                     else
                     {
                         Debug.Log($"ID : {gridACardId}는 강화할 수 없어");
                     }
                 }
-                gridACardId = null;
-                gridBCardId = null;
                 if (_id != null)
                 {
-                    DrawCard.Instance.CreateCardFromNothing(_id);
+                    gridACardId = null;
+                    gridBCardId = null;
+                    DrawCard.Instance.CreateCardFromNothing(_id, level);
                     _id = null;
+                    level = 0;
                 }
             }
             else

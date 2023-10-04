@@ -24,10 +24,37 @@ public class DeckManager
         }
     }
     // 카드를 덱에 추가하는 함수
-    public void AddCardToDeckById(string cardId, int cardCount = 1)
+    public void AddCardToDeckById(string cardId, int cardCount = 1, bool isInf = false , int _level = 0)
     {
         // 스크립터블 오브젝트에서 해당 id를 가진 카드를 찾음
         Entity_CardData.Param foundCard = CardData.Instance.cardDatabase.param.Find(card => card.id == cardId);
+
+        char lastId = foundCard.id[foundCard.id.Length - 1];
+        int level = 1;
+        switch(lastId)
+        {
+            case 'A':
+                level = 1;
+                break;
+            case 'B':
+                level = 2;
+                break;
+            case 'C':
+                level = 3;
+                break;
+            case 'J':
+                level = 1;
+                break;
+            case 'T':
+                level = 2;
+                break;
+            case 'H':
+                level = 3;
+                break;
+            case 'N':
+                level = 2;
+                break;
+        }
 
         if (foundCard != null)
         {
@@ -36,8 +63,30 @@ public class DeckManager
 
             if (existingEntry != null)
             {
-                // 이미 있는 카드라면 개수를 증가
-                existingEntry.count += cardCount;
+                if(isInf == true)
+                {
+                    if(existingEntry.level == _level)
+                    {
+                        // 이미 있는 카드라면 개수를 증가
+                        existingEntry.count += cardCount;
+                    }
+                    else
+                    {
+                        // 새로운 카드라면 덱에 추가
+                        CardDataEntry newEntry = new CardDataEntry
+                        {
+                            id = cardId,
+                            count = cardCount,
+                            level = _level
+                        };
+                        CardData.Instance.deck.Add(newEntry);
+                    }
+                }
+                else
+                {
+                    // 이미 있는 카드라면 개수를 증가
+                    existingEntry.count += cardCount;
+                }
             }
             else
             {
@@ -45,18 +94,26 @@ public class DeckManager
                 CardDataEntry newEntry = new CardDataEntry
                 {
                     id = cardId,
-                    count = cardCount
+                    count = cardCount,
+                    level = level
                 };
                 CardData.Instance.deck.Add(newEntry);
             }
 
             // 추가된 카드 정보를 출력
-            Debug.Log($"추가된 카드 : (카드 이름: {foundCard.cardName}, 개수: {cardCount})");
+            Debug.Log($"추가된 카드 : (카드 이름: {foundCard.cardName}, 개수: {cardCount}, 강화 단계 : {level.ToString()}");
         }
         else
         {
             // 추가할 카드가 스크립쳐블 오브젝트에 없다면 없다면 오류 메세지 출력
             Debug.Log($"ID {cardId}를 가진 카드를 찾을 수 없습니다.");
+        }
+
+        // 무한대로 추가하는 카드일 경우
+        if (lastId == 'N')
+        {
+            string infCard = foundCard.id.Replace("N", "A");
+            AddCardToDeckById(infCard, 2);
         }
         // 덱에 남은 카드 수 체크
         CountCardsInDeck();

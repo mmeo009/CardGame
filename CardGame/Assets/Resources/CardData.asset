@@ -187,17 +187,17 @@ MonoBehaviour:
     element: FIRE
     rarity: 1
     text: "\uB3CC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
-      \uC8FC\uACE0 \uD654\uC0C1\uC744 \uBD80\uC5EC\uD569\uB2C8\uB2E4."
+      \uC90D\uB2C8\uB2E4."
     comment: "\uC190\uC774 \uB370\uC774\uC9C0 \uC54A\uAC8C \uC870\uC2EC\uD558\uC138\uC694"
     adPower: 3
     apPower: 0
     fixedPower: 0
     cc_1: NONE
-    cc_2: BURN
+    cc_2: NONE
     stat_01: 0
     stat_02: 0
-    stat_03: 1
-    stat_04: 1
+    stat_03: 0
+    stat_04: 0
     stat_05: 50
   - id: 101004A
     itemCode: BounceBall_001

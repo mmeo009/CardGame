@@ -7,23 +7,18 @@ public class TestCardAdd : MonoBehaviour
 
     private void Start()
     {
-        DrawCard.Instance.GetComponent<DrawCard>().TransformChack();
+        DrawCard.Instance.TransformChack();
     }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.O))
         {
             // 카드를 덱에 추가
-            Managers.Deck.AddCardToDeckById("101001A", 4);
-            Managers.Deck.AddCardToDeckById("101002A", 4);
-            Managers.Deck.AddCardToDeckById("101003A", 4);
-            Managers.Deck.AddCardToDeckById("101004A", 4);
-            Managers.Deck.AddCardToDeckById("101005A", 4);
-            Managers.Deck.AddCardToDeckById("101006A", 4);
-            Managers.Deck.AddCardToDeckById("101008A", 4);
-            Managers.Deck.AddCardToDeckById("101009A", 4);
-            Managers.Deck.AddCardToDeckById("101010A", 4);
-            Managers.Deck.AddCardToDeckById("101011J", 4);
+            Managers.Deck.AddCardToDeckById("101006A", 20);
+            Managers.Deck.AddCardToDeckById("101006N", 2);
+            Managers.Deck.AddCardToDeckById("101006I", 2, true, 3);
+            Managers.Deck.AddCardToDeckById("101006I", 2, true, 5);
+            Managers.Deck.AddCardToDeckById("101006I", 2, true, 4);
         }
         if(Input.GetKeyDown(KeyCode.K))
         {

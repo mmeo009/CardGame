@@ -9,6 +9,7 @@ public class CardDataLoad : MonoBehaviour
     [SerializeField]
     private List<ObjectNameAndParent> thisCardinfo = new List<ObjectNameAndParent>();
     public string thisCardId;
+    public int thisCardLevel;
 
     public void FindChilds(GameObject target)
     {
@@ -32,6 +33,36 @@ public class CardDataLoad : MonoBehaviour
             }
         }
     }
+    public void LoadCardLevel()
+    {
+        char lastId = thisCardId[thisCardId.Length - 1];
+        int level = 1;
+        switch (lastId)
+        {
+            case 'A':
+                level = 1;
+                break;
+            case 'B':
+                level = 2;
+                break;
+            case 'C':
+                level = 3;
+                break;
+            case 'J':
+                level = 1;
+                break;
+            case 'T':
+                level = 2;
+                break;
+            case 'H':
+                level = 3;
+                break;
+            case 'N':
+                level = 2;
+                break;
+        }
+        thisCardLevel = level;
+    }
     public void IsHolding(bool hold)
     {
         ObjectNameAndParent front = thisCardinfo.Find(name => name.name == "Front");
@@ -54,18 +85,27 @@ public class CardDataLoad : MonoBehaviour
                 int card = Random.Range(0, CardData.Instance.deck.Count);
                 CardDataEntry oneCard = CardData.Instance.deck[card];
                 thisCardId = oneCard.id;
+                thisCardLevel = oneCard.level;
                 Managers.Deck.RemoveCardToDeckById(thisCardId, 1);
                 LoadCardData(thisCardId);
             }
         }
     }
 
-    public void PickCardIdFromDataBase(string cardId)
+    public void PickCardIdFromDataBase(string cardId, int level = 0)
     {
         Entity_CardData.Param foundCard = CardData.Instance.cardDatabase.param.Find(card => card.id == cardId);
         if (foundCard != null)
         {
             thisCardId = cardId;
+            if(level == 0)
+            {
+                LoadCardLevel();
+            }
+            else
+            {
+                thisCardLevel = level;
+            }
             LoadCardData(thisCardId);
         }
         else
@@ -144,7 +184,7 @@ public class CardDataLoad : MonoBehaviour
             ObjectNameAndParent cardText = thisCardinfo.Find(name => name.name == "CardText");
             if(cardName != null)
             {
-                cardName.thisObject.GetComponent<TMP_Text>().text = cardData.cardName;
+                cardName.thisObject.GetComponent<TMP_Text>().text = cardData.cardName.Replace("[ra]", $"{thisCardLevel}");
             }
             if(cardText != null)
             {
@@ -153,7 +193,8 @@ public class CardDataLoad : MonoBehaviour
                     .Replace("[fd]", $"{PlayerData.Instance.player.fixedDamage + cardData.fixedPower}")
                     .Replace("[had]", $"{(PlayerData.Instance.player.adDamage + cardData.adPower) / 2}")
                     .Replace("[hap]", $"{(PlayerData.Instance.player.apDamage + cardData.adPower) / 2}")
-                    .Replace("[hfd]", $"{(PlayerData.Instance.player.fixedDamage + cardData.adPower) / 2}");
+                    .Replace("[hfd]", $"{(PlayerData.Instance.player.fixedDamage + cardData.adPower) / 2}")
+                    .Replace("[ra]", $"{thisCardLevel}");
 
                 cardText.thisObject.GetComponent<TMP_Text>().text = _text;
             }

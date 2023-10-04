@@ -27,4 +27,5 @@ public class CardDataEntry
 {
     public string id;
     public int count; // 카드 개수
+    public int level; // 강화 단계
 }

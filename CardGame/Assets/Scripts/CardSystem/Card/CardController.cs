@@ -115,11 +115,13 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         Vector3 pos = new Vector3(853, 361.5f, 0);
         id = this.GetComponent<CardDataLoad>().thisCardId;
+        int level = this.GetComponent<CardDataLoad>().thisCardLevel;
         if (enlargedCardPrefab == null)
         {
             enlargedCardPrefab = Resources.Load<GameObject>("Prefabs/EnlargedCard");
             GameObject newCard = Instantiate(enlargedCardPrefab, pos, Quaternion.identity);
             newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
+            newCard.GetComponent<CardDataLoad>().thisCardLevel = level;
             newCard.GetComponent<CardDataLoad>().LoadCardData(id);
             newCard.transform.SetParent(GameObject.Find("Canvas").transform);
         }
@@ -128,6 +130,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             GameObject newCard = Instantiate(enlargedCardPrefab, pos, Quaternion.identity);
             newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
             newCard.GetComponent<CardDataLoad>().LoadCardData(id);
+            newCard.GetComponent<CardDataLoad>().thisCardLevel = level;
             newCard.transform.SetParent(GameObject.Find("Canvas").transform);
         }
         isEnlargedCardCreated = true;

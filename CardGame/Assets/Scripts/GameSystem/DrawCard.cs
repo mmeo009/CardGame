@@ -157,7 +157,7 @@ public class DrawCard : GenericSingleton<DrawCard>
             Debug.Log("DeckUi가 존재하지 않습니다.");
         }
     }
-    public void CreateCardFromNothing(string id)
+    public void CreateCardFromNothing(string id, int level = 0)
     {
         float time = 0.5f;
         for (int i = 0; i < cardGrids.Length; i++)
@@ -188,7 +188,14 @@ public class DrawCard : GenericSingleton<DrawCard>
                 // 카드의 정보를 불러오기 위해 카드에 값을 입력 
                 newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
                 // id를 데이터베이스중 한가지를 선택하여 카드의 아이디를 불러와 프리팹에 넣어줌
-                newCard.GetComponent<CardDataLoad>().PickCardIdFromDataBase(id);
+                if (level != 0)
+                {
+                    newCard.GetComponent<CardDataLoad>().PickCardIdFromDataBase(id, level);
+                }
+                else
+                {
+                    newCard.GetComponent<CardDataLoad>().PickCardIdFromDataBase(id);
+                }
                 // 생성된 카드를 캔버스에 넣음
                 newCard.transform.SetParent(GameObject.Find("Canvas").transform);
                 // cardGrid로 이동

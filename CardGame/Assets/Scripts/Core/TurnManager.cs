@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Util;
 
 public class TurnManager : MonoBehaviour
 {
     public enum TurnState
     {
-        Draw,
+        GetDatas,
+        DrawAndEffect,
         Player,
         PreviousEffect,
         Enemy,
@@ -32,7 +32,7 @@ public class TurnManager : MonoBehaviour
     void Start()
     {
         // 게임을 시작할 때 초기 턴 상태 = 카드 드로우
-        currentTurn = TurnState.Draw;
+        currentTurn = TurnState.GetDatas;
         StartCoroutine(GameLoop());
     }
 
@@ -42,8 +42,13 @@ public class TurnManager : MonoBehaviour
         {
             switch (currentTurn)
             {
-                case TurnState.Draw:
-                    yield return StartCoroutine(DrawCard());
+                case TurnState.GetDatas:
+                    yield return StartCoroutine(GetDatas());
+                    currentTurn = TurnState.DrawAndEffect;
+                    Debug.Log(currentTurn);
+                    break;
+                case TurnState.DrawAndEffect:
+                    yield return StartCoroutine(DrawAndEffectTurn());
                     currentTurn = TurnState.Player;
                     Debug.Log(currentTurn);
                     break;
@@ -69,7 +74,7 @@ public class TurnManager : MonoBehaviour
 
                 case TurnState.SubsequentEffect:
                     yield return StartCoroutine(SubsequentEffectTurn());
-                    currentTurn = TurnState.Draw;
+                    currentTurn = TurnState.DrawAndEffect;
                     Debug.Log(currentTurn);
                     break;
             }
@@ -78,11 +83,17 @@ public class TurnManager : MonoBehaviour
             yield return null;
         }
     }
+    IEnumerator GetDatas()
+    {
+        Managers.Deck.AddCardToDeckById("101006A", 20);
+        // 카드 뽑기
+        yield return new WaitForSeconds(2f);
+    }
 
-    IEnumerator DrawCard()
+    IEnumerator DrawAndEffectTurn()
     {
         // 카드 뽑기
-
+        DrawCard.Instance.CreateCardOneAtTheTime();
         yield return new WaitForSeconds(2f);
     }
 
@@ -98,6 +109,8 @@ public class TurnManager : MonoBehaviour
 
     IEnumerator PreviousEffectTurn()
     {
+        DrawCard.Instance.MergeGridToCardGrid();
+        DrawCard.Instance.Invoke("CardInToDeck", 0.5f);
         //플레이어턴 비활성화
         _isPlayerTurnEnd = false;
         // 이전 효과
@@ -117,4 +130,5 @@ public class TurnManager : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
     }
+
 }

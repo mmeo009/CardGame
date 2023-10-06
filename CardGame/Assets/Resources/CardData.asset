@@ -142,7 +142,7 @@ MonoBehaviour:
     cardCost: 0
     element: NONE
     rarity: 1
-    text: "\uB3CC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+    text: "\uC801\uC5D0\uAC8C \uB3CC\uC744 \uB358\uC838  [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
       \uC90D\uB2C8\uB2E4."
     comment: "\uC5B4\uB290 \uB9C8\uC744\uC5D0 \uC0AC\uB294 5\uC0B4 \uAF2C\uB9C8\uB294
       \uC608\uC05C \uB3CC\uC744 \uBAA8\uC73C\uB294\uAC8C \uCDE8\uBBF8\uB77C\uACE0
@@ -165,7 +165,7 @@ MonoBehaviour:
     cardCost: 0
     element: FIRE
     rarity: 1
-    text: "\uB3CC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+    text: "\uC801\uC5D0\uAC8C \uB3CC\uC744 \uB358\uC838  [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
       \uC90D\uB2C8\uB2E4."
     comment: "\uD56B\uD329\uBCF4\uB2E4 \uC88B\uC2B5\uB2C8\uB2E4."
     adPower: 3
@@ -186,16 +186,16 @@ MonoBehaviour:
     cardCost: 0
     element: FIRE
     rarity: 1
-    text: "\uB3CC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
-      \uC90D\uB2C8\uB2E4."
+    text: "\uC801\uC5D0\uAC8C \uB3CC\uC744 \uB358\uC838  [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC8FC\uACE0 \uB0B4 \uB371\uC5D0 \uD654\uC0C1\uCE74\uB4DC\uB97C 2\uC7A5 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4."
     comment: "\uC190\uC774 \uB370\uC774\uC9C0 \uC54A\uAC8C \uC870\uC2EC\uD558\uC138\uC694"
-    adPower: 3
+    adPower: 5
     apPower: 0
     fixedPower: 0
-    cc_1: NONE
+    cc_1: BURN
     cc_2: NONE
-    stat_01: 0
-    stat_02: 0
+    stat_01: 2
+    stat_02: 2
     stat_03: 0
     stat_04: 0
     stat_05: 50
@@ -363,7 +363,7 @@ MonoBehaviour:
     stat_05: 0
   - id: 101006N
     itemCode: Acorn_002
-    cardName: "\uB2E4\uB78C\uC950 \uACF5\uC7A5 + [ra]"
+    cardName: "\uB2E4\uB78C\uC950 \uACF5\uC7A5"
     cardType: 0
     usingMethod: 0
     cardCost: 0
@@ -585,14 +585,14 @@ MonoBehaviour:
     element: ALL
     rarity: 3
     text: "\uC804\uC124\uC758 \uB2ED \uB2E4\uB9AC\uB85C \uC801\uC744 \uB54C\uB824
-      [ad]\uB9CC\uD07C\uC758 \uD53C\uD574\uB97C \uC8FC\uACE0 2\uD134\uB3D9\uC548
-      \uC801\uC5D0\uAC8C \uD654\uC0C1\uC744 \uBD80\uC5EC\uD569\uB2C8\uB2E4."
+      [ad]\uB9CC\uD07C\uC758 \uD53C\uD574\uB97C \uC8FC\uACE0 \uAE30\uB984\uC744 \uBB3B\uD600
+      2\uD134\uB3D9\uC548 \uC801\uC758 \uC2DC\uC57C\uB97C \uD750\uB9AC\uAC8C \uD569\uB2C8\uB2E4."
     comment: "\uB9DB\uC788\uB294 \uC74C\uC2DD\uC744 \uB0AD\uBE44\uD558\uC9C0 \uB9C8\uC138\uC694."
     adPower: 15
     apPower: 0
     fixedPower: 0
     cc_1: NONE
-    cc_2: BURN
+    cc_2: BLIND
     stat_01: 0
     stat_02: 0
     stat_03: 2
@@ -672,7 +672,7 @@ MonoBehaviour:
     rarity: 4
     text: "JTH\uC758 \uC801\uC5D0\uAC8C \uC785\uAE40\uC744 \uBD88\uC5B4 [ad]\uB9CC\uD07C\uC758
       \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uC801\uC740 2\uD134\uB3D9\uC548 \uB3C5\uB370\uBBF8\uC9C0\uB97C
-      \uBC1B\uACE0 \uC2DC\uC804\uC790\uB294 \uD654\uC0C1\uC744 \uC785\uC2B5\uB2C8\uB2E4."
+      \uBC1B\uACE0 \uB0B4 \uB371\uC5D0 \uD654\uC0C1\uCE74\uB4DC\uB97C 2\uC7A5 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4."
     comment: "JTH\uB294 \uC591\uCE58\uB97C \uD558\uC9C0 \uC54A\uB098\uBD10\uC694"
     adPower: 13
     apPower: 0

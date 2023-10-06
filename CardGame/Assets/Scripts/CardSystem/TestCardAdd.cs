@@ -7,6 +7,9 @@ public class TestCardAdd : MonoBehaviour
 
     private void Start()
     {
+        Managers.Data.GetResources();
+        Managers.Data.DataIntoDictionary();
+
         DrawCard.Instance.TransformChack();
     }
     private void Update()
@@ -20,21 +23,10 @@ public class TestCardAdd : MonoBehaviour
             Managers.Deck.AddCardToDeckById("101006I", 2, true, 5);
             Managers.Deck.AddCardToDeckById("101006I", 2, true, 4);
         }
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            int num = Random.Range(1, 5);
-            // 덱에서 카드를 제거
-            Managers.Deck.RemoveCardToDeckById($"10100{num}A", 1);
-        }
         if(Input.GetKeyDown(KeyCode.L))
         {
             // 덱에 있는 카드 정보 출력
             Managers.Deck.PrintDeck();
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Managers.Deck.AddCardToDeckById("123321");
-            Managers.Deck.RemoveCardToDeckById("123321");
         }
         if(Input.GetKeyDown(KeyCode.Q))
         {

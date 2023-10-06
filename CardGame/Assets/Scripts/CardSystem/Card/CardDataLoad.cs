@@ -83,10 +83,10 @@ public class CardDataLoad : MonoBehaviour
             if(CardData.Instance.deck.Count != 0)
             {
                 int card = Random.Range(0, CardData.Instance.deck.Count);
-                CardDataEntry oneCard = CardData.Instance.deck[card];
+                CardInformation oneCard = CardData.Instance.deck[card];
                 thisCardId = oneCard.id;
                 thisCardLevel = oneCard.level;
-                Managers.Deck.RemoveCardToDeckById(thisCardId, 1);
+                Managers.Deck.RemoveCardToDeckById(thisCardId,thisCardLevel, 1);
                 LoadCardData(thisCardId);
             }
         }
@@ -94,7 +94,7 @@ public class CardDataLoad : MonoBehaviour
 
     public void PickCardIdFromDataBase(string cardId, int level = 0)
     {
-        Entity_CardData.Param foundCard = CardData.Instance.cardDatabase.param.Find(card => card.id == cardId);
+        Entity_CardData.Param foundCard = Managers.Data.cardsDictionary[cardId];
         if (foundCard != null)
         {
             thisCardId = cardId;
@@ -116,8 +116,8 @@ public class CardDataLoad : MonoBehaviour
 
     public void LoadCardData(string id)
     {
-        Entity_CardData.Param cardData = CardData.Instance.cardDatabase.param.Find(card => card.id == id);
-        if(cardData != null)
+        Entity_CardData.Param cardData = Managers.Data.cardsDictionary[id];
+        if (cardData != null)
         {
             // Èñ±Íµµ ºÒ·¯¿À±â
             switch (cardData.rarity)

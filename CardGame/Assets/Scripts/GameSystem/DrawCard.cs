@@ -299,8 +299,17 @@ public class DrawCard : GenericSingleton<DrawCard>
                     cardToGoHome.transform.SetParent(GameObject.Find("Canvas").transform);
                     cardToGoHome.transform.DOMove(deckUi.position, 0.5f).SetEase(Ease.Linear).OnComplete(() =>
                     {
+                        string id = cardToGoHome.GetComponent<CardDataLoad>().thisCardId;
+                        char lastId = id[id.Length - 1];
                         cardGrids[gridNum].GetComponent<GridIndex>().ISEmpty();
-                        Managers.Deck.AddCardToDeckById(cardToGoHome.GetComponent<CardDataLoad>().thisCardId, 1);
+                        if (lastId == 'I')
+                        {
+                            Managers.Deck.AddCardToDeckById(id, 1, true, cardToGoHome.GetComponent<CardDataLoad>().thisCardLevel);
+                        }
+                        else
+                        {
+                            Managers.Deck.AddCardToDeckById(id, 1);
+                        }
                         Destroy(cardToGoHome); // 변수를 사용하여 카드 삭제
                     });
                 }

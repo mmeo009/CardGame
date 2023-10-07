@@ -8,11 +8,11 @@ public class MergeGrid : MonoBehaviour, IDropHandler
     public int GridNum;
     public bool isEmpty = true;
     public GameObject myCard;
-    public GameObject mergeButton;
+    public MergeController mergeButton;
 
     public void Start()
     {
-        mergeButton = GameObject.FindWithTag("MergeButton").gameObject;
+        mergeButton = GameObject.FindWithTag("MergeButton").GetComponent<MergeController>();
     }
     public void ISEmpty()
     {
@@ -27,12 +27,12 @@ public class MergeGrid : MonoBehaviour, IDropHandler
             switch (GridNum)
             {
                 case 0:
-                    mergeButton.GetComponent<MergeController>().gridACardId = null;
-                    mergeButton.GetComponent<MergeController>().gridALevel = 0;
+                    mergeButton.gridACardId = null;
+                    mergeButton.gridALevel = 0;
                     break;
                 case 1:
-                    mergeButton.GetComponent<MergeController>().gridBCardId = null;
-                    mergeButton.GetComponent<MergeController>().gridBLevel = 0;
+                    mergeButton.gridBCardId = null;
+                    mergeButton.gridBLevel = 0;
                     break;
             }
         }
@@ -46,12 +46,12 @@ public class MergeGrid : MonoBehaviour, IDropHandler
             switch (GridNum)
             {
                 case 0:
-                    mergeButton.GetComponent<MergeController>().gridACardId = myCardId;
-                    mergeButton.GetComponent<MergeController>().gridALevel = myCard.GetComponent<CardDataLoad>().thisCardLevel;
+                    mergeButton.gridACardId = myCardId;
+                    mergeButton.gridALevel = myCard.GetComponent<CardDataLoad>().thisCardLevel;
                     break;
                 case 1:
-                    mergeButton.GetComponent<MergeController>().gridBCardId = myCardId;
-                    mergeButton.GetComponent<MergeController>().gridBLevel = myCard.GetComponent<CardDataLoad>().thisCardLevel;
+                    mergeButton.gridBCardId = myCardId;
+                    mergeButton.gridBLevel = myCard.GetComponent<CardDataLoad>().thisCardLevel;
                     break;
             }
         }
@@ -71,10 +71,10 @@ public class MergeGrid : MonoBehaviour, IDropHandler
                 switch (GridNum)
                 {
                     case 0:
-                        mergeButton.GetComponent<MergeController>().gridACardId = myCardId;
+                        mergeButton.gridACardId = myCardId;
                         break;
                     case 1:
-                        mergeButton.GetComponent<MergeController>().gridBCardId = myCardId;
+                        mergeButton.gridBCardId = myCardId;
                         break;
                 }
                 droppedCard.GetComponent<CardController>().isHolding = false;

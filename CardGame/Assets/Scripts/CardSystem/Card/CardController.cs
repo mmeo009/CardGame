@@ -132,8 +132,8 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             GameObject newCard = Instantiate(enlargedCardPrefab, pos, Quaternion.identity);
             newCard.transform.localScale = Vector3.one;
             newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
-            newCard.GetComponent<CardDataLoad>().LoadCardData(id);
             newCard.GetComponent<CardDataLoad>().thisCardLevel = level;
+            newCard.GetComponent<CardDataLoad>().LoadCardData(id);
             newCard.transform.SetParent(GameObject.Find("Canvas").transform);
 
         }

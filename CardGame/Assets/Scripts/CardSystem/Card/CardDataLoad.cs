@@ -78,12 +78,12 @@ public class CardDataLoad : MonoBehaviour
 
     public void PickCardAndIdFromDeck()
     {
-        if(CardData.Instance != null)
+        if(DeckData.Instance != null)
         {
-            if(CardData.Instance.deck.Count != 0)
+            if(DeckData.Instance.deck.Count != 0)
             {
-                int card = Random.Range(0, CardData.Instance.deck.Count);
-                CardInformation oneCard = CardData.Instance.deck[card];
+                int card = Random.Range(0, DeckData.Instance.deck.Count);
+                CardInformation oneCard = DeckData.Instance.deck[card];
                 thisCardId = oneCard.id;
                 thisCardLevel = oneCard.level;
                 Managers.Deck.RemoveCardToDeckById(thisCardId,thisCardLevel, 1);

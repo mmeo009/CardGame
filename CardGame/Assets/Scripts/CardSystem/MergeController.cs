@@ -24,7 +24,7 @@ public class MergeController : GenericSingleton<MergeController>
                     if (lastId == 'A')
                     {
                         string __id = gridACardId.Replace("A", "B");
-                        CardInformation existingEntry = CardData.Instance.deck.Find(entry => entry.id == __id);
+                        CardInformation existingEntry = DeckData.Instance.deck.Find(entry => entry.id == __id);
                         if (existingEntry == null)
                         {
                             _id = __id.Replace("B","N");

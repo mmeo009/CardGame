@@ -16,7 +16,7 @@ public class DeckManager
         if(_deckInfo != null)
         {
             deckInfo = _deckInfo;
-            deckInfo.GetComponent<TMP_Text>().text = CardData.Instance.amountOfCardsInDeck.ToString();
+            deckInfo.GetComponent<TMP_Text>().text = DeckData.Instance.amountOfCardsInDeck.ToString();
         }
         else
         {
@@ -26,7 +26,7 @@ public class DeckManager
     // DefaultDeck 관련 시작
     public void DeckSetting()
     {
-        CardData.Instance.deck = CardData.Instance.defaultDeck;
+        DeckData.Instance.deck = DeckData.Instance.defaultDeck;
     }
 
     //1,2단계 카드만 덱에 추가할 수 있음
@@ -54,7 +54,7 @@ public class DeckManager
             if (foundCard != null)
             {
                 // 덱에 이미 같은 카드가 있는지 확인
-                CardInformation existingEntry = CardData.Instance.defaultDeck.Find(entry => entry.id == cardId);
+                CardInformation existingEntry = DeckData.Instance.defaultDeck.Find(entry => entry.id == cardId);
 
                 if (existingEntry != null)
                 {
@@ -65,7 +65,7 @@ public class DeckManager
                         count = cardAmount,
                         level = 1
                     };
-                    CardData.Instance.defaultDeck.Add(newEntry);
+                    DeckData.Instance.defaultDeck.Add(newEntry);
                 }
                 else
                 {
@@ -121,7 +121,7 @@ public class DeckManager
         if (foundCard != null)
         {
             // 덱에 이미 같은 카드가 있는지 확인
-            CardInformation existingEntry = CardData.Instance.deck.Find(entry => entry.id == cardId);
+            CardInformation existingEntry = DeckData.Instance.deck.Find(entry => entry.id == cardId);
 
             if (existingEntry != null)
             {
@@ -141,7 +141,7 @@ public class DeckManager
                             count = cardCount,
                             level = _level
                         };
-                        CardData.Instance.deck.Add(newEntry);
+                        DeckData.Instance.deck.Add(newEntry);
                     }
                 }
                 else
@@ -159,7 +159,7 @@ public class DeckManager
                     count = cardCount,
                     level = level
                 };
-                CardData.Instance.deck.Add(newEntry);
+                DeckData.Instance.deck.Add(newEntry);
             }
 
             // 추가된 카드 정보를 출력
@@ -183,7 +183,7 @@ public class DeckManager
         if (foundCard != null)
         {
             // 덱에 이미 같은 카드가 있는지 확인
-            CardInformation existingEntry = CardData.Instance.deck.Find(entry => entry.id == cardId && entry.level == cardLevel);
+            CardInformation existingEntry = DeckData.Instance.deck.Find(entry => entry.id == cardId && entry.level == cardLevel);
 
             if (existingEntry != null)
             {
@@ -197,7 +197,7 @@ public class DeckManager
                 else if(existingEntry.count == cardAmount)
                 {
                     // 제거량이 덱에 있는 카드와 같을경우 덱에 있는 카드를 제거
-                    CardData.Instance.deck.Remove(existingEntry);
+                    DeckData.Instance.deck.Remove(existingEntry);
                     // 제거된 카드 정보를 출력
                     Debug.Log($"제거된 카드 : (카드 이름: {foundCard.cardName}, 제거 량: {cardAmount})");
                 }
@@ -227,7 +227,7 @@ public class DeckManager
     // 덱에 있는 카드 정보 출력 함수
     public void PrintDeck()
     {
-        foreach (var entry in CardData.Instance.deck)
+        foreach (var entry in DeckData.Instance.deck)
         {
             Entity_CardData.Param foundCard = Managers.Data.cardsDictionary[entry.id];
             if (foundCard != null)
@@ -242,14 +242,14 @@ public class DeckManager
     public void CountCardsInDeck()
     {
         int count = 0;
-        foreach (var entry in CardData.Instance.deck)
+        foreach (var entry in DeckData.Instance.deck)
         {
             Entity_CardData.Param foundCard = Managers.Data.cardsDictionary[entry.id];
             if (foundCard != null)
             {
                 count += entry.count;
             }
-            CardData.Instance.amountOfCardsInDeck = count;
+            DeckData.Instance.amountOfCardsInDeck = count;
         }
     }
 }

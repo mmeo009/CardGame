@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardData : GenericSingleton<CardData>
+public class DeckData : GenericSingleton<DeckData>
 {
     public int amountOfCardsInDeck;     //덱에 들어있는 카드의 양
     // 덱 리스트

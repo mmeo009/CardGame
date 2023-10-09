@@ -85,7 +85,8 @@ public class TurnManager : MonoBehaviour
     }
     IEnumerator GetDatas()
     {
-        Managers.Deck.AddCardToDeckById("101006A", 20);
+        Managers.Deck.AddCardIntoDefaultDeck("101006A", 20);
+        Managers.Deck.DeckSetting();
         // Ä«µå »Ì±â
         yield return new WaitForSeconds(2f);
     }

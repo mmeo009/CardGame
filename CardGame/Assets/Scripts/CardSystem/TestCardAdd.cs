@@ -9,8 +9,7 @@ public class TestCardAdd : MonoBehaviour
     {
         Managers.Data.GetResources();
         Managers.Data.DataIntoDictionary();
-
-        DrawCard.Instance.TransformChack();
+        DrawCard.Instance.TransformChack(); 
     }
     private void Update()
     {

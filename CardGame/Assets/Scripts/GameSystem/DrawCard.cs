@@ -44,7 +44,6 @@ public class DrawCard : GenericSingleton<DrawCard>
             {
                 // 순서대로 트랜스폼에 넣음
                 mergeGrids = mergeGridGo.Select(obj => obj.transform).ToArray();
-                Debug.Log(mergeGrids);
             }
             else
             {

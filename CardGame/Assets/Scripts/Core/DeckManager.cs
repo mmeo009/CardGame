@@ -26,7 +26,11 @@ public class DeckManager
     // DefaultDeck 관련 시작
     public void DeckSetting()
     {
-        DeckData.Instance.deck = DeckData.Instance.defaultDeck;
+        DeckData.Instance.deck.Clear();
+        foreach (var card in DeckData.Instance.defaultDeck)
+        {
+            DeckData.Instance.deck.Add(card.Clone());
+        }
     }
 
     //1,2단계 카드만 덱에 추가할 수 있음
@@ -36,17 +40,17 @@ public class DeckManager
         char lastId = foundCard.id[foundCard.id.Length - 1];
         int level = 0 ;
         // 아이디를 통해 강화 단계 찾기
-        if (lastId != 'A' || lastId != 'J')
-        {
-            Debug.Log("1단계가 아니야");
-        }
-        else if(lastId == 'A' || lastId != 'J')
+        if(lastId == 'A' || lastId == 'J' || lastId == 'I')
         {
             level = 1;
         }
         else if(lastId == 'B' || lastId == 'T' || lastId == 'N')
         {
             level = 2;
+        }
+        else if(lastId == 'C' || lastId == 'H')
+        {
+            level = 3;
         }
         // 카드를 추가하는 부분
         if(level == 1 || level == 2)
@@ -56,14 +60,14 @@ public class DeckManager
                 // 덱에 이미 같은 카드가 있는지 확인
                 CardInformation existingEntry = DeckData.Instance.defaultDeck.Find(entry => entry.id == cardId);
 
-                if (existingEntry != null)
+                if (existingEntry == null)
                 {
                     // 새로운 카드라면 덱에 추가
                     CardInformation newEntry = new CardInformation
                     {
                         id = cardId,
                         count = cardAmount,
-                        level = 1
+                        level = level
                     };
                     DeckData.Instance.defaultDeck.Add(newEntry);
                 }
@@ -78,9 +82,19 @@ public class DeckManager
             }
             else
             {
-                // 추가할 카드가 없다면 오류 메세지 출력
-                Debug.Log($"ID {cardId}를 가진 카드를 찾을 수 없습니다.");
+                // 새로운 카드라면 덱에 추가
+                CardInformation newEntry = new CardInformation
+                {
+                    id = cardId,
+                    count = cardAmount,
+                    level = level
+                };
+                DeckData.Instance.defaultDeck.Add(newEntry);
             }
+        }
+        else
+        {
+            Debug.Log($"{level}은 추가 불가능");
         }
     }
     // DefaultDeck 관련 끝

@@ -16,4 +16,14 @@ public class CardInformation
     public string id;
     public int count; // 카드 개수
     public int level; // 강화 단계
+    public CardInformation Clone()
+    {
+        return new CardInformation
+        {
+            id = this.id,
+            count = this.count,
+            level = this.level,
+            // 다른 속성들도 복사
+        };
+    }
 }

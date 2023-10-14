@@ -18,6 +18,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public GameObject myGrid;
     public GameObject enlargedCardPrefab;
     public string id;
+    public bool isPlayerTurn = false;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right)
+        if (eventData.button == PointerEventData.InputButton.Right && isPlayerTurn == true)
         {
             if(myGrid.GetComponent<MergeGrid>() == null)
             {
@@ -71,7 +72,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && isPlayerTurn == true)
         {
             isDragging = true;
             this.transform.SetParent(transform.root);
@@ -170,7 +171,15 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     private void Update()
     {
-        if(onMouse == true)
+        if(TurnManager.Instance.currentTurn == TurnManager.TurnState.Player)
+        {
+            isPlayerTurn = true;
+        }
+        else
+        {
+            isPlayerTurn = false;
+        }
+        if (onMouse == true)
         {
             if(moreInfoTime > 0)
             {

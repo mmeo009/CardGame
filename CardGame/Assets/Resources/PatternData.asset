@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab5474643b583d42ab44474c2a0ff38, type: 3}
+  m_Name: PatternData
+  m_EditorClassIdentifier: 
+  param:
+  - patternId: 401001A
+    monsterId: 501101A
+    type: 1
+    ad: 3
+    ap: 0
+    heal: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_001: 0
+    stat_002: 0
+    stat_003: 0
+    stat_004: 0
+    stat_005: 0
+    stat_006: 0
+  - patternId: 401002A
+    monsterId: 501101A
+    type: 2
+    ad: 2
+    ap: 0
+    heal: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_001: 0
+    stat_002: 0
+    stat_003: 0
+    stat_004: 0
+    stat_005: 0
+    stat_006: 2
+  - patternId: 401003A
+    monsterId: 501101A
+    type: 1
+    ad: 4
+    ap: 0
+    heal: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_001: 0
+    stat_002: 0
+    stat_003: 0
+    stat_004: 0
+    stat_005: 0
+    stat_006: 0
+  - patternId: 401004A
+    monsterId: 501101B
+    type: 1
+    ad: 4
+    ap: 0
+    heal: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_001: 0
+    stat_002: 0
+    stat_003: 0
+    stat_004: 0
+    stat_005: 0
+    stat_006: 0
+  - patternId: 401005B
+    monsterId: 501101B
+    type: 2
+    ad: 0
+    ap: 0
+    heal: 5
+    cc_1: NONE
+    cc_2: NONE
+    stat_001: 0
+    stat_002: 0
+    stat_003: 0
+    stat_004: 0
+    stat_005: 0
+    stat_006: 0
+  - patternId: 401006A
+    monsterId: 501101B
+    type: 2
+    ad: 1
+    ap: 0
+    heal: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_001: 0
+    stat_002: 0
+    stat_003: 0
+    stat_004: 0
+    stat_005: 0
+    stat_006: 4

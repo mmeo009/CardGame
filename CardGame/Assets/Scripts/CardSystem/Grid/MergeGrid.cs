@@ -63,8 +63,12 @@ public class MergeGrid : MonoBehaviour, IDropHandler
 
         if (droppedCard != null)
         {
-            if(isEmpty == true)
+            if(isEmpty == true && TurnManager.Instance.currentTurn == TurnManager.TurnState.Player)
             {
+                if(droppedCard.GetComponent<CardController>().myGrid.GetComponent<GridIndex>() != null)
+                {
+                    droppedCard.GetComponent<CardController>().myGrid.GetComponent<GridIndex>().ISEmpty();
+                }
                 droppedCard.GetComponent<CardController>().myGrid = gameObject;
                 string myCardId = droppedCard.GetComponent<CardDataLoad>().thisCardId;
                 Debug.Log(myCardId);

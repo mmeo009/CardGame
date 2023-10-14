@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnManager : MonoBehaviour
+public class TurnManager : GenericSingleton<TurnManager>
 {
     public enum TurnState
     {
@@ -13,7 +13,7 @@ public class TurnManager : MonoBehaviour
         Enemy,
         SubsequentEffect
     }
-    private TurnState currentTurn;
+    public TurnState currentTurn;
 
     [SerializeField]
     private bool _isPlayerTurnEnd = false;

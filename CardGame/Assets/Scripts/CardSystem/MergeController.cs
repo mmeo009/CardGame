@@ -24,7 +24,7 @@ public class MergeController : GenericSingleton<MergeController>
                     if (lastId == 'A')
                     {
                         string __id = gridACardId.Replace("A", "B");
-                        Entity_CardData.Param cardFromData = Managers.Data.cardsDictionary[__id];
+                        Entity_CardData.Param cardFromData = Managers.Data.cardDatabase.param.Find(entry => entry.id == __id);
                         if(cardFromData == null)
                         {
                             _id = __id.Replace("B","N");

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestCardAdd : MonoBehaviour
 {
 
-    private void Start()
+    private void Awake()
     {
         Managers.Data.GetResources();
         Managers.Data.DataIntoDictionary();
@@ -24,8 +24,7 @@ public class TestCardAdd : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.L))
         {
-            // 덱에 있는 카드 정보 출력
-            Managers.Deck.PrintDeck();
+            Managers.Stage.SelectLevel();
         }
         if(Input.GetKeyDown(KeyCode.Q))
         {

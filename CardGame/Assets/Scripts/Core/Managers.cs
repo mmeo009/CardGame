@@ -26,8 +26,10 @@ public class Managers : MonoBehaviour
     DataManager _data = new DataManager();
     PoolManager _pool = new PoolManager();
     ResourceManager _resource = new ResourceManager();
+    StageManager _stage = new StageManager();
     public static DeckManager Deck { get { return Instance?._deck; } }
     public static DataManager Data { get { return Instance?._data;  } }
     public static PoolManager Pool { get { return Instance?._pool; } }
     public static ResourceManager Resource { get { return Instance?._resource; } }
+    public static StageManager Stage { get { return Instance?._stage; } }
 }

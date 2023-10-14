@@ -30,7 +30,7 @@ public class CardData : MonoBehaviour
             int cardMethod = thisCard.usingMethod;
             string cardCC01 = thisCard.cc_1;
             string cardCC02 = thisCard.cc_2;
-            int myMana = player.player.maxMana;
+            int myMana = player.player.currentMana;
             if (cardLevel != 'N')
             {
                 if (cardType == 1)
@@ -43,7 +43,9 @@ public class CardData : MonoBehaviour
                     {
                         if(myMana >= cardCost)
                         {
-
+                            player.CalculatePorbability();
+                            player.player.currentMana -= thisCard.cardCost;
+                            float Probablity = UnityEngine.Random.value * player.player.hitProbability;
                         }
                         else
                         {

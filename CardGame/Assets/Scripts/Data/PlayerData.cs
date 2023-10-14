@@ -120,7 +120,22 @@ public class PlayerData : GenericSingleton<PlayerData>
 
     public void CalculatePorbability()
     {
-
+        if (player.blind == true && player.fury == false)
+        {
+            player.hitProbability = 50;
+        }
+        else if (player.blind == true && player.fury == true)
+        {
+            player.hitProbability = 10;
+        }
+        else if(player.blind == false && player.fury == true)
+        {
+            player.hitProbability = 25;
+        }
+        else
+        {
+            player.hitProbability = 100;
+        }
     }
 
     public void PlayerDie()
@@ -146,4 +161,8 @@ public class Player
     public int fixedDamage;
     public int shield;
     public int hitProbability = 100;
+    public bool blind = false;
+    public bool fury = false;
+    public bool sloth = false;
+    public bool poison = false;
 }

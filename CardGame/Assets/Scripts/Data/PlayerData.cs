@@ -25,7 +25,7 @@ public class PlayerData : GenericSingleton<PlayerData>
         player.fixedDamage = player.fixedPower;
     }
 
-    public void GainingOrLosingValue(string value, int amount)
+    public void GainingOrLosingValue(string value, int amount, bool overHealing = false)
     {
         if (amount < 0)
         {
@@ -73,6 +73,11 @@ public class PlayerData : GenericSingleton<PlayerData>
                     break;
                 case ("currentHealth"):
                     player.currentHealth += amount;
+                    if (overHealing == true)
+                    {
+                            int toShield = player.currentHealth - player.maxHealth;
+                            player.shield += toShield;
+                    }
                     if (player.currentHealth > player.maxHealth)
                     {
                         player.currentHealth = player.maxHealth;
@@ -113,6 +118,11 @@ public class PlayerData : GenericSingleton<PlayerData>
         }
     }
 
+    public void CalculatePorbability()
+    {
+
+    }
+
     public void PlayerDie()
     {
 
@@ -134,4 +144,6 @@ public class Player
     public int adDamage;
     public int apDamage;
     public int fixedDamage;
+    public int shield;
+    public int hitProbability = 100;
 }

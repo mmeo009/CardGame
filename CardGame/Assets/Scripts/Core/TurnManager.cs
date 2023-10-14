@@ -85,7 +85,11 @@ public class TurnManager : MonoBehaviour
     }
     IEnumerator GetDatas()
     {
-        Managers.Deck.AddCardIntoDefaultDeck("101006A", 20);
+        for(int i = 1; i < 11;i++)
+        {
+            string num = i.ToString("000");
+            Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
+        }
         Managers.Deck.DeckSetting();
         // Ä«µå »Ì±â
         yield return new WaitForSeconds(2f);

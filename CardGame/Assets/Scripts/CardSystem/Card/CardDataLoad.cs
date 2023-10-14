@@ -89,6 +89,8 @@ public class CardDataLoad : MonoBehaviour
                 thisCardId = oneCard.id;
                 thisCardLevel = oneCard.level;
                 Managers.Deck.RemoveCardToDeckById(thisCardId, thisCardLevel, 1);
+                cardData.GetData(thisCardId);
+                LoadCardData(thisCardId);
             }
         }
     }

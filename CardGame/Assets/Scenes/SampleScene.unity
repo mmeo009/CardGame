@@ -3328,6 +3328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834652964}
   - component: {fileID: 1834652965}
+  - component: {fileID: 1834652970}
   - component: {fileID: 1834652966}
   - component: {fileID: 1834652968}
   - component: {fileID: 1834652969}
@@ -3431,6 +3432,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTurn: 0
   _isPlayerTurnEnd: 0
+--- !u!114 &1834652970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834652962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543e05a2f410ed84b8ff11ebd77913fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterHp: 0
+  monsterMaxHp: 0
+  monsterAd: 0
+  monsterAp: 0
+  monsterName: 
+  monsterData:
+    id: 
+    monsterName: 
+    baseHp: 0
+    baseAd: 0
+    baseAp: 0
+    pattern: 0
+    statPlus: 0
+  patterns: []
 --- !u!1 &1836249320
 GameObject:
   m_ObjectHideFlags: 0

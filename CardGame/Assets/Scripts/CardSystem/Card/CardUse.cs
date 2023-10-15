@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardData : MonoBehaviour
+public class CardUse : MonoBehaviour
 {
     public Entity_CardData.Param thisCard;
     public PlayerData player;

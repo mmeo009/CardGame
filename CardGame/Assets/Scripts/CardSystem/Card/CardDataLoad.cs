@@ -8,13 +8,13 @@ public class CardDataLoad : MonoBehaviour
 {
     [SerializeField]
     private List<ObjectNameAndParent> thisCardinfo = new List<ObjectNameAndParent>();
-    public CardData cardData;
+    public CardUse cardUse;
     public string thisCardId;
     public int thisCardLevel;
 
     public void FindChilds(GameObject target)
     {
-        cardData = GetComponent<CardData>();
+        cardUse = GetComponent<CardUse>();
         for (int i = 0; i < target.gameObject.transform.childCount; i++)
         {
             Transform childTransform = target.gameObject.transform.GetChild(i);
@@ -89,7 +89,7 @@ public class CardDataLoad : MonoBehaviour
                 thisCardId = oneCard.id;
                 thisCardLevel = oneCard.level;
                 Managers.Deck.RemoveCardToDeckById(thisCardId, thisCardLevel, 1);
-                cardData.GetData(thisCardId);
+                cardUse.GetData(thisCardId);
                 LoadCardData(thisCardId);
             }
         }
@@ -110,7 +110,7 @@ public class CardDataLoad : MonoBehaviour
                 thisCardLevel = level;
             }
             LoadCardData(thisCardId);
-            cardData.GetData(thisCardId);
+            cardUse.GetData(thisCardId);
         }
         else
         {

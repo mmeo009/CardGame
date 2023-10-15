@@ -12,21 +12,31 @@ public class StageManager
         DEMON,
         TARVERN,
         FORGE,
-        MIDDLEBOSS,
         BOSS
     }
     public Stage stage = Stage.MAIN;
     public int stageNum;
     public int battleStageCount;
-    public int stronger;
+    public int strongDegree = 1;
+    public int battleStageType = 1;
+    public int level = 2;
     public void SelectLevel()
     {
         if(stageNum == 0)
         {
+            //battleStageType = UnityEngine.Random.Range(1, 4);
             stage = Stage.BATTLE;
             battleStageCount++;
+            if (level == 1)
+            {
+                level = 2;
+            }
+            else
+            {
+                level = 1;
+            }
         }
-        else if((stageNum < 5 && battleStageCount > 3)||(stageNum != 5 && stageNum < 11 && battleStageCount > 6))
+        else if(stageNum < 5 && battleStageCount > 2)
         {
             int st = UnityEngine.Random.Range(0, 4);
             switch (st)
@@ -45,7 +55,7 @@ public class StageManager
                     break;
             }
         }
-        else if((stageNum < 5 && battleStageCount < 3) || (stageNum != 5 && stageNum < 11 && battleStageCount < 6))
+        else if(stageNum < 3 && battleStageCount <= 2)
         {
             int st = UnityEngine.Random.Range(0, 5);
             switch (st)
@@ -68,24 +78,39 @@ public class StageManager
                     break;
             }
         }
-        else if((stageNum < 5 && battleStageCount < 2) || (stageNum != 5 && stageNum < 11 && battleStageCount < 4))
+        else if (stageNum < 5 && battleStageCount < 3)
         {
             stage = Stage.BATTLE;
             battleStageCount++;
         }
         else if(stageNum == 5)
         {
-            stage = Stage.MIDDLEBOSS;
-        }
-        else if(stageNum == 11)
-        {
             stage = Stage.BOSS;
             stageNum = -1;
             battleStageCount = 0;
-            stronger++;
+            strongDegree++;
         }
         stageNum++;
-        Debug.Log(stage);
-        Debug.Log(stageNum);
+        Debug.Log("Stage : " + stage
+                  + " StageNum : " + stageNum
+                  + " battleStageType : " + battleStageType
+                  + " battleStageCount : " + battleStageCount
+                  + " Level : " + level);
+
+        if(stage == Stage.BOSS || stage == Stage.BATTLE)
+        {
+            BattleStage();
+        }
+    }
+    public void BattleStage()
+    {
+        if(stage == Stage.BOSS)
+        {
+            MonsterData.Instance.LoadMonsterData(level, battleStageType, strongDegree, true);
+        }
+        else
+        {
+            MonsterData.Instance.LoadMonsterData(level, battleStageType, strongDegree);
+        }
     }
 }

@@ -1001,7 +1001,7 @@ MonoBehaviour:
   - id: 102016N
     itemCode: Suit_002
     cardName: "\uB2E4\uB78C\uC950 \uC7AC\uB2E8\uC18C"
-    cardType: 2
+    cardType: 0
     usingMethod: 0
     cardCost: 0
     element: NONE

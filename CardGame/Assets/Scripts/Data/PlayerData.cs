@@ -25,7 +25,7 @@ public class PlayerData : GenericSingleton<PlayerData>
         player.fixedDamage = player.fixedPower;
     }
 
-    public void GainingOrLosingValue(string value, int amount, bool overHealing = false)
+    public void GainingOrLosingValue(string value, int amount = 0, bool overHealing = false)
     {
         if (amount < 0)
         {

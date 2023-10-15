@@ -45,7 +45,22 @@ public class CardUse : MonoBehaviour
                         {
                             player.CalculatePorbability();
                             player.player.currentMana -= thisCard.cardCost;
-                            float Probablity = UnityEngine.Random.value * player.player.hitProbability;
+                            int num = UnityEngine.Random.Range(0, 100);
+                            if(num <= player.player.hitProbability)
+                            {
+                                if(thisCard.adPower != 0)
+                                {
+                                    MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);
+                                }
+                                else if(thisCard.apPower != 0)
+                                {
+                                    MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
+                                }
+                            }
+                            else
+                            {
+                                Debug.Log("°¨³ªºø");
+                            }
                         }
                         else
                         {
@@ -56,7 +71,24 @@ public class CardUse : MonoBehaviour
                     {
                         if (myMana >= cardCost)
                         {
-
+                            player.CalculatePorbability();
+                            player.player.currentMana -= thisCard.cardCost;
+                            int num = UnityEngine.Random.Range(0, 100);
+                            if (num <= player.player.hitProbability/2)
+                            {
+                                if (thisCard.adPower != 0)
+                                {
+                                    MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);
+                                }
+                                else if (thisCard.apPower != 0)
+                                {
+                                    MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
+                                }
+                            }
+                            else
+                            {
+                                Debug.Log("°¨³ªºø");
+                            }
                         }
                         else
                         {
@@ -67,7 +99,40 @@ public class CardUse : MonoBehaviour
                     {
                         if (myMana >= cardCost)
                         {
-
+                            player.CalculatePorbability();
+                            player.player.currentMana -= thisCard.cardCost;
+                            int num = UnityEngine.Random.Range(0, 100);
+                            if (num <= player.player.hitProbability)
+                            {
+                                if (thisCard.adPower != 0)
+                                {
+                                    MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);
+                                    if (num/2 <= player.player.hitProbability)
+                                    {
+                                        player.GainingOrLosingValue("currentHealth", (player.player.adDamage + thisCard.adPower)/2);
+                                    }
+                                    else
+                                    {
+                                        Debug.Log("³ªÇÑÅ× °¨³ªºø");
+                                    }
+                                }
+                                else if (thisCard.apPower != 0)
+                                {
+                                    MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
+                                    if (num / 2 <= player.player.hitProbability)
+                                    {
+                                        player.GainingOrLosingValue("currentHealth", (player.player.apDamage + thisCard.apPower) / 2);
+                                    }
+                                    else
+                                    {
+                                        Debug.Log("³ªÇÑÅ× °¨³ªºø");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Debug.Log("°¨³ªºø");
+                            }
                         }
                         else
                         {

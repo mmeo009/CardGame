@@ -134,21 +134,20 @@ public class DeckManager
 
         if (foundCard != null)
         {
-            // 덱에 이미 같은 카드가 있는지 확인
-            CardInformation existingEntry = DeckData.Instance.deck.Find(entry => entry.id == cardId);
-
-            if (existingEntry != null)
+            if (isInf == true)
             {
-                if(isInf == true)
+                CardInformation existingInfEntry = DeckData.Instance.deck.Find(entry => entry.id == cardId);
+
+                if (existingInfEntry != null)
                 {
-                    if(existingEntry.level == _level)
+                    if (existingInfEntry.level == _level)
                     {
-                        // 이미 있는 카드라면 개수를 증가
-                        existingEntry.count += cardCount;
+                        // 이미 있는 카드일 경우 카운트 추가.
+                        existingInfEntry.count += cardCount;
                     }
                     else
                     {
-                        // 새로운 카드라면 덱에 추가
+                        // 아이디는 같지만 레벨이 다를경우 클래스 추가
                         CardInformation newEntry = new CardInformation
                         {
                             id = cardId,
@@ -160,20 +159,37 @@ public class DeckManager
                 }
                 else
                 {
-                    // 이미 있는 카드라면 개수를 증가
-                    existingEntry.count += cardCount;
+                    // 새로운 카드에 새로운 레벨이면 새 카드 추가
+                    CardInformation newEntry = new CardInformation
+                    {
+                        id = cardId,
+                        count = cardCount,
+                        level = _level
+                    };
+                    DeckData.Instance.deck.Add(newEntry);
                 }
             }
             else
             {
-                // 새로운 카드라면 덱에 추가
-                CardInformation newEntry = new CardInformation
+                // 덱에 이미 같은 카드가 있는지 확인
+                CardInformation existingEntry = DeckData.Instance.deck.Find(entry => entry.id == cardId);
+
+                if (existingEntry != null)
                 {
-                    id = cardId,
-                    count = cardCount,
-                    level = level
-                };
-                DeckData.Instance.deck.Add(newEntry);
+                    // 이미 있는 카드라면 개수를 증가
+                    existingEntry.count += cardCount;
+                }
+                else
+                {
+                    // 새로운 카드라면 덱에 추가
+                    CardInformation newEntry = new CardInformation
+                    {
+                        id = cardId,
+                        count = cardCount,
+                        level = level
+                    };
+                    DeckData.Instance.deck.Add(newEntry);
+                }
             }
 
             // 추가된 카드 정보를 출력

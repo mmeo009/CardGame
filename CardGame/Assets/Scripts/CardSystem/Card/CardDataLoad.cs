@@ -283,6 +283,24 @@ public class CardDataLoad : MonoBehaviour
                 case 2:
                     ObjectNameAndParent DF = thisCardinfo.Find(name => name.name == "DF");
                     ObjectNameAndParent HP = thisCardinfo.Find(name => name.name == "HP");
+                    if (DF != null && HP != null)
+                    {
+                        if(cardData.adPower != 0)
+                        {
+                            DF.thisObject.SetActive(true);
+                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.adPower.ToString();
+                        }
+                        else if(cardData.apPower != 0)
+                        {
+                            HP.thisObject.SetActive(true);
+                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.apPower.ToString();
+                        }
+                        else if(cardData.fixedPower != 0)
+                        {
+                            HP.thisObject.SetActive(true);
+                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.fixedPower.ToString();
+                        }
+                    }
                     break;
                 case 3:
                     ObjectNameAndParent SP = thisCardinfo.Find(name => name.name == "SP");

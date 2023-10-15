@@ -73,4 +73,13 @@ public class MonsterData : GenericSingleton<MonsterData>
             }
         }
     }
+
+    public void GetDamage(int amount)
+    {
+        monsterHp -= amount;
+        if(monsterHp <= amount)
+        {
+            Debug.Log("±ú²¿´ß");
+        }
+    }
 }

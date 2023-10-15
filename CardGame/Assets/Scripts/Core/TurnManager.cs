@@ -28,7 +28,12 @@ public class TurnManager : GenericSingleton<TurnManager>
             _isPlayerTurnEnd = value;
         }
     }
-
+    private void Awake()
+    {
+        Managers.Data.GetResources();
+        Managers.Data.DataIntoDictionary();
+        DrawCard.Instance.TransformChack();
+    }
     void Start()
     {
         // 게임을 시작할 때 초기 턴 상태 = 카드 드로우
@@ -85,13 +90,20 @@ public class TurnManager : GenericSingleton<TurnManager>
     }
     IEnumerator GetDatas()
     {
-        for(int i = 1; i < 11;i++)
+        /*for(int i = 1; i < 11; i++)
         {
             string num = i.ToString("000");
             Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
         }
+        for (int i = 12; i < 22; i++)
+        {
+            string num = i.ToString("000");
+            Managers.Deck.AddCardIntoDefaultDeck($"102{num}A", 4);
+        }*/
+        Managers.Deck.AddCardIntoDefaultDeck("102016A", 8);
         Managers.Deck.DeckSetting();
-        // 카드 뽑기
+        Managers.Stage.SelectLevel();           //나중에는 필요 없음
+        Managers.Stage.BattleStage();
         yield return new WaitForSeconds(2f);
     }
 

@@ -12,15 +12,15 @@ public class DeckManager
 
     public void ShowRemainingCards()
     {
-        GameObject _deckInfo = GameObject.Find("RemainingCards");
-        if(_deckInfo != null)
+        if(deckInfo != null)
         {
-            deckInfo = _deckInfo;
             deckInfo.GetComponent<TMP_Text>().text = DeckData.Instance.amountOfCardsInDeck.ToString();
         }
         else
         {
-            Debug.Log("숫자를 표시할 수 없어");
+            GameObject _deckInfo = GameObject.Find("RemainingCards");
+            deckInfo = _deckInfo;
+            deckInfo.GetComponent<TMP_Text>().text = DeckData.Instance.amountOfCardsInDeck.ToString();
         }
     }
     // DefaultDeck 관련 시작

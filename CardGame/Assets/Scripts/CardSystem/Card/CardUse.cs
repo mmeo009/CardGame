@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class CardUse : MonoBehaviour
@@ -17,13 +18,17 @@ public class CardUse : MonoBehaviour
         {
             Debug.Log("해당 아이디의 카드가 게임에 존재하지 않습니다.");
         }
+        player = PlayerData.Instance;
     }
     public void UsingCard()
     {
-        player = PlayerData.Instance;
+        if(player == null)
+        {
+            player = PlayerData.Instance;
+        }
         if (thisCard != null)
         {
-            int cardType = thisCard.id[3];
+            int cardType = (int)Char.GetNumericValue(thisCard.id[2]);
             char cardLevel = thisCard.id[thisCard.id.Length - 1];
             int cardPlusData = thisCard.stat_05;
             int cardCost = thisCard.cardCost;
@@ -56,11 +61,13 @@ public class CardUse : MonoBehaviour
                                 {
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                 }
+                                Debug.Log(num +"/"+ player.player.hitProbability);
                             }
                             else
                             {
                                 Debug.Log("감나빗");
                             }
+                            Destroy(gameObject);
                         }
                         else
                         {
@@ -84,11 +91,13 @@ public class CardUse : MonoBehaviour
                                 {
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                 }
+                                Debug.Log(num + "/" + player.player.hitProbability / 2);
                             }
                             else
                             {
                                 Debug.Log("감나빗");
                             }
+                            Destroy(gameObject);
                         }
                         else
                         {
@@ -128,11 +137,13 @@ public class CardUse : MonoBehaviour
                                         Debug.Log("나한테 감나빗");
                                     }
                                 }
+                                Debug.Log(num + "/" + player.player.hitProbability);
                             }
                             else
                             {
                                 Debug.Log("감나빗");
                             }
+                            Destroy(gameObject);
                         }
                         else
                         {
@@ -152,6 +163,10 @@ public class CardUse : MonoBehaviour
                 {
 
                 }
+            }
+            else
+            {
+                Debug.Log("돌아와");
             }
         }
         else

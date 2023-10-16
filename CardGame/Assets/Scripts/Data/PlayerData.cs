@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerData : GenericSingleton<PlayerData>
 {
     public Player player = new Player();
     public GameObject[] cards;
+    public GameObject mana;
+    public GameObject hp;
     private void Awake()
     {
         if (player.currentHealth == 0)
@@ -15,6 +19,30 @@ public class PlayerData : GenericSingleton<PlayerData>
         if(player.currentMana == 0)
         {
             player.currentMana = player.maxMana;
+        }
+        ShowMyInfo();
+    }
+    public void ShowMyInfo()
+    {
+        if (mana != null)
+        {
+            mana.transform.GetChild(mana.transform.childCount - 1).GetComponent<TMP_Text>().text = player.currentMana + "/" + player.maxMana;
+        }
+        else
+        {
+            GameObject _mana = GameObject.Find("RemainingMana");
+            mana = _mana;
+            mana.transform.GetChild(mana.transform.childCount - 1).GetComponent<TMP_Text>().text = player.currentMana + "/" + player.maxMana;
+        }
+
+        if (hp != null)
+        {
+            hp.GetComponent<Image>();
+        }
+        else
+        {
+            GameObject _hp = GameObject.Find("PlayerHP");
+            hp = _hp;
         }
     }
 
@@ -84,10 +112,17 @@ public class PlayerData : GenericSingleton<PlayerData>
                     }
                     break;
                 case ("currentMana"):
-                    player.currentHealth += amount;
-                    if(player.currentMana > player.maxMana)
+                    if(amount == 0)
                     {
                         player.currentMana = player.maxMana;
+                    }
+                    else
+                    {
+                        player.currentMana += amount;
+                        if (player.currentMana > player.maxMana)
+                        {
+                            player.currentMana = player.maxMana;
+                        }
                     }
                     break;
                 case ("maxHealth"):
@@ -100,6 +135,7 @@ public class PlayerData : GenericSingleton<PlayerData>
         }
         CalculatingDamage();
         ValuesAreChanged();
+        ShowMyInfo();
     }
     public void ValuesAreChanged()
     {

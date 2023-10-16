@@ -573,7 +573,7 @@ MonoBehaviour:
     stat_01: 0
     stat_02: 0
     stat_03: 2
-    stat_04: 0
+    stat_04: 2
     stat_05: 0
   - id: 101009C
     itemCode: Chicken_003

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MonsterData : GenericSingleton<MonsterData>
@@ -18,7 +19,7 @@ public class MonsterData : GenericSingleton<MonsterData>
         monsterData = null;
         patterns.Clear();
         List<Entity_MonsteraData.Param> monsters = new List<Entity_MonsteraData.Param>();
-        foreach(Entity_MonsteraData.Param _monsterData in Managers.Data.monsterDatabase.param)
+        foreach(Entity_MonsteraData.Param _monsterData in Managers.Data.monsterDatabase.param) // 몬스터 스크립터블 옵젝에 있는 데이터들을 가져온다.
         {
             string id = _monsterData.id;
             char no3 = id[2];
@@ -82,4 +83,34 @@ public class MonsterData : GenericSingleton<MonsterData>
             Debug.Log("깨꼬닭");
         }
     }
+    public void PickPattern(string id = null)
+    {
+        Entity_PatternData.Param nextPattern = new Entity_PatternData.Param();
+        if (id != null)
+        {
+            nextPattern = null;
+            
+            for (int i = 0;i < patterns.Count; i++)
+            {
+                if(patterns[i].patternId == id)
+                {
+                    nextPattern = patterns[i];
+                }
+            }
+            if(nextPattern == null)
+            {
+                    Debug.Log($"{id}의 패턴이 존재하지 않습니다.");
+                    int A = UnityEngine.Random.Range(0, patterns.Count);
+                    nextPattern = patterns[A];
+            }
+        }
+        else
+        {
+            int A = UnityEngine.Random.Range(0, patterns.Count);
+            nextPattern = patterns[A];
+
+        }
+        Debug.Log(nextPattern.patternId);
+    }
+
 }

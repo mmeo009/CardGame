@@ -153,6 +153,71 @@ public class CardUse : MonoBehaviour
                 }
                 else if (cardType == 2)
                 {
+                    if (cardMethod == 0)
+                    {
+                        Debug.Log("아무 능력도 없당");
+                    }
+                    else if (cardMethod == 1)
+                    {
+                        if (myMana >= cardCost)
+                        {
+                            player.GainingOrLosingValue("shield", (player.player.apPower* thisCard.adPower));
+                            Destroy(gameObject);
+                        }
+                        else
+                        {
+                            Debug.Log("마나가 없어서 쓸 수 없다");
+                        }
+                    }
+                    else if(cardMethod == 2)
+                    {
+                        if (myMana >= cardCost)
+                        {
+                            player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.apPower));
+                            Destroy(gameObject);
+                        }
+                        else
+                        {
+                            Debug.Log("마나가 없어서 쓸 수 없다");
+                        }
+                    }
+                    else if (cardMethod == 3)
+                    {
+                        if (myMana >= cardCost)
+                        {
+                            player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.apPower), true);
+                            Destroy(gameObject);
+                        }
+                        else
+                        {
+                            Debug.Log("마나가 없어서 쓸 수 없다");
+                        }
+                    }
+                    else if (cardMethod == 4)
+                    {
+                        if (myMana >= cardCost)
+                        {
+                            player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.fixedPower));
+                            player.GainingOrLosingValue("temporary");
+                            Destroy(gameObject);
+                        }
+                        else
+                        {
+                            Debug.Log("마나가 없어서 쓸 수 없다");
+                        }
+                    }
+                    else if(cardMethod == 5)
+                    {
+                        if (myMana >= cardCost)
+                        {
+                            player.GainingOrLosingValue("god", 0, true);
+                            Destroy(gameObject);
+                        }
+                        else
+                        {
+                            Debug.Log("마나가 없어서 쓸 수 없다");
+                        }
+                    }
 
                 }
                 else if (cardType == 3)

@@ -81,6 +81,9 @@ public class PlayerData : GenericSingleton<PlayerData>
                 case ("currentMana"):
                     player.currentHealth -= amount;
                     break;
+                case ("shield"):
+                    player.shield -= amount;
+                    break;
             }
         }
         else if(amount >= 0)
@@ -130,6 +133,73 @@ public class PlayerData : GenericSingleton<PlayerData>
                     break;
                 case ("maxMana"):
                     player.maxMana += amount;
+                    break;
+                case ("shield"):
+                    player.shield += amount;
+                    break;
+                case ("blind"):
+                    if(overHealing == true)
+                    {
+                        player.blind = true;
+                    }
+                    else
+                    {
+                        player.blind = false;
+                    }
+                    break;
+                case ("fury"):
+                    if (overHealing == true)
+                    {
+                        player.fury = true;
+                    }
+                    else
+                    {
+                        player.fury = false;
+                    }
+                    break;
+                case ("sloth"):
+                    if (overHealing == true)
+                    {
+                        player.sloth = true;
+                    }
+                    else
+                    {
+                        player.sloth = false;
+                    }
+                    break;
+                case ("poison"):
+                    if (overHealing == true)
+                    {
+                        player.poison = true;
+                    }
+                    else
+                    {
+                        player.poison = false;
+                    }
+                    break;
+                case ("god"):
+                    if (overHealing == true)
+                    {
+                        player.god = true;
+                    }
+                    else
+                    {
+                        player.god = false;
+                    }
+                    break;
+                case ("temporary"):
+                    if(player.temporary >= 0)
+                    {
+                        player.temporary = 2;
+                    }
+                    else if(player.temporary < 0)
+                    {
+                        player.temporary = 0;
+                    }
+                    else
+                    {
+                        player.temporary-=1;
+                    }
                     break;
             }
         }
@@ -201,4 +271,6 @@ public class Player
     public bool fury = false;
     public bool sloth = false;
     public bool poison = false;
+    public bool god = false;
+    public int temporary = 0;
 }

@@ -198,7 +198,8 @@ public class CardDataLoad : MonoBehaviour
                     .Replace("[had]", $"{(PlayerData.Instance.player.adDamage + cardData.adPower) / 2}")
                     .Replace("[hap]", $"{(PlayerData.Instance.player.apDamage + cardData.adPower) / 2}")
                     .Replace("[hfd]", $"{(PlayerData.Instance.player.fixedDamage + cardData.adPower) / 2}")
-                    .Replace("[ra]", $"{thisCardLevel}");
+                    .Replace("[ra]", $"{thisCardLevel}")
+                    .Replace("[fdd]", $"{(cardData.fixedPower + PlayerData.Instance.player.apDamage) / 2}");
 
                 cardText.thisObject.GetComponent<TMP_Text>().text = _text;
             }

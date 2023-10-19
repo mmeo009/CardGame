@@ -161,6 +161,7 @@ public class CardUse : MonoBehaviour
                     {
                         if (myMana >= cardCost)
                         {
+                            player.player.currentMana -= thisCard.cardCost;
                             player.GainingOrLosingValue("shield", (player.player.apPower* thisCard.adPower));
                             Destroy(gameObject);
                         }
@@ -173,6 +174,7 @@ public class CardUse : MonoBehaviour
                     {
                         if (myMana >= cardCost)
                         {
+                            player.player.currentMana -= thisCard.cardCost;
                             player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.apPower));
                             Destroy(gameObject);
                         }
@@ -185,6 +187,7 @@ public class CardUse : MonoBehaviour
                     {
                         if (myMana >= cardCost)
                         {
+                            player.player.currentMana -= thisCard.cardCost;
                             player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.apPower), true);
                             Destroy(gameObject);
                         }
@@ -197,8 +200,9 @@ public class CardUse : MonoBehaviour
                     {
                         if (myMana >= cardCost)
                         {
+                            player.player.currentMana -= thisCard.cardCost;
                             player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.fixedPower));
-                            player.GainingOrLosingValue("temporary");
+                            player.GainingOrLosingValue("temporary", 2, false, (player.player.apPower * thisCard.fixedPower));
                             Destroy(gameObject);
                         }
                         else
@@ -210,6 +214,7 @@ public class CardUse : MonoBehaviour
                     {
                         if (myMana >= cardCost)
                         {
+                            player.player.currentMana -= thisCard.cardCost;
                             player.GainingOrLosingValue("god", 0, true);
                             Destroy(gameObject);
                         }
@@ -226,7 +231,18 @@ public class CardUse : MonoBehaviour
                 }
                 else if (cardType == 4)
                 {
-
+                    if(cardMethod == 0)
+                    {
+                        if(myMana >= cardCost)
+                        {
+                            player.player.currentMana -= thisCard.cardCost;
+                            Destroy(gameObject);
+                        }
+                        else
+                        {
+                            Debug.Log("마나가 없어서 쓸 수 없다");
+                        }
+                    }
                 }
             }
             else

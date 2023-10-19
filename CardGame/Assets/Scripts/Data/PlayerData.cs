@@ -53,7 +53,7 @@ public class PlayerData : GenericSingleton<PlayerData>
         player.fixedDamage = player.fixedPower;
     }
 
-    public void GainingOrLosingValue(string value, int amount = 0, bool overHealing = false)
+    public void GainingOrLosingValue(string value, int amount = 0, bool overHealing = false, int ccDamage = 2)
     {
         if (amount < 0)
         {
@@ -84,6 +84,64 @@ public class PlayerData : GenericSingleton<PlayerData>
                 case ("shield"):
                     player.shield -= amount;
                     break;
+                case ("poison"):
+                    Player.CC poison = player.playerCc.Find(cc => cc.ccName == "poison");
+                    if (poison != null)
+                    {
+                        if (poison.remainingTurn <= 0)
+                        {
+                            player.playerCc.Remove(poison);
+                        }
+                        player.currentHealth -= poison.damage;
+                        poison.remainingTurn -= amount;
+                    }
+                    break;
+                case ("temporary"):
+                    Player.CC temporary = player.playerCc.Find(cc => cc.ccName == "temporary");
+                    if (temporary != null)
+                    {
+                        if (temporary.remainingTurn <= 0)
+                        {
+                            player.playerCc.Remove(temporary);
+                        }
+                        player.currentHealth -= temporary.damage / 2;
+                        temporary.remainingTurn -= amount;
+                    }
+                    break;
+                case ("blind"):
+                    Player.CC blind = player.playerCc.Find(cc => cc.ccName == "blind");
+                    if (blind != null)
+                    {
+                        if(blind.remainingTurn <= 0)
+                        {
+                            player.playerCc.Remove(blind);
+                        }
+                        blind.remainingTurn -= amount;
+                    }
+                    break;
+                case ("fury"):
+                    Player.CC fury = player.playerCc.Find(cc => cc.ccName == "fury");
+                    if (fury != null)
+                    {
+                        if (fury.remainingTurn <= 0)
+                        {
+                            player.playerCc.Remove(fury);
+                        }
+                        fury.remainingTurn -= amount;
+                    }
+                    break;
+                case ("sloth"):
+                    Player.CC sloth = player.playerCc.Find(cc => cc.ccName == "sloth");
+                    if (sloth != null)
+                    {
+                        if (sloth.remainingTurn <= 0)
+                        {
+                            player.playerCc.Remove(sloth);
+                        }
+                        sloth.remainingTurn -= amount;
+                    }
+                    break;
+
             }
         }
         else if(amount >= 0)
@@ -138,43 +196,101 @@ public class PlayerData : GenericSingleton<PlayerData>
                     player.shield += amount;
                     break;
                 case ("blind"):
-                    if(overHealing == true)
+                    Player.CC blind = player.playerCc.Find(cc => cc.ccName == "blind");
+                    if (blind == null)
                     {
-                        player.blind = true;
+                        Player.CC newCc = new Player.CC
+                        {
+                            ccName = "blind",
+                            remainingTurn = amount,
+                            damage = 0
+                        };
+                        player.playerCc.Add(newCc);
                     }
                     else
                     {
-                        player.blind = false;
+                        blind.remainingTurn += amount;
                     }
                     break;
                 case ("fury"):
-                    if (overHealing == true)
+                    Player.CC fury = player.playerCc.Find(cc => cc.ccName == "fury");
+                    if (fury == null)
                     {
-                        player.fury = true;
+                        Player.CC newCc = new Player.CC
+                        {
+                            ccName = "fury",
+                            remainingTurn = amount,
+                            damage = 0
+                        };
+                        player.playerCc.Add(newCc);
                     }
                     else
                     {
-                        player.fury = false;
+                        fury.remainingTurn += amount;
                     }
                     break;
                 case ("sloth"):
-                    if (overHealing == true)
+                    Player.CC sloth = player.playerCc.Find(cc => cc.ccName == "sloth");
+                    if (sloth == null)
                     {
-                        player.sloth = true;
+                        Player.CC newCc = new Player.CC
+                        {
+                            ccName = "sloth",
+                            remainingTurn = amount,
+                            damage = 0
+                        };
+                        player.playerCc.Add(newCc);
                     }
                     else
                     {
-                        player.sloth = false;
+                        sloth.remainingTurn += amount;
                     }
                     break;
                 case ("poison"):
-                    if (overHealing == true)
+                    Player.CC poison = player.playerCc.Find(cc => cc.ccName == "poison");
+                    if(poison == null)
                     {
-                        player.poison = true;
+                        Player.CC newCc = new Player.CC
+                        {
+                            ccName = "poison",
+                            remainingTurn = amount,
+                            damage = ccDamage
+                        };
+                        player.playerCc.Add(newCc);
                     }
                     else
                     {
-                        player.poison = false;
+                        poison.remainingTurn += amount/2;
+                        if(poison.damage != ccDamage)
+                        {
+                            poison.damage = ccDamage;
+                        }
+                    }
+                    break;
+                case ("temporary"):
+                    Player.CC temporary = player.playerCc.Find(cc => cc.ccName == "temporary");
+                    if(temporary == null)
+                    {
+                        Player.CC newCc = new Player.CC
+                        {
+                            ccName = "temporary",
+                            remainingTurn = amount,
+                            damage = ccDamage
+                        };
+                        player.playerCc.Add(newCc);
+                    }
+                    else
+                    {
+                        if(temporary.remainingTurn == 2)
+                        {
+                            temporary.damage += ccDamage;
+                        }
+                        else if(temporary.remainingTurn == 1)
+                        {
+                            temporary.remainingTurn = 2;
+                            player.currentHealth -= temporary.damage / 2;
+                            temporary.damage = ccDamage;
+                        }
                     }
                     break;
                 case ("god"):
@@ -185,20 +301,6 @@ public class PlayerData : GenericSingleton<PlayerData>
                     else
                     {
                         player.god = false;
-                    }
-                    break;
-                case ("temporary"):
-                    if(player.temporary >= 0)
-                    {
-                        player.temporary = 2;
-                    }
-                    else if(player.temporary < 0)
-                    {
-                        player.temporary = 0;
-                    }
-                    else
-                    {
-                        player.temporary-=1;
                     }
                     break;
             }
@@ -223,25 +325,37 @@ public class PlayerData : GenericSingleton<PlayerData>
             }
         }
     }
+    public void CCChange()
+    {
+        GainingOrLosingValue("poison", -1);
+        GainingOrLosingValue("temporary", -1);
+        GainingOrLosingValue("blind", -1);
+        GainingOrLosingValue("fury", -1);
+        GainingOrLosingValue("sloth", -1);
+        GainingOrLosingValue("god", 0, false);
+    }
 
     public void CalculatePorbability()
     {
-        if (player.blind == true && player.fury == false)
+        Player.CC blind = player.playerCc.Find(cc => cc.ccName == "blind");
+        Player.CC fury = player.playerCc.Find(cc => cc.ccName == "fury");
+        Player.CC sloth = player.playerCc.Find(cc => cc.ccName == "sloth");
+        if (blind != null && fury == null)
         {
             player.hitProbability = 50;
         }
-        else if (player.blind == true && player.fury == true)
+        else if(blind != null && fury != null)
         {
             player.hitProbability = 10;
         }
-        else if(player.blind == false && player.fury == true)
+        else if(blind == null && fury != null)
         {
             player.hitProbability = 25;
         }
         else
         {
             player.hitProbability = 100;
-        }
+        } 
     }
 
     public void PlayerDie()
@@ -262,15 +376,18 @@ public class Player
     public int currentHealth;           // 현재 체력
     public int maxMana = 3;             // 최대 마나
     public int currentMana;             // 현재 마나
-    public int adDamage;
-    public int apDamage;
-    public int fixedDamage;
-    public int shield;
-    public int hitProbability = 100;
-    public bool blind = false;
-    public bool fury = false;
-    public bool sloth = false;
-    public bool poison = false;
-    public bool god = false;
-    public int temporary = 0;
+    public int adDamage;                // 물리 공격
+    public int apDamage;                // 마법 공격
+    public int fixedDamage;             // 고정 공격
+    public int shield;                  // 방어력
+    public int hitProbability = 100;    // 명중률
+    public bool god = false;            // 무적
+    public List<CC> playerCc = new List<CC>();
+    [System.Serializable]
+    public class CC
+    {
+        public string ccName;
+        public int remainingTurn;
+        public int damage = 0;
+    }
 }

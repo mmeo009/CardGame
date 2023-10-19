@@ -1433,3 +1433,337 @@ MonoBehaviour:
     stat_03: 0
     stat_04: 0
     stat_05: 0
+  - id: 103023A
+    itemCode: Sprint_001
+    cardName: "\uC9C8\uC8FC"
+    cardType: 3
+    usingMethod: 1
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "\uCE74\uB4DC\uB97C \uD55C\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103023B
+    itemCode: Sprint_002
+    cardName: "\uC804\uB825 \uC9C8\uC8FC"
+    cardType: 3
+    usingMethod: 1
+    cardCost: 1
+    element: NONE
+    rarity: 2
+    text: "\uCE74\uB4DC\uB97C \uD55C\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103023C
+    itemCode: Sprint_003
+    cardName: "\uC21C\uAC04 \uC774\uB3D9"
+    cardType: 3
+    usingMethod: 1
+    cardCost: 0
+    element: NONE
+    rarity: 2
+    text: "\uCE74\uB4DC\uB97C \uD55C\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103024A
+    itemCode: Meditation_001
+    cardName: "\uBA85\uC0C1"
+    cardType: 3
+    usingMethod: 2
+    cardCost: 3
+    element: NONE
+    rarity: 2
+    text: "3 \uD134\uB3D9\uC548 \uC790\uC2E0\uC744 \uB098\uD0DC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: SLOTH
+    cc_2: NONE
+    stat_01: 3
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103024B
+    itemCode: Meditation_002
+    cardName: "\uB9C8\uC74C\uC758 \uC548\uC815"
+    cardType: 3
+    usingMethod: 2
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "2 \uD134\uB3D9\uC548 \uC790\uC2E0\uC744 \uB098\uD0DC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: SLOTH
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103024C
+    itemCode: Meditation_003
+    cardName: "\uD3C9\uD654"
+    cardType: 3
+    usingMethod: 2
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "1 \uD134\uB3D9\uC548 \uC790\uC2E0\uC744 \uB098\uD0DC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4E4\uACE0 \uC801\uC744 3 \uD134 \uB3D9\uC548 \uB098\uD0DC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: SLOTH
+    cc_2: SLOTH
+    stat_01: 1
+    stat_02: 0
+    stat_03: 3
+    stat_04: 0
+    stat_05: 0
+  - id: 103025A
+    itemCode: Excitement_001
+    cardName: "\uD765\uBD84"
+    cardType: 3
+    usingMethod: 3
+    cardCost: 2
+    element: NONE
+    rarity: 3
+    text: "2 \uD134 \uB3D9\uC548 \uC790\uC2E0\uC744 \uD3ED\uC8FC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: FURY
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103025B
+    itemCode: Excitement_002
+    cardName: "\uAD11\uB780"
+    cardType: 3
+    usingMethod: 3
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "2 \uD134 \uB3D9\uC548 \uC790\uC2E0\uACFC \uC801\uC744 \uD3ED\uC8FC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: FURY
+    cc_2: FURY
+    stat_01: 2
+    stat_02: 0
+    stat_03: 2
+    stat_04: 0
+    stat_05: 0
+  - id: 103025C
+    itemCode: Excitement_003
+    cardName: "\uAE30\uC120\uC81C\uC555"
+    cardType: 3
+    usingMethod: 3
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "2 \uD134 \uB3D9\uC548 \uC790\uC2E0\uC744 \uD3ED\uC8FC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4E4\uACE0 \uC801\uC744 \uD750\uB9BC \uC0C1\uD0DC\uB85C \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: FURY
+    cc_2: BLIND
+    stat_01: 2
+    stat_02: 0
+    stat_03: 2
+    stat_04: 0
+    stat_05: 0
+  - id: 103026A
+    itemCode: Mana_001
+    cardName: "\uC0B0\uC18D\uC758 \uC0D8\uBB3C"
+    cardType: 3
+    usingMethod: 4
+    cardCost: 1
+    element: NONE
+    rarity: 3
+    text: "\uB371\uC5D0 \uD658\uAC01 \uCE74\uB4DC 4\uC7A5\uC744 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4.
+      \uB2E4\uC74C\uD134\uC5D0 \uB9C8\uB098 2 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: MANA
+    cc_2: HALLUCINATION
+    stat_01: 0
+    stat_02: 0
+    stat_03: 4
+    stat_04: 0
+    stat_05: 2
+  - id: 103026B
+    itemCode: Mana_002
+    cardName: "\uC694\uC815\uC758 \uC0D8\uBB3C"
+    cardType: 3
+    usingMethod: 4
+    cardCost: 0
+    element: NONE
+    rarity: 3
+    text: "\uB371\uC5D0 \uD658\uAC01 \uCE74\uB4DC 4\uC7A5\uC744 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4.
+      \uB2E4\uC74C\uD134\uC5D0 \uB9C8\uB098 2 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: MANA
+    cc_2: HALLUCINATION
+    stat_01: 0
+    stat_02: 0
+    stat_03: 4
+    stat_04: 0
+    stat_05: 2
+  - id: 103026C
+    itemCode: Mana_003
+    cardName: "\uC694\uC815 \uC628\uCC9C"
+    cardType: 3
+    usingMethod: 4
+    cardCost: 0
+    element: NONE
+    rarity: 3
+    text: "\uB2E4\uC74C\uD134\uC5D0 \uB9C8\uB098 2\uB97C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: MANA
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 104027A
+    itemCode: Burn_001
+    cardName: "\uD654\uC0C1"
+    cardType: 4
+    usingMethod: 0
+    cardCost: 1
+    element: NONE
+    rarity: 1
+    text: "\uCE74\uB4DC\uB97C \uC0AC\uC6A9\uD558\uC9C0 \uC54A\uC73C\uBA74 \uD134\uC774
+      \uC885\uB8CC\uB420\uB54C \uC790\uC2E0\uC5D0\uAC8C [ad]\uD53C\uD574\uB97C \uC8FC\uACE0
+      \uC0AC\uB77C\uC9D1\uB2C8\uB2E4."
+    comment: text
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 104028A
+    itemCode: Hallucination_001
+    cardName: "\uD658\uAC01"
+    cardType: 4
+    usingMethod: 1
+    cardCost: 0
+    element: NONE
+    rarity: 1
+    text: "\uAC15\uD654\uD558\uC5EC \uD658\uC601 \uCE74\uB4DC\uB97C \uB9CC\uB4E4
+      \uC218 \uC788\uC2B5\uB2C8\uB2E4. "
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 104028B
+    itemCode: Hallucination_002
+    cardName: "\uD658\uC601"
+    cardType: 4
+    usingMethod: 1
+    cardCost: 0
+    element: NONE
+    rarity: 1
+    text: "\uAC15\uD654\uD558\uC5EC \uD5C8\uC0C1 \uCE74\uB4DC\uB97C \uB9CC\uB4E4
+      \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 104028C
+    itemCode: Hallucination_003
+    cardName: "\uD5C8\uC0C1"
+    cardType: 4
+    usingMethod: 1
+    cardCost: 0
+    element: NONE
+    rarity: 1
+    text: "\uC0AC\uC6A9\uD558\uC5EC \uCE74\uB4DC\uB97C \uC81C\uAC70\uD569\uB2C8\uB2E4.
+      \uBAA8\uB4E0 \uAC83\uC740 \uD5C8\uC0C1\uC785\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0

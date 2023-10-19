@@ -38,6 +38,7 @@ public class TurnManager : GenericSingleton<TurnManager>
     {
         // 게임을 시작할 때 초기 턴 상태 = 카드 드로우
         currentTurn = TurnState.GetDatas;
+        PlayerData.Instance.CCChange();
         StartCoroutine(GameLoop());
     }
 

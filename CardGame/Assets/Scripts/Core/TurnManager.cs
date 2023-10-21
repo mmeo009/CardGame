@@ -91,12 +91,12 @@ public class TurnManager : GenericSingleton<TurnManager>
     }
     IEnumerator GetDatas()
     {
-        Managers.Deck.AddCardIntoDefaultDeck("101006N", 8);
-/*        for(int i = 1; i < 11; i++)
-        {
-            string num = i.ToString("000");
-            Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
-        }*/
+        Managers.Deck.AddCardIntoDefaultDeck("102017A", 10);
+/*                for(int i = 1; i < 11; i++)
+                {
+                    string num = i.ToString("000");
+                    Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
+                }*/
         /*for (int i = 12; i < 22; i++)
         {
             string num = i.ToString("000");
@@ -111,7 +111,7 @@ public class TurnManager : GenericSingleton<TurnManager>
     {
         // Ä«µå »Ì±â
         DrawCard.Instance.CreateCardOneAtTheTime();
-        PlayerData.Instance.GainingOrLosingValue("currentMana");
+        PlayerData.Instance.GainingOrLosingValue("currentMana", 0, true);
         yield return new WaitForSeconds(2f);
     }
 

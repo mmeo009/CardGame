@@ -180,7 +180,7 @@ public class CardDataLoad : MonoBehaviour
             ObjectNameAndParent cardImage = thisCardinfo.Find(name => name.name == "CardImage");
             if (cardImage != null)
             {
-                cardImage.thisObject.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Illustration/{id}");
+                cardImage.thisObject.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Illustration/Card/{id}");
             }
 
             // 카드 이름 및 텍스트 불러오기
@@ -199,7 +199,11 @@ public class CardDataLoad : MonoBehaviour
                     .Replace("[hap]", $"{(PlayerData.Instance.player.apDamage + cardData.adPower) / 2}")
                     .Replace("[hfd]", $"{(PlayerData.Instance.player.fixedDamage + cardData.adPower) / 2}")
                     .Replace("[ra]", $"{thisCardLevel}")
-                    .Replace("[fdd]", $"{(cardData.fixedPower + PlayerData.Instance.player.apDamage) / 2}");
+                    .Replace("[fdd]", $"{(cardData.fixedPower + PlayerData.Instance.player.apDamage) / 2}")
+                    .Replace("[adp]", $"{PlayerData.Instance.player.apDamage * cardData.adPower}")
+                    .Replace("[app]", $"{PlayerData.Instance.player.apDamage * cardData.apPower}")
+                    .Replace("[fdp]", $"{PlayerData.Instance.player.apDamage * cardData.fixedPower}")
+                    ;
 
                 cardText.thisObject.GetComponent<TMP_Text>().text = _text;
             }
@@ -307,13 +311,29 @@ public class CardDataLoad : MonoBehaviour
                     ObjectNameAndParent SP = thisCardinfo.Find(name => name.name == "SP");
                     break;
                 case 4:
-                    ObjectNameAndParent SPI = thisCardinfo.Find(name => name.name == "SP");
-                    if (SPI != null && typeText != null)
+                    if(cardData.id[2] == '1')
                     {
-                        SPI.thisObject.SetActive(true);
-                        typeText.thisObject.GetComponent<TMP_Text>().text = $"{cardData.adPower}x{thisCardLevel}";
+                        ObjectNameAndParent SPI = thisCardinfo.Find(name => name.name == "SP");
+                        if (SPI != null && typeText != null)
+                        {
+                            SPI.thisObject.SetActive(true);
+                            typeText.thisObject.GetComponent<TMP_Text>().text = $"{PlayerData.Instance.player.adDamage + cardData.adPower}x{thisCardLevel}";
+                        }
                     }
-                        break;
+                    else if(cardData.id[2] == '2')
+                    {
+                        ObjectNameAndParent DFI = thisCardinfo.Find(name => name.name == "DF");
+                        if (DFI != null && typeText != null)
+                        {
+                            DFI.thisObject.SetActive(true);
+                            typeText.thisObject.GetComponent<TMP_Text>().text = $"{PlayerData.Instance.player.apDamage * cardData.adPower}x{thisCardLevel}";
+                        }
+                    }
+                    else if(cardData.id[2] == '4')
+                    {
+
+                    }
+                    break;
             }
 
             if (this.gameObject.GetComponent<CardController>() != null)

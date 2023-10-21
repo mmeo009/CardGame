@@ -161,11 +161,15 @@ public class PlayerData : GenericSingleton<PlayerData>
                     player.fixedPower += amount;
                     break;
                 case ("currentHealth"):
-                    player.currentHealth += amount;
+                    int toShield = player.currentHealth + amount - player.maxHealth;
                     if (overHealing == true)
                     {
-                            int toShield = player.currentHealth - player.maxHealth;
-                            player.shield += toShield;
+                        player.currentHealth = player.maxHealth;
+                        player.shield += toShield;
+                    }
+                    else
+                    {
+                        player.currentHealth += amount;
                     }
                     if (player.currentHealth > player.maxHealth)
                     {
@@ -173,14 +177,14 @@ public class PlayerData : GenericSingleton<PlayerData>
                     }
                     break;
                 case ("currentMana"):
-                    if(amount == 0)
+                    if(amount == 0 && overHealing == true)
                     {
                         player.currentMana = player.maxMana;
                     }
                     else
                     {
                         player.currentMana += amount;
-                        if (player.currentMana > player.maxMana)
+                        if (player.currentMana > player.maxMana && overHealing == false)
                         {
                             player.currentMana = player.maxMana;
                         }

@@ -62,6 +62,7 @@ public class CardUse : MonoBehaviour
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                 }
                                 Debug.Log(num +"/"+ player.player.hitProbability);      // 명중률 관련 출력
+                                CCUse(cardCC01, cardCC02, cardPlusData);
                             }
                             else
                             {
@@ -92,6 +93,7 @@ public class CardUse : MonoBehaviour
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                 }
                                 Debug.Log(num + "/" + player.player.hitProbability / 2);        // 명중률 관련 출력
+                                CCUse(cardCC01, cardCC02, cardPlusData);
                             }
                             else
                             {
@@ -116,6 +118,7 @@ public class CardUse : MonoBehaviour
                                 if (thisCard.adPower != 0)      // ad무기일 경우
                                 {
                                     MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);      // 몬스터 체력 감소
+                                    CCUse(cardCC01, cardCC02, cardPlusData);
                                     if (num/2 <= player.player.hitProbability)      // 이후 자신에게 돌아오는 확률 계산
                                     {
                                         player.GainingOrLosingValue("currentHealth", (player.player.adDamage + thisCard.adPower)/2);        //내 체력 감소
@@ -128,6 +131,7 @@ public class CardUse : MonoBehaviour
                                 else if (thisCard.apPower != 0)     //ap무기일 경우
                                 {
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
+                                    CCUse(cardCC01, cardCC02, cardPlusData);
                                     if (num / 2 <= player.player.hitProbability)
                                     {
                                         player.GainingOrLosingValue("currentHealth", (player.player.apDamage + thisCard.apPower) / 2);
@@ -163,6 +167,7 @@ public class CardUse : MonoBehaviour
                         {
                             player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
                             player.GainingOrLosingValue("shield", (player.player.apPower* thisCard.adPower));       // 플레이어 방어력 증가
+                            CCUse(cardCC01, cardCC02, cardPlusData);
                             Destroy(gameObject);        //카드 오브젝트 제거
                         }
                         else
@@ -176,6 +181,7 @@ public class CardUse : MonoBehaviour
                         {
                             player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
                             player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.apPower));       // 플레이어 체력 증가
+                            CCUse(cardCC01, cardCC02, cardPlusData);
                             Destroy(gameObject);        // 카드 오브젝트 제거
                         }
                         else
@@ -188,7 +194,8 @@ public class CardUse : MonoBehaviour
                         if (myMana >= cardCost)
                         {
                             player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
-                            player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.apPower), true);     // 플레이어 체력증가 후 가능하다면 방어력 증가
+                            player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.fixedPower), true);     // 플레이어 체력증가 후 가능하다면 방어력 증가
+                            CCUse(cardCC01, cardCC02, cardPlusData);
                             Destroy(gameObject);        // 카드 오브젝트 제거
                         }
                         else
@@ -203,6 +210,7 @@ public class CardUse : MonoBehaviour
                             player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
                             player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.fixedPower));        // 플레이어의 체력을 회복
                             player.GainingOrLosingValue("temporary", 2, false, (player.player.apPower * thisCard.fixedPower));      // 천천히 사라지는 체력 상태이상을 부여
+                            CCUse(cardCC01, cardCC02, cardPlusData);
                             Destroy(gameObject);        // 카등 오브젝트 제거
                         }
                         else
@@ -216,6 +224,7 @@ public class CardUse : MonoBehaviour
                         {
                             player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
                             player.GainingOrLosingValue("god", 0, true);        // 무적 상태이상을 부여
+                            CCUse(cardCC01, cardCC02, cardPlusData);
                             Destroy(gameObject);        // 카드 오브젝트 제거
                         }
                         else
@@ -244,6 +253,18 @@ public class CardUse : MonoBehaviour
                         else
                         {
                             Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
+                        }
+                    }
+                    else if(cardMethod == 1 && cardLevel == 'C')        // 사용 불가능하나 최종 강화 시 사용 가능 카드 (환각)
+                    {
+                        if(myMana >= cardCost)
+                        {
+                            player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
+                            Destroy(gameObject);        // 카드 오브젝트 제거
+                        }
+                        else
+                        {
+                            Debug.Log("마나가 없어서 쓸 수 없다");
                         }
                     }
                 }
@@ -281,18 +302,27 @@ public class CardUse : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("마나가 없어서 쓸 수 없다");
+                        Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                     }
                 }
                 else if(cardType == 2)      // 무한대로 강화가 가능한 방어 카드
                 {
-                    player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
-                    for (int i = 0; i<player.player.currentMana - cardCost; i++)
+                    if (myMana >= cardCost)
                     {
-                        player.GainingOrLosingValue("currentMana", -1);            // 마나 감소
-                        player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.apPower), true);
+                        int thisCardLevel = this.GetComponent<CardDataLoad>().thisCardLevel;
+                        player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
+                        for (int i = 0; i < thisCardLevel; i++)     // 카드 레벨 만큼 반복
+                        {
+                            player.GainingOrLosingValue("shield", (player.player.apPower * thisCard.adPower));
+                        }
+                        Destroy(gameObject);
+                    }
+                    else
+                    {
+                        Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                     }
                 }
+
             }
             else
             {
@@ -304,5 +334,71 @@ public class CardUse : MonoBehaviour
             GetComponent<CardDataLoad>().PickCardAndIdFromDeck();
         }
         
+    }
+
+    public void CCUse(string cardCC01, string cardCC02, int stat05)
+    { 
+        if (cardCC01 != "NONE")
+        {
+            if (cardCC01 == "BURN")
+            {
+                Managers.Deck.AddCardToDeckById("104027A", 2);
+            }
+            else if (cardCC01 == "SLOTH")
+            {
+                player.GainingOrLosingValue("sloth", thisCard.stat_01);
+            }
+            else if (cardCC01 == "DRAW")
+            {
+                DrawCard.Instance.CreateSomeCards();
+            }
+            else if(cardCC01 == "FURY")
+            {
+                player.GainingOrLosingValue("fury", thisCard.stat_01);
+            }
+            else if(cardCC01 == "MANA")
+            {
+                player.GainingOrLosingValue("currentMana", thisCard.stat_02, true);
+            }
+            else if(cardCC01 == "BLIND")
+            {
+                player.GainingOrLosingValue("blind", thisCard.stat_01);
+            }
+            else if(cardCC01 == "HALLUCINATION")
+            {
+                Managers.Deck.AddCardToDeckById("104028A", 4);
+            }
+        }
+        if (cardCC02 != "NONE" && stat05 == 2)
+        {
+            if (cardCC01 == "BURN")
+            {
+                Managers.Deck.AddCardToDeckById("104027A", 2);
+            }
+            else if (cardCC01 == "SLOTH")
+            {
+                player.GainingOrLosingValue("sloth", thisCard.stat_03);
+            }
+            else if (cardCC01 == "DRAW")
+            {
+                DrawCard.Instance.CreateSomeCards();
+            }
+            else if (cardCC01 == "FURY")
+            {
+                player.GainingOrLosingValue("fury", thisCard.stat_03);
+            }
+            else if (cardCC01 == "MANA")
+            {
+                player.GainingOrLosingValue("currentMana", thisCard.stat_04, true);
+            }
+            else if (cardCC01 == "BLIND")
+            {
+                player.GainingOrLosingValue("blind", thisCard.stat_03);
+            }
+            else if (cardCC01 == "HALLUCINATION")
+            {
+                Managers.Deck.AddCardToDeckById("104028A", 4);
+            }
+        }
     }
 }

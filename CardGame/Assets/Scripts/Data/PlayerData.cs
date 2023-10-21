@@ -37,12 +37,17 @@ public class PlayerData : GenericSingleton<PlayerData>
 
         if (hp != null)
         {
-            hp.GetComponent<Image>();
+            float hpfill = (float)player.currentHealth / (float)player.maxHealth;
+            Debug.Log(hpfill);
+            hp.GetComponent<Image>().fillAmount = hpfill;
         }
         else
         {
             GameObject _hp = GameObject.Find("PlayerHP");
             hp = _hp;
+            float hpfill = (float)player.currentHealth / (float)player.maxHealth;
+            Debug.Log(hpfill);
+            hp.GetComponent<Image>().fillAmount = hpfill;
         }
     }
 

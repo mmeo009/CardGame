@@ -12,15 +12,15 @@ public class MonsterGrid : MonoBehaviour, IDropHandler
         MergeGrid merge = dropedCard.GetComponent<CardController>().myGrid.GetComponent<MergeGrid>();
         if (grid != null)
         {
-            grid.ISEmpty();
             dropedCard.GetComponent<CardUse>().UsingCard();
             PlayerData.Instance.ShowMyInfo();
+            grid.ISEmpty();
         }
         else if(merge != null)
         {
-            merge.ISEmpty();
             dropedCard.GetComponent<CardUse>().UsingCard();
             PlayerData.Instance.ShowMyInfo();
+            merge.ISEmpty();
         }
         else
         {

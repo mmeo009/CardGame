@@ -91,11 +91,12 @@ public class TurnManager : GenericSingleton<TurnManager>
     }
     IEnumerator GetDatas()
     {
-        for(int i = 1; i < 11; i++)
+        Managers.Deck.AddCardIntoDefaultDeck("101006N", 8);
+/*        for(int i = 1; i < 11; i++)
         {
             string num = i.ToString("000");
             Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
-        }
+        }*/
         /*for (int i = 12; i < 22; i++)
         {
             string num = i.ToString("000");

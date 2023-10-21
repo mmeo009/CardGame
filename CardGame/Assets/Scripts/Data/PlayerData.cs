@@ -60,29 +60,29 @@ public class PlayerData : GenericSingleton<PlayerData>
             switch (value)
             {
                 case ("adPower"):
-                    player.adPower -= amount;
+                    player.adPower += amount;
                     break;
                 case ("apPower"):
-                    player.apPower -= amount;
+                    player.apPower += amount;
                     break;
                 case ("baPower"):
-                    player.baPower -= amount;
+                    player.baPower += amount;
                     break;
                 case ("fixedPower"):
-                    player.fixedPower -= amount;
+                    player.fixedPower += amount;
                     break;
                 case ("currentHealth"):
-                    player.currentHealth -= amount;
+                    player.currentHealth += amount;
                     if(player.currentHealth <=0)
                     {
                         PlayerDie();
                     }
                     break;
                 case ("currentMana"):
-                    player.currentHealth -= amount;
+                    player.currentMana += amount;
                     break;
                 case ("shield"):
-                    player.shield -= amount;
+                    player.shield += amount;
                     break;
                 case ("poison"):
                     Player.CC poison = player.playerCc.Find(cc => cc.ccName == "poison");
@@ -93,7 +93,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                             player.playerCc.Remove(poison);
                         }
                         player.currentHealth -= poison.damage;
-                        poison.remainingTurn -= amount;
+                        poison.remainingTurn += amount;
                     }
                     break;
                 case ("temporary"):
@@ -105,7 +105,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                             player.playerCc.Remove(temporary);
                         }
                         player.currentHealth -= temporary.damage / 2;
-                        temporary.remainingTurn -= amount;
+                        temporary.remainingTurn += amount;
                     }
                     break;
                 case ("blind"):
@@ -116,7 +116,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                         {
                             player.playerCc.Remove(blind);
                         }
-                        blind.remainingTurn -= amount;
+                        blind.remainingTurn += amount;
                     }
                     break;
                 case ("fury"):
@@ -127,7 +127,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                         {
                             player.playerCc.Remove(fury);
                         }
-                        fury.remainingTurn -= amount;
+                        fury.remainingTurn += amount;
                     }
                     break;
                 case ("sloth"):
@@ -138,7 +138,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                         {
                             player.playerCc.Remove(sloth);
                         }
-                        sloth.remainingTurn -= amount;
+                        sloth.remainingTurn += amount;
                     }
                     break;
 

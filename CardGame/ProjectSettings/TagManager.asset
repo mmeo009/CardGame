@@ -11,6 +11,7 @@ TagManager:
   - Manager
   - MergeButton
   - Monster
+  - BackGround
   layers:
   - Default
   - TransparentFX

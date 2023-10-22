@@ -10,6 +10,8 @@ public class PlayerData : GenericSingleton<PlayerData>
     public GameObject[] cards;
     public GameObject mana;
     public GameObject hp;
+    public GameObject shieldText;
+    public GameObject hpText;
     private void Awake()
     {
         if (player.currentHealth == 0)
@@ -48,6 +50,41 @@ public class PlayerData : GenericSingleton<PlayerData>
             float hpfill = (float)player.currentHealth / (float)player.maxHealth;
             Debug.Log(hpfill);
             hp.GetComponent<Image>().fillAmount = hpfill;
+        }
+        if(hpText != null)
+        {
+            hpText.GetComponent<TMP_Text>().text = player.currentHealth + "/" + player.maxHealth;
+        }
+        else
+        {
+            GameObject _hpT = GameObject.Find("HPText");
+            hpText = _hpT;
+            hpText.GetComponent<TMP_Text>().text = player.currentHealth + "/" + player.maxHealth;
+        }
+        if (shieldText != null)
+        {
+            if (player.shield > 0)
+            {
+                shieldText.GetComponent<TMP_Text>().text = player.shield.ToString();
+            }
+            else
+            {
+                shieldText.GetComponent<TMP_Text>().text = "---";
+            }
+
+        }
+        else
+        {
+            GameObject _shieldT = GameObject.Find("ShieldText");
+            shieldText = _shieldT;
+            if (player.shield > 0)
+            {
+                shieldText.GetComponent<TMP_Text>().text = player.shield.ToString();
+            }
+            else
+            {
+                shieldText.GetComponent<TMP_Text>().text = "---";
+            }
         }
     }
 
@@ -202,7 +239,14 @@ public class PlayerData : GenericSingleton<PlayerData>
                     player.maxMana += amount;
                     break;
                 case ("shield"):
-                    player.shield += amount;
+                    if (amount == 0 && overHealing == true)
+                    {
+                        player.shield = 0;
+                    }
+                    else
+                    {
+                        player.shield += amount;
+                    }
                     break;
                 case ("blind"):
                     Player.CC blind = player.playerCc.Find(cc => cc.ccName == "blind");

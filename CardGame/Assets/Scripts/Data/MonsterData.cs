@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonsterData : GenericSingleton<MonsterData>
 {
@@ -12,6 +13,7 @@ public class MonsterData : GenericSingleton<MonsterData>
     public string monsterName;
     public Entity_MonsteraData.Param monsterData;
     public List<Entity_PatternData.Param> patterns = new List<Entity_PatternData.Param>();
+    public Image bg;
 
     public void LoadMonsterData(int level, int stageType, int strongDegree = 1, bool isBoss = false)
     {
@@ -28,7 +30,11 @@ public class MonsterData : GenericSingleton<MonsterData>
             char _stageType = (char)(stageType + '0');
             char last = id[id.Length - 1];
 
-            if ((no3 == _level && no4 == _stageType && !isBoss) || (no3 == _level && no4 == _stageType && last == 'Z' && isBoss))
+            if (no3 == _level && no4 == _stageType && last == 'Z' && isBoss == true)
+            {
+                monsters.Add(_monsterData);
+            }
+            else if(no3 == _level && no4 == _stageType&& last != 'Z' && isBoss == false)
             {
                 monsters.Add(_monsterData);
             }
@@ -73,6 +79,15 @@ public class MonsterData : GenericSingleton<MonsterData>
                 patterns.Add(_patternData);
             }
         }
+        string stage = monsterData.id.Substring(2,4);
+        Debug.Log(stage);
+        Image _bg = GameObject.FindGameObjectWithTag("BackGround").GetComponent<Image>();
+        if (_bg != null)
+        {
+            bg = _bg;
+            bg.sprite = Resources.Load<Sprite>($"Illustration/BG/{stage}");
+        }
+
     }
 
     public void GetDamage(int amount)

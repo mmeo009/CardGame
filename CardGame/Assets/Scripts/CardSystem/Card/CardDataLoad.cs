@@ -309,6 +309,10 @@ public class CardDataLoad : MonoBehaviour
                     break;
                 case 3:
                     ObjectNameAndParent SP = thisCardinfo.Find(name => name.name == "SP");
+                    if(SP != null && typeText != null)
+                    {
+                        SP.thisObject.SetActive(true);
+                    }    
                     break;
                 case 4:
                     if(cardData.id[2] == '1')
@@ -331,7 +335,20 @@ public class CardDataLoad : MonoBehaviour
                     }
                     else if(cardData.id[2] == '4')
                     {
-
+                        ObjectNameAndParent CC = thisCardinfo.Find(name => name.name == "CC");
+                        if (CC != null && typeText != null)
+                        {
+                            CC.thisObject.SetActive(true);
+                            if(cardData.adPower != 0)
+                            {
+                                typeText.thisObject.GetComponent<TMP_Text>().text = $"{PlayerData.Instance.player.adDamage * cardData.adPower}";
+                            }
+                            else
+                            {
+                                typeText.thisObject.SetActive(false);
+                            }
+                            
+                        }
                     }
                     break;
             }

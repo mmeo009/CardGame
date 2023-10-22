@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class MonsterController : MonoBehaviour
 {
-    public string stage;
+    public Entity_MonsteraData.Param thisMonster;
 
-    public void StageChack()
+    public void GetDamaged()
+    {
+
+    }
+
+    public void BeneficialEffect()
     {
 
     }

@@ -13,7 +13,10 @@ public class MonsterData : GenericSingleton<MonsterData>
     public string monsterName;
     public Entity_MonsteraData.Param monsterData;
     public List<Entity_PatternData.Param> patterns = new List<Entity_PatternData.Param>();
+    public List<MonsterCC> monsterCc = new List<MonsterCC>();
     public Image bg;
+
+    public MonsterController monsterController;
 
     public void LoadMonsterData(int level, int stageType, int strongDegree = 1, bool isBoss = false)
     {
@@ -88,6 +91,15 @@ public class MonsterData : GenericSingleton<MonsterData>
             bg.sprite = Resources.Load<Sprite>($"Illustration/BG/{stage}");
         }
 
+        if(monsterController == null)
+        {
+            monsterController = FindAnyObjectByType<MonsterController>();
+            monsterController.FindMyEyes();
+        }
+        else
+        {
+            monsterController.FindMyEyes();
+        }
     }
 
     public void GetDamage(int amount)
@@ -128,4 +140,155 @@ public class MonsterData : GenericSingleton<MonsterData>
         Debug.Log(nextPattern.patternId);
     }
 
+    public void GainingOrLosingCC(string ccName, int turn, int dmg, bool isAdd)
+    {
+        if(isAdd == true)
+        {
+            switch(ccName)
+            {
+                case ("blind"):
+                    MonsterCC blind = monsterCc.Find(cc => cc.ccName == "blind");
+                    if (blind == null)
+                    {
+                        MonsterCC newCc = new MonsterCC
+                        {
+                            ccName = "blind",
+                            remainingTurn = turn,
+                            damage = 0
+                        };
+                        monsterCc.Add(newCc);
+                    }
+                    else
+                    {
+                        blind.remainingTurn += turn;
+                    }
+                    break;
+                case ("fury"):
+                    MonsterCC fury = monsterCc.Find(cc => cc.ccName == "fury");
+                    if (fury == null)
+                    {
+                        MonsterCC newCc = new MonsterCC
+                        {
+                            ccName = "blind",
+                            remainingTurn = turn,
+                            damage = 0
+                        };
+                        monsterCc.Add(newCc);
+                    }
+                    else
+                    {
+                        fury.remainingTurn += turn;
+                    }
+                    break;
+                case ("sloth"):
+                    MonsterCC sloth = monsterCc.Find(cc => cc.ccName == "sloth");
+                    if (sloth == null)
+                    {
+                        MonsterCC newCc = new MonsterCC
+                        {
+                            ccName = "sloth",
+                            remainingTurn = turn,
+                            damage = 0
+                        };
+                        monsterCc.Add(newCc);
+                    }
+                    else
+                    {
+                        sloth.remainingTurn += turn;
+                    }
+                    break;
+                case ("poison"):
+                    MonsterCC poison = monsterCc.Find(cc => cc.ccName == "poison");
+                    if (poison == null)
+                    {
+                        MonsterCC newCc = new MonsterCC
+                        {
+                            ccName = "sloth",
+                            remainingTurn = turn,
+                            damage = dmg
+                        };
+                        monsterCc.Add(newCc);
+                    }
+                    else
+                    {
+                        poison.remainingTurn += turn/2;
+                        if(poison.damage < dmg)
+                        {
+                            poison.damage = dmg;
+                        }
+                    }
+                    break;
+            }
+        }
+        else if(isAdd == false)
+        {
+            switch (ccName)
+            {
+                case ("blind"):
+                    MonsterCC blind = monsterCc.Find(cc => cc.ccName == "blind");
+                    if (blind != null)
+                    {
+                        blind.remainingTurn -= turn;
+                        if(blind.remainingTurn <= 0)
+                        {
+                            monsterCc.Remove(blind);
+                        }
+                    }
+                    break;
+                case ("fury"):
+                    MonsterCC fury = monsterCc.Find(cc => cc.ccName == "fury");
+                    if (fury != null)
+                    {
+                        fury.remainingTurn -= turn;
+                        if (fury.remainingTurn <= 0)
+                        {
+                            monsterCc.Remove(fury);
+                        }
+                    }
+                    break;
+                case ("sloth"):
+                    MonsterCC sloth = monsterCc.Find(cc => cc.ccName == "sloth");
+                    if (sloth != null)
+                    {
+                        sloth.remainingTurn -= turn;
+                        if (sloth.remainingTurn <= 0)
+                        {
+                            monsterCc.Remove(sloth);
+                        }
+                    }
+                    break;
+                case ("poison"):
+                    MonsterCC poison = monsterCc.Find(cc => cc.ccName == "poison");
+                    if (poison != null)
+                    {
+                        monsterHp -= poison.damage;
+                        monsterController.GetDamaged();
+                        poison.remainingTurn -= turn;
+                        if (poison.damage < dmg)
+                        {
+                            poison.damage = dmg;
+                        }
+                        if (poison.remainingTurn <= 0)
+                        {
+                            monsterCc.Remove(poison);
+                        }
+                    }
+                    break;
+            }
+        }
+    }
+    public void MonsterCCChange()
+    {
+        GainingOrLosingCC("blind", 1, 0,false);
+        GainingOrLosingCC("fury", 1, 0, false);
+        GainingOrLosingCC("sloth", 1, 0, false);
+        GainingOrLosingCC("poison", 1, 0, false);
+    }
+    [System.Serializable]
+    public class MonsterCC
+    {
+        public string ccName;
+        public int remainingTurn;
+        public int damage = 0;
+    }
 }

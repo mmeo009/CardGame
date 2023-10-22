@@ -61,6 +61,7 @@ public class CardUse : MonoBehaviour
                                 {
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                 }
+                                MonsterData.Instance.monsterController.GetDamaged();        // 몬스터 타격 이펙트 출력
                                 Debug.Log(num +"/"+ player.player.hitProbability);      // 명중률 관련 출력
                                 CCUse(cardCC01, cardCC02, cardPlusData);
                             }
@@ -92,6 +93,7 @@ public class CardUse : MonoBehaviour
                                 {
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                 }
+                                MonsterData.Instance.monsterController.GetDamaged();        // 몬스터 타격 이펙트 출력
                                 Debug.Log(num + "/" + player.player.hitProbability / 2);        // 명중률 관련 출력
                                 CCUse(cardCC01, cardCC02, cardPlusData);
                             }
@@ -118,10 +120,11 @@ public class CardUse : MonoBehaviour
                                 if (thisCard.adPower != 0)      // ad무기일 경우
                                 {
                                     MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);      // 몬스터 체력 감소
+                                    MonsterData.Instance.monsterController.GetDamaged();        // 몬스터 타격 이펙트 출력
                                     CCUse(cardCC01, cardCC02, cardPlusData);
                                     if (num/2 <= player.player.hitProbability)      // 이후 자신에게 돌아오는 확률 계산
                                     {
-                                        player.GainingOrLosingValue("currentHealth", (player.player.adDamage + thisCard.adPower)/2);        //내 체력 감소
+                                        player.GainingOrLosingValue("currentHealth", -(player.player.adDamage + thisCard.adPower)/2);        //내 체력 감소
                                     }
                                     else
                                     {
@@ -131,10 +134,11 @@ public class CardUse : MonoBehaviour
                                 else if (thisCard.apPower != 0)     //ap무기일 경우
                                 {
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
+                                    MonsterData.Instance.monsterController.GetDamaged();        // 몬스터 타격 이펙트 출력
                                     CCUse(cardCC01, cardCC02, cardPlusData);
                                     if (num / 2 <= player.player.hitProbability)
                                     {
-                                        player.GainingOrLosingValue("currentHealth", (player.player.apDamage + thisCard.apPower) / 2);
+                                        player.GainingOrLosingValue("currentHealth", -(player.player.apDamage + thisCard.apPower) / 2);
                                     }
                                     else
                                     {
@@ -371,33 +375,52 @@ public class CardUse : MonoBehaviour
         }
         if (cardCC02 != "NONE" && stat05 == 2)
         {
-            if (cardCC01 == "BURN")
+            if (cardCC02 == "BURN")
             {
                 Managers.Deck.AddCardToDeckById("104027A", 2);
             }
-            else if (cardCC01 == "SLOTH")
+            else if (cardCC02 == "SLOTH")
             {
                 player.GainingOrLosingValue("sloth", thisCard.stat_03);
             }
-            else if (cardCC01 == "DRAW")
+            else if (cardCC02 == "DRAW")
             {
                 DrawCard.Instance.CreateSomeCards();
             }
-            else if (cardCC01 == "FURY")
+            else if (cardCC02 == "FURY")
             {
                 player.GainingOrLosingValue("fury", thisCard.stat_03);
             }
-            else if (cardCC01 == "MANA")
+            else if (cardCC02 == "MANA")
             {
                 player.GainingOrLosingValue("currentMana", thisCard.stat_04, true);
             }
-            else if (cardCC01 == "BLIND")
+            else if (cardCC02 == "BLIND")
             {
                 player.GainingOrLosingValue("blind", thisCard.stat_03);
             }
-            else if (cardCC01 == "HALLUCINATION")
+            else if (cardCC02 == "HALLUCINATION")
             {
                 Managers.Deck.AddCardToDeckById("104028A", 4);
+            }
+        }
+        if(cardCC02 != "NONE" && stat05 != 5)
+        {
+            if (cardCC02 == "SLOTH")
+            {
+                MonsterData.Instance.GainingOrLosingCC("sloth",thisCard.stat_03 ,thisCard.stat_04, true);
+            }
+            else if(cardCC02 == "FURY")
+            {
+                MonsterData.Instance.GainingOrLosingCC("fury", thisCard.stat_03, thisCard.stat_04, true);
+            }
+            else if(cardCC02 == "BLIND")
+            {
+                MonsterData.Instance.GainingOrLosingCC("blind", thisCard.stat_03, thisCard.stat_04, true);
+            }
+            else if(cardCC02 == "POISON")
+            {
+                MonsterData.Instance.GainingOrLosingCC("poison", thisCard.stat_03, thisCard.stat_04, true);
             }
         }
     }

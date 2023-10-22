@@ -12,6 +12,7 @@ public class PlayerData : GenericSingleton<PlayerData>
     public GameObject hp;
     public GameObject shieldText;
     public GameObject hpText;
+    public GameObject state;
     private void Awake()
     {
         if (player.currentHealth == 0)
@@ -84,6 +85,31 @@ public class PlayerData : GenericSingleton<PlayerData>
             else
             {
                 shieldText.GetComponent<TMP_Text>().text = "---";
+            }
+        }
+        if(state != null)
+        {
+            foreach(Transform _state in state.transform)
+            {
+                string _name = _state.GetComponent<State>().name;
+                Player.CC _cc = player.playerCc.Find(cc => cc.ccName == _name);
+                if(_cc == null)
+                {
+                    Destroy(_state);
+                }
+            }
+        }
+        else
+        {
+            state = GameObject.FindWithTag("PlayerState");
+            foreach (Transform _state in state.transform)
+            {
+                string _name = _state.GetComponent<State>().name;
+                Player.CC _cc = player.playerCc.Find(cc => cc.ccName == _name);
+                if (_cc == null)
+                {
+                    Destroy(_state);
+                }
             }
         }
     }
@@ -259,6 +285,9 @@ public class PlayerData : GenericSingleton<PlayerData>
                             damage = 0
                         };
                         player.playerCc.Add(newCc);
+                        GameObject _blind = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
+                        _blind.transform.parent = state.transform;
+                        _blind.GetComponent<State>().LoadImage(value);
                     }
                     else
                     {
@@ -276,6 +305,9 @@ public class PlayerData : GenericSingleton<PlayerData>
                             damage = 0
                         };
                         player.playerCc.Add(newCc);
+                        GameObject _fury = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
+                        _fury.transform.parent = state.transform;
+                        _fury.GetComponent<State>().LoadImage(value);
                     }
                     else
                     {
@@ -293,6 +325,9 @@ public class PlayerData : GenericSingleton<PlayerData>
                             damage = 0
                         };
                         player.playerCc.Add(newCc);
+                        GameObject _sloth = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
+                        _sloth.transform.parent = state.transform;
+                        _sloth.GetComponent<State>().LoadImage(value);
                     }
                     else
                     {
@@ -310,11 +345,14 @@ public class PlayerData : GenericSingleton<PlayerData>
                             damage = ccDamage
                         };
                         player.playerCc.Add(newCc);
+                        GameObject _poison = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
+                        _poison.transform.parent = state.transform;
+                        _poison.GetComponent<State>().LoadImage(value);
                     }
                     else
                     {
                         poison.remainingTurn += amount/2;
-                        if(poison.damage != ccDamage)
+                        if(poison.damage < ccDamage)
                         {
                             poison.damage = ccDamage;
                         }
@@ -331,6 +369,9 @@ public class PlayerData : GenericSingleton<PlayerData>
                             damage = ccDamage
                         };
                         player.playerCc.Add(newCc);
+                        GameObject _temporary = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
+                        _temporary.transform.parent = state.transform;
+                        _temporary.GetComponent<State>().LoadImage(value);
                     }
                     else
                     {
@@ -380,12 +421,14 @@ public class PlayerData : GenericSingleton<PlayerData>
     }
     public void CCChange()
     {
+        GainingOrLosingValue("currentMana", 0, true);
         GainingOrLosingValue("poison", -1);
         GainingOrLosingValue("temporary", -1);
         GainingOrLosingValue("blind", -1);
         GainingOrLosingValue("fury", -1);
         GainingOrLosingValue("sloth", -1);
         GainingOrLosingValue("god", 0, false);
+        GainingOrLosingValue("shield", 0, true);
     }
 
     public void CalculatePorbability()

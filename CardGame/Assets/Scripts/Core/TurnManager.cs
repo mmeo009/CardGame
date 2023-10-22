@@ -91,18 +91,16 @@ public class TurnManager : GenericSingleton<TurnManager>
     }
     IEnumerator GetDatas()
     {
-        Managers.Deck.AddCardIntoDefaultDeck("104027A", 4);
-        Managers.Deck.AddCardIntoDefaultDeck("104028A", 4);
-        /*for(int i = 1; i < 11; i++)
+/*        for(int i = 1; i < 11; i++)
                   {
                       string num = i.ToString("000");
                       Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
-                  }
+                  }*/
   for (int i = 12; i < 22; i++)
   {
       string num = i.ToString("000");
       Managers.Deck.AddCardIntoDefaultDeck($"102{num}A", 4);
-  }*/
+  }
         Managers.Deck.DeckSetting();
         Managers.Stage.SelectLevel();           //나중에는 필요 없음
         yield return new WaitForSeconds(2f);
@@ -112,8 +110,8 @@ public class TurnManager : GenericSingleton<TurnManager>
     {
         // 카드 뽑기
         DrawCard.Instance.CreateCardOneAtTheTime();
-        PlayerData.Instance.GainingOrLosingValue("currentMana", 0, true);
-        PlayerData.Instance.GainingOrLosingValue("shield", 0, true);
+        PlayerData.Instance.CCChange();
+        MonsterData.Instance.MonsterCCChange();
         yield return new WaitForSeconds(2f);
     }
 

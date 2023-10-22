@@ -12,6 +12,8 @@ TagManager:
   - MergeButton
   - Monster
   - BackGround
+  - PlayerState
+  - MonsterState
   layers:
   - Default
   - TransparentFX

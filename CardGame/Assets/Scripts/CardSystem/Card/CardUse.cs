@@ -61,7 +61,7 @@ public class CardUse : MonoBehaviour
                                 {
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                 }
-                                MonsterData.Instance.monsterController.GetDamaged();        // 몬스터 타격 이펙트 출력
+                                MonsterData.Instance.monsterAnim.GetDamaged();        // 몬스터 타격 이펙트 출력
                                 Debug.Log(num +"/"+ player.player.hitProbability);      // 명중률 관련 출력
                                 CCUse(cardCC01, cardCC02, cardPlusData);
                             }
@@ -93,7 +93,7 @@ public class CardUse : MonoBehaviour
                                 {
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                 }
-                                MonsterData.Instance.monsterController.GetDamaged();        // 몬스터 타격 이펙트 출력
+                                MonsterData.Instance.monsterAnim.GetDamaged();        // 몬스터 타격 이펙트 출력
                                 Debug.Log(num + "/" + player.player.hitProbability / 2);        // 명중률 관련 출력
                                 CCUse(cardCC01, cardCC02, cardPlusData);
                             }
@@ -120,7 +120,7 @@ public class CardUse : MonoBehaviour
                                 if (thisCard.adPower != 0)      // ad무기일 경우
                                 {
                                     MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);      // 몬스터 체력 감소
-                                    MonsterData.Instance.monsterController.GetDamaged();        // 몬스터 타격 이펙트 출력
+                                    MonsterData.Instance.monsterAnim.GetDamaged();        // 몬스터 타격 이펙트 출력
                                     CCUse(cardCC01, cardCC02, cardPlusData);
                                     if (num/2 <= player.player.hitProbability)      // 이후 자신에게 돌아오는 확률 계산
                                     {
@@ -134,7 +134,7 @@ public class CardUse : MonoBehaviour
                                 else if (thisCard.apPower != 0)     //ap무기일 경우
                                 {
                                     MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
-                                    MonsterData.Instance.monsterController.GetDamaged();        // 몬스터 타격 이펙트 출력
+                                    MonsterData.Instance.monsterAnim.GetDamaged();        // 몬스터 타격 이펙트 출력
                                     CCUse(cardCC01, cardCC02, cardPlusData);
                                     if (num / 2 <= player.player.hitProbability)
                                     {

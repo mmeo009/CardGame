@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Util;
 
-public class MergeController : GenericSingleton<MergeController>
+public class MergeController : MonoBehaviour
 {
     public string gridACardId = null;
     public string gridBCardId = null;
@@ -11,8 +12,14 @@ public class MergeController : GenericSingleton<MergeController>
     public int gridBLevel;
     public int level;
     string baseCardId = null;
+    [SerializeField]
+    private AudioSource audio;
+    [SerializeField]
+    private AudioClip merge;
     public void MergeCards()
     {
+        audio = GetOrAddComponent<AudioSource>(this.gameObject);
+
         if (gridACardId != null && gridBCardId != null)
         {
             if (gridACardId == gridBCardId)
@@ -79,6 +86,18 @@ public class MergeController : GenericSingleton<MergeController>
                         DrawCard.Instance.CreateCardFromNothing(_id, level);
                         if (baseCardId != null)
                         {
+                            if (merge != null)
+                            {
+                                audio.clip = merge;
+                                audio.Play();
+                            }
+                            else
+                            {
+                                AudioClip _merge = Resources.Load<AudioClip>("SoundEffects/Card_Merge");
+                                merge = _merge;
+                                audio.clip = merge;
+                                audio.Play();
+                            }
                             Managers.Deck.AddCardToDeckById(baseCardId, 4);
                             baseCardId = null;
                         }

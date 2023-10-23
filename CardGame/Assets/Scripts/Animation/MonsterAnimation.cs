@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterController : MonoBehaviour
+public class MonsterAnimation : MonoBehaviour
 {
     public Entity_MonsteraData.Param thisMonster;
     public Dictionary<string, GameObject> eyes = new Dictionary<string, GameObject>();

@@ -16,7 +16,7 @@ public class MonsterData : GenericSingleton<MonsterData>
     public List<MonsterCC> monsterCc = new List<MonsterCC>();
     public Image bg;
 
-    public MonsterController monsterController;
+    public MonsterAnimation monsterAnim;
 
     public void LoadMonsterData(int level, int stageType, int strongDegree = 1, bool isBoss = false)
     {
@@ -91,14 +91,14 @@ public class MonsterData : GenericSingleton<MonsterData>
             bg.sprite = Resources.Load<Sprite>($"Illustration/BG/{stage}");
         }
 
-        if(monsterController == null)
+        if(monsterAnim == null)
         {
-            monsterController = FindAnyObjectByType<MonsterController>();
-            monsterController.FindMyEyes();
+            monsterAnim = FindAnyObjectByType<MonsterAnimation>();
+            monsterAnim.FindMyEyes();
         }
         else
         {
-            monsterController.FindMyEyes();
+            monsterAnim.FindMyEyes();
         }
     }
 
@@ -262,7 +262,7 @@ public class MonsterData : GenericSingleton<MonsterData>
                     if (poison != null)
                     {
                         monsterHp -= poison.damage;
-                        monsterController.GetDamaged();
+                        monsterAnim.GetDamaged();
                         poison.remainingTurn -= turn;
                         if (poison.damage < dmg)
                         {

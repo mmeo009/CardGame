@@ -93,28 +93,6 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: NormalCarrot
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 780
-      y: 4
-      width: 135
-      height: 190
-    spriteID: 06c7f92cbd6be4a4b8dad715aef426c5
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 780, y: 4}
-    spritePosition: {x: 746, y: 109}
   - name: body
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -195,8 +173,8 @@ ScriptedImporter:
     layerID: 7
     mosaicPosition: {x: 780, y: 4}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   - name: 3
     spriteName: 
     isGroup: 0

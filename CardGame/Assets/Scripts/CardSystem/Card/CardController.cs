@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using static Util;
 
 public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
@@ -19,10 +20,13 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public GameObject enlargedCardPrefab;
     public string id;
     public bool isPlayerTurn = false;
+    private AudioSource audio;
+    private AudioClip endDrag;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        audio = GetOrAddComponent<AudioSource>(this.gameObject);
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -110,6 +114,19 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 myGrid.GetComponent<MergeGrid>().ISEmpty();
             }
             this.GetComponent<Image>().raycastTarget = true;
+
+            if(endDrag != null)
+            {
+                audio.clip = endDrag;
+                audio.Play();
+            }
+            else
+            {
+                AudioClip _endDrag = Resources.Load<AudioClip>("SoundEffects/Card_Drag_End");
+                endDrag = _endDrag;
+                audio.clip = endDrag;
+                audio.Play();
+            }
         }
     }
     private void CreateEnlargedCard()

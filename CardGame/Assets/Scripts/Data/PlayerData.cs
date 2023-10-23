@@ -95,7 +95,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                 Player.CC _cc = player.playerCc.Find(cc => cc.ccName == _name);
                 if(_cc == null)
                 {
-                    Destroy(_state);
+                    Destroy(_state.gameObject);
                 }
             }
         }
@@ -108,7 +108,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                 Player.CC _cc = player.playerCc.Find(cc => cc.ccName == _name);
                 if (_cc == null)
                 {
-                    Destroy(_state);
+                    Destroy(_state.gameObject);
                 }
             }
         }

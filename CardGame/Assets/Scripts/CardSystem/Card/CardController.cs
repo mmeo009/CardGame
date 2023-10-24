@@ -20,7 +20,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public GameObject enlargedCardPrefab;
     public string id;
     public bool isPlayerTurn = false;
-    private AudioSource audio;
+    public AudioSource audio;
     private AudioClip endDrag;
 
     private void Awake()

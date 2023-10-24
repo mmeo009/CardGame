@@ -13,6 +13,7 @@ public class PlayerData : GenericSingleton<PlayerData>
     public GameObject shieldText;
     public GameObject hpText;
     public GameObject state;
+    public bool isUsingCard = false;
     private void Awake()
     {
         if (player.currentHealth == 0)
@@ -114,7 +115,7 @@ public class PlayerData : GenericSingleton<PlayerData>
         }
     }
 
-    public void CalculatingDamage()
+    public void CalculatingDamage()         // 공격력 계산 함수 
     {
         player.adDamage = player.adPower * player.baPower;
         player.apDamage = player.apPower * player.baPower;
@@ -122,7 +123,7 @@ public class PlayerData : GenericSingleton<PlayerData>
     }
 
     public void GainingOrLosingValue(string value, int amount = 0, bool overHealing = false, int ccDamage = 2)
-    {
+    {       // (바꿀 값, 바꿀 양, 과다치유 Or 상태이상 추가 제거, 상태이상 공격력)
         if (amount < 0)
         {
             switch (value)
@@ -156,60 +157,60 @@ public class PlayerData : GenericSingleton<PlayerData>
                     Player.CC poison = player.playerCc.Find(cc => cc.ccName == "poison");
                     if (poison != null)
                     {
+                        player.currentHealth -= poison.damage;
+                        poison.remainingTurn += amount;
                         if (poison.remainingTurn <= 0)
                         {
                             player.playerCc.Remove(poison);
                         }
-                        player.currentHealth -= poison.damage;
-                        poison.remainingTurn += amount;
                     }
                     break;
                 case ("temporary"):
                     Player.CC temporary = player.playerCc.Find(cc => cc.ccName == "temporary");
                     if (temporary != null)
                     {
+                        player.currentHealth -= temporary.damage / 2;
+                        temporary.remainingTurn += amount;
                         if (temporary.remainingTurn <= 0)
                         {
                             player.playerCc.Remove(temporary);
                         }
-                        player.currentHealth -= temporary.damage / 2;
-                        temporary.remainingTurn += amount;
                     }
                     break;
                 case ("blind"):
                     Player.CC blind = player.playerCc.Find(cc => cc.ccName == "blind");
                     if (blind != null)
                     {
-                        if(blind.remainingTurn <= 0)
+                        blind.remainingTurn += amount;
+                        if (blind.remainingTurn <= 0)
                         {
                             player.playerCc.Remove(blind);
                         }
-                        blind.remainingTurn += amount;
                     }
                     break;
                 case ("fury"):
                     Player.CC fury = player.playerCc.Find(cc => cc.ccName == "fury");
                     if (fury != null)
                     {
+                        fury.remainingTurn += amount;
                         if (fury.remainingTurn <= 0)
                         {
+                            player.adPower -= 3;
                             player.playerCc.Remove(fury);
                         }
-                        fury.remainingTurn += amount;
                     }
                     break;
                 case ("sloth"):
                     Player.CC sloth = player.playerCc.Find(cc => cc.ccName == "sloth");
                     if (sloth != null)
                     {
+                        sloth.remainingTurn += amount;
                         if (sloth.remainingTurn <= 0)
                         {
                             player.playerCc.Remove(sloth);
                         }
-                        sloth.remainingTurn += amount;
                     }
                     break;
-
             }
         }
         else if(amount >= 0)
@@ -305,6 +306,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                             damage = 0
                         };
                         player.playerCc.Add(newCc);
+                        player.adPower += 3;
                         GameObject _fury = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
                         _fury.transform.parent = state.transform;
                         _fury.GetComponent<State>().LoadImage(value);
@@ -402,6 +404,7 @@ public class PlayerData : GenericSingleton<PlayerData>
         CalculatingDamage();
         ValuesAreChanged();
         ShowMyInfo();
+        CalculatePorbability();
     }
     public void ValuesAreChanged()
     {
@@ -436,24 +439,45 @@ public class PlayerData : GenericSingleton<PlayerData>
         Player.CC blind = player.playerCc.Find(cc => cc.ccName == "blind");
         Player.CC fury = player.playerCc.Find(cc => cc.ccName == "fury");
         Player.CC sloth = player.playerCc.Find(cc => cc.ccName == "sloth");
-        if (blind != null && fury == null)
+
+
+        if (sloth != null)      // 나태 상태
+        {
+            player.hitProbability = 0;
+        }
+        else if (blind == null && fury != null)      // 폭주 상태
+        {
+            player.hitProbability = 75;
+        }
+        else if (blind != null && fury == null)     // 실명 상태
         {
             player.hitProbability = 50;
         }
-        else if(blind != null && fury != null)
+        else if(blind != null && fury != null)      // 실명과 폭주 상태
         {
             player.hitProbability = 10;
         }
-        else if(blind == null && fury != null)
-        {
-            player.hitProbability = 25;
-        }
-        else
+        else if(sloth == null && fury == null && blind == null)     // 아무런 상태 이상도 없는 상태
         {
             player.hitProbability = 100;
         } 
     }
-
+    public void UsingDelay(float time)
+    {
+        if (isUsingCard == true)
+        {
+            Invoke("UsingCard", time);
+        }
+        else
+        {
+            UsingCard();
+        }
+    }
+    public bool UsingCard()
+    {
+        isUsingCard = !isUsingCard;
+        return isUsingCard;
+    }
     public void PlayerDie()
     {
 

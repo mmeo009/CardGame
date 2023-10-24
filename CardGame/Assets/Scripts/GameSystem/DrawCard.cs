@@ -210,6 +210,7 @@ public class DrawCard : GenericSingleton<DrawCard>
         {
             // 현재 반복중인 인덱스를 저장
             Transform targetGrid = cardGrids[i];
+            cardGrids[i].GetComponent<GridIndex>().ISEmpty();
             // 카드 그리드가 찼는지 체크
             if (cardGrids[i].GetComponent<GridIndex>().isEmpty == true)
             {

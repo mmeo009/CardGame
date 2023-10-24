@@ -776,7 +776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1789,8 +1789,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2163,7 +2163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2240,7 +2240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2633,6 +2633,8 @@ MonoBehaviour:
   gridALevel: 0
   gridBLevel: 0
   level: 0
+  audio: {fileID: 0}
+  merge: {fileID: 0}
 --- !u!1 &1430128847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3228,7 +3230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3350,6 +3352,7 @@ MonoBehaviour:
     baseAp: 0
     pattern: 0
     statPlus: 0
+  anim: {fileID: 0}
 --- !u!224 &1713521346 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4013132459159729343, guid: caeec258730d6ab428bc0443f25585de, type: 3}
@@ -4073,6 +4076,7 @@ MonoBehaviour:
   shieldText: {fileID: 0}
   hpText: {fileID: 0}
   state: {fileID: 0}
+  isUsingCard: 0
 --- !u!114 &1834652968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4132,7 +4136,7 @@ MonoBehaviour:
   patterns: []
   monsterCc: []
   bg: {fileID: 0}
-  monsterController: {fileID: 0}
+  monsterAnim: {fileID: 0}
 --- !u!1 &1836249320
 GameObject:
   m_ObjectHideFlags: 0

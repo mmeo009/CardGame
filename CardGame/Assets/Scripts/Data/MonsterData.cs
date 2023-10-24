@@ -93,6 +93,9 @@ public class MonsterData : GenericSingleton<MonsterData>
 
         if(monsterAnim == null)
         {
+            GameObject monster = Instantiate(Resources.Load<GameObject>($"Prefabs/Monster/{monsterData.id}"), new Vector3(1072.5f, 837.5f,0), Quaternion.identity);
+            monster.transform.parent = FindAnyObjectByType<MonsterGrid>().transform;
+
             monsterAnim = FindAnyObjectByType<MonsterAnimation>();
             monsterAnim.FindMyEyes();
         }

@@ -271,10 +271,19 @@ public class CardUse : MonoBehaviour
                     }
                     else if (cardType == 3)     // 스킬 카드
                     {
-                        if (cardMethod == 0)
-                        {
-
-                        }
+                            if (myMana >= cardCost)
+                            {
+                                player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
+                                player.UsingDelay(0.5f);        // 카드 사용 딜레이
+                                CCUse(cardCC01, cardCC02, cardPlusData);
+                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
+                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                Destroy(gameObject);        // 카드 오브젝트 제거
+                            }
+                            else
+                            {
+                                Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
+                            }
                     }
                     else if (cardType == 4)     // 상태이상 카드
                     {

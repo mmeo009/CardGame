@@ -6,21 +6,34 @@ public class MonsterAnimation : MonoBehaviour
 {
     public Entity_MonsteraData.Param thisMonster;
     public Dictionary<string, GameObject> eyes = new Dictionary<string, GameObject>();
-    public Dictionary<string, GameObject> item = new Dictionary<string, GameObject>();
+    public Dictionary<string, GameObject> items = new Dictionary<string, GameObject>();
     public Animator anim;
     public void FindMyEyes()        // 눈과 애니메이터 찾아오는 함수
     {
-        Transform face = gameObject.transform.GetChild(0).transform;        // 얼굴 오브젝트를 찾아옴
-        foreach(Transform _face in face)
+        int childs = gameObject.transform.childCount;
+        if(childs > 0 )
         {
-            eyes.Add(_face.name,_face.gameObject);      // 얼굴 오브젝트를 찾아와 오브젝트의 이름을 Key값으로 Dictionary에 저장함
-            Debug.Log(_face.name);
-        }
-        Transform item = gameObject.transform.GetChild(1).transform;        // 아이템 오브젝트를 찾아옴
-        foreach (Transform _item in item)
-        {
-            eyes.Add(_item.name, _item.gameObject);      // 아이템 오브젝트를 찾아와 오브젝트의 이름을 Key값으로 Dictionary에 저장함
-            Debug.Log(_item.name);
+            Dictionary<string, Transform> _childs = new Dictionary<string, Transform>();
+            for(int i = 0; i< childs; i++)
+            {
+                _childs.Add(gameObject.transform.GetChild(i).name, gameObject.transform.GetChild(i).transform);
+            }
+            if (_childs["Face"] != null)
+            {
+                foreach (Transform _face in _childs["Face"])
+                {
+                    eyes.Add(_face.name, _face.gameObject);      // 얼굴 오브젝트를 찾아와 오브젝트의 이름을 Key값으로 Dictionary에 저장함
+                    Debug.Log(_face.name);
+                }
+            }
+            if(_childs["Item"] != null)
+            {
+                foreach (Transform _item in _childs["Item"])
+                {
+                    items.Add(_item.name, _item.gameObject);      // 아이템 오브젝트를 찾아와 오브젝트의 이름을 Key값으로 Dictionary에 저장함
+                    Debug.Log(_item.name);
+                }
+            }
         }
 
         Animator _anim = gameObject.GetComponent<Animator>();           // 애니메이터를 찾아옴
@@ -37,12 +50,22 @@ public class MonsterAnimation : MonoBehaviour
             FindMyEyes();
             eyes["Normal"].SetActive(false);
             eyes["Sad"].SetActive(true);
+            if(items != null) 
+            {
+                items["Normal"].SetActive(false);
+                items["Sad"].SetActive(true);
+            }
             Invoke("SetDefaultEye", 1.0f);
         }
         else
         {
             eyes["Normal"].SetActive(false);
             eyes["Sad"].SetActive(true);
+            if (items != null)
+            {
+                items["Normal"].SetActive(false);
+                items["Sad"].SetActive(true);
+            }
             Invoke("SetDefaultEye", 1.0f);
         }
         if(anim != null)
@@ -72,6 +95,12 @@ public class MonsterAnimation : MonoBehaviour
             eyes["Sad"].SetActive(false);
             eyes["Mad"].SetActive(false);
             eyes["Normal"].SetActive(true);
+        }
+        if(items != null)
+        {
+            items["Sad"].SetActive(false);
+            items["Mad"].SetActive(false);
+            items["Normal"].SetActive(true);
         }
     }
 }

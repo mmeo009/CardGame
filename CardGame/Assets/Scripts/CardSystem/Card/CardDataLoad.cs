@@ -312,6 +312,14 @@ public class CardDataLoad : MonoBehaviour
                     if(SP != null && typeText != null)
                     {
                         SP.thisObject.SetActive(true);
+                        if(cardData.adPower == 0 && cardData.apPower == 0)
+                        {
+                            typeText.thisObject.SetActive(false);
+                        }
+                        else
+                        {
+                            typeText.thisObject.GetComponent<TMP_Text>().text += cardData.adPower.ToString();
+                        }
                     }    
                     break;
                 case 4:

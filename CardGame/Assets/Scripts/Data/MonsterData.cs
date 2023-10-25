@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -93,7 +94,12 @@ public class MonsterData : GenericSingleton<MonsterData>
 
         if(monsterAnim == null)
         {
-            GameObject monster = Instantiate(Resources.Load<GameObject>($"Prefabs/Monster/{monsterData.id}"), new Vector3(1072.5f, 837.5f,0), Quaternion.identity);
+            GameObject _monster = Resources.Load<GameObject>($"Prefabs/Monster/{monsterData.id}");
+            GameObject monster = Instantiate(_monster, new Vector3(1072.5f, 837.5f,0), Quaternion.identity);
+            if(_monster == null)
+            {
+                monster = Instantiate(Resources.Load<GameObject>("Prefabs/Monster/501101A"), new Vector3(1072.5f, 837.5f, 0), Quaternion.identity);
+            }
             monster.transform.parent = FindAnyObjectByType<MonsterGrid>().transform;
 
             monsterAnim = FindAnyObjectByType<MonsterAnimation>();

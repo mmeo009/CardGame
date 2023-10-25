@@ -93,6 +93,160 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: Carrot_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 574
+      y: 1153
+      width: 145
+      height: 87
+    spriteID: 3641b13911d22f4448d9bea2d020a147
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 574, y: 1153}
+    spritePosition: {x: 739, y: 114}
+  - name: Carrot_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 293
+      y: 1260
+      width: 163
+      height: 151
+    spriteID: 58e19457105bd624aa9bc7cd3b75babc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 293, y: 1260}
+    spritePosition: {x: 736, y: 115}
+  - name: NormalCarrot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 822
+      y: 992
+      width: 135
+      height: 190
+    spriteID: 06c7f92cbd6be4a4b8dad715aef426c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 822, y: 992}
+    spritePosition: {x: 746, y: 109}
+  - name: 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 574
+      y: 992
+      width: 240
+      height: 153
+    spriteID: ac1af1d2541ae85458a2f205ca8773e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 574, y: 992}
+    spritePosition: {x: 901, y: 592}
+  - name: 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 992
+      width: 311
+      height: 260
+    spriteID: 24ae66e00f83b6640a58edc1cd4e4ee6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 992}
+    spritePosition: {x: 845, y: 520}
+  - name: 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 323
+      y: 992
+      width: 243
+      height: 232
+    spriteID: 6f40a13d6cb710641829143493696744
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 323, y: 992}
+    spritePosition: {x: 885, y: 532}
+  - name: Normal
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1260
+      width: 281
+      height: 264
+    spriteID: 5b8226553efcf8a4b89d3800a58223c9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1260}
+    spritePosition: {x: 869, y: 571}
   - name: body
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -146,75 +300,75 @@ ScriptedImporter:
   mosaicPSDLayers: []
   rigPSDLayers:
   - name: Carrot_2
-    spriteName: 
+    spriteName: Carrot_2
     isGroup: 0
     parentIndex: -1
     spriteID: 3641b13911d22f4448d9bea2d020a147
     layerID: 9
-    mosaicPosition: {x: 0, y: 0}
+    mosaicPosition: {x: 574, y: 1153}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   - name: Carrot_1
-    spriteName: 
+    spriteName: Carrot_1
     isGroup: 0
     parentIndex: -1
     spriteID: 58e19457105bd624aa9bc7cd3b75babc
     layerID: 8
-    mosaicPosition: {x: 0, y: 0}
+    mosaicPosition: {x: 293, y: 1260}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   - name: NormalCarrot
     spriteName: NormalCarrot
     isGroup: 0
     parentIndex: -1
     spriteID: 06c7f92cbd6be4a4b8dad715aef426c5
     layerID: 7
-    mosaicPosition: {x: 780, y: 4}
+    mosaicPosition: {x: 822, y: 992}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   - name: 3
-    spriteName: 
+    spriteName: 3
     isGroup: 0
     parentIndex: -1
     spriteID: ac1af1d2541ae85458a2f205ca8773e4
     layerID: 6
-    mosaicPosition: {x: 0, y: 0}
+    mosaicPosition: {x: 574, y: 992}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   - name: 2
-    spriteName: 
+    spriteName: 2
     isGroup: 0
     parentIndex: -1
     spriteID: 24ae66e00f83b6640a58edc1cd4e4ee6
     layerID: 4
-    mosaicPosition: {x: 0, y: 0}
+    mosaicPosition: {x: 4, y: 992}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   - name: 1
-    spriteName: 
+    spriteName: 1
     isGroup: 0
     parentIndex: -1
     spriteID: 6f40a13d6cb710641829143493696744
     layerID: 5
-    mosaicPosition: {x: 0, y: 0}
+    mosaicPosition: {x: 323, y: 992}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   - name: Normal
-    spriteName: 
+    spriteName: Normal
     isGroup: 0
     parentIndex: -1
     spriteID: 5b8226553efcf8a4b89d3800a58223c9
     layerID: 3
-    mosaicPosition: {x: 0, y: 0}
+    mosaicPosition: {x: 4, y: 1260}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   - name: body
     spriteName: body
     isGroup: 0

@@ -1448,7 +1448,7 @@ MonoBehaviour:
     adPower: 0
     apPower: 0
     fixedPower: 0
-    cc_1: NONE
+    cc_1: DRAW
     cc_2: NONE
     stat_01: 0
     stat_02: 0
@@ -1468,7 +1468,7 @@ MonoBehaviour:
     adPower: 0
     apPower: 0
     fixedPower: 0
-    cc_1: NONE
+    cc_1: DRAW
     cc_2: NONE
     stat_01: 0
     stat_02: 0
@@ -1488,7 +1488,7 @@ MonoBehaviour:
     adPower: 0
     apPower: 0
     fixedPower: 0
-    cc_1: NONE
+    cc_1: DRAW
     cc_2: NONE
     stat_01: 0
     stat_02: 0
@@ -1631,7 +1631,7 @@ MonoBehaviour:
     element: NONE
     rarity: 3
     text: "\uB371\uC5D0 \uD658\uAC01 \uCE74\uB4DC 4\uC7A5\uC744 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4.
-      \uB2E4\uC74C\uD134\uC5D0 \uB9C8\uB098 2 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
+      \uC774\uBC88\uD134\uC5D0 \uB9C8\uB098 2 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
     comment: text
     adPower: 2
     apPower: 0
@@ -1652,7 +1652,7 @@ MonoBehaviour:
     element: NONE
     rarity: 3
     text: "\uB371\uC5D0 \uD658\uAC01 \uCE74\uB4DC 4\uC7A5\uC744 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4.
-      \uB2E4\uC74C\uD134\uC5D0 \uB9C8\uB098 2 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
+      \uC774\uBC88\uD134\uC5D0 \uB9C8\uB098 2 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
     comment: text
     adPower: 2
     apPower: 0
@@ -1672,7 +1672,7 @@ MonoBehaviour:
     cardCost: 0
     element: NONE
     rarity: 3
-    text: "\uB2E4\uC74C\uD134\uC5D0 \uB9C8\uB098 2\uB97C \uC5BB\uC2B5\uB2C8\uB2E4."
+    text: "\uC774\uBC88\uD134\uC5D0 \uB9C8\uB098 2\uB97C \uC5BB\uC2B5\uB2C8\uB2E4."
     comment: text
     adPower: 2
     apPower: 0

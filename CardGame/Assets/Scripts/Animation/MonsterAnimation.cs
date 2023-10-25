@@ -10,15 +10,15 @@ public class MonsterAnimation : MonoBehaviour
     public Animator anim;
     public void FindMyEyes()        // 눈과 애니메이터 찾아오는 함수
     {
-        int childs = gameObject.transform.childCount;
+        int childs = gameObject.transform.childCount;       // 몬스터의 자식 오브젝트의 숫자를 저장하는 변수
         if(childs > 0 )
         {
-            Dictionary<string, Transform> _childs = new Dictionary<string, Transform>();
+            Dictionary<string, Transform> _childs = new Dictionary<string, Transform>();        // 몬스터의 아이템과 얼굴을 저장하는 Dictionary
             for(int i = 0; i< childs; i++)
-            {
-                _childs.Add(gameObject.transform.GetChild(i).name, gameObject.transform.GetChild(i).transform);
+            {       // 자식 수 만큼 반복하여 Dictionary에 저장
+                _childs.Add(gameObject.transform.GetChild(i).name, gameObject.transform.GetChild(i).transform);     
             }
-            if (_childs["Face"] != null)
+            if (_childs["Face"] != null)    // 얼굴이 존재 할 경우
             {
                 foreach (Transform _face in _childs["Face"])
                 {
@@ -26,7 +26,7 @@ public class MonsterAnimation : MonoBehaviour
                     Debug.Log(_face.name);
                 }
             }
-            if(_childs["Item"] != null)
+            if(_childs["Item"] != null)     //아이템이 존재 할 경우
             {
                 foreach (Transform _item in _childs["Item"])
                 {

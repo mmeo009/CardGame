@@ -93,6 +93,28 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: leaves_Up
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 534
+      y: 431
+      width: 854
+      height: 303
+    spriteID: 7fbd920537795f044aad8619c7b546af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 534, y: 431}
+    spritePosition: {x: 442, y: 871}
   - name: leaves_Down
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -100,8 +122,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 851
+      x: 534
+      y: 4
       width: 892
       height: 419
     spriteID: af767be4782897a4880f88f62f93d2bf
@@ -113,7 +135,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 851}
+    uvTransform: {x: 534, y: 4}
     spritePosition: {x: 422, y: 744}
   - name: Carrot shoulder_Right
     originalName: 
@@ -122,8 +144,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 299
-      y: 1692
+      x: 534
+      y: 742
       width: 283
       height: 250
     spriteID: 8f3d1bd49f1f4b44e9c4fd9a13a3f415
@@ -135,7 +157,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 299, y: 1692}
+    uvTransform: {x: 534, y: 742}
     spritePosition: {x: 721, y: 362}
   - name: Carrot forearm_Right
     originalName: 
@@ -144,8 +166,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 534
-      y: 440
+      x: 1396
+      y: 431
       width: 359
       height: 299
     spriteID: b2b5c1893144a784a9a6a71208010413
@@ -157,7 +179,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 534, y: 440}
+    uvTransform: {x: 1396, y: 431}
     spritePosition: {x: 473, y: 332}
   - name: Carrot elbow_Right
     originalName: 
@@ -166,8 +188,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 1278
+      x: 1434
+      y: 4
       width: 455
       height: 406
     spriteID: 7aa8c075ce6acb144b6b35a70a4bd5cf
@@ -179,7 +201,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 1278}
+    uvTransform: {x: 1434, y: 4}
     spritePosition: {x: 423, y: 559}
   - name: Carrot shoulder_Left
     originalName: 
@@ -189,7 +211,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1692
+      y: 1594
       width: 287
       height: 250
     spriteID: dabc37867a9f4ab44935fa803d522ae0
@@ -201,7 +223,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 1692}
+    uvTransform: {x: 4, y: 1594}
     spritePosition: {x: 1195, y: 546}
   - name: Carrot forearm_Left
     originalName: 
@@ -210,8 +232,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 467
-      y: 1278
+      x: 4
+      y: 1287
       width: 330
       height: 299
     spriteID: 11d3b10ea063d5e48811b82f1b0d5ff7
@@ -223,7 +245,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 467, y: 1278}
+    uvTransform: {x: 4, y: 1287}
     spritePosition: {x: 1368, y: 516}
   - name: Carrot elbow_Left
     originalName: 
@@ -232,8 +254,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 534
-      y: 4
+      x: 4
+      y: 851
       width: 455
       height: 428
     spriteID: 961725c760655e141b3f94181f5a0ee3
@@ -245,7 +267,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 534, y: 4}
+    uvTransform: {x: 4, y: 851}
     spritePosition: {x: 1321, y: 721}
   - name: Carrot body
     originalName: 
@@ -300,22 +322,22 @@ ScriptedImporter:
   mosaicPSDLayers: []
   rigPSDLayers:
   - name: leaves_Up
-    spriteName: 
+    spriteName: leaves_Up
     isGroup: 0
     parentIndex: -1
     spriteID: 7fbd920537795f044aad8619c7b546af
     layerID: 4
-    mosaicPosition: {x: 0, y: 0}
+    mosaicPosition: {x: 534, y: 431}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   - name: leaves_Down
     spriteName: leaves_Down
     isGroup: 0
     parentIndex: -1
     spriteID: af767be4782897a4880f88f62f93d2bf
     layerID: 12
-    mosaicPosition: {x: 4, y: 851}
+    mosaicPosition: {x: 534, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -325,7 +347,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 8f3d1bd49f1f4b44e9c4fd9a13a3f415
     layerID: 11
-    mosaicPosition: {x: 299, y: 1692}
+    mosaicPosition: {x: 534, y: 742}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -335,7 +357,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: b2b5c1893144a784a9a6a71208010413
     layerID: 10
-    mosaicPosition: {x: 534, y: 440}
+    mosaicPosition: {x: 1396, y: 431}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -345,7 +367,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 7aa8c075ce6acb144b6b35a70a4bd5cf
     layerID: 9
-    mosaicPosition: {x: 4, y: 1278}
+    mosaicPosition: {x: 1434, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -355,7 +377,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: dabc37867a9f4ab44935fa803d522ae0
     layerID: 8
-    mosaicPosition: {x: 4, y: 1692}
+    mosaicPosition: {x: 4, y: 1594}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -365,7 +387,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 11d3b10ea063d5e48811b82f1b0d5ff7
     layerID: 7
-    mosaicPosition: {x: 467, y: 1278}
+    mosaicPosition: {x: 4, y: 1287}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -375,7 +397,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 961725c760655e141b3f94181f5a0ee3
     layerID: 6
-    mosaicPosition: {x: 534, y: 4}
+    mosaicPosition: {x: 4, y: 851}
     flatten: 0
     isImported: 1
     isVisible: 1

@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 1604019766081282497}
   - component: {fileID: 1936932071444646131}
   m_Layer: 5
-  m_Name: Right arm
+  m_Name: Rightarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2586402859638145474}
   - component: {fileID: 1599629657173782016}
   m_Layer: 5
-  m_Name: Right ear
+  m_Name: Rightear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 2412444397436131415}
   - component: {fileID: 8012900059645466654}
   m_Layer: 5
-  m_Name: Left arm
+  m_Name: Leftarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 239907838051025363}
   - component: {fileID: 611363355279363214}
   m_Layer: 5
-  m_Name: Left ear (1)
+  m_Name: Leftear2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 8826591649563997150}
   - component: {fileID: 7956825616701094307}
   m_Layer: 5
-  m_Name: CC
+  m_Name: Sad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 7457682763918251429}
   - component: {fileID: 4752972331100326138}
   m_Layer: 5
-  m_Name: Joy
+  m_Name: CC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 7496332465737952751}
   - component: {fileID: 4789674138307859026}
   m_Layer: 5
-  m_Name: Happy
+  m_Name: Mad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,7 +879,7 @@ GameObject:
   - component: {fileID: 9107565234658631183}
   - component: {fileID: 650619370876838005}
   m_Layer: 5
-  m_Name: Left ear
+  m_Name: Leftear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 8758915841993219914}
   - component: {fileID: 7487125755208472325}
   m_Layer: 5
-  m_Name: Right ear (1)
+  m_Name: Rightear2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -137,7 +137,7 @@ public class MonsterData : GenericSingleton<MonsterData>
             GameObject _patternText = GameObject.Find("PatternText");
             patternText = _patternText;
         }
-        if(patternState == null)
+        if(patternStates == null)
         {
             GameObject _patternStates = GameObject.Find("PatternState");
             patternStates = _patternStates;
@@ -154,6 +154,7 @@ public class MonsterData : GenericSingleton<MonsterData>
         }
         hpText.GetComponent<TMP_Text>().text = $"HP : {monsterHp}";
         state.GetComponent<TMP_Text>().text = monsterName;
+        PickPattern();
     }
 
     public void GetDamage(int amount)
@@ -176,7 +177,7 @@ public class MonsterData : GenericSingleton<MonsterData>
 
             if (type == 1)
             {
-                PlayerData.Instance.GainingOrLosingValue("currentHealth", -ad);
+                PlayerData.Instance.GainingOrLosingValue("currentHealth", -(ad + monsterAd));
             }
             else if (type == 2)
             {
@@ -218,14 +219,14 @@ public class MonsterData : GenericSingleton<MonsterData>
                     Debug.Log($"{id}의 패턴이 존재하지 않습니다.");
                     int A = UnityEngine.Random.Range(0, patterns.Count);
                     nextPattern = patterns[A];
-                pattern = nextPattern;
+                    pattern = nextPattern;
             }
         }
         else
         {
             int A = UnityEngine.Random.Range(0, patterns.Count);
             nextPattern = patterns[A];
-
+            pattern = nextPattern;
         }
         patternState["Attack"].SetActive(false);
         patternState["Heal"].SetActive(false);

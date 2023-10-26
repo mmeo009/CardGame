@@ -141,7 +141,19 @@ public class PlayerData : GenericSingleton<PlayerData>
                     player.fixedPower += amount;
                     break;
                 case ("currentHealth"):
-                    player.currentHealth += amount;
+                    if(player.shield > 0)
+                    {
+                        if(player.shield >= -amount)
+                        {
+                            player.shield += amount;
+                        }
+                        else
+                        {
+                            int _shield = player.shield += amount;
+                            player.shield = 0;
+                            player.currentHealth += _shield;
+                        }
+                    }
                     if(player.currentHealth <=0)
                     {
                         PlayerDie();

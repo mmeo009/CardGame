@@ -77,8 +77,7 @@ public class CardUse : MonoBehaviour
                                     Debug.Log("감나빗");       // 빗나갔을 경우 출력
                                 }
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트를 제거
                             }
                             else
@@ -112,8 +111,7 @@ public class CardUse : MonoBehaviour
                                     Debug.Log("감나빗");       // 빗나갔을 경우 출력
                                 }
                                 player.UsingDelay(1.0f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -165,8 +163,7 @@ public class CardUse : MonoBehaviour
                                     Debug.Log("감나빗");       // 빗나갔을 경우 출력
                                 }
                                 player.UsingDelay(1.5f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -189,8 +186,7 @@ public class CardUse : MonoBehaviour
                                 player.GainingOrLosingValue("shield", (player.player.apPower * thisCard.adPower));       // 플레이어 방어력 증가
                                 CCUse(cardCC01, cardCC02, cardPlusData);
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        //카드 오브젝트 제거
                             }
                             else
@@ -206,8 +202,7 @@ public class CardUse : MonoBehaviour
                                 player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.apPower));       // 플레이어 체력 증가
                                 CCUse(cardCC01, cardCC02, cardPlusData);
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -223,8 +218,7 @@ public class CardUse : MonoBehaviour
                                 player.GainingOrLosingValue("currentHealth", (player.player.apPower * thisCard.fixedPower), true);     // 플레이어 체력증가 후 가능하다면 방어력 증가
                                 CCUse(cardCC01, cardCC02, cardPlusData);
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -241,8 +235,7 @@ public class CardUse : MonoBehaviour
                                 player.GainingOrLosingValue("temporary", 2, false, (player.player.apPower * thisCard.fixedPower));      // 천천히 사라지는 체력 상태이상을 부여
                                 CCUse(cardCC01, cardCC02, cardPlusData);
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카등 오브젝트 제거
                             }
                             else
@@ -258,8 +251,7 @@ public class CardUse : MonoBehaviour
                                 player.GainingOrLosingValue("god", 0, true);        // 무적 상태이상을 부여
                                 CCUse(cardCC01, cardCC02, cardPlusData);
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -276,8 +268,7 @@ public class CardUse : MonoBehaviour
                                 player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
                                 CCUse(cardCC01, cardCC02, cardPlusData);
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -293,8 +284,7 @@ public class CardUse : MonoBehaviour
                             {
                                 player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -308,8 +298,7 @@ public class CardUse : MonoBehaviour
                             {
                                 player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                                cardController.audio.Play();        // 카드 사용 사운드 재생
+                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -348,8 +337,7 @@ public class CardUse : MonoBehaviour
                                     Debug.Log("감나빗");       // 빗나갈 경우
                                 }
                             }
-                            cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                            cardController.audio.Play();        // 카드 사용 사운드 재생
+                            SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                             Destroy(gameObject);        // 카드 오브젝트 제거
                         }
                         else
@@ -367,8 +355,7 @@ public class CardUse : MonoBehaviour
                             {
                                 player.GainingOrLosingValue("shield", (player.player.apPower * thisCard.adPower));
                             }
-                            cardController.audio.clip = Resources.Load<AudioClip>($"SoundEffects/{thisCard.cardName}");     // 카드 사용 사운드를 불러옴
-                            cardController.audio.Play();        // 카드 사용 사운드 재생
+                            SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                             Destroy(gameObject);
                         }
                         else

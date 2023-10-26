@@ -10,8 +10,10 @@ public class DataManager
     public Dictionary<string, Entity_CardData.Param> cardsDictionary = new Dictionary<string, Entity_CardData.Param>();
     public Dictionary<string, Entity_MonsteraData.Param> monstersDictionary = new Dictionary<string, Entity_MonsteraData.Param>();
     public Dictionary<string, Entity_PatternData.Param> monstersPatternDictionary = new Dictionary<string, Entity_PatternData.Param>();
+    public Dictionary<string, AudioClip> soundDictionary = new Dictionary<string, AudioClip>();
     public void GetResources()
     {
+        Screen.SetResolution(1920, 1200, true);
         cardDatabase = Resources.Load<Entity_CardData>("CardData");
         monsterDatabase = Resources.Load<Entity_MonsteraData>("MonsterData");
         patternDatabase = Resources.Load<Entity_PatternData>("PatternData");
@@ -23,8 +25,12 @@ public class DataManager
         {
             Debug.Log("Ã£¾Ò´Ù·æ.");
         }
+        AudioClip[] soundFiles = Resources.LoadAll<AudioClip>("SoundEffects");
 
-
+        foreach (AudioClip sound in soundFiles)
+        {
+            soundDictionary[sound.name] = sound;
+        }
     }
     public void DataIntoDictionary()
     {

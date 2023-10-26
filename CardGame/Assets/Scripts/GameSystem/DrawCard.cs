@@ -13,6 +13,10 @@ public class DrawCard : GenericSingleton<DrawCard>
 
     public void TransformChack()
     {
+        if(cardPrefab == null)
+        {
+            cardPrefab = Resources.Load<GameObject>("Prefabs/Card");
+        }    
         if (deckUi == null || cardGrids == null)
         {
             if (GameObject.Find("DeckUI") != null)
@@ -56,20 +60,6 @@ public class DrawCard : GenericSingleton<DrawCard>
         {
 
         }
-
-        if (cardPrefab == null)
-        {
-            cardPrefab = Resources.Load<GameObject>("Prefabs/Card");
-        }
-        if (draw == null)
-        {
-            draw = Resources.Load<AudioClip>("SoundEffects/Card_Draw");
-        }
-        if (shuffle == null)
-        {
-            shuffle = Resources.Load<AudioClip>("SoundEffects/Card_Shuffle");
-        }
-
     }
     public void CreateSomeCards()
     {
@@ -127,9 +117,7 @@ public class DrawCard : GenericSingleton<DrawCard>
                     // 생성된 카드를 캔버스에 넣음
                     newCard.transform.SetParent(GameObject.Find("Canvas").transform);
                     // cardGrid로 이동
-                    newCard.GetComponent<AudioSource>().clip = draw;
-                    // 오디오 소스 입력
-                    newCard.GetComponent<AudioSource>().Play();
+                    SoundData.Instance.PlaySound("Card_Draw");
                     // 오디오 재생
                     CardMoveToGrid(newCard, time, targetGrid);
                 }
@@ -180,9 +168,7 @@ public class DrawCard : GenericSingleton<DrawCard>
                             targetGrid.GetComponent<GridIndex>().ISEmpty();
                         }
                     });
-                    newCard.GetComponent<AudioSource>().clip = draw;
-                    // 오디오 소스 입력
-                    newCard.GetComponent<AudioSource>().Play();
+                    SoundData.Instance.PlaySound("Card_Draw");
                     // 오디오 재생
                     CardMoveToGrid(newCard, time, targetGrid, 1);
                 }
@@ -357,9 +343,7 @@ public class DrawCard : GenericSingleton<DrawCard>
                         {
                             Managers.Deck.AddCardToDeckById(id, 1);
                         }
-                        cardToGoHome.GetComponent<AudioSource>().clip = shuffle;
-                        // 오디오 소스 입력
-                        cardToGoHome.GetComponent<AudioSource>().Play();
+                        SoundData.Instance.PlaySound("Card_Shuffle");
                         // 오디오 재생
                         Destroy(cardToGoHome); // 변수를 사용하여 카드 삭제
                     });

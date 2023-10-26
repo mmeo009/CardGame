@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MonsterData : GenericSingleton<MonsterData>
 {
@@ -14,8 +15,11 @@ public class MonsterData : GenericSingleton<MonsterData>
     public string monsterName;
     public Entity_MonsteraData.Param monsterData;
     public List<Entity_PatternData.Param> patterns = new List<Entity_PatternData.Param>();
+    public Entity_PatternData.Param pattern;
     public List<MonsterCC> monsterCc = new List<MonsterCC>();
     public Image bg;
+    public GameObject hpText, patternText, patternStates, state;
+    public Dictionary<string, GameObject> patternState = new Dictionary<string, GameObject>();
 
     public MonsterAnimation monsterAnim;
 
@@ -36,16 +40,26 @@ public class MonsterData : GenericSingleton<MonsterData>
 
             if (no3 == _level && no4 == _stageType && last == 'Z' && isBoss == true)
             {
-                monsters.Add(_monsterData);
+                    monsters.Add(_monsterData);
             }
             else if(no3 == _level && no4 == _stageType&& last != 'Z' && isBoss == false)
             {
-                monsters.Add(_monsterData);
+                    monsters.Add(_monsterData);
             }
             Debug.Log(_monsterData.id);
         }
-        if(monsters.Count > 0)
+        for(int i  = 0; i < monsters.Count; i ++)
         {
+            string id = monsters[i].id;
+            if(id == "501102A" || id == "501102C")
+            {
+                monsters.Remove(monsters[i]);
+                Debug.Log(monsters.Count);
+            }
+        }
+        if (monsters.Count > 0)
+        {
+
             int monsterNum = UnityEngine.Random.Range(0, monsters.Count);
             monsterData = monsters[monsterNum];
         }
@@ -75,8 +89,10 @@ public class MonsterData : GenericSingleton<MonsterData>
         monsterName = monsterData.monsterName;
         monsterHp = monsterMaxHp;
 
+
+
         // 몬스터 패턴 불러오기
-        foreach(Entity_PatternData.Param _patternData in Managers.Data.patternDatabase.param)
+        foreach (Entity_PatternData.Param _patternData in Managers.Data.patternDatabase.param)
         {
             if(_patternData.monsterId == monsterData.id)
             {
@@ -103,20 +119,84 @@ public class MonsterData : GenericSingleton<MonsterData>
             monster.transform.parent = FindAnyObjectByType<MonsterGrid>().transform;
 
             monsterAnim = FindAnyObjectByType<MonsterAnimation>();
+            monsterAnim.thisMonster = monsterData;
             monsterAnim.FindMyEyes();
         }
         else
         {
             monsterAnim.FindMyEyes();
         }
+
+        if (hpText == null)
+        {
+            GameObject _hpText = GameObject.Find("MonsterHpText");
+            hpText = _hpText;
+        }
+        if(patternText == null)
+        {
+            GameObject _patternText = GameObject.Find("PatternText");
+            patternText = _patternText;
+        }
+        if(patternState == null)
+        {
+            GameObject _patternStates = GameObject.Find("PatternState");
+            patternStates = _patternStates;
+
+            foreach(Transform pattern in patternStates.transform)
+            {
+                string _name = pattern.name;
+                patternState.Add(_name, pattern.gameObject);
+            }
+        }
+        if(state == null)
+        {
+            state = GameObject.Find("MonsterName");
+        }
+        hpText.GetComponent<TMP_Text>().text = $"HP : {monsterHp}";
+        state.GetComponent<TMP_Text>().text = monsterName;
     }
 
     public void GetDamage(int amount)
     {
         monsterHp -= amount;
+        hpText.GetComponent<TMP_Text>().text = $"HP : {monsterHp}";
         if(monsterHp <= amount)
         {
             Debug.Log("깨꼬닭");
+        }
+    }
+    public void UsePattern()
+    {
+        if(pattern != null)
+        {
+            int type = pattern.type;
+            int ad = pattern.ad;
+            int ap = pattern.ap;
+            int heal = pattern.heal;
+
+            if (type == 1)
+            {
+                PlayerData.Instance.GainingOrLosingValue("currentHealth", -ad);
+            }
+            else if (type == 2)
+            {
+                if (ad != 0)
+                {
+                    monsterAd += ad;
+                }
+                else if (ap != 0)
+                {
+                    monsterAp += ap;
+                }
+                else if (heal != 0)
+                {
+                    monsterHp += heal;
+                }
+            }
+            else if(type == 3)
+            {
+                Debug.Log("나중에 구현 예정");
+            }
         }
     }
     public void PickPattern(string id = null)
@@ -138,6 +218,7 @@ public class MonsterData : GenericSingleton<MonsterData>
                     Debug.Log($"{id}의 패턴이 존재하지 않습니다.");
                     int A = UnityEngine.Random.Range(0, patterns.Count);
                     nextPattern = patterns[A];
+                pattern = nextPattern;
             }
         }
         else
@@ -146,7 +227,24 @@ public class MonsterData : GenericSingleton<MonsterData>
             nextPattern = patterns[A];
 
         }
-        Debug.Log(nextPattern.patternId);
+        patternState["Attack"].SetActive(false);
+        patternState["Heal"].SetActive(false);
+        patternState["Defensive"].SetActive(false);
+        if (pattern.type == 1)
+        {
+            patternState["Attack"].SetActive(true);
+            patternText.GetComponent<TMP_Text>().text = $"{pattern.ad + monsterAd}";
+        }
+        else if(pattern.type == 2)
+        {
+            patternState["Heal"].SetActive(true);
+            patternText.GetComponent<TMP_Text>().text = $"강화!";
+        }
+        else
+        {
+            patternState["Defensive"].SetActive(true);
+            patternText.GetComponent<TMP_Text>().text = $"한 턴 휴식!";
+        }
     }
 
     public void GainingOrLosingCC(string ccName, int turn, int dmg, bool isAdd)

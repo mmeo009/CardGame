@@ -143,14 +143,14 @@ public class TurnManager : GenericSingleton<TurnManager>
     IEnumerator EnemyTurn()
     {
         // 적의 턴
-
+        MonsterData.Instance.UsePattern();
         yield return new WaitForSeconds(2f);
     }
 
     IEnumerator SubsequentEffectTurn()
     {
         // 이후 효과
-
+        MonsterData.Instance.PickPattern();
         yield return new WaitForSeconds(2f);
     }
 

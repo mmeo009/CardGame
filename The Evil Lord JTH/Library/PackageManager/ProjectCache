@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638344399644167377
-    m_Hash: 2891438559
+      ticks: 638344613999773315
+    m_Hash: 3347505969
   m_LockFileStatus:
     m_FilePath: C:/My_Project/CardGame_2/The Evil Lord JTH/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638344399833699756
-    m_Hash: 3956890126
+      ticks: 638344613999813253
+    m_Hash: 1748053291
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,217 @@ m_LocalPackages:
 m_ProjectPath: C:/My_Project/CardGame_2/The Evil Lord JTH/Packages
 m_EditorVersion: 2021.3.10f1 (1c7d0df0160b)
 m_ResolvedPackages:
+- packageId: com.unity.addressables@1.19.19
+  testable: 0
+  isDirectDependency: 1
+  version: 1.19.19
+  source: 1
+  resolvedPath: C:\My_Project\CardGame_2\The Evil Lord JTH\Library\PackageCache\com.unity.addressables@1.19.19
+  assetPath: Packages/com.unity.addressables
+  name: com.unity.addressables
+  displayName: Addressables
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: 'The Addressable Asset System allows the developer to ask for an asset
+    via its address. Once an asset (e.g. a prefab) is marked "addressable", it generates
+    an address which can be called from anywhere. Wherever the asset resides (local
+    or remote), the system will locate it and its dependencies, then return it.
+
+
+    Use
+    ''Window->Asset Management->Addressables'' to begin working with the system.
+
+
+    Addressables
+    use asynchronous loading to support loading from any location with any collection
+    of dependencies. Whether you have been using direct references, traditional asset
+    bundles, or Resource folders, addressables provide a simpler way to make your
+    game more dynamic. Addressables simultaneously opens up the world of asset bundles
+    while managing all the complexity.
+
+
+    For usage samples, see github.com/Unity-Technologies/Addressables-Sample'
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.0.8-preview
+    - 0.0.12-preview
+    - 0.0.15-preview
+    - 0.0.16-preview
+    - 0.0.18-preview
+    - 0.0.22-preview
+    - 0.0.26-preview
+    - 0.0.27-preview
+    - 0.1.2-preview
+    - 0.2.1-preview
+    - 0.2.2-preview
+    - 0.3.5-preview
+    - 0.4.6-preview
+    - 0.4.8-preview
+    - 0.5.2-preview
+    - 0.5.3-preview
+    - 0.6.6-preview
+    - 0.6.7-preview
+    - 0.6.8-preview
+    - 0.7.4-preview
+    - 0.7.5-preview
+    - 0.8.4-preview
+    - 0.8.6-preview
+    - 1.1.3-preview
+    - 1.1.4-preview
+    - 1.1.5
+    - 1.1.7
+    - 1.1.9
+    - 1.1.10
+    - 1.2.2
+    - 1.2.3
+    - 1.2.4
+    - 1.3.3
+    - 1.3.8
+    - 1.4.0
+    - 1.5.0
+    - 1.5.1
+    - 1.6.0
+    - 1.6.2
+    - 1.7.4
+    - 1.7.5
+    - 1.8.3
+    - 1.8.4
+    - 1.8.5
+    - 1.9.2
+    - 1.10.0
+    - 1.11.2
+    - 1.12.0
+    - 1.13.1
+    - 1.14.2
+    - 1.15.1
+    - 1.16.1
+    - 1.16.6
+    - 1.16.7
+    - 1.16.8
+    - 1.16.10
+    - 1.16.12
+    - 1.16.13
+    - 1.16.15
+    - 1.16.16
+    - 1.16.19
+    - 1.17.0-preview
+    - 1.17.2-preview
+    - 1.17.4-preview
+    - 1.17.5-preview
+    - 1.17.6-preview
+    - 1.17.13
+    - 1.17.15
+    - 1.17.17
+    - 1.18.2
+    - 1.18.4
+    - 1.18.9
+    - 1.18.11
+    - 1.18.13
+    - 1.18.15
+    - 1.18.16
+    - 1.18.19
+    - 1.19.4
+    - 1.19.6
+    - 1.19.9
+    - 1.19.11
+    - 1.19.13
+    - 1.19.14
+    - 1.19.15
+    - 1.19.17
+    - 1.19.18
+    - 1.19.19
+    - 1.20.0
+    - 1.20.3
+    - 1.20.5
+    - 1.21.1
+    - 1.21.2
+    - 1.21.3
+    - 1.21.8
+    - 1.21.9
+    - 1.21.10
+    - 1.21.12
+    - 1.21.14
+    - 1.21.15
+    - 1.21.17
+    - 1.21.18
+    - 1.21.19
+    - 2.0.3
+    compatible:
+    - 1.19.19
+    - 1.20.0
+    - 1.20.3
+    - 1.20.5
+    - 1.21.1
+    - 1.21.2
+    - 1.21.3
+    - 1.21.8
+    - 1.21.9
+    - 1.21.10
+    - 1.21.12
+    - 1.21.14
+    - 1.21.15
+    - 1.21.17
+    - 1.21.18
+    - 1.21.19
+    verified: 1.19.19
+  dependencies:
+  - name: com.unity.scriptablebuildpipeline
+    version: 1.19.6
+  - name: com.unity.modules.assetbundle
+    version: 1.0.0
+  - name: com.unity.modules.imageconversion
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  - name: com.unity.modules.unitywebrequestassetbundle
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.scriptablebuildpipeline
+    version: 1.20.1
+  - name: com.unity.modules.assetbundle
+    version: 1.0.0
+  - name: com.unity.modules.imageconversion
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  - name: com.unity.modules.unitywebrequestassetbundle
+    version: 1.0.0
+  keywords:
+  - asset
+  - resources
+  - bundle
+  - bundles
+  - assetbundles
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637819852270000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/Addressables.git
+    revision: 2ac2ed2277c173a9a41ffeafa080525578c38e4f
+    path: 
+  unityLifecycle:
+    version: 1.19.19
+    nextVersion: 
 - packageId: com.unity.collab-proxy@1.17.2
   testable: 0
   isDirectDependency: 1
@@ -981,6 +1192,114 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.6.4
+    nextVersion: 
+- packageId: com.unity.toolchain.win-x86_64-linux-x86_64@2.0.6
+  testable: 0
+  isDirectDependency: 1
+  version: 2.0.6
+  source: 1
+  resolvedPath: C:\My_Project\CardGame_2\The Evil Lord JTH\Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.6
+  assetPath: Packages/com.unity.toolchain.win-x86_64-linux-x86_64
+  name: com.unity.toolchain.win-x86_64-linux-x86_64
+  displayName: Toolchain Win Linux x64
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: assets
+  description: Cross-compilation toolchain to build player target Linux x86_64 on
+    host Windows x86_64
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.1.4-preview
+    - 0.1.5-preview
+    - 0.1.6-preview
+    - 0.1.7-preview
+    - 0.1.8-preview
+    - 0.1.9-preview
+    - 0.1.10-preview
+    - 0.1.11-preview
+    - 0.1.13-preview
+    - 0.1.14-preview
+    - 0.1.15-preview
+    - 0.1.16-preview
+    - 0.1.17-preview
+    - 0.1.18-preview
+    - 0.1.19-preview
+    - 0.1.20-preview
+    - 0.1.21-preview
+    - 1.0.0
+    - 2.0.0
+    - 2.0.1
+    - 2.0.2
+    - 2.0.3
+    - 2.0.4
+    - 2.0.5
+    - 2.0.6
+    compatible:
+    - 0.1.4-preview
+    - 0.1.5-preview
+    - 0.1.6-preview
+    - 0.1.7-preview
+    - 0.1.8-preview
+    - 0.1.9-preview
+    - 0.1.10-preview
+    - 0.1.11-preview
+    - 0.1.13-preview
+    - 0.1.14-preview
+    - 0.1.15-preview
+    - 0.1.16-preview
+    - 0.1.17-preview
+    - 0.1.18-preview
+    - 0.1.19-preview
+    - 0.1.20-preview
+    - 0.1.21-preview
+    - 1.0.0
+    - 2.0.0
+    - 2.0.1
+    - 2.0.2
+    - 2.0.3
+    - 2.0.4
+    - 2.0.5
+    - 2.0.6
+    verified: 
+  dependencies:
+  - name: com.unity.sysroot
+    version: 2.0.7
+  - name: com.unity.sysroot.linux-x86_64
+    version: 2.0.6
+  resolvedDependencies:
+  - name: com.unity.sysroot
+    version: 2.0.7
+  - name: com.unity.sysroot.linux-x86_64
+    version: 2.0.6
+  keywords:
+  - toolchain
+  - windows
+  - linux
+  - cross-compilation
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 638258057940000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.toolchain.win-x86_64-linux-x86_64@2.0/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.sysroot.git
+    revision: bf00578d8ff96f17f95a226bb361b69fe2860cc1
+    path: 
+  unityLifecycle:
+    version: 
     nextVersion: 
 - packageId: com.unity.ugui@1.0.0
   testable: 0
@@ -2877,6 +3196,183 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+- packageId: com.unity.sysroot@2.0.7
+  testable: 0
+  isDirectDependency: 0
+  version: 2.0.7
+  source: 1
+  resolvedPath: C:\My_Project\CardGame_2\The Evil Lord JTH\Library\PackageCache\com.unity.sysroot@2.0.7
+  assetPath: Packages/com.unity.sysroot
+  name: com.unity.sysroot
+  displayName: Sysroot Base
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: assets
+  description: This is the base sysroot package required by all sysroot and toolchain
+    packages
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.1.7-preview
+    - 0.1.8-preview
+    - 0.1.9-preview
+    - 0.1.10-preview
+    - 0.1.11-preview
+    - 0.1.12-preview
+    - 0.1.14-preview
+    - 0.1.15-preview
+    - 0.1.16-preview
+    - 0.1.17-preview
+    - 0.1.18-preview
+    - 0.1.19-preview
+    - 1.0.0
+    - 2.0.0
+    - 2.0.2
+    - 2.0.3
+    - 2.0.4
+    - 2.0.5
+    - 2.0.6
+    - 2.0.7
+    compatible:
+    - 0.1.7-preview
+    - 0.1.8-preview
+    - 0.1.9-preview
+    - 0.1.10-preview
+    - 0.1.11-preview
+    - 0.1.12-preview
+    - 0.1.14-preview
+    - 0.1.15-preview
+    - 0.1.16-preview
+    - 0.1.17-preview
+    - 0.1.18-preview
+    - 0.1.19-preview
+    - 1.0.0
+    - 2.0.0
+    - 2.0.2
+    - 2.0.3
+    - 2.0.4
+    - 2.0.5
+    - 2.0.6
+    - 2.0.7
+    verified: 
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - unity
+  - linux
+  - sysroot
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 638258057320000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.sysroot@2.0/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.sysroot.git
+    revision: bf00578d8ff96f17f95a226bb361b69fe2860cc1
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+- packageId: com.unity.sysroot.linux-x86_64@2.0.6
+  testable: 0
+  isDirectDependency: 0
+  version: 2.0.6
+  source: 1
+  resolvedPath: C:\My_Project\CardGame_2\The Evil Lord JTH\Library\PackageCache\com.unity.sysroot.linux-x86_64@2.0.6
+  assetPath: Packages/com.unity.sysroot.linux-x86_64
+  name: com.unity.sysroot.linux-x86_64
+  displayName: Sysroot Linux x64
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: assets
+  description: Sysroot used to build unity player for linux x86_64
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.1.6-preview
+    - 0.1.7-preview
+    - 0.1.8-preview
+    - 0.1.9-preview
+    - 0.1.10-preview
+    - 0.1.11-preview
+    - 0.1.12-preview
+    - 0.1.13-preview
+    - 0.1.14-preview
+    - 0.1.15-preview
+    - 1.0.0
+    - 2.0.0
+    - 2.0.1
+    - 2.0.2
+    - 2.0.3
+    - 2.0.4
+    - 2.0.5
+    - 2.0.6
+    compatible:
+    - 0.1.6-preview
+    - 0.1.7-preview
+    - 0.1.8-preview
+    - 0.1.9-preview
+    - 0.1.10-preview
+    - 0.1.11-preview
+    - 0.1.12-preview
+    - 0.1.13-preview
+    - 0.1.14-preview
+    - 0.1.15-preview
+    - 1.0.0
+    - 2.0.0
+    - 2.0.1
+    - 2.0.2
+    - 2.0.3
+    - 2.0.4
+    - 2.0.5
+    - 2.0.6
+    verified: 
+  dependencies:
+  - name: com.unity.sysroot
+    version: 2.0.7
+  resolvedDependencies:
+  - name: com.unity.sysroot
+    version: 2.0.7
+  keywords:
+  - unity
+  - linux
+  - sysroot
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 638258057410000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.sysroot.linux-x86_64@2.0/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.sysroot.git
+    revision: bf00578d8ff96f17f95a226bb361b69fe2860cc1
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
 - packageId: com.unity.ext.nunit@1.0.6
   testable: 0
   isDirectDependency: 0
@@ -3272,6 +3768,135 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.4.2
+    nextVersion: 
+- packageId: com.unity.scriptablebuildpipeline@1.20.1
+  testable: 0
+  isDirectDependency: 0
+  version: 1.20.1
+  source: 1
+  resolvedPath: C:\My_Project\CardGame_2\The Evil Lord JTH\Library\PackageCache\com.unity.scriptablebuildpipeline@1.20.1
+  assetPath: Packages/com.unity.scriptablebuildpipeline
+  name: com.unity.scriptablebuildpipeline
+  displayName: Scriptable Build Pipeline
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: The Scriptable Build Pipeline moves the asset bundle build pipeline
+    to C#.  Use the pre-defined build flows, or create your own using the divided
+    up APIs.  This system improves build time, fixes incremental build, and provides
+    greater flexibility.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.0.5-preview
+    - 0.0.6-preview
+    - 0.0.8-preview
+    - 0.0.9-preview
+    - 0.0.10-preview
+    - 0.0.14-preview
+    - 0.0.15-preview
+    - 0.1.0-preview
+    - 0.2.0-preview
+    - 1.0.1-preview
+    - 1.1.0-preview
+    - 1.1.1-preview
+    - 1.2.1-preview
+    - 1.3.5-preview
+    - 1.4.1-preview
+    - 1.5.0-preview
+    - 1.5.1
+    - 1.5.2
+    - 1.5.4
+    - 1.5.6
+    - 1.5.10
+    - 1.6.3-preview
+    - 1.6.4-preview
+    - 1.6.5-preview
+    - 1.7.2
+    - 1.7.3
+    - 1.8.2
+    - 1.8.4
+    - 1.8.6
+    - 1.9.0
+    - 1.10.0
+    - 1.11.1
+    - 1.11.2
+    - 1.12.0
+    - 1.13.1
+    - 1.14.0
+    - 1.14.1
+    - 1.15.1
+    - 1.15.2
+    - 1.16.1
+    - 1.17.0
+    - 1.18.0
+    - 1.19.0
+    - 1.19.1
+    - 1.19.2
+    - 1.19.3
+    - 1.19.4
+    - 1.19.5
+    - 1.19.6
+    - 1.20.1
+    - 1.20.2
+    - 1.21.0
+    - 1.21.1
+    - 1.21.2
+    - 1.21.3
+    - 1.21.5
+    - 1.21.7
+    - 1.21.8
+    - 1.21.9
+    - 1.21.20
+    - 1.21.21
+    - 2.0.1
+    compatible:
+    - 1.20.1
+    - 1.20.2
+    - 1.21.0
+    - 1.21.1
+    - 1.21.2
+    - 1.21.3
+    - 1.21.5
+    - 1.21.7
+    - 1.21.8
+    - 1.21.9
+    - 1.21.20
+    - 1.21.21
+    - 2.0.1
+    verified: 1.20.2
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - build
+  - bundle
+  - bundles
+  - assetbundles
+  - cache
+  - server
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 637874640850000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/Addressables.git
+    revision: f2d9aac4eb254f268ff4e23f800ccc30c53dbd75
+    path: 
+  unityLifecycle:
+    version: 1.20.1
     nextVersion: 
 - packageId: com.unity.settings-manager@1.0.3
   testable: 0

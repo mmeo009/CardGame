@@ -30,7 +30,7 @@ public class MonsterPattern_importer : AssetPostprocessor
 
                 foreach (string sheetName in sheetNames)
                 {
-                    var exportPath = "Assets/Resources/" + sheetName + ".asset";
+                    var exportPath = "Assets/Excel/" + sheetName + ".asset";
                     
                     // check scriptable object
                     var data = (Entity_PatternData)AssetDatabase.LoadAssetAtPath(exportPath, typeof(Entity_PatternData));

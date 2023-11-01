@@ -118,6 +118,8 @@
 -define:UNITY_OPERATE_SERVICE_ENABLED
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
+-r:"Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll"
 -r:"Assets/Terasurware/Editor/npoi/ICSharpCode.SharpZipLib.dll"
 -r:"Assets/Terasurware/Editor/npoi/NPOI.dll"
 -r:"Assets/Terasurware/Editor/npoi/NPOI.OOXML.dll"

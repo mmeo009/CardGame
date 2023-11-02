@@ -10,6 +10,7 @@ using Object = UnityEngine.Object;
 
 public class ResourceManager
 {
+
     Dictionary<string, UnityEngine.Object> _resources = new Dictionary<string, Object>();
 
     public T Load<T>(string key) where T : Object
@@ -76,6 +77,7 @@ public class ResourceManager
             }
 
             _resources.Add(Key, op.Result);
+            Debug.Log(_resources[Key] + " : " + _resources[Key].GetType());
             callback?.Invoke(op.Result);
         };
     }

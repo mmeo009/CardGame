@@ -17,6 +17,7 @@ public class DataManager
         entity_CardData = (Entity_CardData)Managers.Resource.Load<ScriptableObject>("CardData");
         entity_MonsteraData = (Entity_MonsteraData)Managers.Resource.Load<ScriptableObject>("MonsterData");
         entity_PatternData = (Entity_PatternData)Managers.Resource.Load<ScriptableObject>("PatternData");
+
         if (entity_CardData != null)
         {
             foreach (Entity_CardData.Param cardData in entity_CardData.param)

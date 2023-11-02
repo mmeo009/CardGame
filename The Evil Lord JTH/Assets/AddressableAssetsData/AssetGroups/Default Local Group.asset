@@ -15,11 +15,26 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: e85c377ea643f44459684be1cf561163
-  m_SerializeEntries: []
+  m_GUID: 18d3e9c00fa657c4b8617ddc0adbf234
+  m_SerializeEntries:
+  - m_GUID: ccb8c09987c45254fbcd512f937e0955
+    m_Address: CardData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Data
+  - m_GUID: 2b74c3e7babd11446bb754f0d3ef03c8
+    m_Address: MonsterData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Data
+  - m_GUID: b46f0554b03f37c4da9d8def5ec2ab1b
+    m_Address: PatternData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Data
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: f8d242abd03f5b24395f041c22b91390, type: 2}
+  m_Settings: {fileID: 11400000, guid: 0badbe3c4aa1ddd46b94c4608aedb784, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: bb623c8706364e94ab6bb3f1f71e4835, type: 2}
-    - {fileID: 11400000, guid: 7e6bc0a0f6a3fc2408c40b7cd8e1b5e5, type: 2}
+    - {fileID: 11400000, guid: 7a59849a30f926b458484d905a0183e9, type: 2}
+    - {fileID: 11400000, guid: 3f7e41f22367d414c8e1ce94bfdb4e85, type: 2}

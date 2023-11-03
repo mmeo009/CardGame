@@ -1,0 +1,1771 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e7b73bffd03df40a9b24687eebd788, type: 3}
+  m_Name: CardData
+  m_EditorClassIdentifier: 
+  param:
+  - id: 101001A
+    itemCode: Wood_001
+    cardName: "\uB098\uBB34 \uB9C9\uB300\uAE30"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 0
+    element: GRESS
+    rarity: 1
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uBC29\uAE08 \uC8FC\uC6CC\uC628 \uC2E0\uC120\uD55C \uB098\uBB34\uC785\uB2C8\uB2E4."
+    adPower: 1
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101001B
+    itemCode: Wood_002
+    cardName: "\uBFB0\uC871\uD55C \uB098\uBB34 \uB9C9\uB300\uAE30"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 1
+    element: GRESS
+    rarity: 1
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uB098\uBB34\uB97C \uBE44\uBCD0\uB354\uB2C8 \uBFB0\uC871\uD574 \uC84C\uC2B5\uB2C8\uB2E4."
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101001C
+    itemCode: Wood_003
+    cardName: "\uBFB0\uC871\uD55C \uB098\uBB34 \uCC3D"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 2
+    element: GRESS
+    rarity: 1
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uBFB0\uC871\uD55C \uB098\uBB34\uB97C \uBB49\uCCD0\uC11C \uCC3D\uC744
+      \uB9CC\uB4E4\uC5C8\uC2B5\uB2C8\uB2E4."
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101002A
+    itemCode: Dagger_001
+    cardName: "\uB2E8\uAC80"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 1
+    element: NONE
+    rarity: 1
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uC0AC\uACFC\uB97C \uC798 \uAE4E\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4.  "
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101002B
+    itemCode: Dagger_002
+    cardName: "\uC591\uB0A0 \uB2E8\uAC80"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 2
+    element: NONE
+    rarity: 1
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uBCA0\uC774\uBA74 \uC544\uD50C\uAC83 \uAC19\uC2B5\uB2C8\uB2E4. (\uB530\uB054!)"
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101002C
+    itemCode: Dagger_003
+    cardName: "\uB3C5\uAE30\uB97C \uD488\uC740 \uAC80"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 4
+    element: GRESS
+    rarity: 1
+    text: "\uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uB3C5\uC740 \uC5B4\uB514\uC11C \uB0AC\uB294\uC9C0 \uBAA8\uB985\uB2C8\uB2E4."
+    adPower: 1
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: POISON
+    stat_01: 0
+    stat_02: 0
+    stat_03: 2
+    stat_04: 4
+    stat_05: 0
+  - id: 101003A
+    itemCode: Stone_001
+    cardName: "\uC791\uC740 \uC870\uC57D\uB3CC"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 0
+    element: NONE
+    rarity: 1
+    text: "\uC801\uC5D0\uAC8C \uB3CC\uC744 \uB358\uC838  [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
+    comment: "\uC5B4\uB290 \uB9C8\uC744\uC5D0 \uC0AC\uB294 5\uC0B4 \uAF2C\uB9C8\uB294
+      \uC608\uC05C \uB3CC\uC744 \uBAA8\uC73C\uB294\uAC8C \uCDE8\uBBF8\uB77C\uACE0
+      \uD569\uB2C8\uB2E4."
+    adPower: 1
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101003B
+    itemCode: Stone_002
+    cardName: "\uB530\uB73B\uD55C \uC870\uC57D\uB3CC"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 0
+    element: FIRE
+    rarity: 1
+    text: "\uC801\uC5D0\uAC8C \uB3CC\uC744 \uB358\uC838  [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
+    comment: "\uD56B\uD329\uBCF4\uB2E4 \uC88B\uC2B5\uB2C8\uB2E4."
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 50
+  - id: 101003C
+    itemCode: Stone_003
+    cardName: "\uB728\uAC70\uC6B4 \uC870\uC57D\uB3CC"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 0
+    element: FIRE
+    rarity: 1
+    text: "\uC801\uC5D0\uAC8C \uB3CC\uC744 \uB358\uC838  [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC8FC\uACE0 \uB0B4 \uB371\uC5D0 \uD654\uC0C1\uCE74\uB4DC\uB97C 2\uC7A5 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4."
+    comment: "\uC190\uC774 \uB370\uC774\uC9C0 \uC54A\uAC8C \uC870\uC2EC\uD558\uC138\uC694"
+    adPower: 5
+    apPower: 0
+    fixedPower: 0
+    cc_1: BURN
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 2
+    stat_03: 0
+    stat_04: 0
+    stat_05: 50
+  - id: 101004A
+    itemCode: BounceBall_001
+    cardName: "\uD0F1\uD0F1\uBCFC \uD55C\uAC1C"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 1
+    element: NONE
+    rarity: 1
+    text: "\uD0F1\uD0F1\uBCFC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uD0F1\uD0F1\uBCFC\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uC544\uC774\uCF54 \uBF08 \uB9DE\uC558\uB124"
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101004B
+    itemCode: BounceBall_002
+    cardName: "\uD0F1\uD0F1\uBCFC \uB450\uAC1C"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "\uD0F1\uD0F1\uBCFC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uD0F1\uD0F1\uBCFC\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uC544\uC774\uCF54 \uBF08 \uB450\uBC88 \uB9DE\uC558\uB124"
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101004C
+    itemCode: BounceBall_003
+    cardName: "\uD0F1\uD0F1\uBCFC \uC5EC\uB7EC \uAC1C"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 3
+    element: NONE
+    rarity: 2
+    text: "\uD0F1\uD0F1\uBCFC\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uD0F1\uD0F1\uBCFC\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uD55C\uBC88\uC5D0 4\uAC1C\uB97C \uB358\uC9C0\uB2C8 \uD558\uB098\uC529
+      \uBE57\uB098\uAC00\uC9C0"
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101005A
+    itemCode: Boomerang_001
+    cardName: "\uBD80\uBA54\uB791"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 2
+    element: GRESS
+    rarity: 2
+    text: "\uBD80\uBA54\uB791\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uBD80\uBA54\uB791\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uCD08\uC2B9\uB2EC \uCC98\uB7FC \uC0DD\uACBC\uC2B5\uB2C8\uB2E4. (\uBC18\uC9DD!)"
+    adPower: 4
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101005B
+    itemCode: Boomerang_002
+    cardName: "\uD2BC\uD2BC\uD55C \uBD80\uBA54\uB791"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 2
+    element: GRESS
+    rarity: 2
+    text: "\uBD80\uBA54\uB791\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uBD80\uBA54\uB791\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uC544\uD504\uC9C0 \uC54A\uAC8C \uB450\uAEBC\uC6B4 \uC7A5\uAC11\uC744
+      \uAF2D \uCC29\uC6A9\uD558\uC138\uC694."
+    adPower: 5
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101005C
+    itemCode: Boomerang_003
+    cardName: "\uAC15\uD654\uB41C \uBD80\uBA54\uB791"
+    cardType: 1
+    usingMethod: 3
+    cardCost: 3
+    element: GRESS
+    rarity: 2
+    text: "\uBD80\uBA54\uB791\uC744 \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uBD80\uBA54\uB791\uC740 \uC801\uC744
+      \uB9DE\uCD94\uACE0 \uB098\uC5D0\uAC8C \uB3CC\uC544\uC640 [had]\uB9CC\uD07C
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uBB35\uC9C1\uD55C \uD55C\uBC29 (\uB098\uB3C4 \uD55C\uBC29)"
+    adPower: 6
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101006A
+    itemCode: Acorn_001
+    cardName: "\uB3C4\uD1A0\uB9AC"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 1
+    element: GRESS
+    rarity: 2
+    text: "\uC801\uC5D0\uAC8C \uB3C4\uD1A0\uB9AC\uB97C \uB358\uC838 [ad]\uB9CC\uD07C\uC758
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uAC15\uD654\uB97C \uD558\uBA74 \uB2E4\uB78C\uC950
+      \uACF5\uC7A5\uC5D0 \uB3C4\uD1A0\uB9AC\uB97C \uB9E1\uAE41\uB2C8\uB2E4."
+    comment: "\uC77C\uB2E8 \uB9DE\uC73C\uBA74 \uAE30\uBD84\uC774 \uB098\uC069\uB2C8\uB2E4."
+    adPower: 1
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101006N
+    itemCode: Acorn_002
+    cardName: "\uB2E4\uB78C\uC950 \uACF5\uC7A5"
+    cardType: 0
+    usingMethod: 0
+    cardCost: 0
+    element: NONE
+    rarity: 2
+    text: "\uB450\uAC1C\uC758 \uACF5\uC7A5\uC744 \uD569\uCE58\uBA74 \uB3C4\uD1A0\uB9AC
+      4\uC7A5\uC744 \uB371\uC5D0 \uC11E\uC5B4 \uB123\uACE0 \uBB34\uD55C\uC758 \uB3C4\uD1A0\uB9AC\uB97C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: "\uB2E4\uB78C\uC950\uB294 \uB3C4\uD1A0\uB9AC \uB450\uAC1C\uB85C \uB3C4\uD1A0\uB9AC
+      4\uAC1C\uB97C \uB9CC\uB4ED\uB2C8\uB2E4. \uC190\uD574\uBCF4\uB294 \uC7A5\uC0AC
+      \u3160\u3160"
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101006I
+    itemCode: Acorn_003
+    cardName: "\uBB34\uD55C\uC758 \uB3C4\uD1A0\uB9AC + [ra]"
+    cardType: 4
+    usingMethod: 2
+    cardCost: 2
+    element: GRESS
+    rarity: 2
+    text: "\uC801\uC5D0\uAC8C \uB3C4\uD1A0\uB9AC\uB97C [ra]\uD68C \uB358\uC838 [ad]\uB9CC\uD07C\uC758
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4.  \uC774 \uCE74\uB4DC\uB294 \uBB34\uD55C\uD788
+      \uAC15\uD654\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4!"
+    comment: "\uB2E4\uB78C\uC950 \uC5EC\uB7EC\uAC1C \uD1B5\uD1B5\uD1B5"
+    adPower: 1
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101007A
+    itemCode: Spear_001
+    cardName: "\uAE34 \uCC3D"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 4
+    element: NONE
+    rarity: 2
+    text: "\uC801\uC5D0\uAC8C \uCC3D\uC744 \uB358\uC838 [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
+    comment: "\uCC3D \uD53C\uD560\uC904 \uC54C\uC544!"
+    adPower: 8
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101007B
+    itemCode: Spear_002
+    cardName: "\uB354\uC6B1\uB354 \uAE34 \uCC3D"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 4
+    element: NONE
+    rarity: 2
+    text: "\uC801\uC5D0\uAC8C \uCC3D\uC744 \uB358\uC838 [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
+    comment: "\uCC3D \uD53C\uD560\uC904 \uC54C\uB77C\uACE0!"
+    adPower: 10
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101007C
+    itemCode: Spear_003
+    cardName: "\uB108\uBB34\uB098\uB3C4 \uAE34 \uCC3D"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 5
+    element: NONE
+    rarity: 2
+    text: "\uAE34\uCC3D\uC73C\uB85C \uC801\uC744 \uCC14\uB7EC [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
+    comment: "\uCC3D \uD53C\uD558\uC9C0\uB9C8!"
+    adPower: 14
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101008A
+    itemCode: ThrowingAxe_001
+    cardName: "\uD22C\uCC99\uC6A9 \uB3C4\uB07C"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "\uB3C4\uB07C\uB97C \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
+    comment: "\uB3C4\uB07C\uB294 \uB098\uBB34\uB97C \uBCA8\uB54C \uC4F0\uC138\uC694"
+    adPower: 5
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101008B
+    itemCode: ThrowingAxe_002
+    cardName: "\uD22C\uCC99\uC6A9 \uB3C4\uB07C \uB450\uC790\uB8E8"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "\uB3C4\uB07C\uB97C \uB450\uC790\uB8E8 \uB358\uC800 \uC801\uC5D0\uAC8C
+      [ad]\uB9CC\uD07C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uB3C4\uB07C\uAC00 \uB458\uC774\uBA74 \uB450\uBC30\uB85C \uC4F0\uB7EC\uD2B8\uB9AC\uC8E0"
+    adPower: 4
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101008C
+    itemCode: ThrowingAxe_003
+    cardName: "\uB9C8\uB825\uC774 \uAE43\uB4E0 \uB3C4\uB07C"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "\uB3C4\uB07C\uB97C \uB358\uC838 \uC801\uC5D0\uAC8C [ad]\uB9CC\uD07C \uB9C8\uBC95
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uB3C4\uB07C\uB97C \uC0D8\uBB3C\uC5D0 \uBE60\uB728\uB838\uB354\uB2C8?"
+    adPower: 0
+    apPower: 7
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101009A
+    itemCode: Chicken_001
+    cardName: "\uB2ED"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "\uC801\uC5D0\uAC8C \uB2ED\uC744 \uB358\uC838 [ad]\uB9CC\uD07C\uC758 \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
+    comment: "\uB2ED\uC740 \uBB34\uAE30\uAC00 \uC544\uB2C8\uC5D0\uC694."
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101009B
+    itemCode: Chicken_002
+    cardName: "\uB2ED \uB2E4\uB9AC"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "\uC801\uC744 \uBBF8\uB044\uB7EC\uC6B4 \uB2ED \uB2E4\uB9AC\uB85C \uB54C\uB824
+      [ad]\uB9CC\uD07C\uC758 \uD53C\uD574\uB97C \uC8FC\uACE0 \uAE30\uB984\uC744 \uBB3B\uD600
+      2\uD134\uB3D9\uC548 \uC801\uC758 \uC2DC\uC57C\uB97C \uD750\uB9AC\uAC8C \uD569\uB2C8\uB2E4."
+    comment: "\uC74C\uC2DD\uC744 \uAC00\uC9C0\uACE0 \uB180\uBA74 \uBABB\uC368\uC694."
+    adPower: 7
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: BLIND
+    stat_01: 0
+    stat_02: 0
+    stat_03: 2
+    stat_04: 2
+    stat_05: 0
+  - id: 101009C
+    itemCode: Chicken_003
+    cardName: "\uC804\uC124\uC758 \uB2ED \uB2E4\uB9AC"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 5
+    element: ALL
+    rarity: 3
+    text: "\uC804\uC124\uC758 \uB2ED \uB2E4\uB9AC\uB85C \uC801\uC744 \uB54C\uB824
+      [ad]\uB9CC\uD07C\uC758 \uD53C\uD574\uB97C \uC8FC\uACE0 \uAE30\uB984\uC744 \uBB3B\uD600
+      2\uD134\uB3D9\uC548 \uC801\uC758 \uC2DC\uC57C\uB97C \uD750\uB9AC\uAC8C \uD569\uB2C8\uB2E4."
+    comment: "\uB9DB\uC788\uB294 \uC74C\uC2DD\uC744 \uB0AD\uBE44\uD558\uC9C0 \uB9C8\uC138\uC694."
+    adPower: 15
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: BLIND
+    stat_01: 0
+    stat_02: 0
+    stat_03: 2
+    stat_04: 2
+    stat_05: 0
+  - id: 101010A
+    itemCode: Hammer_001
+    cardName: "\uBFC5 \uB9DD\uCE58"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 1
+    element: NONE
+    rarity: 3
+    text: "\uC801\uC744 \uBFC5\uB9DD\uCE58\uB85C \uB54C\uB824 [ad]\uB9CC\uD07C\uC758
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+    comment: "\uBFC5\uBFC5\uBFC5"
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101010B
+    itemCode: Hammer_002
+    cardName: "\uCCA0 \uB9DD\uCE58"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "\uC801\uC744 \uB9DD\uCE58\uB85C \uB54C\uB824 [ad]\uB9CC\uD07C\uC758 \uD53C\uD574\uB97C
+      \uC90D\uB2C8\uB2E4."
+    comment: "\uAE61\uAE61\uAE61"
+    adPower: 4
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101010C
+    itemCode: Hammer_003
+    cardName: "\uC774\uC0C1\uD55C \uB9DD\uCE58"
+    cardType: 1
+    usingMethod: 1
+    cardCost: 5
+    element: ALL
+    rarity: 3
+    text: "\uC801\uC744 \uB9DD\uCE58\uB85C \uB54C\uB824 [ap]\uB9CC\uD07C\uC758 \uD53C\uD574\uB97C
+      \uC8FC\uACE0 \uC2DC\uC804\uC790\uB97C 2\uD134 \uB3D9\uC548 \uB098\uD0DC\uD558\uAC8C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: "\uD5E4\uD5E4\uBFC5\uBFC5\uAE61\uAE61"
+    adPower: 0
+    apPower: 15
+    fixedPower: 0
+    cc_1: SLOTH
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 101011J
+    itemCode: JTH_001
+    cardName: "JTH\uC758 \uC785\uAE40"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 6
+    element: NONE
+    rarity: 4
+    text: "JTH\uC758 \uC801\uC5D0\uAC8C \uC785\uAE40\uC744 \uBD88\uC5B4 [ad]\uB9CC\uD07C\uC758
+      \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4. \uC801\uC740 2\uD134\uB3D9\uC548 \uB3C5\uB370\uBBF8\uC9C0\uB97C
+      \uBC1B\uACE0 \uB0B4 \uB371\uC5D0 \uD654\uC0C1\uCE74\uB4DC\uB97C 2\uC7A5 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4."
+    comment: "JTH\uB294 \uC591\uCE58\uB97C \uD558\uC9C0 \uC54A\uB098\uBD10\uC694"
+    adPower: 13
+    apPower: 0
+    fixedPower: 0
+    cc_1: BURN
+    cc_2: POISON
+    stat_01: 2
+    stat_02: 2
+    stat_03: 2
+    stat_04: 2
+    stat_05: 0
+  - id: 101011T
+    itemCode: JTH_002
+    cardName: "JTH\uC758 \uB208\uBE5B"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 6
+    element: NONE
+    rarity: 4
+    text: "JTH\uAC00 \uC801\uC5D0\uAC8C \uC719\uD06C\uD569\uB2C8\uB2E4. [ad]\uB9CC\uD07C\uC758
+      \uD53C\uD574\uB97C \uC8FC\uACE0 \uC801\uACFC \uC790\uC2E0\uC744 \uB098\uD0DC\uD558\uAC8C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: "JTH\uC758 \uB208\uC740 \uBE5B\uC774 \uB098\uB098\uBD10\uC694"
+    adPower: 13
+    apPower: 0
+    fixedPower: 0
+    cc_1: SLOTH
+    cc_2: SLOTH
+    stat_01: 2
+    stat_02: 0
+    stat_03: 2
+    stat_04: 0
+    stat_05: 0
+  - id: 101011H
+    itemCode: JTH_003
+    cardName: "JTH\uC758 \uC7AC\uCC44\uAE30"
+    cardType: 1
+    usingMethod: 2
+    cardCost: 6
+    element: NONE
+    rarity: 4
+    text: "JTH\uAC00 \uC801\uC5D0\uAC8C \uC7AC\uCC44\uAE30 \uD569\uB2C8\uB2E4. [ad]\uB9CC\uD07C\uC758
+      \uD53C\uD574\uB97C \uC8FC\uACE0 \uB0A8\uC740 \uB9C8\uB098 1\uB2F9 \uB9C8\uB0981\uC744
+      \uC783\uACE0 \uBC18\uBCF5\uD569\uB2C8\uB2E4."
+    comment: bless you~
+    adPower: 7
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102012A
+    itemCode: Shield_001
+    cardName: "\uB098\uBB34 \uBC29\uD328"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 0
+    element: GRESS
+    rarity: 1
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uB098\uBB34\uB97C \uBB49\uCCE4\uB354\uB2C8 \uC81C\uBC95 \uBC29\uD328
+      \uAC19\uC544\uC694."
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102012B
+    itemCode: Shield_002
+    cardName: "\uB3CC \uBC29\uD328"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 1
+    element: FIRE
+    rarity: 1
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uBC29\uD328\uCC98\uB7FC \uC0DD\uACBC\uAE38\uB798 \uBC29\uD328\uB85C
+      \uC501\uB2C8\uB2E4."
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102012C
+    itemCode: Shield_003
+    cardName: "\uAC15\uCCA0 \uBC29\uD328"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 2
+    element: FIRE
+    rarity: 1
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uAC15\uCCA0\uB85C \uC5F4\uC2EC\uD788 \uB9CC\uB4E0 \uBC29\uD328\uC785\uB2C8\uB2E4."
+    adPower: 5
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102013A
+    itemCode: PotionA_001
+    cardName: "\uBBF8\uB7C9\uC758 \uCE58\uC720 \uBB3C\uC57D"
+    cardType: 2
+    usingMethod: 2
+    cardCost: 0
+    element: WATER
+    rarity: 1
+    text: "\uCCB4\uB825\uC744 [app]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+    comment: "\uBFB0\uC871\uADC0\uB4E4\uC740 \uBB3C\uC57D\uC744 \uBE44\uC2F8\uAC8C
+      \uD314\uAE30\uC704\uD574 \uC591\uC744 \uC9C4\uC9DC \uB9CE\uC774 \uC904\uC600\uB2E4\uB124\uC694.(\uC0AC\uAE30\uAFBC)"
+    adPower: 0
+    apPower: 1
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102013B
+    itemCode: PotionA_002
+    cardName: "\uC18C\uB7C9\uC758 \uCE58\uC720 \uBB3C\uC57D"
+    cardType: 2
+    usingMethod: 2
+    cardCost: 1
+    element: WATER
+    rarity: 1
+    text: "\uCCB4\uB825\uC744 [app]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+    comment: "\uBFB0\uC871\uADC0\uB4E4\uC740 \uBB3C\uC57D\uC744 \uBE44\uC2F8\uAC8C
+      \uD314\uAE30\uC704\uD574 \uC591\uC744 \uC904\uC600\uB2E4\uB124\uC694."
+    adPower: 0
+    apPower: 2
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102013C
+    itemCode: PotionA_003
+    cardName: "\uCE58\uC720 \uBB3C\uC57D"
+    cardType: 2
+    usingMethod: 2
+    cardCost: 2
+    element: WATER
+    rarity: 1
+    text: "\uCCB4\uB825\uC744 [app]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+    comment: "\uAE38\uCB49\uADC0 \uB9C8\uC744\uC758 \uBA85\uBB3C"
+    adPower: 0
+    apPower: 4
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102014A
+    itemCode: PotionB_001
+    cardName: "\uBC29\uC5B4\uC758 \uBB18\uC57D"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 2
+    element: NONE
+    rarity: 1
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uB2F9\uC2E0\uB3C4 \uB3CC\uC774 \uB420 \uC218 \uC788\uC5B4\uC694."
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102014B
+    itemCode: PotionB_002
+    cardName: "\uBD84\uB178\uC758 \uBB18\uC57D"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 2
+    element: NONE
+    rarity: 1
+    text: "\uD3ED\uC8FC \uC0C1\uD0DC\uC774\uC0C1\uC744 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uB3CC\uC774 \uB418\uAE30 \uC2EB\uB2E4\uACE0 \uD654\uB0B4\uC9C0 \uB9C8\uC138\uC694."
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: FURY
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102014C
+    itemCode: PotionB_003
+    cardName: "\uAC15\uD654\uC758 \uBB18\uC57D"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 3
+    element: NONE
+    rarity: 1
+    text: "\uD3ED\uC8FC \uC0C1\uD0DC\uC774\uC0C1\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.
+      \uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uD654\uB09C \uB3CC\uC774 \uB418\uC5C8\uAD70\uC694!"
+    adPower: 3
+    apPower: 0
+    fixedPower: 0
+    cc_1: FURY
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102015A
+    itemCode: WingedArmor_001
+    cardName: "\uB0A0\uAC1C \uB2EC\uB9B0 \uB098\uBB34 \uAC11\uC637"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 3
+    element: NONE
+    rarity: 1
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4. \uCE74\uB4DC\uB97C
+      \uD55C\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+    comment: "\uD55C \uC778\uAC04\uC740 \uC694\uC815\uCC98\uB7FC \uB0A0\uACE0 \uC2F6\uC5C8\uC5B4\uC694."
+    adPower: 4
+    apPower: 0
+    fixedPower: 0
+    cc_1: DRAW
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102015B
+    itemCode: WingedArmor_002
+    cardName: "\uAC15\uD654\uB41C \uB0A0\uAC1C \uB2EC\uB9B0 \uAC11\uC637"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 3
+    element: NONE
+    rarity: 1
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4. \uCE74\uB4DC\uB97C
+      \uD55C\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+    comment: "\uC694\uC815\uC774 \uB418\uACE0\uC2F6\uC5C8\uB358 \uC544\uBC84\uC9C0\uB97C
+      \uBCF4\uACE0 \uC544\uB4E4\uC774 \uB9CC\uB4E0 \uC5ED\uC791"
+    adPower: 5
+    apPower: 0
+    fixedPower: 0
+    cc_1: DRAW
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102015C
+    itemCode: WingedArmor_003
+    cardName: "\uBC18\uC9DD\uAC70\uB9AC\uB294 \uB0A0\uAC1C \uB2EC\uB9B0 \uAC11\uC637"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 3
+    element: NONE
+    rarity: 2
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4. \uCE74\uB4DC\uB97C
+      \uD55C\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+    comment: "\uC694\uC815\uC774 \uB418\uACE0\uC2F6\uC5C8\uB358 \uC544\uBC84\uC9C0\uB97C
+      \uBCF4\uACE0 \uC544\uB4E4 \uCE5C\uAD6C\uAC00 \uC798 \uB9CC\uB4E4\uC5C8\uB300\uC694."
+    adPower: 6
+    apPower: 0
+    fixedPower: 0
+    cc_1: DRAW
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102016A
+    itemCode: Suit_001
+    cardName: "\uB2E4\uB78C\uC950 \uC815\uC7A5"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 1
+    element: GRESS
+    rarity: 2
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uACB0\uD63C\uC2DD\uC744 \uD558\uC9C0\uB9CC \uB2E8\uCD94\uAC00 \uB9C8\uC74C\uC5D0
+      \uB4E4\uC9C0 \uC54A\uC558\uC5B4\uC694."
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102016N
+    itemCode: Suit_002
+    cardName: "\uB2E4\uB78C\uC950 \uC7AC\uB2E8\uC18C"
+    cardType: 0
+    usingMethod: 0
+    cardCost: 0
+    element: NONE
+    rarity: 2
+    text: "\uB450\uAC1C\uC758 \uC7AC\uB2E8\uC18C\uB97C \uD569\uCE58\uBA74 \uB2E4\uB78C\uC950
+      \uC815\uC7A5 4\uC7A5\uC744 \uB371\uC5D0 \uC11E\uC5B4 \uB123\uACE0 \uB2E8\uCD94\uAC00
+      \uCD94\uAC00\uB41C \uC815\uC7A5\uC744 \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: "\uB2E4\uB78C\uC950 \uB9C8\uC744\uC5D0\uC11C \uC18C\uBB38\uB09C \uC815\uC7A5
+      \uC7A5\uC778\uC785\uB2C8\uB2E4."
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102016I
+    itemCode: Suit_003
+    cardName: "\uB2E8\uCD94\uAC00 \uCD94\uAC00\uB41C \uC815\uC7A5 + [ra]"
+    cardType: 4
+    usingMethod: 1
+    cardCost: 2
+    element: GRESS
+    rarity: 2
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4. \uC774
+      \uCE74\uB4DC\uB294 \uBB34\uD55C\uD788 \uAC15\uD654\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+    comment: "\uB2E4\uB78C\uC950\uB294 \uACB0\uD63C\uC2DD\uC774 \uAC71\uC815\uB418\uAE30
+      \uC2DC\uC791\uD588\uC5B4\uC694."
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102017A
+    itemCode: WitchsFood_001
+    cardName: "\uB9C8\uB140\uC758 \uC0AC\uD0D5"
+    cardType: 2
+    usingMethod: 3
+    cardCost: 3
+    element: NONE
+    rarity: 2
+    text: "\uCCB4\uB825\uC744 [fdp]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4. \uB9CC\uC57D
+      \uCCB4\uB825\uC774 \uAC00\uB4DD \uCC3C\uB2E4\uBA74 \uB0A8\uC740 \uB9CC\uD07C
+      \uBC29\uC5B4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uB9C8\uB140\uC758 \uC0AC\uD0D5\uC740 \uB2EC\uCF64\uD574 \uBCF4\uC5EC\uC694."
+    adPower: 0
+    apPower: 0
+    fixedPower: 4
+    cc_1: OVERHEALING
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 4
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102017B
+    itemCode: WitchsFood_002
+    cardName: "\uB9C8\uB140\uC758 \uACFC\uC790"
+    cardType: 2
+    usingMethod: 3
+    cardCost: 4
+    element: NONE
+    rarity: 2
+    text: "\uCCB4\uB825\uC744 [fdp]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4. \uB9CC\uC57D
+      \uCCB4\uB825\uC774 \uAC00\uB4DD \uCC3C\uB2E4\uBA74 \uB0A8\uC740 \uB9CC\uD07C
+      \uBC29\uC5B4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4. \uC2DC\uC804\uC790\uC5D0\uAC8C
+      \uD654\uC0C1\uC744 \uBD80\uC5EC\uD569\uB2C8\uB2E4."
+    comment: "\uB9C8\uB140\uC758 \uACFC\uC790\uB294 \uB2EC\uCF64\uD558\uC9C0\uB9CC
+      \uB728\uAC70\uC6CC\uC694."
+    adPower: 0
+    apPower: 0
+    fixedPower: 6
+    cc_1: OVERHEALING
+    cc_2: BURN
+    stat_01: 1
+    stat_02: 6
+    stat_03: 2
+    stat_04: 0
+    stat_05: 2
+  - id: 102017C
+    itemCode: WitchsFood_003
+    cardName: "\uB9C8\uB140\uC758 \uCD08\uCF5C\uB9BF"
+    cardType: 2
+    usingMethod: 3
+    cardCost: 4
+    element: NONE
+    rarity: 2
+    text: "\uCCB4\uB825\uC744 [fdp]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4. \uB9CC\uC57D
+      \uCCB4\uB825\uC774 \uAC00\uB4DD \uCC3C\uB2E4\uBA74 \uB0A8\uC740 \uB9CC\uD07C
+      \uBC29\uC5B4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uB9C8\uB140\uC758 \uCD08\uCF5C\uB9BF\uC740 \uB2EC\uCF64\uD574 \uBCF4\uC5EC\uC694."
+    adPower: 0
+    apPower: 0
+    fixedPower: 7
+    cc_1: OVERHEALING
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 7
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102018A
+    itemCode: HeavyArmor_001
+    cardName: "\uBB34\uAC70\uC6B4 \uAC11\uC637"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 5
+    element: NONE
+    rarity: 2
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uD0A4 \uD070 \uC0AC\uB78C\uC744 \uC704\uD55C \uAC11\uC637(190cm\uC774\uC0C1\uB9CC
+      \uCC29\uC6A9\uAC00\uB2A5)"
+    adPower: 10
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102018B
+    itemCode: HeavyArmor_002
+    cardName: "\uB354 \uBB34\uAC70\uC6B4 \uAC11\uC637"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 5
+    element: NONE
+    rarity: 2
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uD0A4 \uD06C\uACE0 \uD798\uC774 \uC13C \uC0AC\uB78C\uC744 \uC704\uD55C
+      \uAC11\uC637"
+    adPower: 14
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102018C
+    itemCode: HeavyArmor_003
+    cardName: "\uAC70\uC778\uC758 \uAC11\uC637"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 6
+    element: NONE
+    rarity: 2
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uC778\uAC04\uC744 \uC704\uD55C \uAC11\uC637\uC774 \uC544\uB2CC\uAC70
+      \uAC19\uC544\uC694."
+    adPower: 18
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102019A
+    itemCode: Leech_001
+    cardName: "\uD761\uD608 \uAC70\uBA38\uB9AC"
+    cardType: 2
+    usingMethod: 4
+    cardCost: 2
+    element: NONE
+    rarity: 3
+    text: "\uC77C\uC2DC\uC801\uC73C\uB85C [fdp]\uCCB4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.
+      \uD55C\uD134\uC5D0 [fdd]\uC529 2\uD134\uC5D0 \uAC78\uCCD0 \uCCB4\uB825\uC744
+      \uC783\uC2B5\uB2C8\uB2E4."
+    comment: "\uC77C\uC2DC\uC801\uC73C\uB85C \uC218\uD608\uD574\uC8FC\uB294 \uADC0\uC5EC\uC6B4
+      \uAC70\uBA38\uB9AC"
+    adPower: 0
+    apPower: 0
+    fixedPower: 10
+    cc_1: TEMPORARY
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 10
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102019B
+    itemCode: Leech_002
+    cardName: "\uACF5\uC8FC \uAC70\uBA38\uB9AC"
+    cardType: 2
+    usingMethod: 4
+    cardCost: 2
+    element: NONE
+    rarity: 3
+    text: "\uC77C\uC2DC\uC801\uC73C\uB85C [fdp]\uCCB4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.
+      \uD55C\uD134\uC5D0 [fdd]\uC529 2\uD134\uC5D0 \uAC78\uCCD0 \uCCB4\uB825\uC744
+      \uC783\uC2B5\uB2C8\uB2E4."
+    comment: "\uACF5\uC8FC\uB2D8\uC740 \uC54C\uBC14\uC911\uC774\uC5D0\uC694"
+    adPower: 0
+    apPower: 0
+    fixedPower: 20
+    cc_1: TEMPORARY
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 20
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102019C
+    itemCode: Leech_003
+    cardName: "\uC5EC\uC655 \uAC70\uBA38\uB9AC"
+    cardType: 2
+    usingMethod: 5
+    cardCost: 4
+    element: NONE
+    rarity: 3
+    text: "\uC774\uBC88\uD134 \uB3D9\uC548 \uBB34\uC801 \uC0C1\uD0DC\uAC00 \uB429\uB2C8\uB2E4."
+    comment: "\uC5EC\uC655\uB2D8\uC5D0\uAC8C \uACE0\uAC1C\uB97C \uC870\uC544\uB9AC\uC138\uC694!"
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: GOD
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102020A
+    itemCode: Crystal_001
+    cardName: "\uC218\uC815 \uBC29\uD328"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4. \uC774\uBC88\uD134\uC5D0
+      \uB9C8\uB098\uB97C 1 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uBC18\uC9DD\uBC18\uC9DD \uBC29\uD328"
+    adPower: 4
+    apPower: 0
+    fixedPower: 0
+    cc_1: MANA
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 1
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102020B
+    itemCode: Crystal_002
+    cardName: "\uC790\uC218\uC815 \uBC29\uD328"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4. \uC774\uBC88\uD134\uC5D0
+      \uB9C8\uB098\uB97C 1 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uBCF4\uB77C\uC0C9 \uB2F9\uC2E0\uC740 \uB108\uBB34 \uC544\uB984\uB2E4\uC6CC\uC694."
+    adPower: 5
+    apPower: 0
+    fixedPower: 0
+    cc_1: MANA
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 1
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102020C
+    itemCode: Crystal_003
+    cardName: "\uD1A0\uD30C\uC988 \uBC29\uD328"
+    cardType: 2
+    usingMethod: 1
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "\uBC29\uC5B4\uB825\uC744 [adp]\uB9CC\uD07C \uC5BB\uC2B5\uB2C8\uB2E4. \uC774\uBC88\uD134\uC5D0
+      \uB9C8\uB098\uB97C 2 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uD638\uBC15 \uC544\uB2D9\uB2C8\uB2E4. \uBAA9\uCE94\uB514 \uC808\uB300
+      \uC544\uB2D9\uB2C8\uB2E4."
+    adPower: 6
+    apPower: 0
+    fixedPower: 0
+    cc_1: MANA
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 2
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102021A
+    itemCode: Fairy_001
+    cardName: "\uC694\uC815 \uAC00\uB8E8"
+    cardType: 2
+    usingMethod: 4
+    cardCost: 1
+    element: NONE
+    rarity: 3
+    text: "\uC77C\uC2DC\uC801\uC73C\uB85C [fdp]\uCCB4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.
+      \uD55C\uD134\uC5D0 [fdd]\uC529 2\uD134\uC5D0 \uAC78\uCCD0 \uCCB4\uB825\uC744
+      \uC783\uC2B5\uB2C8\uB2E4."
+    comment: "\uC694\uC815\uC758 \uAC01\uC9C8\uC774\uB77C\uACE0 \uD558\uBA74 \uC694\uC815\uC774
+      \uC2AC\uD37C\uC694."
+    adPower: 0
+    apPower: 0
+    fixedPower: 4
+    cc_1: TEMPORARY
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 4
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102021B
+    itemCode: Fairy_002
+    cardName: "\uC694\uC815 \uAC00\uB8E8 \uC8FC\uBA38\uB2C8"
+    cardType: 2
+    usingMethod: 2
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "\uCCB4\uB825\uC744 [app]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+    comment: "\uC8FC\uBA38\uB2C8\uB9CC\uC73C\uB85C\uB3C4 \uCE58\uB8CC\uAC00 \uB418\uB294\uAC83
+      \uAC19\uC544\uC694."
+    adPower: 0
+    apPower: 5
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102021C
+    itemCode: Fairy_003
+    cardName: "\uBCD1\uC18D\uC758 \uC694\uC815"
+    cardType: 2
+    usingMethod: 3
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "\uCCB4\uB825\uC744 [fdp]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4. \uB9CC\uC57D
+      \uCCB4\uB825\uC774 \uAC00\uB4DD \uCC3C\uB2E4\uBA74 \uB0A8\uC740 \uB9CC\uD07C
+      \uBC29\uC5B4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uC694\uC815\uC758 \uCE58\uC720 \uB2A5\uB825\uC740 \uCD5C\uACE0\uC785\uB2C8\uB2E4."
+    adPower: 0
+    apPower: 0
+    fixedPower: 6
+    cc_1: OVERHEALING
+    cc_2: NONE
+    stat_01: 1
+    stat_02: 6
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102022J
+    itemCode: JTH_004
+    cardName: "JTH\uC758 \uB208\uBB3C"
+    cardType: 2
+    usingMethod: 4
+    cardCost: 6
+    element: NONE
+    rarity: 4
+    text: "\uC77C\uC2DC\uC801\uC73C\uB85C [fdp]\uCCB4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.
+      \uD55C\uD134\uC5D0 [fdd]\uC529 2\uD134\uC5D0 \uAC78\uCCD0 \uCCB4\uB825\uC744
+      \uC783\uC2B5\uB2C8\uB2E4."
+    comment: "JTH\uB3C4 \uC6B8\uAE34 \uD558\uB124\uC694?"
+    adPower: 0
+    apPower: 0
+    fixedPower: 20
+    cc_1: TEMPORARY
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 20
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102022T
+    itemCode: JTH_005
+    cardName: "JTH\uC758 \uC190\uAE38"
+    cardType: 2
+    usingMethod: 2
+    cardCost: 6
+    element: NONE
+    rarity: 4
+    text: "\uC989\uC2DC \uCCB4\uB825\uC744 [app]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+    comment: "JTH\uC190\uC740 \uC57D\uC190"
+    adPower: 0
+    apPower: 20
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 102022C
+    itemCode: JTH_006
+    cardName: "JTH\uC758 \uD3EC\uC639"
+    cardType: 2
+    usingMethod: 3
+    cardCost: 6
+    element: NONE
+    rarity: 4
+    text: "\uBB34\uC801 \uC0C1\uD0DC\uAC00 \uB418\uACE0 \uB0A8\uC740 \uB9C8\uB098
+      1\uB2F9 [app]\uB9CC\uD07C\uC758 \uCCB4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.
+      \uB9CC\uC57D \uCCB4\uB825\uC774 \uAC00\uB4DD \uCC3C\uB2E4\uBA74 \uB0A8\uC740
+      \uB9CC\uD07C \uBC29\uC5B4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: "\uC548\uC544\uC918\uC694."
+    adPower: 0
+    apPower: 5
+    fixedPower: 0
+    cc_1: OVERHEALING
+    cc_2: NONE
+    stat_01: 5
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103023A
+    itemCode: Sprint_001
+    cardName: "\uC9C8\uC8FC"
+    cardType: 3
+    usingMethod: 1
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "\uCE74\uB4DC\uB97C \uD55C\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: DRAW
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103023B
+    itemCode: Sprint_002
+    cardName: "\uC804\uB825 \uC9C8\uC8FC"
+    cardType: 3
+    usingMethod: 1
+    cardCost: 1
+    element: NONE
+    rarity: 2
+    text: "\uCE74\uB4DC\uB97C \uD55C\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: DRAW
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103023C
+    itemCode: Sprint_003
+    cardName: "\uC21C\uAC04 \uC774\uB3D9"
+    cardType: 3
+    usingMethod: 1
+    cardCost: 0
+    element: NONE
+    rarity: 2
+    text: "\uCE74\uB4DC\uB97C \uD55C\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: DRAW
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103024A
+    itemCode: Meditation_001
+    cardName: "\uBA85\uC0C1"
+    cardType: 3
+    usingMethod: 2
+    cardCost: 3
+    element: NONE
+    rarity: 2
+    text: "3 \uD134\uB3D9\uC548 \uC790\uC2E0\uC744 \uB098\uD0DC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: SLOTH
+    cc_2: NONE
+    stat_01: 3
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103024B
+    itemCode: Meditation_002
+    cardName: "\uB9C8\uC74C\uC758 \uC548\uC815"
+    cardType: 3
+    usingMethod: 2
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "2 \uD134\uB3D9\uC548 \uC790\uC2E0\uC744 \uB098\uD0DC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: SLOTH
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103024C
+    itemCode: Meditation_003
+    cardName: "\uD3C9\uD654"
+    cardType: 3
+    usingMethod: 2
+    cardCost: 2
+    element: NONE
+    rarity: 2
+    text: "1 \uD134\uB3D9\uC548 \uC790\uC2E0\uC744 \uB098\uD0DC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4E4\uACE0 \uC801\uC744 3 \uD134 \uB3D9\uC548 \uB098\uD0DC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: SLOTH
+    cc_2: SLOTH
+    stat_01: 1
+    stat_02: 0
+    stat_03: 3
+    stat_04: 0
+    stat_05: 0
+  - id: 103025A
+    itemCode: Excitement_001
+    cardName: "\uD765\uBD84"
+    cardType: 3
+    usingMethod: 3
+    cardCost: 2
+    element: NONE
+    rarity: 3
+    text: "2 \uD134 \uB3D9\uC548 \uC790\uC2E0\uC744 \uD3ED\uC8FC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: FURY
+    cc_2: NONE
+    stat_01: 2
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 103025B
+    itemCode: Excitement_002
+    cardName: "\uAD11\uB780"
+    cardType: 3
+    usingMethod: 3
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "2 \uD134 \uB3D9\uC548 \uC790\uC2E0\uACFC \uC801\uC744 \uD3ED\uC8FC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: FURY
+    cc_2: FURY
+    stat_01: 2
+    stat_02: 0
+    stat_03: 2
+    stat_04: 0
+    stat_05: 0
+  - id: 103025C
+    itemCode: Excitement_003
+    cardName: "\uAE30\uC120\uC81C\uC555"
+    cardType: 3
+    usingMethod: 3
+    cardCost: 3
+    element: NONE
+    rarity: 3
+    text: "2 \uD134 \uB3D9\uC548 \uC790\uC2E0\uC744 \uD3ED\uC8FC \uC0C1\uD0DC\uB85C
+      \uB9CC\uB4E4\uACE0 \uC801\uC744 \uD750\uB9BC \uC0C1\uD0DC\uB85C \uB9CC\uB4ED\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: FURY
+    cc_2: BLIND
+    stat_01: 2
+    stat_02: 0
+    stat_03: 2
+    stat_04: 0
+    stat_05: 0
+  - id: 103026A
+    itemCode: Mana_001
+    cardName: "\uC0B0\uC18D\uC758 \uC0D8\uBB3C"
+    cardType: 3
+    usingMethod: 4
+    cardCost: 1
+    element: NONE
+    rarity: 3
+    text: "\uB371\uC5D0 \uD658\uAC01 \uCE74\uB4DC 4\uC7A5\uC744 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4.
+      \uC774\uBC88\uD134\uC5D0 \uB9C8\uB098 2 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: MANA
+    cc_2: HALLUCINATION
+    stat_01: 0
+    stat_02: 0
+    stat_03: 4
+    stat_04: 0
+    stat_05: 2
+  - id: 103026B
+    itemCode: Mana_002
+    cardName: "\uC694\uC815\uC758 \uC0D8\uBB3C"
+    cardType: 3
+    usingMethod: 4
+    cardCost: 0
+    element: NONE
+    rarity: 3
+    text: "\uB371\uC5D0 \uD658\uAC01 \uCE74\uB4DC 4\uC7A5\uC744 \uC11E\uC5B4\uB123\uC2B5\uB2C8\uB2E4.
+      \uC774\uBC88\uD134\uC5D0 \uB9C8\uB098 2 \uB354 \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: MANA
+    cc_2: HALLUCINATION
+    stat_01: 0
+    stat_02: 0
+    stat_03: 4
+    stat_04: 0
+    stat_05: 2
+  - id: 103026C
+    itemCode: Mana_003
+    cardName: "\uC694\uC815 \uC628\uCC9C"
+    cardType: 3
+    usingMethod: 4
+    cardCost: 0
+    element: NONE
+    rarity: 3
+    text: "\uC774\uBC88\uD134\uC5D0 \uB9C8\uB098 2\uB97C \uC5BB\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: MANA
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 104027A
+    itemCode: Burn_001
+    cardName: "\uD654\uC0C1"
+    cardType: 4
+    usingMethod: 0
+    cardCost: 1
+    element: NONE
+    rarity: 1
+    text: "\uCE74\uB4DC\uB97C \uC0AC\uC6A9\uD558\uC9C0 \uC54A\uC73C\uBA74 \uD134\uC774
+      \uC885\uB8CC\uB420\uB54C \uC790\uC2E0\uC5D0\uAC8C [ad]\uD53C\uD574\uB97C \uC8FC\uACE0
+      \uC0AC\uB77C\uC9D1\uB2C8\uB2E4."
+    comment: text
+    adPower: 2
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 104028A
+    itemCode: Hallucination_001
+    cardName: "\uD658\uAC01"
+    cardType: 4
+    usingMethod: 1
+    cardCost: 0
+    element: NONE
+    rarity: 1
+    text: "\uAC15\uD654\uD558\uC5EC \uD658\uC601 \uCE74\uB4DC\uB97C \uB9CC\uB4E4
+      \uC218 \uC788\uC2B5\uB2C8\uB2E4. "
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 104028B
+    itemCode: Hallucination_002
+    cardName: "\uD658\uC601"
+    cardType: 4
+    usingMethod: 1
+    cardCost: 0
+    element: NONE
+    rarity: 1
+    text: "\uAC15\uD654\uD558\uC5EC \uD5C8\uC0C1 \uCE74\uB4DC\uB97C \uB9CC\uB4E4
+      \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0
+  - id: 104028C
+    itemCode: Hallucination_003
+    cardName: "\uD5C8\uC0C1"
+    cardType: 4
+    usingMethod: 1
+    cardCost: 0
+    element: NONE
+    rarity: 1
+    text: "\uC0AC\uC6A9\uD558\uC5EC \uCE74\uB4DC\uB97C \uC81C\uAC70\uD569\uB2C8\uB2E4.
+      \uBAA8\uB4E0 \uAC83\uC740 \uD5C8\uC0C1\uC785\uB2C8\uB2E4."
+    comment: text
+    adPower: 0
+    apPower: 0
+    fixedPower: 0
+    cc_1: NONE
+    cc_2: NONE
+    stat_01: 0
+    stat_02: 0
+    stat_03: 0
+    stat_04: 0
+    stat_05: 0

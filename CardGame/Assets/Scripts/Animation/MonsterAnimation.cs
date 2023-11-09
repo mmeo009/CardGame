@@ -10,35 +10,20 @@ public class MonsterAnimation : MonoBehaviour
     public Animator anim;
     public void FindMyEyes()
     {
-        int childs = gameObject.transform.childCount;
-        List<Transform> _eyes = new List<Transform>();
         List<Transform> _items = new List<Transform>();
-        for (int i = 0; i < childs; i++)
+        foreach(Transform face in transform)
         {
-            Transform child = gameObject.transform.GetChild(i);
-            if (child.name == "Face")
+            if(face.name == "Buff" || face.name == "Surprised" || face.name == "Sad" || face.name == "Normal")
             {
-                _eyes.Add(child);
-                foreach (Transform eye in child)
-                {
-                    eyes.Add(eye.name, eye.gameObject);
-                }
+                eyes.Add(face.name, face.gameObject);
             }
-            else if (child.name == "Item")
-            {
-                _items.Add(child);
-                foreach (Transform item in child)
-                {
-                    items.Add(item.name, item.gameObject);
-                }
-            }
-        }
-
+        }    
         Animator _anim = gameObject.GetComponent<Animator>();
         if (_anim != null)
         {
             anim = _anim;
         }
+        SetDefaultEye();
     }
 
     public void GetDamaged()
@@ -86,17 +71,41 @@ public class MonsterAnimation : MonoBehaviour
         if (eyes == null)
         {
             FindMyEyes();
-            eyes["CC"].SetActive(false);
-            eyes["Sad"].SetActive(false);
-            eyes["Mad"].SetActive(false);
-            eyes["Normal"].SetActive(true);
+            if(eyes["Surprised"] != null)
+            {
+                eyes["Surprised"].SetActive(false);
+            }
+            if (eyes["Sad"] != null)
+            {
+                eyes["Sad"].SetActive(false);
+            }
+            if (eyes["Buff"] != null)
+            {
+                eyes["Buff"].SetActive(false);
+            }
+            if (eyes["Normal"] != null)
+            {
+                eyes["Normal"].SetActive(true);
+            }
         }
         else
         {
-            eyes["CC"].SetActive(false);
-            eyes["Sad"].SetActive(false);
-            eyes["Mad"].SetActive(false);
-            eyes["Normal"].SetActive(true);
+            if (eyes["Surprised"] != null)
+            {
+                eyes["Surprised"].SetActive(false);
+            }
+            if (eyes["Sad"] != null)
+            {
+                eyes["Sad"].SetActive(false);
+            }
+            if (eyes["Buff"] != null)
+            {
+                eyes["Buff"].SetActive(false);
+            }
+            if (eyes["Normal"] != null)
+            {
+                eyes["Normal"].SetActive(true);
+            }
         }
 /*        if(items != null && items["Normal"] != null)
         {

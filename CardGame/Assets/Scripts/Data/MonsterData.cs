@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static Util;
 
 public class MonsterData : GenericSingleton<MonsterData>
 {
@@ -17,7 +18,8 @@ public class MonsterData : GenericSingleton<MonsterData>
     public List<Entity_PatternData.Param> patterns = new List<Entity_PatternData.Param>();
     public Entity_PatternData.Param pattern;
     public List<MonsterCC> monsterCc = new List<MonsterCC>();
-    public Image bg;
+    public SpriteRenderer bg;
+    public Transform monster;
     public GameObject hpText, patternText, patternStates, state;
     public Dictionary<string, GameObject> patternState = new Dictionary<string, GameObject>();
 
@@ -101,24 +103,25 @@ public class MonsterData : GenericSingleton<MonsterData>
         }
         string stage = monsterData.id.Substring(2,4);
         Debug.Log(stage);
-        Image _bg = GameObject.FindGameObjectWithTag("BackGround").GetComponent<Image>();
+        SpriteRenderer _bg = GameObject.FindGameObjectWithTag("BackGround").GetComponent<SpriteRenderer>();
         if (_bg != null)
         {
             bg = _bg;
             bg.sprite = Resources.Load<Sprite>($"Illustration/BG/{stage}");
+            bg.transform.localScale = new Vector3(0.416f, 0.416f, 0.0f);
         }
 
         if(monsterAnim == null)
         {
             GameObject _monster = Resources.Load<GameObject>($"Prefabs/Monster/{monsterData.id}");
-            GameObject monster = Instantiate(_monster, new Vector3(1072.5f, 837.5f,0), Quaternion.identity);
+            GameObject monster = Instantiate(_monster);
             if(_monster == null)
             {
-                monster = Instantiate(Resources.Load<GameObject>("Prefabs/Monster/501101A"), new Vector3(1072.5f, 837.5f, 0), Quaternion.identity);
+                monster = Instantiate(Resources.Load<GameObject>("Prefabs/Monster/501101A"), new Vector3(0.0f,-3.0f,0.0f), Quaternion.identity);
             }
-            monster.transform.parent = FindAnyObjectByType<MonsterGrid>().transform;
-
-            monsterAnim = FindAnyObjectByType<MonsterAnimation>();
+            monster.transform.parent = bg.transform.GetChild(0);
+            monster.transform.localPosition = new Vector3 (0,0,0);
+            monsterAnim = GetOrAddComponent<MonsterAnimation>(monster.gameObject);
             monsterAnim.thisMonster = monsterData;
             monsterAnim.FindMyEyes();
         }

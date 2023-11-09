@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using DG.Tweening;
+using UnityEngine.UI;
 using static Util;
 
 public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
@@ -131,7 +128,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
     private void CreateEnlargedCard()
     {
-        Vector3 pos = new Vector3(310, 850, 0);
+        Vector3 pos = GameObject.FindGameObjectWithTag("EnlargedPosition").transform.position;
         id = this.GetComponent<CardDataLoad>().thisCardId;
         int level = this.GetComponent<CardDataLoad>().thisCardLevel;
         if (enlargedCardPrefab == null)
@@ -139,6 +136,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             enlargedCardPrefab = Resources.Load<GameObject>("Prefabs/EnlargedCard");
             GameObject newCard = Instantiate(enlargedCardPrefab, pos, Quaternion.identity);
             newCard.transform.localScale = Vector3.one;
+            newCard.GetComponent<RectTransform>().sizeDelta = new Vector3(180, 320);
             newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
             newCard.GetComponent<CardDataLoad>().thisCardLevel = level;
             newCard.GetComponent<CardDataLoad>().LoadCardData(id);
@@ -149,6 +147,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         {
             GameObject newCard = Instantiate(enlargedCardPrefab, pos, Quaternion.identity);
             newCard.transform.localScale = Vector3.one;
+            newCard.GetComponent<RectTransform>().sizeDelta = new Vector3(180, 320);
             newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
             newCard.GetComponent<CardDataLoad>().thisCardLevel = level;
             newCard.GetComponent<CardDataLoad>().LoadCardData(id);

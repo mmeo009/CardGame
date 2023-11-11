@@ -84,6 +84,8 @@
     <Compile Include="Assets\Scripts\CardSystem\Card\CardController.cs" />
     <Compile Include="Assets\Scripts\CardSystem\Grid\GridIndex.cs" />
     <Compile Include="Assets\Scripts\Core\GenericSingleton.cs" />
+    <Compile Include="Assets\Scripts\CardSystem\Card\DragManager.cs" />
+    <Compile Include="Assets\Scripts\CardSystem\Grid\SlotIndex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

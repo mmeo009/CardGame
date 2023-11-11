@@ -71,8 +71,10 @@
     <Compile Include="Assets\Terasurware\Classes\Entity_CardData.cs" />
     <Compile Include="Assets\Scripts\CardSystem\MergeController.cs" />
     <Compile Include="Assets\Scripts\Core\StageManager.cs" />
+    <Compile Include="Assets\Scripts\CardSystem\Card\DragManager.cs" />
     <Compile Include="Assets\Scripts\GameSystem\DrawCard.cs" />
     <Compile Include="Assets\Scripts\Core\Managers.cs" />
+    <Compile Include="Assets\Scripts\CardSystem\Grid\SlotIndex.cs" />
     <Compile Include="Assets\Scripts\Data\MonsterData.cs" />
     <Compile Include="Assets\Scripts\Core\DeckManager.cs" />
     <Compile Include="Assets\Scripts\CardSystem\Card\CardUse.cs" />
@@ -84,8 +86,6 @@
     <Compile Include="Assets\Scripts\CardSystem\Card\CardController.cs" />
     <Compile Include="Assets\Scripts\CardSystem\Grid\GridIndex.cs" />
     <Compile Include="Assets\Scripts\Core\GenericSingleton.cs" />
-    <Compile Include="Assets\Scripts\CardSystem\Card\DragManager.cs" />
-    <Compile Include="Assets\Scripts\CardSystem\Grid\SlotIndex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

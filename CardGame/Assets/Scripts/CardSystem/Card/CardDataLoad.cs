@@ -180,7 +180,7 @@ public class CardDataLoad : MonoBehaviour
             ObjectNameAndParent cardImage = thisCardinfo.Find(name => name.name == "CardImage");
             if (cardImage != null)
             {
-                cardImage.thisObject.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Illustration/Card/{id}");
+                cardImage.thisObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"Illustration/Card/{id}");
             }
 
             // 카드 이름 및 텍스트 불러오기
@@ -188,7 +188,7 @@ public class CardDataLoad : MonoBehaviour
             ObjectNameAndParent cardText = thisCardinfo.Find(name => name.name == "CardText");
             if(cardName != null)
             {
-                cardName.thisObject.GetComponent<TMP_Text>().text = cardData.cardName.Replace("[ra]", $"{thisCardLevel}");
+                cardName.thisObject.GetComponent<TextMeshPro>().text = cardData.cardName.Replace("[ra]", $"{thisCardLevel}");
             }
             if(cardText != null)
             {
@@ -205,7 +205,7 @@ public class CardDataLoad : MonoBehaviour
                     .Replace("[fdp]", $"{PlayerData.Instance.player.apDamage * cardData.fixedPower}")
                     ;
 
-                cardText.thisObject.GetComponent<TMP_Text>().text = _text;
+                cardText.thisObject.GetComponent<TextMeshPro>().text = _text;
             }
 
             // 카드 강화 단계 불러오기
@@ -230,7 +230,7 @@ public class CardDataLoad : MonoBehaviour
                 {
                     levelNum = thisCardLevel;
                 }
-                    levelText.thisObject.GetComponent<TMP_Text>().text = levelNum.ToString();
+                    levelText.thisObject.GetComponent<TextMeshPro>().text = levelNum.ToString();
             }
 
             // 카드 코스트 불러오기
@@ -250,7 +250,7 @@ public class CardDataLoad : MonoBehaviour
                     if (SPN != null && typeText != null)
                     {
                         SPN.thisObject.SetActive(true);
-                        typeText.thisObject.GetComponent<TMP_Text>().text = "∞";
+                        typeText.thisObject.GetComponent<TextMeshPro>().text = "∞";
                     }
                     else
                     {
@@ -266,22 +266,22 @@ public class CardDataLoad : MonoBehaviour
                         if(cardData.adPower != 0)
                         {
                             AD.thisObject.SetActive(true);
-                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.adPower.ToString();
+                            typeText.thisObject.GetComponent<TextMeshPro>().text = cardData.adPower.ToString();
                         }
                         else if(cardData.apPower != 0)
                         {
                             AP.thisObject.SetActive(true);
-                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.apPower.ToString();
+                            typeText.thisObject.GetComponent<TextMeshPro>().text = cardData.apPower.ToString();
                         }
                         else if(cardData.fixedPower != 0)
                         {
                             FP.thisObject.SetActive(true);
-                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.fixedPower.ToString();
+                            typeText.thisObject.GetComponent<TextMeshPro>().text = cardData.fixedPower.ToString();
                         }
                         else
                         {
                             AD.thisObject.SetActive(true);
-                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.adPower.ToString();
+                            typeText.thisObject.GetComponent<TextMeshPro>().text = cardData.adPower.ToString();
                         }
                     }
                     break;
@@ -293,17 +293,17 @@ public class CardDataLoad : MonoBehaviour
                         if(cardData.adPower != 0)
                         {
                             DF.thisObject.SetActive(true);
-                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.adPower.ToString();
+                            typeText.thisObject.GetComponent<TextMeshPro>().text = cardData.adPower.ToString();
                         }
                         else if(cardData.apPower != 0)
                         {
                             HP.thisObject.SetActive(true);
-                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.apPower.ToString();
+                            typeText.thisObject.GetComponent<TextMeshPro>().text = cardData.apPower.ToString();
                         }
                         else if(cardData.fixedPower != 0)
                         {
                             HP.thisObject.SetActive(true);
-                            typeText.thisObject.GetComponent<TMP_Text>().text = cardData.fixedPower.ToString();
+                            typeText.thisObject.GetComponent<TextMeshPro>().text = cardData.fixedPower.ToString();
                         }
                     }
                     break;
@@ -318,7 +318,7 @@ public class CardDataLoad : MonoBehaviour
                         }
                         else
                         {
-                            typeText.thisObject.GetComponent<TMP_Text>().text += cardData.adPower.ToString();
+                            typeText.thisObject.GetComponent<TextMeshPro>().text += cardData.adPower.ToString();
                         }
                     }    
                     break;
@@ -329,7 +329,7 @@ public class CardDataLoad : MonoBehaviour
                         if (SPI != null && typeText != null)
                         {
                             SPI.thisObject.SetActive(true);
-                            typeText.thisObject.GetComponent<TMP_Text>().text = $"{PlayerData.Instance.player.adDamage + cardData.adPower}x{thisCardLevel}";
+                            typeText.thisObject.GetComponent<TextMeshPro>().text = $"{PlayerData.Instance.player.adDamage + cardData.adPower}x{thisCardLevel}";
                         }
                     }
                     else if(cardData.id[2] == '2')
@@ -338,7 +338,7 @@ public class CardDataLoad : MonoBehaviour
                         if (DFI != null && typeText != null)
                         {
                             DFI.thisObject.SetActive(true);
-                            typeText.thisObject.GetComponent<TMP_Text>().text = $"{PlayerData.Instance.player.apDamage * cardData.adPower}x{thisCardLevel}";
+                            typeText.thisObject.GetComponent<TextMeshPro>().text = $"{PlayerData.Instance.player.apDamage * cardData.adPower}x{thisCardLevel}";
                         }
                     }
                     else if(cardData.id[2] == '4')
@@ -349,7 +349,7 @@ public class CardDataLoad : MonoBehaviour
                             CC.thisObject.SetActive(true);
                             if(cardData.adPower != 0)
                             {
-                                typeText.thisObject.GetComponent<TMP_Text>().text = $"{PlayerData.Instance.player.adDamage * cardData.adPower}";
+                                typeText.thisObject.GetComponent<TextMeshPro>().text = $"{PlayerData.Instance.player.adDamage * cardData.adPower}";
                             }
                             else
                             {

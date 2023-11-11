@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2303741122506282678}
   m_Layer: 5
   m_Name: MergeSlot
-  m_TagString: Merge
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

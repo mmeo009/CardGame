@@ -17,6 +17,7 @@ public class SlotIndex : MonoBehaviour
         Full
     }
 
+    public int gridNum;
     public string cardId;
     public CardDataLoad cardObject;
     public SlotType type = SlotType.Default;
@@ -31,7 +32,7 @@ public class SlotIndex : MonoBehaviour
     {
         card.transform.SetParent(this.transform);
         card.transform.localPosition = Vector3.zero;
-        card.transform.localScale = Vector3.one;
+        card.transform.localScale = new Vector3(2.403846f, 2.403846f);
 
         cardId = card.thisCardId;
         cardObject = card;

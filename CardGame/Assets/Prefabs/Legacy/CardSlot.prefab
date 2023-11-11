@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -565176859043679256}
   m_Layer: 5
   m_Name: CardSlot
-  m_TagString: Grid
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -23,9 +23,14 @@ public class SlotIndex : MonoBehaviour
     public SlotType type = SlotType.Default;
     public SlotState state = SlotState.Empty;
 
-    private void ChangeState(SlotState _state)
+    public void ChangeState(SlotState _state)
     {
         state = _state;
+        if(_state == SlotState.Empty)
+        {
+            cardObject = null;
+            cardId = null;
+        }
     }
 
     public void GetCardIntoThisSlot(CardDataLoad card)

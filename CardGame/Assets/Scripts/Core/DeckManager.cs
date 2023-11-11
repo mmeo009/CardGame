@@ -14,13 +14,13 @@ public class DeckManager
     {
         if(deckInfo != null)
         {
-            deckInfo.GetComponent<TMP_Text>().text = DeckData.Instance.amountOfCardsInDeck.ToString();
+            deckInfo.GetComponent<TextMeshPro>().text = DeckData.Instance.amountOfCardsInDeck.ToString();
         }
         else
         {
             GameObject _deckInfo = GameObject.Find("RemainingCards");
             deckInfo = _deckInfo;
-            deckInfo.GetComponent<TMP_Text>().text = DeckData.Instance.amountOfCardsInDeck.ToString();
+            deckInfo.GetComponent<TextMeshPro>().text = DeckData.Instance.amountOfCardsInDeck.ToString();
         }
     }
     // DefaultDeck 관련 시작

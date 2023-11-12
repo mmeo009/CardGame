@@ -39,6 +39,8 @@ public class SlotIndex : MonoBehaviour
         card.transform.localPosition = Vector3.zero;
         card.transform.localScale = new Vector3(2.403846f, 2.403846f);
 
+        card.mySlot = this;
+
         cardId = card.thisCardId;
         cardObject = card;
 

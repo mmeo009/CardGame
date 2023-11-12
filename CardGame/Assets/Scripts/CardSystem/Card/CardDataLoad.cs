@@ -11,6 +11,7 @@ public class CardDataLoad : MonoBehaviour
     public CardUse cardUse;
     public string thisCardId;
     public int thisCardLevel;
+    public SlotIndex mySlot;
 
     public void FindChilds(GameObject target)
     {

@@ -982,7 +982,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 1000
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 1000
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1454,6 +1454,9 @@ MonoBehaviour:
   cardUse: {fileID: 0}
   thisCardId: 
   thisCardLevel: 0
+  mySlot: {fileID: 0}
+  dragOrder: 0
+  isHolding: 0
 --- !u!114 &7792386610620217099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1488,7 +1491,7 @@ MonoBehaviour:
     stat_04: 0
     stat_05: 0
   player: {fileID: 0}
-  cardController: {fileID: 0}
+  card: {fileID: 0}
 --- !u!1 &6343363068142703527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,7 +1748,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 1000
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

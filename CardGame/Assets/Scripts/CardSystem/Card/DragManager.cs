@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragManager : MonoBehaviour
+public class DragManager : GenericSingleton<DragManager>
 {
     public Vector3 _target;
     public CardDataLoad carryingCard;
@@ -10,7 +10,9 @@ public class DragManager : MonoBehaviour
     public bool isEnlargedCardCreated = false;
     private GameObject enlargedCardPrefab;
 
-    private float enlargedTimer = 2.0f;
+    public GameObject enlargedCard;
+
+    private float enlargedTimer = 1.0f;
 
 
     void Update()
@@ -29,7 +31,14 @@ public class DragManager : MonoBehaviour
         {
             SendRayCast();
         }
-        HoldAndEnlargedCard();
+        if(!Input.GetMouseButton(0) && !Input.GetMouseButtonDown(0))
+        {
+            HoldAndEnlargedCard();
+        }
+        else
+        {
+            DestroyEnlargedCard();
+        }
     }
     void HoldAndEnlargedCard()
     {
@@ -60,18 +69,36 @@ public class DragManager : MonoBehaviour
                     card.IsHolding(false);
                 }
             }
-            else if(slot.type != SlotIndex.SlotType.Monster)
+            else if(slot.type != SlotIndex.SlotType.Monster && slot.cardObject)
             {
                 if (isEnlargedCardCreated == false)
                 {
                     enlargedTimer -= Time.deltaTime;
                     if(enlargedTimer <= 0)
                     {
-                        //CreateEnlargedCard();
-                        enlargedTimer = 2.0f;
+                        CreateEnlargedCard(slot);
+                        enlargedTimer = 1.0f;
+                    }
+                }
+                else if(isEnlargedCardCreated  == true)
+                {
+                    string id = enlargedCard.GetComponent<CardDataLoad>().thisCardId;
+                    
+                    if (slot.cardId != id)
+                    {
+                        DestroyEnlargedCard();
+                        CreateEnlargedCard(slot);
                     }
                 }
             }
+            else
+            {
+                DestroyEnlargedCard();
+            }
+        }
+        else
+        {
+            DestroyEnlargedCard();
         }
     }
     void SendRayCast()
@@ -82,32 +109,48 @@ public class DragManager : MonoBehaviour
         {
             Debug.DrawLine(ray.origin, hit.point, Color.red, 0.1f);
             Debug.Log("Hit: " + hit.transform.gameObject.name);
-
             var slot = hit.transform.GetComponent<SlotIndex>();
-            if(slot.state == SlotIndex.SlotState.Full && carryingCard == null)
+            if (TurnManager.Instance.currentTurn == TurnManager.TurnState.Player)
             {
-                slot.cardObject.transform.SetParent(null);
-                carryingCard = slot.cardObject;
-                slot.ChangeState(SlotIndex.SlotState.Empty);
-            }
-            else if(slot.state == SlotIndex.SlotState.Empty && carryingCard != null)
-            {
-                if(slot.type == SlotIndex.SlotType.Default || slot.type == SlotIndex.SlotType.Merge)
+                if (slot.state == SlotIndex.SlotState.Full && carryingCard == null)
                 {
-                    slot.GetCardIntoThisSlot(carryingCard);
-                    carryingCard = null;
+                    slot.cardObject.transform.SetParent(null);
+                    carryingCard = slot.cardObject;
+                    slot.ChangeState(SlotIndex.SlotState.Empty);
                 }
-            }
-            else if(slot.state == SlotIndex.SlotState.Full && carryingCard != null)
-            {
-                if(slot.type != SlotIndex.SlotType.Monster)
+                else if (slot.state == SlotIndex.SlotState.Empty && carryingCard != null)
                 {
+                    if (slot.type == SlotIndex.SlotType.Default || slot.type == SlotIndex.SlotType.Merge)
+                    {
+                        slot.GetCardIntoThisSlot(carryingCard);
+                        carryingCard = null;
+                    }
+                    else if (slot.type == SlotIndex.SlotType.Monster)
+                    {
+                        carryingCard.GetComponent<CardUse>().UsingCard();
+                        carryingCard.mySlot.ChangeState(SlotIndex.SlotState.Empty);
+                        PlayerData.Instance.ShowMyInfo();
+                        carryingCard = null;
+                    }
+                }
+                else if (slot.state == SlotIndex.SlotState.Full && carryingCard != null)
+                {
+                    if (slot.type != SlotIndex.SlotType.Monster)
+                    {
+                        OnCarryFail();
+                    }
+                    else if (slot.type == SlotIndex.SlotType.Monster)
+                    {
+                        carryingCard.GetComponent<CardUse>().UsingCard();
+                        carryingCard.mySlot.ChangeState(SlotIndex.SlotState.Empty);
+                        PlayerData.Instance.ShowMyInfo();
+                    }
+                }
+                else
+                {
+                    if (!carryingCard) return;
                     OnCarryFail();
                 }
-            }
-            else
-            {
-                OnCarryFail();
             }
         }
         else
@@ -135,34 +178,49 @@ public class DragManager : MonoBehaviour
         _carryingCard.EndDragging();
     }
 
-    private void CreateEnlargedCard()
+    private void CreateEnlargedCard(SlotIndex slot)
     {
         Vector3 pos = GameObject.FindGameObjectWithTag("EnlargedPosition").transform.position;
-        string id = carryingCard.GetComponent<CardDataLoad>().thisCardId;
-        int level = carryingCard.GetComponent<CardDataLoad>().thisCardLevel;
+        string id = slot.cardObject.thisCardId;
+        int level = slot.cardObject.thisCardLevel;
         if (enlargedCardPrefab == null)
         {
-            enlargedCardPrefab = Resources.Load<GameObject>("Prefabs/EnlargedCard");
+            enlargedCardPrefab = Resources.Load<GameObject>("Prefabs/Card");
             GameObject newCard = Instantiate(enlargedCardPrefab, pos, Quaternion.identity);
-            newCard.transform.localScale = Vector3.one;
-            newCard.GetComponent<RectTransform>().sizeDelta = new Vector3(180, 320);
+            Destroy(newCard?.GetComponent<CardUse>());
+            newCard.transform.localScale = new Vector3(2,2,2);
             newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
             newCard.GetComponent<CardDataLoad>().thisCardLevel = level;
             newCard.GetComponent<CardDataLoad>().LoadCardData(id);
-            newCard.transform.SetParent(GameObject.Find("Canvas").transform);
+            enlargedCard = newCard;
 
         }
         else
         {
             GameObject newCard = Instantiate(enlargedCardPrefab, pos, Quaternion.identity);
-            newCard.transform.localScale = Vector3.one;
-            newCard.GetComponent<RectTransform>().sizeDelta = new Vector3(180, 320);
+            Destroy(newCard?.GetComponent<CardUse>());
+            newCard.transform.localScale = new Vector3(2, 2, 2);
             newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
             newCard.GetComponent<CardDataLoad>().thisCardLevel = level;
             newCard.GetComponent<CardDataLoad>().LoadCardData(id);
-            newCard.transform.SetParent(GameObject.Find("Canvas").transform);
-
+            enlargedCard = newCard;
         }
         isEnlargedCardCreated = true;
+    }
+    private void DestroyEnlargedCard()
+    {
+        if (enlargedCard != null)
+        {
+            Destroy(enlargedCard);
+            enlargedCard = null;
+            isEnlargedCardCreated = false;
+        }
+        else
+        {
+            if (isEnlargedCardCreated == true)
+            {
+                isEnlargedCardCreated = false;
+            }
+        }
     }
 }

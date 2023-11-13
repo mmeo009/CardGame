@@ -300,6 +300,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                         player.playerCc.Add(newCc);
                         GameObject _blind = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
                         _blind.transform.parent = state.transform;
+                        _blind.transform.localScale = Vector3.one;
                         _blind.GetComponent<State>().LoadImage(value);
                     }
                     else
@@ -321,6 +322,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                         player.adPower += 3;
                         GameObject _fury = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
                         _fury.transform.parent = state.transform;
+                        _fury.transform.localScale = Vector3.one;
                         _fury.GetComponent<State>().LoadImage(value);
                     }
                     else
@@ -341,6 +343,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                         player.playerCc.Add(newCc);
                         GameObject _sloth = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
                         _sloth.transform.parent = state.transform;
+                        _sloth.transform.localScale = Vector3.one;
                         _sloth.GetComponent<State>().LoadImage(value);
                     }
                     else
@@ -361,6 +364,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                         player.playerCc.Add(newCc);
                         GameObject _poison = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
                         _poison.transform.parent = state.transform;
+                        _poison.transform.localScale = Vector3.one;
                         _poison.GetComponent<State>().LoadImage(value);
                     }
                     else
@@ -385,6 +389,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                         player.playerCc.Add(newCc);
                         GameObject _temporary = Instantiate(Resources.Load<GameObject>("Prefabs/State"));
                         _temporary.transform.parent = state.transform;
+                        _temporary.transform.localScale = Vector3.one;
                         _temporary.GetComponent<State>().LoadImage(value);
                     }
                     else

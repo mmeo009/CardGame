@@ -69,8 +69,6 @@ public class DrawCard : GenericSingleton<DrawCard>
                 {
                     // 카드 프리팹 생성
                     GameObject newCard = Instantiate(cardPrefab, deckUi.position, Quaternion.identity);
-                    newCard.transform.localScale = Vector3.one;
-                    newCard.GetComponent<RectTransform>().sizeDelta = new Vector3(180, 320);
                     // 카드의 정보를 불러오기 위해 카드에 값을 입력 
                     newCard.GetComponent<CardDataLoad>().FindChilds(newCard);
                     // 덱에 들어있는 카드중 한가지를 선택하여 카드의 아이디를 불러와 프리팹에 넣어줌
@@ -81,7 +79,7 @@ public class DrawCard : GenericSingleton<DrawCard>
                 }
                 else
                 {
-                    Debug.Log($"{cardGrids[i].GetComponent<GridIndex>().GridNum} 번 그리드에 이미 카드가 있습니다.");
+                    Debug.Log($"{cardGrids[i].GetComponent<SlotIndex>().gridNum} 번 그리드에 이미 카드가 있습니다.");
                 }
             }
         }
@@ -128,7 +126,7 @@ public class DrawCard : GenericSingleton<DrawCard>
                 }
                 else
                 {
-                    Debug.Log($"{cardGrids[i].GetComponent<GridIndex>().GridNum} 번 그리드에 이미 카드가 있습니다.");
+                    Debug.Log($"{cardGrids[i].GetComponent<SlotIndex>().gridNum} 번 그리드에 이미 카드가 있습니다.");
                 }
             }
         }

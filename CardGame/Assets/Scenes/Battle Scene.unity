@@ -816,6 +816,7 @@ GameObject:
   - component: {fileID: 390667160}
   - component: {fileID: 390667159}
   - component: {fileID: 390667161}
+  - component: {fileID: 390667162}
   m_Layer: 0
   m_Name: BackGround
   m_TagString: BackGround
@@ -908,6 +909,19 @@ MonoBehaviour:
   cardObject: {fileID: 0}
   type: 2
   state: 0
+--- !u!65 &390667162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390667158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 38.416553, y: 14.499998, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &395570065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1904,6 +1918,7 @@ MonoBehaviour:
   _target: {x: 0, y: 0, z: 0}
   carryingCard: {fileID: 0}
   isEnlargedCardCreated: 0
+  enlargedCard: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class CardUse : MonoBehaviour
 {
     public Entity_CardData.Param thisCard;          // 이 카드의 데이터를 저장
     public PlayerData player;                       // 플레이어의 데이터를 저장
-    public CardController cardController;
+    public CardDataLoad card;
 	public void GetData(string id)
     {
         Entity_CardData.Param foundCard = Managers.Data.cardsDictionary[id];        // 카드를 데이터에서 찾아옴
@@ -21,7 +21,12 @@ public class CardUse : MonoBehaviour
         }
         player = PlayerData.Instance;           //  플레이어를 불러와서 할당
 
-        cardController = GetComponent<CardController>();        // CardController를 불러와서 할당
+        card = GetComponent<CardDataLoad>();        // CardDataLoad를 불러와서 할당
+    }
+    public void UsingFail()
+    {
+        card.mySlot.GetCardIntoThisSlot(card);
+        card.EndDragging();
     }
     public void UsingCard()                     // 카드를 사용하는 함수
     {
@@ -82,6 +87,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -117,6 +123,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -170,6 +177,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -194,6 +202,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -211,6 +220,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -228,6 +238,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -246,6 +257,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -263,6 +275,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -271,18 +284,20 @@ public class CardUse : MonoBehaviour
                     }
                     else if (cardType == 3)     // 스킬 카드
                     {
-                            if (myMana >= cardCost)
-                            {
-                                player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
-                                CCUse(cardCC01, cardCC02, cardPlusData);
-                                player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
-                                Destroy(gameObject);        // 카드 오브젝트 제거
-                            }
-                            else
-                            {
-                                Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
+                        if (myMana >= cardCost)
+                        {
+                            player.GainingOrLosingValue("currentMana", -cardCost);            // 마나 감소
+                            CCUse(cardCC01, cardCC02, cardPlusData);
+                            player.UsingDelay(0.5f);        // 카드 사용 딜레이
+                            SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
+                            Destroy(gameObject);        // 카드 오브젝트 제거
+                        }
+                        else
+                        {
+                            UsingFail();        // 카드 사용 실패
+                            Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                             player.UsingDelay(0);        // 다른 카드 사용 가능
+
                         }
                     }
                     else if (cardType == 4)     // 상태이상 카드
@@ -298,6 +313,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -313,6 +329,7 @@ public class CardUse : MonoBehaviour
                             }
                             else
                             {
+                                UsingFail();        // 카드 사용 실패
                                 Debug.Log("마나가 없어서 쓸 수 없다");
                                 player.UsingDelay(0);        // 다른 카드 사용 가능
                             }
@@ -354,6 +371,7 @@ public class CardUse : MonoBehaviour
                         }
                         else
                         {
+                            UsingFail();        // 카드 사용 실패
                             Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                             player.UsingDelay(0);        // 다른 카드 사용 가능
                         }
@@ -374,6 +392,7 @@ public class CardUse : MonoBehaviour
                         }
                         else
                         {
+                            UsingFail();        // 카드 사용 실패
                             Debug.Log("마나가 없어서 쓸 수 없다");        // 마나가 없을 경우 출력
                             player.UsingDelay(0);        // 다른 카드 사용 가능
                         }
@@ -381,6 +400,7 @@ public class CardUse : MonoBehaviour
                 }
                 else
                 {
+                    UsingFail();        // 카드 사용 실패
                     Debug.Log("돌아와");       // 아직 미 구현 상태의 카드
                     player.UsingDelay(0);        // 다른 카드 사용 가능
                 }

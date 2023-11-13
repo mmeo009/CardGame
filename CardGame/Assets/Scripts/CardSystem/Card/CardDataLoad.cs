@@ -53,10 +53,11 @@ public class CardDataLoad : MonoBehaviour
                 else if (objectName.thisObject.GetComponent<TextMeshPro>())
                 {
                     Vector3 currentPosition = rt.localPosition;
-                    currentPosition.z -= 12;
+                    currentPosition.z -= 10;
                     rt.localPosition = currentPosition;
                 }
             }
+            IsHolding(false);
             dragOrder = true;
         }
     }
@@ -75,7 +76,7 @@ public class CardDataLoad : MonoBehaviour
                 else if (objectName.thisObject.GetComponent<TextMeshPro>())
                 {
                     Vector3 currentPosition = rt.localPosition;
-                    currentPosition.z += 12;
+                    currentPosition.z += 10;
                     rt.localPosition = currentPosition;
                 }
             }
@@ -410,9 +411,9 @@ public class CardDataLoad : MonoBehaviour
                     break;
             }
 
-            if (this.gameObject.GetComponent<CardController>() != null)
+            if (this.gameObject.GetComponent<CardDataLoad>() != null)
             {
-                this.gameObject.GetComponent<CardController>().id = id;
+                this.gameObject.GetComponent<CardDataLoad>().thisCardId = id;
             }
 
         }

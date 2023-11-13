@@ -66,8 +66,6 @@
     <Compile Include="Assets\Scripts\Core\TurnManager.cs" />
     <Compile Include="Assets\Scripts\Animation\MonsterAnimation.cs" />
     <Compile Include="Assets\Scripts\Core\DataManager.cs" />
-    <Compile Include="Assets\Scripts\CardSystem\Grid\MergeGrid.cs" />
-    <Compile Include="Assets\Scripts\CardSystem\Grid\MonsterGrid.cs" />
     <Compile Include="Assets\Terasurware\Classes\Entity_CardData.cs" />
     <Compile Include="Assets\Scripts\CardSystem\MergeController.cs" />
     <Compile Include="Assets\Scripts\Core\StageManager.cs" />
@@ -83,8 +81,6 @@
     <Compile Include="Assets\Scripts\Core\CoroutineManager.cs" />
     <Compile Include="Assets\Scripts\Data\DeckData.cs" />
     <Compile Include="Assets\Scripts\Core\PoolManager.cs" />
-    <Compile Include="Assets\Scripts\CardSystem\Card\CardController.cs" />
-    <Compile Include="Assets\Scripts\CardSystem\Grid\GridIndex.cs" />
     <Compile Include="Assets\Scripts\Core\GenericSingleton.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -27,6 +27,7 @@ public class CardUse : MonoBehaviour
     {
         card.mySlot.GetCardIntoThisSlot(card);
         card.EndDragging();
+        DragManager.Instance.carryingCard = null;
     }
     public void UsingCard()                     // 카드를 사용하는 함수
     {
@@ -76,13 +77,13 @@ public class CardUse : MonoBehaviour
                                     MonsterData.Instance.monsterAnim.GetDamaged();        // 몬스터 타격 이펙트 출력
                                     Debug.Log(num + "/" + player.player.hitProbability);      // 명중률 관련 출력
                                     CCUse(cardCC01, cardCC02, cardPlusData);
+                                    SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 }
                                 else
                                 {
                                     Debug.Log("감나빗");       // 빗나갔을 경우 출력
                                 }
                                 player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트를 제거
                             }
                             else
@@ -112,13 +113,13 @@ public class CardUse : MonoBehaviour
                                     MonsterData.Instance.monsterAnim.GetDamaged();        // 몬스터 타격 이펙트 출력
                                     Debug.Log(num + "/" + player.player.hitProbability / 2);        // 명중률 관련 출력
                                     CCUse(cardCC01, cardCC02, cardPlusData);
+                                    SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 }
                                 else
                                 {
                                     Debug.Log("감나빗");       // 빗나갔을 경우 출력
                                 }
                                 player.UsingDelay(1.0f);        // 카드 사용 딜레이
-                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -142,6 +143,7 @@ public class CardUse : MonoBehaviour
                                         MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);      // 몬스터 체력 감소
                                         MonsterData.Instance.monsterAnim.GetDamaged();        // 몬스터 타격 이펙트 출력
                                         CCUse(cardCC01, cardCC02, cardPlusData);
+                                        SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                         if (num / 2 <= player.player.hitProbability)      // 이후 자신에게 돌아오는 확률 계산
                                         {
                                             player.GainingOrLosingValue("currentHealth", -(player.player.adDamage + thisCard.adPower) / 2);        //내 체력 감소
@@ -172,7 +174,6 @@ public class CardUse : MonoBehaviour
                                     Debug.Log("감나빗");       // 빗나갔을 경우 출력
                                 }
                                 player.UsingDelay(1.5f);        // 카드 사용 딜레이
-                                SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 Destroy(gameObject);        // 카드 오브젝트 제거
                             }
                             else
@@ -359,6 +360,7 @@ public class CardUse : MonoBehaviour
                                         MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                     }
                                     Debug.Log(num + "/" + player.player.hitProbability / 2);
+                                    SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                                 }
                                 else
                                 {
@@ -366,7 +368,6 @@ public class CardUse : MonoBehaviour
                                 }
                             }
                             player.UsingDelay(0.5f);        // 카드 사용 딜레이
-                            SoundData.Instance.PlaySound(thisCard.itemCode);        // 카드 사용 사운드 재생
                             Destroy(gameObject);        // 카드 오브젝트 제거
                         }
                         else
@@ -410,10 +411,7 @@ public class CardUse : MonoBehaviour
         {
             GetComponent<CardDataLoad>().PickCardAndIdFromDeck();
         }
-        
     }
-
-
     public void CCUse(string cardCC01, string cardCC02, int stat05)
     { 
         if (cardCC01 != "NONE")

@@ -13,6 +13,7 @@ public class PlayerData : GenericSingleton<PlayerData>
     public GameObject shieldText;
     public GameObject hpText;
     public GameObject state;
+    public PlayerAnimation playerAnimation;
     public bool isUsingCard = false;
     private void Awake()
     {
@@ -23,6 +24,10 @@ public class PlayerData : GenericSingleton<PlayerData>
         if(player.currentMana == 0)
         {
             player.currentMana = player.maxMana;
+        }
+        if (playerAnimation == null)
+        {
+            playerAnimation = FindObjectOfType<PlayerAnimation>();
         }
         ShowMyInfo();
     }
@@ -42,7 +47,6 @@ public class PlayerData : GenericSingleton<PlayerData>
         if (hp != null)
         {
             float hpfill = (float)player.currentHealth / (float)player.maxHealth;
-            Debug.Log(hpfill);
             hp.GetComponent<Image>().fillAmount = hpfill;
         }
         else
@@ -146,13 +150,20 @@ public class PlayerData : GenericSingleton<PlayerData>
                         if(player.shield >= -amount)
                         {
                             player.shield += amount;
+                            playerAnimation.PlayAnimation(PlayerAnimation.Type.HIT);
                         }
                         else
                         {
                             int _shield = player.shield += amount;
                             player.shield = 0;
                             player.currentHealth += _shield;
+                            playerAnimation.PlayAnimation(PlayerAnimation.Type.BREAK, true);
                         }
+                    }
+                    else
+                    {
+                        player.currentHealth += amount;
+                        playerAnimation.PlayAnimation(PlayerAnimation.Type.HIT);
                     }
                     if(player.currentHealth <=0)
                     {
@@ -164,6 +175,7 @@ public class PlayerData : GenericSingleton<PlayerData>
                     break;
                 case ("shield"):
                     player.shield += amount;
+                    playerAnimation.PlayAnimation(PlayerAnimation.Type.BREAK);
                     break;
                 case ("poison"):
                     Player.CC poison = player.playerCc.Find(cc => cc.ccName == "poison");
@@ -247,10 +259,12 @@ public class PlayerData : GenericSingleton<PlayerData>
                     {
                         player.currentHealth = player.maxHealth;
                         player.shield += toShield;
+                        playerAnimation.PlayAnimation(PlayerAnimation.Type.GAIN, true);
                     }
                     else
                     {
                         player.currentHealth += amount;
+                        playerAnimation.PlayAnimation(PlayerAnimation.Type.HEAL);
                     }
                     if (player.currentHealth > player.maxHealth)
                     {
@@ -280,11 +294,16 @@ public class PlayerData : GenericSingleton<PlayerData>
                 case ("shield"):
                     if (amount == 0 && overHealing == true)
                     {
+                        if(player.shield > 0)
+                        {
+                            playerAnimation.PlayAnimation(PlayerAnimation.Type.BREAK);
+                        }
                         player.shield = 0;
                     }
                     else
                     {
                         player.shield += amount;
+                        playerAnimation.PlayAnimation(PlayerAnimation.Type.GAIN);
                     }
                     break;
                 case ("blind"):

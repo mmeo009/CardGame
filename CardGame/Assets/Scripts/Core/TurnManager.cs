@@ -91,7 +91,11 @@ public class TurnManager : GenericSingleton<TurnManager>
     }
     IEnumerator GetDatas()
     {
-        for(int i = 1; i < 11; i++)
+        if (PlayerData.Instance.playerAnimation == null)
+        {
+            PlayerData.Instance.playerAnimation = FindObjectOfType<PlayerAnimation>();
+        }
+        for (int i = 1; i < 11; i++)
                   {
                       string num = i.ToString("000");
                       Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);

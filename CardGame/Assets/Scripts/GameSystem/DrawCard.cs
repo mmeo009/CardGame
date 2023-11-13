@@ -13,10 +13,10 @@ public class DrawCard : GenericSingleton<DrawCard>
 
     public void TransformChack()
     {
-        if(cardPrefab == null)
+        if (cardPrefab == null)
         {
             cardPrefab = Resources.Load<GameObject>("Prefabs/Card");
-        }    
+        }
         if (deckUi == null || cardGrids == null)
         {
             if (GameObject.Find("DeckUI") != null)
@@ -193,31 +193,27 @@ public class DrawCard : GenericSingleton<DrawCard>
     public void CreateCardFromNothing(string id, int level = 0)
     {
         float time = 0.5f;
-        for (int i = 0; i < cardGrids.Length; i++)
+        if (mergeGrids[0].GetComponent<SlotIndex>().state != SlotIndex.SlotState.Empty)
         {
-            // 현재 반복중인 인덱스를 저장
-            SlotIndex targetGrid = cardGrids[i];
-            if(cardGrids[i].GetComponent<SlotIndex>().state == SlotIndex.SlotState.Empty)
+            GameObject cardA;
+            cardA = mergeGrids[0].GetComponent<SlotIndex>().cardObject.gameObject;
+            cardA.transform.SetParent(null);
+            mergeGrids[0].GetComponent<SlotIndex>().ChangeState(SlotIndex.SlotState.Empty);
+            Destroy(cardA);
+        }
+        if (mergeGrids[1].GetComponent<SlotIndex>().state != SlotIndex.SlotState.Empty)
+        {
+            GameObject cardB;
+            cardB = mergeGrids[1].GetComponent<SlotIndex>().cardObject.gameObject;
+            cardB.transform.SetParent(null);
+            mergeGrids[1].GetComponent<SlotIndex>().ChangeState(SlotIndex.SlotState.Empty);
+            Destroy(cardB);
+        }
+        foreach (SlotIndex slot in cardGrids)
+        {
+            if (slot.state == SlotIndex.SlotState.Empty)
             {
-            // 카드 그리드가 찼는지 체크
-            if (cardGrids[gridNum].GetComponent<SlotIndex>().state == SlotIndex.SlotState.Empty)
-            {
-                if (mergeGrids[0].GetComponent<SlotIndex>().state != SlotIndex.SlotState.Empty)
-                {
-                    GameObject cardA;
-                    cardA = mergeGrids[0].GetComponent<SlotIndex>().cardObject.gameObject;
-                    cardA.transform.SetParent(null);
-                    mergeGrids[0].GetComponent<SlotIndex>().ChangeState(SlotIndex.SlotState.Empty);
-                    Destroy(cardA);
-                }
-                if (mergeGrids[1].GetComponent<SlotIndex>().state != SlotIndex.SlotState.Empty)
-                {
-                    GameObject cardB;
-                    cardB = mergeGrids[1].GetComponent<SlotIndex>().cardObject.gameObject;
-                    cardB.transform.SetParent(null);
-                    mergeGrids[1].GetComponent<SlotIndex>().ChangeState(SlotIndex.SlotState.Empty);
-                    Destroy(cardB);
-                }
+                SlotIndex emptyslot = slot;
                 // 카드 프리팹 생성
                 GameObject newCard = Instantiate(cardPrefab, mergeGrids[1].transform.position, Quaternion.identity);
                 // 카드의 정보를 불러오기 위해 카드에 값을 입력 
@@ -232,18 +228,15 @@ public class DrawCard : GenericSingleton<DrawCard>
                     newCard.GetComponent<CardDataLoad>().PickCardIdFromDataBase(id);
                 }
                 // cardGrid로 이동
-                CardMoveToGrid(newCard, time, targetGrid, 2);
+                CardMoveToGrid(newCard, time, emptyslot, 2);
                 break;
-                }
             }
             else
             {
-                Debug.Log($"{cardGrids[gridNum].GetComponent<SlotIndex>().gridNum} 번 그리드에 이미 카드가 있습니다.");
+                Debug.Log($"그리드에 이미 카드가 있습니다.");
             }
         }
     }
-
-
     private void CardMoveToGrid(GameObject newCard, float time, SlotIndex targetGrid, int type = 0)
     {
         newCard.GetComponent<CardDataLoad>().InDragging();

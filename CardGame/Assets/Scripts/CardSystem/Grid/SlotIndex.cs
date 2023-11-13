@@ -30,22 +30,45 @@ public class SlotIndex : MonoBehaviour
         {
             cardObject = null;
             cardId = null;
+            if(type == SlotType.Merge)
+            {
+                SendCardDataToMergeController();
+            }
         }
     }
 
     public void GetCardIntoThisSlot(CardDataLoad card)
     {
+        card.transform.position = transform.position;
         card.transform.SetParent(this.transform);
         card.transform.localPosition = Vector3.zero;
         card.transform.localScale = new Vector3(2.403846f, 2.403846f);
 
         card.mySlot = this;
+        card.EndDragging();
 
         cardId = card.thisCardId;
         cardObject = card;
 
         ChangeState(SlotState.Full);
+
+        if(type == SlotType.Merge)
+        {
+            SendCardDataToMergeController();
+        }
     }
 
+    public void SendCardDataToMergeController()
+    {
+        MergeController merge = FindObjectOfType<MergeController>();
 
+        if(gridNum == 0)
+        {
+            merge.gridACardId = cardId;
+        }
+        else if(gridNum == 1)
+        {
+            merge.gridBCardId = cardId;
+        }
+    }
 }

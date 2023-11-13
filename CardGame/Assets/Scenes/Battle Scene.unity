@@ -4697,17 +4697,17 @@ Canvas:
   m_GameObject: {fileID: 2049383485}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 963194227}
+  m_PlaneDistance: 10
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -11
   m_TargetDisplay: 0
 --- !u!224 &2049383489
 RectTransform:
@@ -4812,6 +4812,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1475557885}
     m_Modifications:
+    - target: {fileID: -6329713551894892508, guid: 0476203c8d8fe5b4ca6f935605e93568, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 3368846974822231506, guid: 0476203c8d8fe5b4ca6f935605e93568, type: 3}
       propertyPath: m_Name
       value: CardSlot_00

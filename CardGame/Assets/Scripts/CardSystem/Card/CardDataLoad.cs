@@ -12,6 +12,8 @@ public class CardDataLoad : MonoBehaviour
     public string thisCardId;
     public int thisCardLevel;
     public SlotIndex mySlot;
+    public bool dragOrder = false;
+    public bool isHolding = false;
 
     public void FindChilds(GameObject target)
     {
@@ -34,6 +36,50 @@ public class CardDataLoad : MonoBehaviour
             {
                 FindChilds(childObject);
             }
+        }
+    }
+    public void InDragging()
+    {
+        if(dragOrder == false)
+        {
+            foreach (ObjectNameAndParent objectName in thisCardinfo)
+            {
+                SpriteRenderer sp = objectName.thisObject.GetComponent<SpriteRenderer>();
+                RectTransform rt = objectName.thisObject.GetComponent<RectTransform>();
+                if (sp != null)
+                {
+                    sp.sortingOrder += 12;
+                }
+                else if (objectName.thisObject.GetComponent<TextMeshPro>())
+                {
+                    Vector3 currentPosition = rt.localPosition;
+                    currentPosition.z -= 12;
+                    rt.localPosition = currentPosition;
+                }
+            }
+            dragOrder = true;
+        }
+    }
+    public void EndDragging()
+    {
+        if(dragOrder == true)
+        {
+            foreach (ObjectNameAndParent objectName in thisCardinfo)
+            {
+                SpriteRenderer sp = objectName.thisObject.GetComponent<SpriteRenderer>();
+                RectTransform rt = objectName.thisObject.GetComponent<RectTransform>();
+                if (sp != null)
+                {
+                    sp.sortingOrder -= 12;
+                }
+                else if (objectName.thisObject.GetComponent<TextMeshPro>())
+                {
+                    Vector3 currentPosition = rt.localPosition;
+                    currentPosition.z += 12;
+                    rt.localPosition = currentPosition;
+                }
+            }
+            dragOrder = false;
         }
     }
     public void LoadCardLevel()
@@ -71,11 +117,13 @@ public class CardDataLoad : MonoBehaviour
         ObjectNameAndParent front = thisCardinfo.Find(name => name.name == "Front");
         if (hold == true)
         {
-            front.thisObject.GetComponent<Image>().color = Color.cyan;
+            front.thisObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+            isHolding = true;
         }
         else
         {
-            front.thisObject.GetComponent<Image>().color = Color.white;
+            front.thisObject.GetComponent<SpriteRenderer>().color = Color.white;
+            isHolding = false;
         }
     }
 

@@ -48,7 +48,7 @@ public class CardDataLoad : MonoBehaviour
                 RectTransform rt = objectName.thisObject.GetComponent<RectTransform>();
                 if (sp != null)
                 {
-                    sp.sortingOrder += 12;
+                    sp.sortingOrder += 14;
                 }
                 else if (objectName.thisObject.GetComponent<TextMeshPro>())
                 {
@@ -71,7 +71,7 @@ public class CardDataLoad : MonoBehaviour
                 RectTransform rt = objectName.thisObject.GetComponent<RectTransform>();
                 if (sp != null)
                 {
-                    sp.sortingOrder -= 12;
+                    sp.sortingOrder -= 14;
                 }
                 else if (objectName.thisObject.GetComponent<TextMeshPro>())
                 {

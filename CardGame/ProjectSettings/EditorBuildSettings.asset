@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle Scene.unity
     guid: 6adf11c2dce2ded40bd316a2daaa4260
+  - enabled: 1
+    path: Assets/Scenes/Test End Scene.unity
+    guid: d95e9561cd1f3794287621ae259e27f7
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0fbc58e4b74ff684d9b3b68c546274d7, type: 2}

@@ -24,7 +24,13 @@ public class MonsterData : GenericSingleton<MonsterData>
     public Dictionary<string, GameObject> patternState = new Dictionary<string, GameObject>();
 
     public MonsterAnimation monsterAnim;
-
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.A)&& Input.GetKeyDown(KeyCode.K))
+        {
+            GetDamage(10);
+        }
+    }
     public void LoadMonsterData(int level, int stageType, int strongDegree = 1, bool isBoss = false)
     {
         // ¸ó½ºÅÍ ºÒ·¯¿À±â
@@ -166,7 +172,7 @@ public class MonsterData : GenericSingleton<MonsterData>
         hpText.GetComponent<TMP_Text>().text = $"HP : {monsterHp}";
         if(monsterHp <= amount)
         {
-            Debug.Log("±ú²¿´ß");
+            PlayerData.Instance.PlayerWin();
         }
     }
     public void UsePattern()

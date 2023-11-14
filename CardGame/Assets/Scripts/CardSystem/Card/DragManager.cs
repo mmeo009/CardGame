@@ -141,6 +141,7 @@ public class DragManager : GenericSingleton<DragManager>
                     }
                     else if (slot.type == SlotIndex.SlotType.Monster)
                     {
+                        if (!carryingCard) return;
                         carryingCard.GetComponent<CardUse>().UsingCard();
                         carryingCard.mySlot.ChangeState(SlotIndex.SlotState.Empty);
                         PlayerData.Instance.ShowMyInfo();

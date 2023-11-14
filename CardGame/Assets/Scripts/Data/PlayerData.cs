@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : GenericSingleton<PlayerData>
 {
@@ -516,7 +517,12 @@ public class PlayerData : GenericSingleton<PlayerData>
     }
     public void PlayerDie()
     {
+        Application.Quit();
+    }
 
+    public void PlayerWin()
+    {
+        SceneManager.LoadScene("Test End Scene");
     }
 
 }

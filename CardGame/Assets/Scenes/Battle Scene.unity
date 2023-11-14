@@ -757,8 +757,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1834652969}
         m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
-        m_MethodName: set_isPlayerTurnEnd
-        m_Mode: 6
+        m_MethodName: PlayerTurnEnd
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

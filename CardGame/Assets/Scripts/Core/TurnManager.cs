@@ -28,6 +28,8 @@ public class TurnManager : GenericSingleton<TurnManager>
             _isPlayerTurnEnd = value;
         }
     }
+
+    private bool waitDraw = true;
     private void Awake()
     {
         Managers.Data.GetResources();
@@ -96,15 +98,15 @@ public class TurnManager : GenericSingleton<TurnManager>
             PlayerData.Instance.playerAnimation = FindObjectOfType<PlayerAnimation>();
         }
         for (int i = 1; i < 11; i++)
-                  {
-                      string num = i.ToString("000");
-                      Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
-                  }
- for (int i = 12; i < 22; i++)
-  {
-      string num = i.ToString("000");
-      Managers.Deck.AddCardIntoDefaultDeck($"102{num}A", 4);
-  }
+        {
+            string num = i.ToString("000");
+            Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
+        }
+        for (int i = 12; i < 22; i++)
+        {
+            string num = i.ToString("000");
+            Managers.Deck.AddCardIntoDefaultDeck($"102{num}A", 4);
+        }
         for (int i = 23; i < 27; i++)
         {
             string num = i.ToString("000");
@@ -121,15 +123,25 @@ public class TurnManager : GenericSingleton<TurnManager>
         DrawCard.Instance.CreateCardOneAtTheTime();
         PlayerData.Instance.CCChange();
         MonsterData.Instance.MonsterCCChange();
-        yield return new WaitForSeconds(2f);
+        //플레이어턴 비활성화
+        _isPlayerTurnEnd = false;
+        waitDraw = true;
+        yield return new WaitForSeconds(3f);
     }
 
     IEnumerator PlayerTurn()
     {
+        float playerTurnDuration = 2f;
+        float elapsedTime = 0f;
         // 플레이어의 턴
 
         while (!isPlayerTurnEnd)
         {
+            elapsedTime += Time.deltaTime;
+            if (elapsedTime >= playerTurnDuration)
+            {
+                waitDraw = false;
+            }
             yield return null;
         }
     }
@@ -138,8 +150,7 @@ public class TurnManager : GenericSingleton<TurnManager>
     {
         DrawCard.Instance.MergeGridToCardGrid();
         DrawCard.Instance.Invoke("CardInToDeck", 0.5f);
-        //플레이어턴 비활성화
-        _isPlayerTurnEnd = false;
+
         // 이전 효과
         yield return new WaitForSeconds(2f);
     }
@@ -158,4 +169,11 @@ public class TurnManager : GenericSingleton<TurnManager>
         yield return new WaitForSeconds(2f);
     }
 
+    public void PlayerTurnEnd()
+    {
+        if(currentTurn == TurnState.Player && waitDraw == false && isPlayerTurnEnd == false)
+        {
+            isPlayerTurnEnd = true;
+        }
+    }
 }

@@ -127,7 +127,6 @@ public class DragManager : GenericSingleton<DragManager>
                     }
                     else if (slot.type == SlotIndex.SlotType.Monster)
                     {
-                        if (!carryingCard) return;
                         carryingCard.GetComponent<CardUse>().UsingCard();
                         carryingCard.mySlot.ChangeState(SlotIndex.SlotState.Empty);
                         PlayerData.Instance.ShowMyInfo();
@@ -141,7 +140,6 @@ public class DragManager : GenericSingleton<DragManager>
                     }
                     else if (slot.type == SlotIndex.SlotType.Monster)
                     {
-                        if (!carryingCard) return;
                         carryingCard.GetComponent<CardUse>().UsingCard();
                         carryingCard.mySlot.ChangeState(SlotIndex.SlotState.Empty);
                         PlayerData.Instance.ShowMyInfo();
@@ -164,7 +162,7 @@ public class DragManager : GenericSingleton<DragManager>
     {   //아이템을 선택하고 마우스 위치로 이동 
         _target = Camera.main.ScreenToWorldPoint(Input.mousePosition);  //좌표변환
         _target.z = 0;
-        var delta = 20 * Time.deltaTime;
+        var delta = 40 * Time.deltaTime;
         delta *= Vector3.Distance(transform.position, _target);
         carryingCard.transform.position = Vector3.MoveTowards(carryingCard.transform.position, _target, delta);
         carryingCard.InDragging();

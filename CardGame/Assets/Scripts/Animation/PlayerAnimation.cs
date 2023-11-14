@@ -33,7 +33,7 @@ public class PlayerAnimation : MonoBehaviour
             if (breakAfterHit == true)
             {
                 anim.SetBool("BreakAfterHit", true);
-                Invoke("MakeFalse", 0.3f);
+                Invoke("MakeFalse", 0.5f);
             }
         }
         else if(type == Type.BREAK)
@@ -42,7 +42,7 @@ public class PlayerAnimation : MonoBehaviour
             if(breakAfterHit == true)
             {
                 anim.SetBool("BreakAfterHit", true);
-                Invoke("MakeFalse", 0.3f);
+                Invoke("MakeFalse", 0.5f);
             }
         }
     }

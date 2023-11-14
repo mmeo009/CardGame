@@ -61,12 +61,11 @@ public class DrawCard : GenericSingleton<DrawCard>
     {
         if (deckUi != null)
         {
-            for (int i = 0; i < cardGrids.Length; i++)
+            foreach (SlotIndex slot in cardGrids)
             {
-                // 현재 반복중인 인덱스를 저장
-                SlotIndex targetGrid = cardGrids[i];
-                if (cardGrids[gridNum].GetComponent<SlotIndex>().state == SlotIndex.SlotState.Empty)
+                if (slot.state == SlotIndex.SlotState.Empty)
                 {
+                    SlotIndex emptyslot = slot;
                     // 카드 프리팹 생성
                     GameObject newCard = Instantiate(cardPrefab, deckUi.position, Quaternion.identity);
                     // 카드의 정보를 불러오기 위해 카드에 값을 입력 
@@ -74,16 +73,15 @@ public class DrawCard : GenericSingleton<DrawCard>
                     // 덱에 들어있는 카드중 한가지를 선택하여 카드의 아이디를 불러와 프리팹에 넣어줌
                     newCard.GetComponent<CardDataLoad>().PickCardAndIdFromDeck();
                     // cardGrid로 이동
-                    CardMoveToGrid(newCard, 0.3f, targetGrid);
+                    CardMoveToGrid(newCard, 0.3f, emptyslot);
                     break;
                 }
                 else
                 {
-                    Debug.Log($"{cardGrids[i].GetComponent<SlotIndex>().gridNum} 번 그리드에 이미 카드가 있습니다.");
+                    Debug.Log($"그리드에 이미 카드가 있습니다.");
                 }
             }
         }
-
     }
 
     public void CreateCardAllAtOnce()

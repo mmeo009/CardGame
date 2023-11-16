@@ -55,7 +55,9 @@ public class CardUse : MonoBehaviour
                     {
                         if (cardMethod == 0)             // 아무것도 아닌 무기
                         {
+                            UsingFail();        // 카드 사용 실패
                             Debug.Log("아무 능력도 없당");
+                            player.UsingDelay(0);        // 다른 카드 사용 가능
                         }
                         if (cardMethod == 1)             // 때리는 무기
                         {

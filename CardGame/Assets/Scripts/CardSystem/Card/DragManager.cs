@@ -114,9 +114,15 @@ public class DragManager : GenericSingleton<DragManager>
             {
                 if (slot.state == SlotIndex.SlotState.Full && carryingCard == null)
                 {
+                    CardDataLoad card = slot.cardObject;
                     slot.cardObject.transform.SetParent(null);
                     carryingCard = slot.cardObject;
                     slot.ChangeState(SlotIndex.SlotState.Empty);
+                    if(card.isHolding == true)
+                    {
+                        Managers.Deck.nowHold--;
+                        card.IsHolding(false);
+                    }
                 }
                 else if (slot.state == SlotIndex.SlotState.Empty && carryingCard != null)
                 {

@@ -20,7 +20,7 @@ public class MergeController : MonoBehaviour
     {
         audio = GetOrAddComponent<AudioSource>(this.gameObject);
 
-        if (gridACardId != null && gridBCardId != null)
+        if (gridACardId != null || gridBCardId != null)
         {
             if (gridACardId == gridBCardId)
             {

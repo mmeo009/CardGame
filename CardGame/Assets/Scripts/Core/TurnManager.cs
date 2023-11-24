@@ -152,7 +152,7 @@ public class TurnManager : GenericSingleton<TurnManager>
     IEnumerator PreviousEffectTurn()
     {
         DrawCard.Instance.MergeGridToCardGrid();
-        DrawCard.Instance.Invoke("CardInToDeck", 0.5f);
+        DrawCard.Instance.Invoke("CardInToDeck", 1.5f);
 
         // 이전 효과
         yield return new WaitForSeconds(2f);

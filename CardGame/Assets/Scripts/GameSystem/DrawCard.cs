@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -258,6 +259,7 @@ public class DrawCard : GenericSingleton<DrawCard>
     }
     public void MergeGridToCardGrid()
     {
+        List<SlotIndex> emptyGrid = new List<SlotIndex>();
         foreach (SlotIndex _mergeGrids in mergeGrids)
         {
             CardDataLoad card =  _mergeGrids.cardObject;
@@ -268,10 +270,14 @@ public class DrawCard : GenericSingleton<DrawCard>
                     SlotIndex grid = cardGrids[i];
                     if (grid.GetComponent<SlotIndex>().state == SlotIndex.SlotState.Empty)
                     {
-                        _mergeGrids.GetComponent<SlotIndex>().ChangeState(SlotIndex.SlotState.Empty);
-                        CardMoveToGrid(card.gameObject, 0.3f, grid);
-                        break;
+                        emptyGrid.Add(grid);
                     }
+                }
+                if (emptyGrid.Count > 0)
+                {
+                    _mergeGrids.GetComponent<SlotIndex>().ChangeState(SlotIndex.SlotState.Empty);
+                    CardMoveToGrid(card.gameObject, 0.3f, emptyGrid[0]);
+                    emptyGrid.RemoveAt(0);
                 }
             }
         }

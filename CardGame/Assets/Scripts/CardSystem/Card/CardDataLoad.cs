@@ -170,6 +170,14 @@ public class CardDataLoad : MonoBehaviour
 
     public void LoadCardData(string id)
     {
+        foreach(ObjectNameAndParent go in thisCardinfo)
+        {
+            if(go.name == "Normal" || go.name == "Epic" || go.name == "Rare" || go.name == "Legendary" || go.name == "FP" || go.name == "AD" || go.name == "AP"
+                || go.name == "DF" || go.name == "SP" || go.name == "HP" || go.name == "CC")
+            {
+                go.thisObject.SetActive(false);
+            }
+        }
         Entity_CardData.Param cardData = Managers.Data.cardsDictionary[id];
         if (cardData != null)
         {

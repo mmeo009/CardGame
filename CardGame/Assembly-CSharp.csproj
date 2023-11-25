@@ -53,13 +53,14 @@
     <UnityVersion>2021.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Terasurware\Classes\Entity_MonsteraData.cs" />
     <Compile Include="Assets\Terasurware\Classes\Entity_PatternData.cs" />
     <Compile Include="Assets\Scripts\Util\Util.cs" />
     <Compile Include="Assets\Scripts\Core\ResourceManager.cs" />
+    <Compile Include="Assets\Scripts\Sounds\BackgroundMusic.cs" />
     <Compile Include="Assets\Scripts\UI\State.cs" />
     <Compile Include="Assets\Scripts\Data\PlayerData.cs" />
     <Compile Include="Assets\Scripts\CardSystem\TestCardAdd.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Assets\Scripts\Test\End.cs" />
     <Compile Include="Assets\Scripts\Animation\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Core\GenericSingleton.cs" />
-    <Compile Include="Assets\Scripts\Sounds\BackgroundMusic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Util;
 
 public class BackgroundMusic : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class BackgroundMusic : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetOrAddComponent<AudioSource>(this.gameObject);
         audioSource.Play(); // 배경음악 재생
     }
 

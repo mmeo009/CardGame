@@ -16,7 +16,7 @@ public class PlayerData : GenericSingleton<PlayerData>
     public GameObject state;
     public PlayerAnimation playerAnimation;
     public bool isUsingCard = false;
-    private void Awake()
+    public void DataSet()
     {
         if (player.currentHealth == 0)
         {
@@ -34,6 +34,7 @@ public class PlayerData : GenericSingleton<PlayerData>
     }
     public void ShowMyInfo()
     {
+
         if (mana != null)
         {
             mana.transform.GetChild(mana.transform.childCount - 1).GetComponent<TMP_Text>().text = player.currentMana + "/" + player.maxMana;

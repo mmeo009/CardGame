@@ -8,7 +8,7 @@ public class SlotIndex : MonoBehaviour
     {
         Default,
         Merge,
-        Monster,
+        Monster
     }
 
     public enum SlotState

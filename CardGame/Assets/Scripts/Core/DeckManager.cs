@@ -97,6 +97,22 @@ public class DeckManager
             Debug.Log($"{level}은 추가 불가능");
         }
     }
+
+    public void AddCardIntoDefaultDeckByRarity(int rarity, int amount)
+    {
+        List<Entity_CardData.Param> card = new List<Entity_CardData.Param>();
+        foreach(var cards in Managers.Data.cardsDictionary)
+        {
+            int cardRarity = cards.Value.rarity;
+            if(cardRarity == rarity)
+            {
+                card.Add(cards.Value);
+            }
+        }
+        int indexNum = Random.Range(0, card.Count);
+        AddCardIntoDefaultDeck(card[indexNum].id, amount);
+    }
+
     // DefaultDeck 관련 끝
 
     // 카드를 덱에 추가하는 함수

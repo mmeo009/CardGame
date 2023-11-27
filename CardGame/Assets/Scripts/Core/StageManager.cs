@@ -99,7 +99,7 @@ public class StageManager
 
         if(stage == Stage.BOSS || stage == Stage.BATTLE)
         {
-            BattleStage();
+            GameManager.Instance.MoveScene("Battle Scene");
         }
     }
     public void BattleStage()

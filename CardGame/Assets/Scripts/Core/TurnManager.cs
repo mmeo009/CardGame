@@ -30,14 +30,10 @@ public class TurnManager : GenericSingleton<TurnManager>
     }
 
     private bool waitDraw = true;
-    private void Awake()
-    {
-        Managers.Data.GetResources();
-        Managers.Data.DataIntoDictionary();
-        DrawCard.Instance.TransformChack();
-    }
+
     void Start()
     {
+        DrawCard.Instance.TransformChack();
         // 게임을 시작할 때 초기 턴 상태 = 카드 드로우
         currentTurn = TurnState.GetDatas;
         PlayerData.Instance.CCChange();
@@ -116,7 +112,6 @@ public class TurnManager : GenericSingleton<TurnManager>
             Managers.Deck.AddCardIntoDefaultDeck($"103{num}A", 4);
         }
         Managers.Deck.DeckSetting();
-        Managers.Stage.SelectLevel();           //나중에는 필요 없음
         yield return new WaitForSeconds(2f);
     }
 

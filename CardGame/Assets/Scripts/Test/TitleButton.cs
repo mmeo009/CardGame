@@ -6,6 +6,14 @@ public class TitleButton : MonoBehaviour
 {
     public void Press(string sceneName)
     {
-        Managers.Game.MoveScene(sceneName);
+        if(sceneName == "end")
+        {
+            GameManager.Instance.EndClick();
+        }
+        else
+        {
+            GameManager.Instance.MoveScene(sceneName);
+        }
     }
+
 }

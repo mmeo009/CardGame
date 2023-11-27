@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 319947616}
   - component: {fileID: 319947615}
   - component: {fileID: 319947613}
+  - component: {fileID: 319947617}
   m_Layer: 0
   m_Name: GameData
   m_TagString: Untagged
@@ -343,6 +344,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &319947617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319947611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543e05a2f410ed84b8ff11ebd77913fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterHp: 0
+  monsterMaxHp: 0
+  monsterAd: 0
+  monsterAp: 0
+  monsterName: 
+  monsterData:
+    id: 
+    monsterName: 
+    baseHp: 0
+    baseAd: 0
+    baseAp: 0
+    pattern: 0
+    statPlus: 0
+  patterns: []
+  pattern:
+    patternId: 
+    monsterId: 
+    type: 0
+    ad: 0
+    ap: 0
+    heal: 0
+    cc_1: 
+    cc_2: 
+    stat_001: 0
+    stat_002: 0
+    stat_003: 0
+    stat_004: 0
+    stat_005: 0
+    stat_006: 0
+  monsterCc: []
+  bg: {fileID: 0}
+  monster: {fileID: 0}
+  hpText: {fileID: 0}
+  patternText: {fileID: 0}
+  patternStates: {fileID: 0}
+  state: {fileID: 0}
+  monsterAnim: {fileID: 0}
 --- !u!1 &587285288
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794574098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 5, z: 0}
+  m_LocalPosition: {x: -9.08, y: 6.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -784,6 +834,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891832450}
   m_CullTransparentMesh: 1
+--- !u!1 &905376109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 905376111}
+  - component: {fileID: 905376110}
+  m_Layer: 0
+  m_Name: '@GameManager'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &905376110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905376109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20d68cc2bfcf534abe7c509566b3dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  isFirst: 0
+--- !u!4 &905376111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905376109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994676678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,7 +1486,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1814289486}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 994676683}
+        m_TargetAssemblyTypeName: TitleButton, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: end
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1814289486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,7 +1620,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1939361834}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 994676683}
+        m_TargetAssemblyTypeName: TitleButton, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: first
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1939361834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1722,8 +1842,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 994676683}
         m_TargetAssemblyTypeName: TitleButton, Assembly-CSharp
-        m_MethodName: Press
-        m_Mode: 5
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

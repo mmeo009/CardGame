@@ -7,6 +7,6 @@ public class End : MonoBehaviour
 {
     public void EndClick()
     {
-        Application.Quit();
+        GameManager.Instance.EndClick();
     }
 }

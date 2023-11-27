@@ -3,8 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : GenericSingleton<GameManager>
 {
+    public string sceneName;
+    public bool isFirst = false;
+
+    private void Awake()
+    {
+        Managers.Data.GetResources();
+        Managers.Data.DataIntoDictionary();
+    }
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -15,20 +23,32 @@ public class GameManager : MonoBehaviour
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        string sceneName = scene.name;
-        Debug.Log("ÇöÀç ¾À ÀÌ¸§: " + sceneName);
-
+        string name = scene.name;
+        sceneName = name;
+        Debug.Log("ÇöÀç ¾À ÀÌ¸§: " + name);
         if (sceneName == "Battle Scene")
         {
             PlayerData.Instance.DataSet();
+            Managers.Stage.BattleStage();
         }
         else if (sceneName == "Store Scene")
         {
 
         }
     }
-    public void MoveScene(string SceneName) //¾À ÀÌµ¿(¿øÇÏ´Â ¾À ÀÌ¸§)
+    public void MoveScene(string sceneName) //¾À ÀÌµ¿(¿øÇÏ´Â ¾À ÀÌ¸§)
     {
-        SceneManager.LoadScene(SceneName);
+        if(sceneName == "first")
+        {
+            Managers.Stage.SelectLevel();
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+    }
+    public void EndClick()
+    {
+        Application.Quit();
     }
 }

@@ -19,7 +19,18 @@ public class StoreCardGrid : MonoBehaviour
 
     public void CheckThisStage()
     {
-
+        if (GameManager.Instance.sceneName == "Store Scene")
+        {
+            type = Type.SHOP;
+        }
+        else if(GameManager.Instance.sceneName == "Demon Scene")
+        {
+            type = Type.DEMON;
+        }
+        else
+        {
+            type = Type.NONE;
+        }
     }
     public void SetMyRarity()
     {

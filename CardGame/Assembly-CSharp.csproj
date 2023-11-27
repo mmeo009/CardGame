@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Terasurware\Classes\Entity_MonsteraData.cs" />
+    <Compile Include="Assets\Scripts\CardSystem\Grid\StoreCardGrid.cs" />
     <Compile Include="Assets\Terasurware\Classes\Entity_PatternData.cs" />
     <Compile Include="Assets\Scripts\Util\Util.cs" />
     <Compile Include="Assets\Scripts\Core\ResourceManager.cs" />
@@ -87,7 +88,6 @@
     <Compile Include="Assets\Scripts\Test\End.cs" />
     <Compile Include="Assets\Scripts\Animation\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Core\GenericSingleton.cs" />
-    <Compile Include="Assets\Scripts\CardSystem\Grid\StoreCardGrid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

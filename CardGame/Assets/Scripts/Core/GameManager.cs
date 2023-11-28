@@ -52,6 +52,10 @@ public class GameManager : GenericSingleton<GameManager>
         {
             PlayerData.Instance.DataSet();
         }
+        else if(sceneName == "Inv Scene")
+        {
+
+        }
     }
     public void MoveScene(string sceneName) //씬 이동(원하는 씬 이름)
     {

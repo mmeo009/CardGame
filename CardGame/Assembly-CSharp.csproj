@@ -66,7 +66,7 @@
     <Compile Include="Assets\Scripts\Data\PlayerData.cs" />
     <Compile Include="Assets\Scripts\CardSystem\TestCardAdd.cs" />
     <Compile Include="Assets\Scripts\Core\TurnManager.cs" />
-    <Compile Include="Assets\Scripts\Test\TitleButton.cs" />
+    <Compile Include="Assets\Scripts\Test\Button.cs" />
     <Compile Include="Assets\Scripts\Animation\MonsterAnimation.cs" />
     <Compile Include="Assets\Scripts\Core\DataManager.cs" />
     <Compile Include="Assets\Terasurware\Classes\Entity_CardData.cs" />

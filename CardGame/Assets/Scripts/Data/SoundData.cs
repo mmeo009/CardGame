@@ -14,7 +14,7 @@ public class SoundData : GenericSingleton<SoundData>
         }
 
         AudioClip clip = Managers.Data.soundDictionary[name];
-        if(clip != null)
+        if(clip != null && audio != null)
         {
             audio.clip = clip;
             audio.Play();

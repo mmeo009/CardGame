@@ -27,7 +27,7 @@ public class PlayerData : GenericSingleton<PlayerData>
         }
         if (playerAnimation == null)
         {
-            playerAnimation = FindObjectOfType<PlayerAnimation>();
+            playerAnimation = this.gameObject.GetComponent<PlayerAnimation>();
         }
         ShowMyInfo();
     }

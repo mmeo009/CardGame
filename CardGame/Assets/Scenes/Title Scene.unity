@@ -986,6 +986,7 @@ MonoBehaviour:
   draw: {fileID: 0}
   turn: {fileID: 0}
   monsterData: {fileID: 0}
+  drag: {fileID: 0}
 --- !u!95 &1108840803
 Animator:
   serializedVersion: 5

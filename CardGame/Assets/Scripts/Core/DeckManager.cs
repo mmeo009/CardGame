@@ -98,6 +98,7 @@ public class DeckManager
         }
     }
 
+    // 등급별로 여러장 구매하여 defaultDeck에 추가함
     public void AddCardIntoDefaultDeckByRarity(int rarity, int amount)
     {
         List<Entity_CardData.Param> card = new List<Entity_CardData.Param>();
@@ -111,6 +112,53 @@ public class DeckManager
         }
         int indexNum = Random.Range(0, card.Count);
         AddCardIntoDefaultDeck(card[indexNum].id, amount);
+    }
+
+    // defaultDeck에서 카드 제거
+    public void RemoveCardFromDefaultDeckById(string cardId, int cardLevel, int cardAmount = 1)
+    {
+        // 해당 id를 가진 카드를 찾음
+        Entity_CardData.Param foundCard = Managers.Data.cardsDictionary[cardId];
+
+        if (foundCard != null)
+        {
+            // 덱에 이미 같은 카드가 있는지 확인
+            CardInformation existingEntry = DeckData.Instance.defaultDeck.Find(entry => entry.id == cardId && entry.level == cardLevel);
+
+            if (existingEntry != null)
+            {
+                if (existingEntry.count > cardAmount)
+                {
+                    // 제거량이 덱에 있는 카드의 양보다 적을경우 덱에있는 카드의 수를 줄임
+                    existingEntry.count -= cardAmount;
+                    // 제거된 카드 정보를 출력
+                    Debug.Log($"기본 덱에서 제거된 카드 : (카드 이름: {foundCard.cardName}, 제거 량: {cardAmount})");
+                }
+                else if (existingEntry.count == cardAmount)
+                {
+                    // 제거량이 덱에 있는 카드와 같을경우 덱에 있는 카드를 제거
+                    DeckData.Instance.defaultDeck.Remove(existingEntry);
+                    // 제거된 카드 정보를 출력
+                    Debug.Log($"기본 덱에서 제거된 카드 : (카드 이름: {foundCard.cardName}, 제거 량: {cardAmount})");
+                }
+                else
+                {
+                    // 제거량이 덱에 있는 카드의 양보다 많을경우 오류 메세지 출력
+                    Debug.Log($"기본 덱에서 ID{cardId}의 카드 수는{existingEntry.count}입니다. 따라서 더 많은 양을 제거할 수 없습니다.");
+                }
+
+            }
+            else
+            {
+                // 덱에 없는 카드일 경우 오류 메세지 출력
+                Debug.Log($"기본 덱에서 ID {cardId}를 가진 카드가 없습니다.");
+            }
+        }
+        else
+        {
+            // 제거할 카드가 없다면 오류 메세지 출력
+            Debug.Log($"기본 덱에서 ID {cardId}를 가진 카드를 찾을 수 없습니다.");
+        }
     }
 
     // DefaultDeck 관련 끝

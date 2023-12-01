@@ -523,7 +523,6 @@ public class PlayerData : GenericSingleton<PlayerData>
     public void PlayerWin()
     {
         Managers.Stage.SelectLevel();
-        GameManager.Instance.MoveScene("Test End Scene");
     }
 
 }

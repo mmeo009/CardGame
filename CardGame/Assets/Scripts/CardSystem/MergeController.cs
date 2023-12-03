@@ -16,9 +16,12 @@ public class MergeController : MonoBehaviour
     private AudioSource audio;
     [SerializeField]
     private AudioClip merge;
-    public void MergeCards()
+    private void Start()
     {
         audio = GetOrAddComponent<AudioSource>(this.gameObject);
+    }
+    public void MergeCards()
+    {
 
         if (gridACardId != null || gridBCardId != null)
         {

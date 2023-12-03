@@ -34,7 +34,7 @@ public class GameManager : GenericSingleton<GameManager>
         string name = scene.name;
         sceneName = name;
         Debug.Log("ÇöÀç ¾À ÀÌ¸§: " + name);
-        if(sceneName != "Battle Scene")
+        if(sceneName != "Battle Scene" || sceneName != "Store Scene" || sceneName != "Demon Scene")
         {
             turn.enabled = false;
             draw.enabled = false;
@@ -51,17 +51,35 @@ public class GameManager : GenericSingleton<GameManager>
         else if (sceneName == "Store Scene")
         {
             PlayerData.Instance.DataSet();
+            drag.enabled = true;
         }
+        else if (sceneName == "Demon Scene")
+        {
+            PlayerData.Instance.DataSet();
+            drag.enabled = true;
+        }
+        else if(sceneName == "Forge Scene")
+        {
+            PlayerData.Instance.DataSet();
+        }
+
     }
-    public void MoveScene(string sceneName) //¾À ÀÌµ¿(¿øÇÏ´Â ¾À ÀÌ¸§)
+    public void MoveScene(string nextSceneName) //¾À ÀÌµ¿(¿øÇÏ´Â ¾À ÀÌ¸§)
     {
-        if(sceneName == "first")
+        if (nextSceneName == "first")
         {
             Managers.Stage.SelectLevel();
         }
         else
         {
-            SceneManager.LoadScene(sceneName);
+            if (sceneName != nextSceneName)
+            {
+                SceneManager.LoadScene(nextSceneName);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
     public void EndClick()

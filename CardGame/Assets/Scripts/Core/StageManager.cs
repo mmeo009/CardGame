@@ -109,6 +109,14 @@ public class StageManager
         {
             GameManager.Instance.MoveScene("Forge Scene");
         }
+        else if(stage == Stage.DEMON)
+        {
+            GameManager.Instance.MoveScene("Demon Scene");
+        }
+        else if (stage == Stage.STORE)
+        {
+            GameManager.Instance.MoveScene("Store Scene");
+        }
     }
     public void BattleStage()
     {

@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Terasurware\Classes\Entity_MonsteraData.cs" />
-    <Compile Include="Assets\Scripts\CardSystem\Grid\StoreCardGrid.cs" />
     <Compile Include="Assets\Terasurware\Classes\Entity_PatternData.cs" />
     <Compile Include="Assets\Scripts\Util\Util.cs" />
     <Compile Include="Assets\Scripts\Core\ResourceManager.cs" />
@@ -67,6 +66,7 @@
     <Compile Include="Assets\Scripts\CardSystem\TestCardAdd.cs" />
     <Compile Include="Assets\Scripts\CardSystem\Grid\Testc.cs" />
     <Compile Include="Assets\Scripts\Core\TurnManager.cs" />
+    <Compile Include="Assets\Scripts\Tarvern&amp;Forge\WayButton.cs" />
     <Compile Include="Assets\Scripts\Test\Button.cs" />
     <Compile Include="Assets\Scripts\Animation\MonsterAnimation.cs" />
     <Compile Include="Assets\Scripts\Core\DataManager.cs" />
@@ -89,7 +89,6 @@
     <Compile Include="Assets\Scripts\Test\End.cs" />
     <Compile Include="Assets\Scripts\Animation\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Core\GenericSingleton.cs" />
-    <Compile Include="Assets\Scripts\Tarvern&amp;Forge\WayButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

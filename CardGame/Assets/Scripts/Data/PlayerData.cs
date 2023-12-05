@@ -41,8 +41,11 @@ public class PlayerData : GenericSingleton<PlayerData>
         else
         {
             GameObject _mana = GameObject.Find("RemainingMana");
-            mana = _mana;
-            mana.transform.GetChild(mana.transform.childCount - 1).GetComponent<TMP_Text>().text = player.currentMana + "/" + player.maxMana;
+            if (_mana != null)
+            {
+                mana = _mana;
+                mana.transform.GetChild(mana.transform.childCount - 1).GetComponent<TMP_Text>().text = player.currentMana + "/" + player.maxMana;
+            }
         }
 
         if (hp != null)
@@ -53,10 +56,13 @@ public class PlayerData : GenericSingleton<PlayerData>
         else
         {
             GameObject _hp = GameObject.Find("PlayerHP");
-            hp = _hp;
-            float hpfill = (float)player.currentHealth / (float)player.maxHealth;
-            Debug.Log(hpfill);
-            hp.GetComponent<Image>().fillAmount = hpfill;
+            if(_hp != null)
+            {
+                hp = _hp;
+                float hpfill = (float)player.currentHealth / (float)player.maxHealth;
+                Debug.Log(hpfill);
+                hp.GetComponent<Image>().fillAmount = hpfill;
+            }
         }
         if(hpText != null)
         {
@@ -65,8 +71,11 @@ public class PlayerData : GenericSingleton<PlayerData>
         else
         {
             GameObject _hpT = GameObject.Find("HPText");
-            hpText = _hpT;
-            hpText.GetComponent<TMP_Text>().text = player.currentHealth + "/" + player.maxHealth;
+            if(_hpT != null)
+            {
+                hpText = _hpT;
+                hpText.GetComponent<TMP_Text>().text = player.currentHealth + "/" + player.maxHealth;
+            }
         }
         if (shieldText != null)
         {
@@ -83,14 +92,17 @@ public class PlayerData : GenericSingleton<PlayerData>
         else
         {
             GameObject _shieldT = GameObject.Find("ShieldText");
-            shieldText = _shieldT;
-            if (player.shield > 0)
+            if(_shieldT != null)
             {
-                shieldText.GetComponent<TMP_Text>().text = player.shield.ToString();
-            }
-            else
-            {
-                shieldText.GetComponent<TMP_Text>().text = "---";
+                shieldText = _shieldT;
+                if (player.shield > 0)
+                {
+                    shieldText.GetComponent<TMP_Text>().text = player.shield.ToString();
+                }
+                else
+                {
+                    shieldText.GetComponent<TMP_Text>().text = "---";
+                }
             }
         }
         if(state != null)
@@ -108,13 +120,16 @@ public class PlayerData : GenericSingleton<PlayerData>
         else
         {
             state = GameObject.FindWithTag("PlayerState");
-            foreach (Transform _state in state.transform)
+            if(state != null)
             {
-                string _name = _state.GetComponent<State>().name;
-                Player.CC _cc = player.playerCc.Find(cc => cc.ccName == _name);
-                if (_cc == null)
+                foreach (Transform _state in state.transform)
                 {
-                    Destroy(_state.gameObject);
+                    string _name = _state.GetComponent<State>().name;
+                    Player.CC _cc = player.playerCc.Find(cc => cc.ccName == _name);
+                    if (_cc == null)
+                    {
+                        Destroy(_state.gameObject);
+                    }
                 }
             }
         }
@@ -517,7 +532,9 @@ public class PlayerData : GenericSingleton<PlayerData>
     }
     public void PlayerDie()
     {
-        GameManager.Instance.MoveScene("Test End Scene");
+        player = new Player();
+        Managers.Stage.Reset();
+        GameManager.Instance.MoveScene("Title Scene");
     }
 
     public void PlayerWin()

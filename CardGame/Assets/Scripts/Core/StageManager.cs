@@ -20,6 +20,15 @@ public class StageManager
     public int strongDegree = 1;
     public int battleStageType = 1;
     public int level = 2;
+    public void Reset()
+    {
+        stage = Stage.MAIN;
+        stageNum = 0;
+        battleStageCount = 0;
+        strongDegree = 1;
+        battleStageType = 1;
+        level = 2;
+    }
     public void SelectLevel()
     {
         if(stageNum == 0)
@@ -38,17 +47,18 @@ public class StageManager
         }
         else if(stageNum < 5 && battleStageCount > 2)
         {
-            int st = UnityEngine.Random.Range(0, 4);
+            // int st = UnityEngine.Random.Range(0, 4);
+            int st = UnityEngine.Random.Range(0, 3);
             switch (st)
             {
                 case 0:
-                    stage = Stage.STORE;
+                    stage = Stage.TARVERN;
                     break;
                 case 1:
                     stage = Stage.FORGE;
                     break;
                 case 2:
-                    stage = Stage.TARVERN;
+                    stage = Stage.STORE;
                     break;
                 case 3:
                     stage = Stage.DEMON;
@@ -57,11 +67,13 @@ public class StageManager
         }
         else if(stageNum < 3 && battleStageCount <= 2)
         {
-            int st = UnityEngine.Random.Range(0, 5);
+            // int st = UnityEngine.Random.Range(0, 5);
+            int st = UnityEngine.Random.Range(0, 3);
             switch (st)
             {
                 case 0:
-                    stage = Stage.STORE;
+                    stage = Stage.BATTLE;
+                    battleStageCount++;
                     break;
                 case 1:
                     stage = Stage.FORGE;
@@ -73,8 +85,7 @@ public class StageManager
                     stage = Stage.DEMON;
                     break;
                 case 4:
-                    stage = Stage.BATTLE;
-                    battleStageCount++;
+                    stage = Stage.STORE;
                     break;
             }
         }
@@ -97,9 +108,13 @@ public class StageManager
                   + " battleStageCount : " + battleStageCount
                   + " Level : " + level);
 
-        if(stage == Stage.BOSS || stage == Stage.BATTLE)
+        if(stage == Stage.BATTLE)
         {
             GameManager.Instance.MoveScene("Battle Scene");
+        }
+        else if(stage == Stage.BOSS)
+        {
+            GameManager.Instance.MoveScene("Test End Scene");
         }
         else if(stage == Stage.TARVERN)
         {

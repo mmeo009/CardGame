@@ -15,42 +15,42 @@ MonoBehaviour:
   param:
   - id: 501101A
     monsterName: "\uAF2C\uB9C8 \uAE38\uCB49 \uADC0"
-    baseHp: 30
+    baseHp: 15
     baseAd: 1
     baseAp: 1
     pattern: 3
     statPlus: 1
   - id: 501101B
     monsterName: "\uBE44\uC2E4 \uBE44\uC2E4\uD55C \uAE38\uCB49 \uADC0"
-    baseHp: 30
+    baseHp: 15
     baseAd: 1
     baseAp: 1
     pattern: 3
     statPlus: 1
   - id: 501102A
     monsterName: "\uAC1C\uBB3C \uB2F9\uADFC"
-    baseHp: 30
+    baseHp: 15
     baseAd: 2
     baseAp: 1
     pattern: 3
     statPlus: 1
   - id: 501102B
     monsterName: "\uB2F9\uADFC \uB18D\uBD80 \uAE38\uCB49 \uADC0"
-    baseHp: 40
+    baseHp: 25
     baseAd: 2
     baseAp: 1
     pattern: 3
     statPlus: 1
   - id: 501102C
     monsterName: "\uB2F9\uADFC \uC0BC\uD615\uC81C"
-    baseHp: 40
+    baseHp: 25
     baseAd: 1
     baseAp: 2
     pattern: 3
     statPlus: 1
   - id: 501103Z
     monsterName: "\uAE38\uCB49 \uADC0 \uC5EC\uC655 \uD1A0\uAE7D\uC774"
-    baseHp: 80
+    baseHp: 45
     baseAd: 5
     baseAp: 5
     pattern: 7

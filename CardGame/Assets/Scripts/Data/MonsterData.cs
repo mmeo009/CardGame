@@ -100,6 +100,8 @@ public class MonsterData : GenericSingleton<MonsterData>
 
 
         // 몬스터 패턴 불러오기
+        patterns.Clear();
+        patternState.Clear();
         foreach (Entity_PatternData.Param _patternData in Managers.Data.patternDatabase.param)
         {
             if(_patternData.monsterId == monsterData.id)

@@ -164,6 +164,10 @@ public class TurnManager : GenericSingleton<TurnManager>
     {
         // 이후 효과
         MonsterData.Instance.PickPattern();
+        if(DeckData.Instance.amountOfCardsInDeck >= 0)
+        {
+            Managers.Deck.DeckSetting();
+        }
         yield return new WaitForSeconds(2f);
     }
 

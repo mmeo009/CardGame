@@ -36,6 +36,7 @@ public class GameManager : GenericSingleton<GameManager>
         Debug.Log("ÇöÀç ¾À ÀÌ¸§: " + name);
         if(sceneName != "Battle Scene" || sceneName != "Store Scene" || sceneName != "Demon Scene")
         {
+            TurnManager.Instance.TurnEnd();
             turn.enabled = false;
             draw.enabled = false;
             drag.enabled = false;
@@ -47,14 +48,17 @@ public class GameManager : GenericSingleton<GameManager>
             turn.enabled = true;
             draw.enabled = true;
             drag.enabled = true;
+            TurnManager.Instance.TurnStart();
         }
         else if (sceneName == "Store Scene")
         {
+            TurnManager.Instance.TurnEnd();
             PlayerData.Instance.DataSet();
             drag.enabled = true;
         }
         else if (sceneName == "Demon Scene")
         {
+            TurnManager.Instance.TurnEnd();
             PlayerData.Instance.DataSet();
             drag.enabled = true;
         }
@@ -69,6 +73,24 @@ public class GameManager : GenericSingleton<GameManager>
         if (nextSceneName == "first")
         {
             Managers.Stage.SelectLevel();
+            for (int i = 1; i < 11; i++)
+            {
+                if (i != 4)
+                {
+                    string num = i.ToString("000");
+                    Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
+                }
+            }
+            for (int i = 12; i < 22; i++)
+            {
+                string num = i.ToString("000");
+                Managers.Deck.AddCardIntoDefaultDeck($"102{num}A", 4);
+            }
+            for (int i = 23; i < 27; i++)
+            {
+                string num = i.ToString("000");
+                Managers.Deck.AddCardIntoDefaultDeck($"103{num}A", 4);
+            }
         }
         else
         {

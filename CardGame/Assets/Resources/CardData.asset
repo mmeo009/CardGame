@@ -1378,7 +1378,7 @@ MonoBehaviour:
     cardCost: 6
     element: NONE
     rarity: 4
-    text: "\uC77C\uC2DC\uC801\uC73C\uB85C [fdp]\uCCB4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.
+    text: "\uC77C\uC2DC\uC801\uC73C\uB85C 20 \uCCB4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.
       \uD55C\uD134\uC5D0 [fdd]\uC529 2\uD134\uC5D0 \uAC78\uCCD0 \uCCB4\uB825\uC744
       \uC783\uC2B5\uB2C8\uB2E4."
     comment: "JTH\uB3C4 \uC6B8\uAE34 \uD558\uB124\uC694?"
@@ -1400,7 +1400,7 @@ MonoBehaviour:
     cardCost: 6
     element: NONE
     rarity: 4
-    text: "\uC989\uC2DC \uCCB4\uB825\uC744 [app]\uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+    text: "\uC989\uC2DC \uCCB4\uB825\uC744 20 \uB9CC\uD07C \uD68C\uBCF5\uD569\uB2C8\uB2E4."
     comment: "JTH\uC190\uC740 \uC57D\uC190"
     adPower: 0
     apPower: 20
@@ -1412,7 +1412,7 @@ MonoBehaviour:
     stat_03: 0
     stat_04: 0
     stat_05: 0
-  - id: 102022C
+  - id: 102022H
     itemCode: JTH_006
     cardName: "JTH\uC758 \uD3EC\uC639"
     cardType: 2
@@ -1421,9 +1421,9 @@ MonoBehaviour:
     element: NONE
     rarity: 4
     text: "\uBB34\uC801 \uC0C1\uD0DC\uAC00 \uB418\uACE0 \uB0A8\uC740 \uB9C8\uB098
-      1\uB2F9 [app]\uB9CC\uD07C\uC758 \uCCB4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.
-      \uB9CC\uC57D \uCCB4\uB825\uC774 \uAC00\uB4DD \uCC3C\uB2E4\uBA74 \uB0A8\uC740
-      \uB9CC\uD07C \uBC29\uC5B4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4."
+      1\uB2F9 5 \uB9CC\uD07C\uC758 \uCCB4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4. \uB9CC\uC57D
+      \uCCB4\uB825\uC774 \uAC00\uB4DD \uCC3C\uB2E4\uBA74 \uB0A8\uC740 \uB9CC\uD07C
+      \uBC29\uC5B4\uB825\uC744 \uC5BB\uC2B5\uB2C8\uB2E4."
     comment: "\uC548\uC544\uC918\uC694."
     adPower: 0
     apPower: 5

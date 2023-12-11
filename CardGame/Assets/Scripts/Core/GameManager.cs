@@ -75,11 +75,8 @@ public class GameManager : GenericSingleton<GameManager>
             Managers.Stage.SelectLevel();
             for (int i = 1; i < 11; i++)
             {
-                if (i != 4)
-                {
-                    string num = i.ToString("000");
-                    Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
-                }
+                string num = i.ToString("000");
+                Managers.Deck.AddCardIntoDefaultDeck($"101{num}A", 4);
             }
             for (int i = 12; i < 22; i++)
             {

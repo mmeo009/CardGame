@@ -250,17 +250,17 @@ public class CardDataLoad : MonoBehaviour
             }
             if(cardText != null)
             {
-                string _text = cardData.text.Replace("[ad]", $"{PlayerData.Instance.player.adDamage + cardData.adPower}")
-                    .Replace("[ap]", $"{PlayerData.Instance.player.apDamage + cardData.apPower}")
-                    .Replace("[fd]", $"{PlayerData.Instance.player.fixedDamage + cardData.fixedPower}")
-                    .Replace("[had]", $"{(PlayerData.Instance.player.adDamage + cardData.adPower) / 2}")
-                    .Replace("[hap]", $"{(PlayerData.Instance.player.apDamage + cardData.adPower) / 2}")
-                    .Replace("[hfd]", $"{(PlayerData.Instance.player.fixedDamage + cardData.adPower) / 2}")
-                    .Replace("[ra]", $"{thisCardLevel}")
-                    .Replace("[fdd]", $"{(cardData.fixedPower + PlayerData.Instance.player.apDamage) / 2}")
-                    .Replace("[adp]", $"{PlayerData.Instance.player.apDamage * cardData.adPower}")
-                    .Replace("[app]", $"{PlayerData.Instance.player.apDamage * cardData.apPower}")
-                    .Replace("[fdp]", $"{PlayerData.Instance.player.apDamage * cardData.fixedPower}")
+                string _text = cardData.text.Replace("[ad]", $"<color=red>{PlayerData.Instance.player.adDamage + cardData.adPower}</color>")
+                    .Replace("[ap]", $"<color=red>{PlayerData.Instance.player.apDamage + cardData.apPower}</color>")
+                    .Replace("[fd]", $"<color=red>{PlayerData.Instance.player.fixedDamage + cardData.fixedPower}</color>")
+                    .Replace("[had]", $"<color=red>{(PlayerData.Instance.player.adDamage + cardData.adPower) / 2}</color>")
+                    .Replace("[hap]", $"<color=red>{(PlayerData.Instance.player.apDamage + cardData.adPower) / 2}</color>")
+                    .Replace("[hfd]", $"<color=red>{(PlayerData.Instance.player.fixedDamage + cardData.adPower) / 2}</color>")
+                    .Replace("[ra]", $"<color=red>{thisCardLevel}</color>")
+                    .Replace("[fdd]", $"<color=red>{(cardData.fixedPower + PlayerData.Instance.player.apDamage) / 2}</color>")
+                    .Replace("[adp]", $"<color=red>{PlayerData.Instance.player.apDamage * cardData.adPower}</color>")
+                    .Replace("[app]", $"<color=red>{PlayerData.Instance.player.apDamage * cardData.apPower}</color>")
+                    .Replace("[fdp]", $"<color=red>{PlayerData.Instance.player.apDamage * cardData.fixedPower}</color>")
                     ;
 
                 cardText.thisObject.GetComponent<TextMeshPro>().text = _text;

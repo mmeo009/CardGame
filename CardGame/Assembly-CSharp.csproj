@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\CardSystem\Card\CardDataLoad.cs" />
     <Compile Include="Assets\Scripts\Core\CoroutineManager.cs" />
     <Compile Include="Assets\Scripts\Data\DeckData.cs" />
+    <Compile Include="Assets\Scripts\Test\Test.cs" />
     <Compile Include="Assets\Scripts\Core\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Core\GameManager.cs" />
     <Compile Include="Assets\Scripts\Test\End.cs" />
@@ -111,7 +112,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>

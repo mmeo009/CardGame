@@ -300,6 +300,7 @@ public class CardDataLoad : MonoBehaviour
 
             // 카드 스텟 불러오기
             ObjectNameAndParent typeText = thisCardinfo.Find(name => name.name == "TypeText");
+            ObjectNameAndParent BG = thisCardinfo.Find(name => name.name == "BG");
             switch (cardData.cardType)
             {
                 case 0:
@@ -341,6 +342,7 @@ public class CardDataLoad : MonoBehaviour
                             AD.thisObject.SetActive(true);
                             typeText.thisObject.GetComponent<TextMeshPro>().text = cardData.adPower.ToString();
                         }
+                        BG.thisObject.GetComponent<SpriteRenderer>().color = Color.red;
                     }
                     break;
                 case 2:
@@ -363,6 +365,7 @@ public class CardDataLoad : MonoBehaviour
                             HP.thisObject.SetActive(true);
                             typeText.thisObject.GetComponent<TextMeshPro>().text = cardData.fixedPower.ToString();
                         }
+                        BG.thisObject.GetComponent<SpriteRenderer>().color = Color.cyan;
                     }
                     break;
                 case 3:
@@ -378,7 +381,9 @@ public class CardDataLoad : MonoBehaviour
                         {
                             typeText.thisObject.GetComponent<TextMeshPro>().text += cardData.adPower.ToString();
                         }
-                    }    
+                        BG.thisObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+
+                    }
                     break;
                 case 4:
                     if(cardData.id[2] == '1')
@@ -389,6 +394,8 @@ public class CardDataLoad : MonoBehaviour
                             SPI.thisObject.SetActive(true);
                             typeText.thisObject.GetComponent<TextMeshPro>().text = $"{PlayerData.Instance.player.adDamage + cardData.adPower}x{thisCardLevel}";
                         }
+                        BG.thisObject.GetComponent<SpriteRenderer>().color = Color.red;
+
                     }
                     else if(cardData.id[2] == '2')
                     {
@@ -398,6 +405,8 @@ public class CardDataLoad : MonoBehaviour
                             DFI.thisObject.SetActive(true);
                             typeText.thisObject.GetComponent<TextMeshPro>().text = $"{PlayerData.Instance.player.apDamage * cardData.adPower}x{thisCardLevel}";
                         }
+                        BG.thisObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+
                     }
                     else if(cardData.id[2] == '4')
                     {
@@ -415,6 +424,8 @@ public class CardDataLoad : MonoBehaviour
                             }
                             
                         }
+                        BG.thisObject.GetComponent<SpriteRenderer>().color = Color.white;
+
                     }
                     break;
             }

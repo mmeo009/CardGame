@@ -28,23 +28,40 @@ public class InventoryManager : GenericSingleton<InventoryManager>
     public void LoadMyCard(int listNum)
     {           // 카드 하나에 정보를 기입하는 함수
         int cardNum = listNum % 4;
-        string id = myDeck[listNum].id;
-        int level = myDeck[listNum].level;
-        int count = myDeck[listNum].count;
-
-        invCards[cardNum].thisCardId = id;
-        invCards[cardNum].thisCardLevel = level;
-        if(invCards[cardNum].thisCardinfo == null)
+        if (listNum > cardAmount)
         {
-            invCards[cardNum].FindChilds(invCards[cardNum].gameObject);
+            CardActive(cardNum, false);         // 카드 비활성화
         }
-        invCards[cardNum].LoadCardData(id);
-        ObjectNameAndParent text = invCards[cardNum].thisCardinfo.Find(name => name.name == "AmountText");
-        text.thisObject.GetComponent<TextMeshPro>().text = $"{count}장";
+        else
+        {
+            CardActive(cardNum, true);          // 카드 활성화
+
+            string id = myDeck[listNum].id;         // 카드의 아이디
+            int level = myDeck[listNum].level;          // 카드의 레벨
+            int count = myDeck[listNum].count;          // 카드의 개수
+
+            invCards[cardNum].thisCardId = id;          // 카드에 아이디를 기입해줌
+            invCards[cardNum].thisCardLevel = level;            // 카드에 레벨을 기입해줌
+            if (invCards[cardNum].thisCardinfo.Count <= 0)
+            {
+                invCards[cardNum].FindChilds(invCards[cardNum].gameObject);             // 하위 친구들을 찾아두지 않은 상태일 경우 찾음
+            }
+            invCards[cardNum].LoadCardData(id);         // 카드의 정보를 불러옴
+            ObjectNameAndParent text = invCards[cardNum].thisCardinfo.Find(name => name.name == "AmountText");          // 카드의 개수를 표시하는 오브젝트를 찾아옴
+            text.thisObject.GetComponent<TextMeshPro>().text = $"{count}장";         // 카드의 개수를 표시하는 오브젝트에 개수를 표시함
+        }
+    }
+    public void CardActive(int cardNum, bool active)
+    {
+        invCards[cardNum].gameObject.SetActive(active);
     }
 
     public void LoadByMaxNum()
     {
-        
+        int num = maxNum;
+            LoadMyCard(num - 3);
+            LoadMyCard(num - 2);
+            LoadMyCard(num - 1);
+            LoadMyCard(num);
     }
 }

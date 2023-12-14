@@ -11,6 +11,7 @@ public class GameManager : GenericSingleton<GameManager>
     public TurnManager turn;
     public MonsterData monsterData;
     public DragManager drag;
+    public InventoryManager inv;
 
     private void Awake()
     {
@@ -20,6 +21,15 @@ public class GameManager : GenericSingleton<GameManager>
         turn = GetComponent<TurnManager>();
         draw = GetComponent<DrawCard>();
         drag = GetComponent<DragManager>();
+        inv = GetComponent<InventoryManager>();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            MoveScene("Inventory Scene");
+        }
     }
     private void OnEnable()
     {
@@ -34,7 +44,7 @@ public class GameManager : GenericSingleton<GameManager>
         string name = scene.name;
         sceneName = name;
         Debug.Log("ÇöÀç ¾À ÀÌ¸§: " + name);
-        if(sceneName != "Battle Scene" || sceneName != "Store Scene" || sceneName != "Demon Scene")
+        if(sceneName != "Battle Scene" || sceneName != "Store Scene" || sceneName != "Demon Scene" || sceneName != "Inventory Scene")
         {
             TurnManager.Instance.TurnEnd();
             turn.enabled = false;
@@ -43,6 +53,7 @@ public class GameManager : GenericSingleton<GameManager>
         }
         if (sceneName == "Battle Scene")
         {
+            inv.enabled = false;
             PlayerData.Instance.DataSet();
             Managers.Stage.BattleStage();
             turn.enabled = true;
@@ -52,19 +63,29 @@ public class GameManager : GenericSingleton<GameManager>
         }
         else if (sceneName == "Store Scene")
         {
+            inv.enabled = false;
             TurnManager.Instance.TurnEnd();
             PlayerData.Instance.DataSet();
             drag.enabled = true;
         }
         else if (sceneName == "Demon Scene")
         {
+            inv.enabled = false;
             TurnManager.Instance.TurnEnd();
             PlayerData.Instance.DataSet();
             drag.enabled = true;
         }
         else if(sceneName == "Forge Scene")
         {
+            inv.enabled = false;
             PlayerData.Instance.DataSet();
+        }
+        else if(sceneName == "Inventory Scene")
+        {
+            inv.enabled = true;
+            InventoryManager.Instance.LoadMyDeck();
+            InventoryManager.Instance.FindInvCards();
+            InventoryManager.Instance.LoadByMaxNum();
         }
 
     }

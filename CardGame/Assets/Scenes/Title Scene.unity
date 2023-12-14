@@ -834,6 +834,7 @@ GameObject:
   - component: {fileID: 1108840798}
   - component: {fileID: 1108840806}
   - component: {fileID: 1108840808}
+  - component: {fileID: 1108840809}
   - component: {fileID: 1108840807}
   - component: {fileID: 1108840797}
   m_Layer: 0
@@ -987,6 +988,7 @@ MonoBehaviour:
   turn: {fileID: 0}
   monsterData: {fileID: 0}
   drag: {fileID: 0}
+  inv: {fileID: 0}
 --- !u!95 &1108840803
 Animator:
   serializedVersion: 5
@@ -1122,6 +1124,22 @@ MonoBehaviour:
   mergeGrids: []
   deckUi: {fileID: 0}
   gridNum: 0
+--- !u!114 &1108840809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108840796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3796cc87d2969f46b4b1b2af0f85afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myDeck: []
+  invCards: []
+  maxNum: 3
+  cardAmount: 0
 --- !u!1 &1179593335
 GameObject:
   m_ObjectHideFlags: 0

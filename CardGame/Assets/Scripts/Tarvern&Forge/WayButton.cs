@@ -86,7 +86,7 @@ public class WayButton : MonoBehaviour
         else if (stage == "I0")
         {
             int i = InventoryManager.Instance.maxNum;
-            if(i < 3)
+            if(i > 3)
             {
                 InventoryManager.Instance.maxNum -= 4;
                 InventoryManager.Instance.LoadByMaxNum();
@@ -96,12 +96,15 @@ public class WayButton : MonoBehaviour
         {
             int i = InventoryManager.Instance.maxNum;
             int card = InventoryManager.Instance.cardAmount;
-            card = card / 4;
             if (i < card)
             {
-                InventoryManager.Instance.maxNum -= 4;
+                InventoryManager.Instance.maxNum += 4;
                 InventoryManager.Instance.LoadByMaxNum();
             }
+        }
+        else if(stage == "GoI")
+        {
+            GameManager.Instance.MoveScene("Inventory Scene");
         }
     }
 }

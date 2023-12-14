@@ -7,7 +7,7 @@ using TMPro;
 public class CardDataLoad : MonoBehaviour
 {
     [SerializeField]
-    private List<ObjectNameAndParent> thisCardinfo = new List<ObjectNameAndParent>();
+    public List<ObjectNameAndParent> thisCardinfo = new List<ObjectNameAndParent>();
     public CardUse cardUse;
     public string thisCardId;
     public int thisCardLevel;

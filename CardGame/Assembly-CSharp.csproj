@@ -90,6 +90,8 @@
     <Compile Include="Assets\Scripts\Test\End.cs" />
     <Compile Include="Assets\Scripts\Animation\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Core\GenericSingleton.cs" />
+    <Compile Include="Assets\Scripts\GameSystem\StoreManager.cs" />
+    <Compile Include="Assets\Scripts\GameSystem\InventoryManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -83,5 +83,25 @@ public class WayButton : MonoBehaviour
         {
             Managers.Stage.SelectLevel();
         }
+        else if (stage == "I0")
+        {
+            int i = InventoryManager.Instance.maxNum;
+            if(i < 3)
+            {
+                InventoryManager.Instance.maxNum -= 4;
+                InventoryManager.Instance.LoadByMaxNum();
+            }
+        }
+        else if(stage == "I1")
+        {
+            int i = InventoryManager.Instance.maxNum;
+            int card = InventoryManager.Instance.cardAmount;
+            card = card / 4;
+            if (i < card)
+            {
+                InventoryManager.Instance.maxNum -= 4;
+                InventoryManager.Instance.LoadByMaxNum();
+            }
+        }
     }
 }

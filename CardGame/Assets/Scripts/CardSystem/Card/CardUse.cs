@@ -68,11 +68,11 @@ public class CardUse : MonoBehaviour
                                 int num = UnityEngine.Random.Range(0, 100);
                                 if (num <= player.player.hitProbability)    // 명중 확률 
                                 {
-                                    if (thisCard.adPower != 0)           // ad공격 카드일 경우
+                                    if (thisCard.adPower >= 0)           // ad공격 카드일 경우
                                     {
                                         MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);
                                     }
-                                    else if (thisCard.apPower != 0)      // ap공격 카드일 경우
+                                    else if (thisCard.apPower >= 0)      // ap공격 카드일 경우
                                     {
                                         MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                     }
@@ -104,11 +104,11 @@ public class CardUse : MonoBehaviour
                                 int num = UnityEngine.Random.Range(0, 100);
                                 if (num <= player.player.hitProbability / 2)      // 명중확률 ( 원거리 무기라 절반값으로 계산)
                                 {
-                                    if (thisCard.adPower != 0)      // ad공격 카드일 경우
+                                    if (thisCard.adPower >= 0)      // ad공격 카드일 경우
                                     {
                                         MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);
                                     }
-                                    else if (thisCard.apPower != 0)     // ap공격 카드일 경우
+                                    else if (thisCard.apPower >= 0)     // ap공격 카드일 경우
                                     {
                                         MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                     }
@@ -140,7 +140,7 @@ public class CardUse : MonoBehaviour
                                 int num = UnityEngine.Random.Range(0, 100);
                                 if (num <= player.player.hitProbability)        // 명중확률 ( 던지고 돌아오는 무기이기에 그대로 계산)
                                 {
-                                    if (thisCard.adPower != 0)      // ad무기일 경우
+                                    if (thisCard.adPower >= 0)      // ad무기일 경우
                                     {
                                         MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);      // 몬스터 체력 감소
                                         MonsterData.Instance.monsterAnim.GetDamaged();        // 몬스터 타격 이펙트 출력
@@ -155,7 +155,7 @@ public class CardUse : MonoBehaviour
                                             Debug.Log("나한테 감나빗");       // 나한테 빗나갔을 경우 출력
                                         }
                                     }
-                                    else if (thisCard.apPower != 0)     //ap무기일 경우
+                                    else if (thisCard.apPower >= 0)     //ap무기일 경우
                                     {
                                         MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                         MonsterData.Instance.monsterAnim.GetDamaged();        // 몬스터 타격 이펙트 출력
@@ -353,11 +353,11 @@ public class CardUse : MonoBehaviour
                                 int num = UnityEngine.Random.Range(0, 100);
                                 if (num <= player.player.hitProbability / 2)
                                 {
-                                    if (thisCard.adPower != 0)
+                                    if (thisCard.adPower >= 0)
                                     {
                                         MonsterData.Instance.GetDamage(player.player.adDamage + thisCard.adPower);
                                     }
-                                    else if (thisCard.apPower != 0)
+                                    else if (thisCard.apPower >= 0)
                                     {
                                         MonsterData.Instance.GetDamage(player.player.apDamage + thisCard.apPower);
                                     }

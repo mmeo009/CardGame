@@ -26,10 +26,10 @@ public class MonsterData : GenericSingleton<MonsterData>
     public MonsterAnimation monsterAnim;
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
+/*        if(Input.GetKeyDown(KeyCode.K))
         {
             GetDamage(10);
-        }
+        }*/
     }
     public void LoadMonsterData(int level, int stageType, int strongDegree = 1, bool isBoss = false)
     {
@@ -170,7 +170,15 @@ public class MonsterData : GenericSingleton<MonsterData>
 
     public void GetDamage(int amount)
     {
-        monsterHp -= amount;
+        if(amount > 0)
+        {
+            monsterHp -= amount;
+        }
+        else
+        {
+            monsterHp += amount;
+        }
+
         hpText.GetComponent<TMP_Text>().text = $"HP : {monsterHp}";
         if(monsterHp <= 0)
         {

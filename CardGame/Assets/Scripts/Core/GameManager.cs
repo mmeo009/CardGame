@@ -26,10 +26,10 @@ public class GameManager : GenericSingleton<GameManager>
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+/*        if(Input.GetKeyDown(KeyCode.I))
         {
             MoveScene("Inventory Scene");
-        }
+        }*/
     }
     private void OnEnable()
     {
@@ -55,6 +55,7 @@ public class GameManager : GenericSingleton<GameManager>
         {
             inv.enabled = false;
             PlayerData.Instance.DataSet();
+            Managers.Deck.nowHold = 0;
             Managers.Stage.BattleStage();
             turn.enabled = true;
             draw.enabled = true;

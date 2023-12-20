@@ -13,6 +13,8 @@ public class PlayerData : GenericSingleton<PlayerData>
     public GameObject shieldText;
     public GameObject hpText;
     public GameObject state;
+    public GameObject stateInfo;
+    public GameObject stateText;
     public PlayerAnimation playerAnimation;
     public bool isUsingCard = false;
     public void DataSet()
@@ -132,6 +134,19 @@ public class PlayerData : GenericSingleton<PlayerData>
                     }
                 }
             }
+        }
+        if(GameManager.Instance.sceneName == "Battle Scene")
+        {
+            if (stateInfo != null)
+            {
+                stateInfo.SetActive(false);
+            }
+            else
+            {
+                stateInfo = GameObject.Find("StateInfo");
+                stateInfo.SetActive(false);
+            }
+            stateText = GameObject.Find("StateText");
         }
     }
 
@@ -539,7 +554,7 @@ public class PlayerData : GenericSingleton<PlayerData>
 
     public void PlayerWin()
     {
-        Managers.Stage.SelectLevel();
+        GameManager.Instance.MoveScene("Inventory Scene");
     }
 
 }
